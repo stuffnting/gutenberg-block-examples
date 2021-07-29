@@ -18,7 +18,6 @@ function myprefix_enqueue_richtext_supports_editor_assets() {
   ); 
 }
 
-
 /**
  * Add support to test `supports` attribute of registerBlockType
  * 
@@ -29,4 +28,6 @@ add_action( 'after_setup_theme', 'myprefix_extra_theme_setup' );
 
 function myprefix_extra_theme_setup() {
   add_theme_support( 'custom-line-height' );
+  add_theme_support('custom-spacing');
+  add_theme_support('editor-font-sizes');
 }

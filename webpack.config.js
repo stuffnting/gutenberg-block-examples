@@ -8,6 +8,28 @@ const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   ...defaultConfig,
+  plugins: [
+    new CopyPlugin({
+      patterns: [
+        { context: "src", from: "plugin.php", to: "./" },
+        {
+          context: "src",
+          from: "*/*.php",
+          to: "./[name]/index.php",
+        },
+        {
+          context: "src",
+          from: "*/*.css",
+          to: "./[name]/styles.css",
+        },
+        { from: "README.md", to: "./" },
+      ],
+    }),
+    new CleanWebpackPlugin({
+      dry: true,
+      cleanOnceBeforeBuildPatterns: ["**/*"],
+    }),
+  ],
   entry: {
     "block-collection": "./src/block-collection/block-collection.js",
     "block-styles": "./src/block-styles/block-styles.js",
@@ -76,26 +98,4 @@ module.exports = {
     path: path.join(__dirname, "/start"),
     filename: "[name]/index.js",
   },
-  plugins: [
-    new CopyPlugin({
-      patterns: [
-        { context: "src", from: "plugin.php", to: "./" },
-        {
-          context: "src",
-          from: "*/*.php",
-          to: "./[name]/index.php",
-        },
-        {
-          context: "src",
-          from: "*/*.css",
-          to: "./[name]/styles.css",
-        },
-        { from: "README.md", to: "./" },
-      ],
-    }),
-    new CleanWebpackPlugin({
-      dry: true,
-      cleanOnceBeforeBuildPatterns: ["**/*"],
-    }),
-  ],
 };

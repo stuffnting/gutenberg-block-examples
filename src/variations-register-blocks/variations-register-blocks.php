@@ -18,10 +18,10 @@ function myprefix_enqueue_variations_register_blocks_assets(){
   );
 
   wp_register_style(
-    'myprefix-variations-register-blocks-style',
-    MYPREFIX_GUT_BLOCKS_PLUGIN_URL . '/css/variations-register-blocks.css',
+    'myprefix-variations-existing-blocks-style',
+    MYPREFIX_GUT_BLOCKS_PLUGIN_URL . basename( __DIR__ ) . '/styles.css',
     array( 'wp-edit-blocks' ),
-    filemtime( MYPREFIX_GUT_BLOCKS_PLUGIN_PATH . 'css/variations-register-blocks.css' )
+    filemtime( MYPREFIX_GUT_BLOCKS_PLUGIN_PATH . basename( __DIR__ ) . '/styles.css' )
   );
 
   register_block_type( 'myprefix/variations-register-blocks', array(

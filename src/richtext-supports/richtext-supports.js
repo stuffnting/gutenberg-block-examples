@@ -26,10 +26,16 @@ registerBlockType("myprefix/richtext-supports", {
     color: {
       gradient: true,
     },
-    fontSize: true, // Adds a drop down to the Block Inspector WP 5.6
     html: false, // Prevents Edit HTML is ... menu
     //multiple: false, // Only allows on of this block in each post
-    lineHeight: true, // Adds a control to Block Inspector WP 5.6, this needs theme support, see the PHP file
+    typography: {
+      fontSize: true, // Adds a drop down to the Block Inspector WP 5.6
+      lineHeight: true, // Adds a control to Block Inspector WP 5.6, this needs theme support, see the PHP file
+    },
+    spacing: {
+      margin: ["top", "bottom"], // Enable margin UI control. *** Not working WP 5.8
+      padding: true, // Enable padding UI control.
+    },
   },
   edit: (props) => {
     const { attributes, setAttributes } = props;

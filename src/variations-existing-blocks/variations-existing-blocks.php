@@ -21,8 +21,8 @@ function myprefix_enqueue_variations_existing_blocks_assets(){
   wp_register_style(
     'myprefix-variations-existing-blocks-style',
     MYPREFIX_GUT_BLOCKS_PLUGIN_URL . basename( __DIR__ ) . '/styles.css',
-    array( 'wp-edit-blocks' ),
-    filemtime( MYPREFIX_GUT_BLOCKS_PLUGIN_URL . basename( __DIR__ ) . '/styles.css' )
+    array(),
+    filemtime( MYPREFIX_GUT_BLOCKS_PLUGIN_PATH . basename( __DIR__ ) . '/styles.css' )
   );
 
   register_block_type( 'myprefix/variations-existing-blocks', array(
