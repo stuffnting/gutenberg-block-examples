@@ -24,9 +24,10 @@ if( !defined( 'ABSPATH') ) {
 define( 'MYPREFIX_GUT_BLOCKS_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'MYPREFIX_GUT_BLOCKS_PLUGIN_URL', plugins_url( '/', __FILE__ ) );
 
-/* require_once('richtext-basic-block/index.php');
 
 require_once('richtext-text-align/index.php');
+
+/* require_once('richtext-basic-block/index.php');
 require_once('richtext-formatting-options/index.php');
 require_once('richtext-custom-toolbar-buttons/index.php'); */
 require_once('richtext-supports/index.php');

@@ -8,6 +8,9 @@ const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   ...defaultConfig,
+  externals: {
+    lodash: "lodash",
+  },
   plugins: [
     new CopyPlugin({
       patterns: [
@@ -31,24 +34,26 @@ module.exports = {
     }),
   ],
   entry: {
-    "block-collection": "./src/block-collection/block-collection.js",
+    /*     "block-collection": "./src/block-collection/block-collection.js",
     "block-styles": "./src/block-styles/block-styles.js",
     "richtext-flexible-paragraph":
       "./src/richtext-flexible-paragraph/richtext-flexible-paragraph.js",
-
     "richtext-basic-block":
       "./src/richtext-basic-block/richtext-basic-block.js",
-
     "richtext-multiline": "./src/richtext-multiline/richtext-multiline.js",
     "richtext-multiple-instances":
       "./src/richtext-multiple-instances/richtext-multiple-instances.js",
     "richtext-formatting-options":
-      "./src/richtext-formatting-options/richtext-formatting-options.js",
+      "./src/richtext-formatting-options/richtext-formatting-options.js", */
+
     "richtext-text-align": "./src/richtext-text-align/richtext-text-align.js",
-    "richtext-custom-toolbar-buttons":
-      "./src/richtext-custom-toolbar-buttons/richtext-custom-toolbar-buttons.js",
+
+    /* "richtext-custom-toolbar-buttons":
+      "./src/richtext-custom-toolbar-buttons/richtext-custom-toolbar-buttons.js", */
+
     "richtext-supports": "./src/richtext-supports/richtext-supports.js",
-    "richtext-split-merge":
+
+    /*     "richtext-split-merge":
       "./src/richtext-split-merge/richtext-split-merge.js",
     "richtext-transforms-simple":
       "./src/richtext-transforms-simple/richtext-transforms-simple.js",
@@ -91,7 +96,7 @@ module.exports = {
     "filter-core-block-class-names":
       "./src/filter-core-block-class-names/filter-core-block-class-names.js",
     "filter-core-block-controls":
-      "./src/filter-core-block-controls/filter-core-block-controls.js",
+      "./src/filter-core-block-controls/filter-core-block-controls.js", */
     // "custom-class": "./src/custom-class/custom-class.js",
   },
   output: {
