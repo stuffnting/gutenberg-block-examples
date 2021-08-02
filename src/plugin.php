@@ -77,3 +77,5 @@ require_once('filter-core-block-class-names/index.php');
 require_once('filter-core-block-controls/index.php'); */
 
 //require_once('php/custom-class/index.php');
+
+require_once('block-json/index.php');

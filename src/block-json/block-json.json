@@ -1,0 +1,29 @@
+{
+  "apiVersion": 2,
+  "name": "myprefix/test-block-json",
+  "title": "Test block.json",
+  "category": "text",
+  "icon": "lightbulb",
+  "description": "Test block.json file",
+  "keywords": ["paragraph", "test"],
+  "textdomain": "myprefix",
+  "attributes": {
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": "p",
+      "default": ""
+    }
+  },
+  "supports": {
+    "align": true,
+    "color": true,
+    "anchor": true
+  },
+  "example": {
+    "attributes": {
+      "content": "Tester McTest!"
+    }
+  },
+  "editorScript": "myprefix-block-json-block-script"
+}

@@ -3,6 +3,7 @@ const path = require("path");
 
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const { BlockList } = require("net");
 
 //console.log(path);
 
@@ -25,6 +26,7 @@ module.exports = {
           from: "*/*.css",
           to: "./[name]/styles.css",
         },
+        { context: "src", from: "*/*.json", to: "./[name]/block.json" },
         { from: "README.md", to: "./" },
       ],
     }),
@@ -98,6 +100,8 @@ module.exports = {
     "filter-core-block-controls":
       "./src/filter-core-block-controls/filter-core-block-controls.js", */
     // "custom-class": "./src/custom-class/custom-class.js",
+
+    "block-json": "./src/block-json/block-json.js",
   },
   output: {
     path: path.join(__dirname, "/start"),
