@@ -46,12 +46,12 @@ module.exports = {
     "richtext-multiple-instances":
       "./src/richtext-multiple-instances/richtext-multiple-instances.js",
     "richtext-formatting-options":
-      "./src/richtext-formatting-options/richtext-formatting-options.js", */
+      "./src/richtext-formatting-options/richtext-formatting-options.js", 
 
     "richtext-text-align": "./src/richtext-text-align/richtext-text-align.js",
 
-    /* "richtext-custom-toolbar-buttons":
-      "./src/richtext-custom-toolbar-buttons/richtext-custom-toolbar-buttons.js", */
+    "richtext-custom-toolbar-buttons":
+      "./src/richtext-custom-toolbar-buttons/richtext-custom-toolbar-buttons.js",
 
     "richtext-supports": "./src/richtext-supports/richtext-supports.js",
 
@@ -64,11 +64,13 @@ module.exports = {
     "variations-existing-blocks":
       "./src/variations-existing-blocks/variations-existing-blocks.js",
     "variations-register-blocks":
-      "./src/variations-register-blocks/variations-register-blocks.js",
+      "./src/variations-register-blocks/variations-register-blocks.js", */
+
     "inner-blocks": "./src/inner-blocks/inner-blocks.js",
-    "inner-blocks-template":
-      "./src/inner-blocks-template/inner-blocks-template.js",
-    "metabox-simple-block":
+    "inner-blocks-template-child":
+      "./src/inner-blocks-template-child/inner-blocks-template-child.js",
+
+    /*"metabox-simple-block":
       "./src/metabox-simple-block/metabox-simple-block.js",
     "metabox-document-settings":
       "./src/metabox-document-settings/metabox-document-settings.js",

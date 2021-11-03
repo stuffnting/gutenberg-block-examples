@@ -6,6 +6,8 @@ const BLOCKS_TEMPLATE = [
   ["core/paragraph", { placeholder: "Image Details" }],
 ];
 
+const ALLOWED_BLOCKS = ["core/paragraph"];
+
 const STYLE = {
   color: "white",
   padding: "20px",
@@ -21,11 +23,12 @@ registerBlockType("myprefix/inner-blocks-template", {
   edit: () => {
     const blockProps = useBlockProps({ style: STYLE });
     return (
-      <>
-        <div {...blockProps}>
-          <InnerBlocks template={BLOCKS_TEMPLATE} templateLock="all" />
-        </div>
-      </>
+      <div {...blockProps}>
+        <InnerBlocks
+          template={BLOCKS_TEMPLATE}
+          allowedBlocks={ALLOWED_BLOCKS}
+        />
+      </div>
     );
   },
   save: ({ className }) => {
@@ -34,6 +37,31 @@ registerBlockType("myprefix/inner-blocks-template", {
     return (
       <div {...blockProps}>
         <InnerBlocks.Content />
+      </div>
+    );
+  },
+});
+
+registerBlockType("myprefix/inner-blocks-child", {
+  apiVersion: 2,
+  title: "Inner Blocks Child",
+  category: "layout",
+  icon: "lightbulb",
+  parent: ["myprefix/inner-blocks-template"],
+  edit: () => {
+    const blockProps = useBlockProps();
+    return (
+      <div {...blockProps}>
+        <p>I am a child</p>
+      </div>
+    );
+  },
+  save: ({ className }) => {
+    const blockProps = useBlockProps.save();
+
+    return (
+      <div {...blockProps}>
+        <p>I am a child</p>
       </div>
     );
   },

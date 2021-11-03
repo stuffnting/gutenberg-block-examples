@@ -23,19 +23,22 @@ registerBlockType("myprefix/richtext-custom-toolbar-buttons", {
 
     return (
       <>
+        <BlockControls group="block">
+          <ToolbarButton onClick={() => console.log("PANTS!")}>
+            {__("My button")}
+          </ToolbarButton>
+        </BlockControls>
+        <BlockControls group="inline">
+          <ToolbarButton
+            label={__("A custom button that deletes the content", "textDomain")}
+            icon="dismiss"
+            className="myprefix-custom-button-1"
+            onClick={() => setAttributes({ content: null })}
+          />
+        </BlockControls>
         <BlockControls>
           <Toolbar label={__("Custom Buttons", "textDomain")}>
             <ToolbarGroup>
-              {/* The custom buttons is added here */}
-              <ToolbarButton
-                label={__(
-                  "A custom button that deletes the content",
-                  "textDomain"
-                )}
-                icon="dismiss"
-                className="myprefix-custom-button-1"
-                onClick={() => setAttributes({ content: null })}
-              />
               <ToolbarButton
                 label={__(
                   "A custom button that changes the content to Pants",
@@ -48,6 +51,7 @@ registerBlockType("myprefix/richtext-custom-toolbar-buttons", {
             </ToolbarGroup>
           </Toolbar>
         </BlockControls>
+
         <RichText
           identifier="content"
           tagName="h2"

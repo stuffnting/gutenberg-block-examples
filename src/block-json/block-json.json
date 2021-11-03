@@ -2,7 +2,7 @@
   "apiVersion": 2,
   "name": "myprefix/test-block-json",
   "title": "Test block.json",
-  "category": "text",
+  "category": "my-category",
   "icon": "lightbulb",
   "description": "Test block.json file",
   "keywords": ["paragraph", "test"],

@@ -3,11 +3,11 @@
  * This code does stuff related to block patterns
  */
 
-/********************************************************************
+/******************************************************************************
  * 
  * Enable the core block patterns
  * 
- ********************************************************************/
+ ******************************************************************************/
 
 add_action( 'after_setup_theme', 'myprefix_block_patterns_setup' );
 
@@ -18,11 +18,11 @@ function myprefix_block_patterns_setup() {
 }
 
 
-/********************************************************************
+/******************************************************************************
  * 
  * Unregister patterns and pattern categories
  * 
- ********************************************************************/
+ ******************************************************************************/
 
 add_action('init', 'myprefix_unregister_block_patterns');
 
@@ -58,11 +58,11 @@ function myprefix_unregister_block_patterns() {
 }
 
 
-/********************************************************************
+/******************************************************************************
  * 
  * Register patterns and pattern categories
  * 
- ********************************************************************/
+ ******************************************************************************/
 
 add_action('init', 'myprefix_register_block_patterns');
 
@@ -89,13 +89,14 @@ function myprefix_register_block_patterns() {
 }
 
 
-/********************************************************************
+/******************************************************************************
  * 
  * List registered patterns and pattern categories
  * 
- * *** Note: This will place the lists on a front-end page.
+ * *** NOTE: This will place the lists on a front-end page one the 
+ *           print_r statements are uncommented.
  * 
- ********************************************************************/
+ ******************************************************************************/
 
 add_filter( 'the_content', 'myprefix_list_block_patterns', 1);
 
@@ -121,10 +122,45 @@ function myprefix_list_block_patterns($content) {
     $pattern_cats_list[] = $cat['name'];
   }
 
-  echo "<pre>";
+/*   echo "<pre>";
   print_r($pattern_list);
   print_r($pattern_cats_list);
-  echo "</pre>";
+  echo "</pre>"; */
 
   return $content;
+}
+
+
+/******************************************************************************
+ * 
+ * Register a contextual pattern for the core/heading block type
+ * 
+ * *** NOTE: This block pattern can be selected from the inserter as normal.
+ *           It also appears in the core/heading block's transform menu.
+ * 
+ ******************************************************************************/
+
+add_action( 'init', 'myprefix_register_block_contextual_patterns' );
+
+function myprefix_register_block_contextual_patterns() {
+
+  // Register a new block pattern category. If the category is empty it will not appear in the inserter.
+  register_block_pattern_category('myprefix-contextual-patterns', 
+    ['label' => __('Some contextual patterns', 'textDomain')]
+  );
+
+  register_block_pattern(
+    'heading-example',
+    array(
+        'title'         => __( 'Black heading with image' ),
+        'categories'    => array( 'myprefix-contextual-patterns' ),
+        'blockTypes'    => array( 'core/heading' ), // These are the block for which this pattern will be suggested
+        'viewportWidth' => 500,
+        'content'       => ' <!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+        <figure class="wp-block-image size-large"><img src="https://s.w.org/images/core/5.8/nature-above-01.jpg" alt=""/></figure>
+        <!-- /wp:image --><!-- wp:heading {"level":3,"backgroundColor":"black","textColor":"white"} -->
+        <h3 class="has-white-color has-black-background-color has-text-color has-background">My most excellent heading</h3>
+        <!-- /wp:heading -->',
+    )
+  );
 }
