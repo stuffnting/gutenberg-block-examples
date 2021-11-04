@@ -29,7 +29,7 @@ function myprefix_enqueue_metabox_simple_block_editor_assets() {
 
   // Register the call_back for rendering on the front end
   register_block_type( 'myprefix/meta-simple-block', array(
-    'apiVersion' => 2,    
+    'api_version' => 2,    
     'editor_script'   => 'myprefix-metabox-simple-block-script',
     'render_callback' => 'myprefix_metabox_simple_block_cb'        
   ) );

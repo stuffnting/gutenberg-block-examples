@@ -70,6 +70,8 @@ module.exports = {
     "inner-blocks-template-child":
       "./src/inner-blocks-template-child/inner-blocks-template-child.js",
 
+    context: "./src/context/context.js",
+
     /*"metabox-simple-block":
       "./src/metabox-simple-block/metabox-simple-block.js",
     "metabox-document-settings":
@@ -83,10 +85,11 @@ module.exports = {
       "/src/metabox-notices-save-lock/metabox-notices-save-lock.js",
     "metabox-attribute": "/src/metabox-attribute/metabox-attribute.js",
     "metabox-with-select-doc-settings":
-      "/src/metabox-with-select-doc-settings/metabox-with-select-doc-settings.js",
+      "/src/metabox-with-select-doc-settings/metabox-with-select-doc-settings.js",*/
+
     "dynamic-block-simple":
       "./src/dynamic-block-simple/dynamic-block-simple.js",
-    "dynamic-block-serverside-render":
+    /*"dynamic-block-serverside-render":
       "./src/dynamic-block-serverside-render/dynamic-block-serverside-render.js",
     "dynamic-block-inspector-controls":
       "./src/dynamic-block-inspector-controls/dynamic-block-inspector-controls.js",

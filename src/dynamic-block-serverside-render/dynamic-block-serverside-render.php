@@ -48,7 +48,7 @@ function myprefix_enqueue_dynamic_block_serverside_render_editor_assets() {
 
   // Register the call_back for rendering on the front end
   register_block_type( 'myprefix/dynamic-block-serverside-render', array(
-    'apiVersion' => 2,    
+    'api_version' => 2,    
     'editor_script'   => 'myprefix-dynamic-block-serverside-render-script',
     'render_callback' => 'myprefix_dynamic_block_serverside_render_cb'        
   ) );

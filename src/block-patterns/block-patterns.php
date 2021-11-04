@@ -82,6 +82,7 @@ function myprefix_register_block_patterns() {
     
   register_block_pattern('myprefix/image-and-text', [
     'title' => __('Images and text in columns', 'textDomain'),
+    'description' => __('My nice block pattern', 'textDomain'),
     'keywords' => ['columns', 'pictures'],
     'categories' => ['columns', 'myprefix-patterns'],
     'content' => $pattern_escaped_html,

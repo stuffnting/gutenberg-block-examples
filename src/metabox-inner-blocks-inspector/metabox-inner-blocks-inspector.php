@@ -19,7 +19,7 @@ function myprefix_enqueue_metabox_inner_blocks_inspector_editor_assets() {
 
   // Register the call_back for rendering on the front end
   register_block_type( 'myprefix/metabox-inner-blocks-inspector', array(
-    'apiVersion' => 2,    
+    'api_version' => 2,    
     'editor_script'   => 'myprefix-metabox-inner-blocks-inspector-script',
     'render_callback' => 'myprefix_metabox_inner_blocks_inspector_cb'        
   ) );

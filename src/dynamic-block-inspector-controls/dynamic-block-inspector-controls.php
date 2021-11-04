@@ -59,7 +59,7 @@ function myprefix_enqueue_dynamic_block_inspector_controls_editor_assets() {
     and so if the defaults are used—noting is changed in the 
     Block Inspector—the callback function knows nothing about them. */
   register_block_type( 'myprefix/dynamic-block-inspector-controls', array(
-    'apiVersion' => 2,    
+    'api_version' => 2,    
     'editor_script'   => 'myprefix-dynamic-block-inspector-controls-script',
     'render_callback' => 'myprefix_dynamic_block_inspector_controls_cb',  
     'attributes'      => array (

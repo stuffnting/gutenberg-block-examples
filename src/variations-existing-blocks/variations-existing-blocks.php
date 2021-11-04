@@ -26,7 +26,7 @@ function myprefix_enqueue_variations_existing_blocks_assets(){
   );
 
   register_block_type( 'myprefix/variations-existing-blocks', array(
-    'apiVersion' => 2,
+    'api_version' => 2,
     'editor_script' => 'myprefix-variations-existing-blocks-script', // Editor only
     'style' => 'myprefix-variations-existing-blocks-style', // Editor and frontend
   ) );

@@ -21,7 +21,7 @@ wp_register_script(
 
 // Register the call_back for rendering on the front end
 register_block_type( 'myprefix/metabox-notices-save-lock', array(
-  'apiVersion' => 2,    
+  'api_version' => 2,    
   'editor_script'   => 'myprefix-metabox-notices-save-lock-script',
   'render_callback' => 'myprefix_metabox_notices_save_lock_cb'        
 ) );

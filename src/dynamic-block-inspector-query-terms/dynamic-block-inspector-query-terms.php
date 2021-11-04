@@ -48,7 +48,7 @@ function myprefix_enqueue_dynamic_block_inspector_query_terms_editor_assets() {
 
   // Register the call_back for rendering on the front end
   register_block_type( 'myprefix/dynamic-block-inspector-query-terms', array(
-    'apiVersion' => 2,    
+    'api_version' => 2,    
     'editor_script'   => 'myprefix-dynamic-block-inspector-query-terms-script',
     'render_callback' => 'myprefix_dynamic_block_inspector_query_terms_cb',
     'attributes'      => array (

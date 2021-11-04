@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Code for laying out a simple dynamic block that contains the 3 latest posts.
+ * Code for laying out a simple dynamic block that contains the 3 latest posts. 
  */
 function myprefix_dynamic_block_simple_cb( $attributes, $content ) {
   
@@ -48,7 +48,7 @@ function myprefix_enqueue_dynamic_block_simple_editor_assets() {
 
   // Register the call_back for rendering on the front end
   register_block_type( 'myprefix/dynamic-block-simple', array(
-    'apiVersion' => 2,    
+    'api_version' => 2,    
     'editor_script'   => 'myprefix-dynamic-block-simple-script',
     'render_callback' => 'myprefix_dynamic_block_simple_cb'        
   ) );

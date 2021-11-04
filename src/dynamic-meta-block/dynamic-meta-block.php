@@ -49,7 +49,7 @@ function myprefix_enqueue_dynamic_meta_block_editor_assets() {
 
   // Register the call_back for rendering on the front end
   register_block_type( 'myprefix/dynamic-meta-block', array(
-    'apiVersion' => 2,    
+    'api_version' => 2,    
     'editor_script'   => 'myprefix-dynamic-meta-block-script',
     'render_callback' => 'myprefix_dynamic_meta_block_cb'
   ) );
