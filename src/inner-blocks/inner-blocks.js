@@ -1,6 +1,9 @@
 const { registerBlockType } = wp.blocks;
 const { InnerBlocks, useBlockProps } = wp.blockEditor;
 
+// WP 5.8 uses this experimental feature for the core/column block
+const useInnerBlocksProps = wp.blockEditor.__experimentalUseInnerBlocksProps;
+
 const STYLE = {
   color: "white",
   padding: "20px",
@@ -16,15 +19,24 @@ registerBlockType("myprefix/inner-blocks", {
   edit: () => {
     const blockProps = useBlockProps({ style: STYLE });
 
-    return (
-      <>
+    const allowedBlocks = ["core/paragraph", "core/heading", "core/quote"];
+
+    const innerBlockProps = useInnerBlocksProps(
+      { ...blockProps },
+      { allowedBlocks }
+    );
+
+    return <div {...innerBlockProps} />;
+
+    /**
+     * Old way, without useInnerBlocksProps
+     * 
         <div {...blockProps}>
           <InnerBlocks
             allowedBlocks={["core/paragraph", "core/heading", "core/quote"]}
           />
         </div>
-      </>
-    );
+     */
   },
   save: () => {
     const blockProps = useBlockProps.save({ style: STYLE });
