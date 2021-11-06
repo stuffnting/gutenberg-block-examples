@@ -49,6 +49,7 @@ require_once('inner-blocks/index.php');
 require_once('inner-blocks-template-child/index.php');
 
 require_once('context/index.php');
+require_once('context-block-json/index.php');
 
 //require_once('templates/index.php');
 //require_once('block-patterns/index.php');  

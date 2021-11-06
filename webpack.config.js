@@ -6,7 +6,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 const { BlockList } = require("net");
 
 //console.log(path);
-
+console.log(defaultConfig);
 module.exports = {
   ...defaultConfig,
   externals: {
@@ -26,13 +26,24 @@ module.exports = {
           from: "*/*.css",
           to: "./[name]/styles.css",
         },
-        { context: "src", from: "*/*.json", to: "./[name]/block.json" },
+        // { context: "src", from: "*/*.json", to: "./[name]/block.json" },
+        //{ context: "src", from: "*/*.json", to: "./[path]/[name].json" },
+        {
+          context: "src",
+          from: "*/*.json",
+          to({ context, absoluteFilename }) {
+            var filename = absoluteFilename.split("/").pop();
+            console.log(absoluteFilename.split("/"));
+            return "pants";
+          },
+        },
         { from: "README.md", to: "./" },
       ],
     }),
     new CleanWebpackPlugin({
       dry: true,
       cleanOnceBeforeBuildPatterns: ["**/*"],
+      //dangerouslyAllowCleanPatternsOutsideProject: true,
     }),
   ],
   entry: {
@@ -71,6 +82,7 @@ module.exports = {
       "./src/inner-blocks-template-child/inner-blocks-template-child.js",
 
     context: "./src/context/context.js",
+    "context-block-json": "./src/context-block-json/context-block-json.js",
 
     /*"metabox-simple-block":
       "./src/metabox-simple-block/metabox-simple-block.js",

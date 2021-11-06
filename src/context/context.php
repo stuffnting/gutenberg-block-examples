@@ -22,18 +22,20 @@ function myprefix_enqueue_context_editor_assets() {
   ); 
 
   register_block_type( 'myprefix/context-parent', array(
-    'api_version' => 2,  
-    'editor_script'   => 'myprefix-context-script',
+    'api_version'       => 2,  
+    'editor_script'     => 'myprefix-context-script',
+    'provides_context'  => ['myprefix/myNumber' => 'myNumber'],
   ));
 
   register_block_type( 'myprefix/context-child', array(
-    'api_version' => 2,  
+    'api_version'     => 2,  
     'editor_script'   => 'myprefix-context-script',
+    'uses_context'    => ['myprefix/myNumber'],
     'render_callback' => function( $attributes, $content, $block ) {
-      echo "<pre>";
-      print_r($block);
-      echo "</pre>";
-      return '<p>The current record ID is: ' . $block->context['myprefix/myNumber'] . '</p>';
+      $my_number = array_key_exists( 'myprefix/myNumber', $block->context ) 
+        ?  $block->context['myprefix/myNumber'] 
+        : "No number";
+      return "<p>My Number Is (from render_callback): $my_number</p>";
     },
   ));
 }

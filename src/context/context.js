@@ -14,18 +14,23 @@ registerBlockType("myprefix/context-parent", {
     },
   },
 
-  providesContext: {
+  // Because provides_context is defined in the PHP file this line is not needed here
+  /*   providesContext: {
     "myprefix/myNumber": "myNumber",
-  },
+  }, */
 
   edit: (props) => {
     const MY_TEMPLATE = [["myprefix/context-child", {}]];
+
+    const blockProps = useBlockProps();
+
     const {
       attributes: { myNumber },
       setAttributes,
     } = props;
+
     return (
-      <div>
+      <div {...blockProps}>
         <TextControl
           label="My Number:"
           value={myNumber}
@@ -41,7 +46,7 @@ registerBlockType("myprefix/context-parent", {
 
     return (
       <div {...blockProps}>
-        <p>The record ID: {props.attributes.myNumber}</p>
+        <p>My Number Is: {props.attributes.myNumber}</p>
         <InnerBlocks.Content />
       </div>
     );
@@ -54,11 +59,12 @@ registerBlockType("myprefix/context-child", {
   category: "widgets",
   icon: "lightbulb",
 
-  usesContext: ["myprefix/myNumber"],
+  // Because uses_context is defined in the PHP file this line is not needed here
+  //usesContext: ["myprefix/myNumber"],
 
   edit(props) {
     const { context } = props;
-    return "The record ID: " + context["myprefix/myNumber"];
+    return "My Number IS: " + context["myprefix/myNumber"];
   },
 
   save() {

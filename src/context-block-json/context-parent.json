@@ -1,0 +1,19 @@
+{
+  "apiVersion": 2,
+  "name": "myprefix/context-block-json-parent",
+  "title": "Context with block.json parent",
+  "category": "widgets",
+  "icon": "lightbulb",
+  "description": "Test block.json file with context",
+  "keywords": ["paragraph", "test"],
+  "textdomain": "myprefix",
+  "attributes": {
+    "myNiceNumber": {
+      "type": "number"
+    }
+  },
+  "providesContext": {
+    "myprefix/myNiceNumber": "number"
+  },
+  "editorScript": "myprefix-context-block-json-script"
+}
