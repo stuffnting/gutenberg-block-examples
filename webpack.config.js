@@ -1,12 +1,104 @@
 const defaultConfig = require("@wordpress/scripts/config/webpack.config");
+
+const fs = require("fs");
 const path = require("path");
 
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+
 const { BlockList } = require("net");
 
-//console.log(path);
-console.log(defaultConfig);
+// A list of example blocks to build
+const BUILD_LIST = [
+  "block-json",
+  /*** richtext ***/
+  //"richtext-flexible-paragraph",
+  //"richtext-basic-block",
+  //"richtext-multiline",
+  //"richtext-multiple-instances",
+  //"richtext-formatting-options",
+  //"richtext-text-align",
+  //"richtext-custom-toolbar-buttons",
+  //"richtext-supports",
+  //"richtext-split-merge",
+  //"richtext-transforms-simple",
+  //"richtext-transforms-multiblock",
+  /*** variations, styles ***/
+  //"variations-existing-blocks",
+  //"variations-register-blocks",
+  "block-styles",
+  /*** templates, patterns ***/
+  "templates",
+  //"block-patterns"
+  //"block-collection",
+  /*** inner-blocks, context  ***/
+  //"inner-blocks",
+  //"inner-blocks-template-child",
+  "context",
+  "context-block-json",
+  /*** metabox ***/
+  //"metabox-simple-block",
+  //"metabox-document-settings",
+  //"metabox-plugin-sidebar",
+  //"metabox-with-media",
+  //"metabox-inner-blocks-inspector",
+  //"metabox-notices-save-lock",
+  //"metabox-attribute",
+  //"metabox-with-select-doc-settings",
+  /*** dynamic ***/
+  //"dynamic-block-simple",
+  //"dynamic-block-serverside-render",
+  //"dynamic-block-inspector-controls",
+  //"dynamic-meta-block",
+  //"dynamic-block-inner-blocks",
+  //"dynamic-block-inspector-query-terms",
+  /*** filters ***/
+  //"filter-core-block-supports",
+  //"filter-core-block-class-names",
+  //"filter-core-block-controls",
+  /*** misc ***/
+  //"custom-class",
+];
+
+/**
+ * Make a build list object for Webpack.
+ *
+ * ./src/${el}/${el}.js is in form ./src/block-name/block-name.js
+ *
+ * Some block examples don't have a JS file.
+ * fs.existsSync(`./src/${el}/${el}.js`) checks the existence of the file before
+ * placing in buildListObj.
+ */
+const buildListObj = BUILD_LIST.length
+  ? BUILD_LIST.reduce(
+      (acc, el) =>
+        fs.existsSync(`./src/${el}/${el}.js`)
+          ? { ...acc, [el]: `./src/${el}/${el}.js` }
+          : { ...acc },
+      {}
+    )
+  : {};
+
+/**
+ * A callback function for the copy-webpack-plugin `filter`.
+ *
+ * When a file matches the `from` glob, decide wether to copy it  * or not
+ * based on the contents of BUILD_LIST.
+ *
+ * @param {string} absoluteSourcePath - Absolute path to the file that matched the glob.
+ * @returns {boolean} - Whether to copy the file to the build folder.
+ */
+const filterCB = (absoluteSourcePath) => {
+  var pathArray = absoluteSourcePath.split("/");
+  var fileDirectory = pathArray.slice(-2, -1).join();
+
+  if (BUILD_LIST.includes(fileDirectory)) {
+    return true;
+  }
+
+  return false;
+};
+
 module.exports = {
   ...defaultConfig,
   externals: {
@@ -19,107 +111,43 @@ module.exports = {
         {
           context: "src",
           from: "*/*.php",
-          to: "./[name]/index.php",
+          to: "./[path]/index.php",
+          filter: filterCB,
         },
         {
           context: "src",
           from: "*/*.css",
-          to: "./[name]/styles.css",
+          to: "./[path]/styles.css",
+          filter: filterCB,
         },
-        // { context: "src", from: "*/*.json", to: "./[name]/block.json" },
-        //{ context: "src", from: "*/*.json", to: "./[path]/[name].json" },
         {
           context: "src",
           from: "*/*.json",
-          to({ context, absoluteFilename }) {
-            var filename = absoluteFilename.split("/").pop();
-            console.log(absoluteFilename.split("/"));
-            return "pants";
+          to({ absoluteFilename }) {
+            var pathArray = absoluteFilename.split("/");
+            var fileName = pathArray.slice(-1).join();
+            var name = fileName.split(".").slice(0, 1).join();
+            var fileDirectory = pathArray.slice(-2, -1).join();
+
+            /**
+             * ./src/block-name/block-name.json becomes ./start/block-name/block.json
+             * ./src/block-name/any-other-name.json becomes ./start/block-name/any-other-name.json
+             */
+            return name === fileDirectory
+              ? "./[path]/block.json"
+              : "./[path]/[name].json";
           },
+          filter: filterCB,
         },
         { from: "README.md", to: "./" },
       ],
     }),
     new CleanWebpackPlugin({
-      dry: true,
+      dry: false,
       cleanOnceBeforeBuildPatterns: ["**/*"],
-      //dangerouslyAllowCleanPatternsOutsideProject: true,
     }),
   ],
-  entry: {
-    /*     "block-collection": "./src/block-collection/block-collection.js",
-    "block-styles": "./src/block-styles/block-styles.js",
-    "richtext-flexible-paragraph":
-      "./src/richtext-flexible-paragraph/richtext-flexible-paragraph.js",
-    "richtext-basic-block":
-      "./src/richtext-basic-block/richtext-basic-block.js",
-    "richtext-multiline": "./src/richtext-multiline/richtext-multiline.js",
-    "richtext-multiple-instances":
-      "./src/richtext-multiple-instances/richtext-multiple-instances.js",
-    "richtext-formatting-options":
-      "./src/richtext-formatting-options/richtext-formatting-options.js", 
-
-    "richtext-text-align": "./src/richtext-text-align/richtext-text-align.js",
-
-    "richtext-custom-toolbar-buttons":
-      "./src/richtext-custom-toolbar-buttons/richtext-custom-toolbar-buttons.js",
-
-    "richtext-supports": "./src/richtext-supports/richtext-supports.js",
-
-    /*     "richtext-split-merge":
-      "./src/richtext-split-merge/richtext-split-merge.js",
-    "richtext-transforms-simple":
-      "./src/richtext-transforms-simple/richtext-transforms-simple.js",
-    "richtext-transforms-multiblock":
-      "./src/richtext-transforms-multiblock/richtext-transforms-multiblock.js",
-    "variations-existing-blocks":
-      "./src/variations-existing-blocks/variations-existing-blocks.js",
-    "variations-register-blocks":
-      "./src/variations-register-blocks/variations-register-blocks.js", */
-
-    "inner-blocks": "./src/inner-blocks/inner-blocks.js",
-    "inner-blocks-template-child":
-      "./src/inner-blocks-template-child/inner-blocks-template-child.js",
-
-    context: "./src/context/context.js",
-    "context-block-json": "./src/context-block-json/context-block-json.js",
-
-    /*"metabox-simple-block":
-      "./src/metabox-simple-block/metabox-simple-block.js",
-    "metabox-document-settings":
-      "./src/metabox-document-settings/metabox-document-settings.js",
-    "metabox-plugin-sidebar":
-      "./src/metabox-plugin-sidebar/metabox-plugin-sidebar.js",
-    "metabox-with-media": "./src/metabox-with-media/metabox-with-media.js",
-    "metabox-inner-blocks-inspector":
-      "/src/metabox-inner-blocks-inspector/metabox-inner-blocks-inspector.js",
-    "metabox-notices-save-lock":
-      "/src/metabox-notices-save-lock/metabox-notices-save-lock.js",
-    "metabox-attribute": "/src/metabox-attribute/metabox-attribute.js",
-    "metabox-with-select-doc-settings":
-      "/src/metabox-with-select-doc-settings/metabox-with-select-doc-settings.js",*/
-
-    "dynamic-block-simple":
-      "./src/dynamic-block-simple/dynamic-block-simple.js",
-    /*"dynamic-block-serverside-render":
-      "./src/dynamic-block-serverside-render/dynamic-block-serverside-render.js",
-    "dynamic-block-inspector-controls":
-      "./src/dynamic-block-inspector-controls/dynamic-block-inspector-controls.js",
-    "dynamic-meta-block": "./src/dynamic-meta-block/dynamic-meta-block.js",
-    "dynamic-block-inner-blocks":
-      "./src/dynamic-block-inner-blocks/dynamic-block-inner-blocks.js",
-    "dynamic-block-inspector-query-terms":
-      "./src/dynamic-block-inspector-query-terms/dynamic-block-inspector-query-terms.js",
-    "filter-core-block-supports":
-      "./src/filter-core-block-supports/filter-core-block-supports.js",
-    "filter-core-block-class-names":
-      "./src/filter-core-block-class-names/filter-core-block-class-names.js",
-    "filter-core-block-controls":
-      "./src/filter-core-block-controls/filter-core-block-controls.js", */
-    // "custom-class": "./src/custom-class/custom-class.js",
-
-    "block-json": "./src/block-json/block-json.js",
-  },
+  entry: buildListObj,
   output: {
     path: path.join(__dirname, "/start"),
     filename: "[name]/index.js",
