@@ -1,0 +1,14 @@
+{
+  "context": {
+    "name": "context",
+    "include": true
+  },
+  "context-block-json": {
+    "name": "context-block-json",
+    "include": true
+  },
+  "custom-class": {
+    "name": "block-json",
+    "include": false
+  }
+}

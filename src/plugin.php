@@ -14,6 +14,8 @@
  * Text Domain: sntEvents
  */
 
+use function PHPSTORM_META\type;
+
 if( !defined( 'ABSPATH') ) {
   exit;
 }
@@ -24,58 +26,32 @@ if( !defined( 'ABSPATH') ) {
 define( 'MYPREFIX_GUT_BLOCKS_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'MYPREFIX_GUT_BLOCKS_PLUGIN_URL', plugins_url( '/', __FILE__ ) );
 
-//require_once('block-json/index.php');
+if ( file_exists( __DIR__ . '/build-list.json' ) ) {
+  $build_list_json = file_get_contents('build-list.json', true);
+  $build_list = json_decode($build_list_json, true);
 
-/*require_once('richtext-basic-block/index.php');
-require_once('richtext-multiline/index.php');
-require_once('richtext-multiple-instances/index.php');
-require_once('richtext-split-merge/index.php');
-require_once('richtext-custom-toolbar-buttons/index.php'); 
-require_once('richtext-formatting-options/index.php');
-require_once('richtext-supports/index.php');
-require_once('richtext-text-align/index.php');
-require_once('richtext-transforms-simple/index.php');
-require_once('richtext-transforms-multiblock/index.php');*/
+  process_require_from_json( $build_list );
+} else {
+  error_log("ERROR: Can't find build-list.json file. Logged from line" . __LINE__ . " in " . __FILE__);
+}
 
-//require_once('richtext-flexible-paragraph/index.php'); 
+function process_require_from_json( $build_list ) {
 
-/* require_once('variations-existing-blocks/index.php');
-require_once('variations-register-blocks/index.php'); */
+  if ( !is_array( $build_list ) ) {
+    return;
+  }
 
-/* require_once('block-collection/index.php');
-require_once('block-styles/index.php');*/
+  foreach ( $build_list as $key => $value ) {
 
-require_once('inner-blocks/index.php');
-require_once('inner-blocks-template-child/index.php');
+    $file = __DIR__ . '/' . $value['name'] . '/index.php';
 
-require_once('context/index.php');
-require_once('context-block-json/index.php');
+    if ( $value['include'] === true && file_exists($file)  ) {
+      require_once( $file );
+    }
 
-//require_once('templates/index.php');
-//require_once('block-patterns/index.php');  
+  }
 
-/* require_once('metabox-simple-block/index.php');
-require_once('metabox-document-settings/index.php');
-require_once('metabox-plugin-sidebar/index.php');
-require_once('metabox-attribute/index.php');
-require_once('metabox-inner-blocks-inspector/index.php');
-require_once('metabox-with-media/index.php');
-require_once('metabox-notices-save-lock/index.php');
-require_once('metabox-with-select-doc-settings/index.php');*/
-
-require_once('dynamic-block-simple/index.php');
-/*require_once('dynamic-block-serverside-render/index.php');
-require_once('dynamic-block-inspector-controls/index.php');
-require_once('dynamic-block-inner-blocks/index.php');
-require_once('dynamic-block-inspector-query-terms/index.php');
-require_once('dynamic-meta-block/index.php');
-
-require_once('filter-core-block-supports/index.php');
-require_once('filter-core-block-class-names/index.php');
-require_once('filter-core-block-controls/index.php'); */
-
-//require_once('php/custom-class/index.php');
-
+}
 
 
 
