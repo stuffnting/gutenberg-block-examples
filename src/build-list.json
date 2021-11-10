@@ -1,14 +1,202 @@
 {
+  "richtext-basic-block": {
+    "cat": "richtext",
+    "name": "richtext-basic-block",
+    "include": false
+  },
+  "block-json": {
+    "cat": "richtext",
+    "name": "block-json",
+    "include": false
+  },
+  "richtext-flexible-paragraph": {
+    "cat": "richtext",
+    "name": "richtext-flexible-paragraph",
+    "include": false
+  },
+  "richtext-multiline": {
+    "cat": "richtext",
+    "name": "richtext-multiline",
+    "include": false
+  },
+  "richtext-multiple-instances": {
+    "cat": "richtext",
+    "name": "richtext-multiple-instances",
+    "include": false
+  },
+  "richtext-formatting-options": {
+    "cat": "richtext",
+    "name": "richtext-formatting-options",
+    "include": false
+  },
+  "richtext-text-align": {
+    "cat": "richtext",
+    "name": "richtext-text-align",
+    "include": false
+  },
+  "richtext-custom-toolbar-buttons": {
+    "cat": "richtext",
+    "name": "richtext-custom-toolbar-buttons",
+    "include": false
+  },
+  "richtext-supports": {
+    "cat": "richtext",
+    "name": "richtext-supports",
+    "include": false
+  },
+  "richtext-split-merge": {
+    "cat": "richtext",
+    "name": "richtext-split-merge",
+    "include": false
+  },
+  "richtext-transforms-simple": {
+    "cat": "richtext",
+    "name": "richtext-transforms-simple",
+    "include": false
+  },
+  "richtext-transforms-multiblock": {
+    "cat": "richtext",
+    "name": "richtext-transforms-multiblock",
+    "include": false
+  },
+  "variations-existing-blocks": {
+    "cat": "variations and styles",
+    "name": "variations-existing-blocks",
+    "include": false
+  },
+  "variations-register-blocks": {
+    "cat": "variations and styles",
+    "name": "variations-register-blocks",
+    "include": false
+  },
+  "block-styles": {
+    "cat": "variations and styles",
+    "name": "block-style",
+    "include": false
+  },
+  "templates": {
+    "cat": "templates and styles",
+    "name": "templates",
+    "include": false
+  },
+  "block-patterns": {
+    "cat": "templates and styles",
+    "name": "block-patterns",
+    "include": false
+  },
+  "block-collection": {
+    "cat": "templates and styles",
+    "name": "block-collection",
+    "include": false
+  },
+  "inner-blocks": {
+    "cat": "innerblocks and context",
+    "name": "inner-blocks",
+    "include": false
+  },
+  "inner-blocks-template-child": {
+    "cat": "innerblocks and context",
+    "name": "inner-blocks-template-child",
+    "include": false
+  },
   "context": {
+    "cat": "templates and patterns",
     "name": "context",
     "include": true
   },
   "context-block-json": {
+    "cat": "templates and patterns",
     "name": "context-block-json",
     "include": true
   },
+  "dynamic-block-simple": {
+    "cat": "dynamic blocks",
+    "name": "dynamic-block-simple",
+    "include": false
+  },
+  "dynamic-block-serverside-render": {
+    "cat": "dynamic blocks",
+    "name": "dynamic-block-serverside-render",
+    "include": false
+  },
+  "dynamic-block-inspector-controls": {
+    "cat": "dynamic blocks",
+    "name": "dynamic-block-inspector-controls",
+    "include": false
+  },
+  "dynamic-meta-block": {
+    "cat": "dynamic blocks",
+    "name": "dynamic-meta-block",
+    "include": false
+  },
+  "dynamic-block-inner-blocks": {
+    "cat": "dynamic blocks",
+    "name": "dynamic-block-inner-blocks",
+    "include": false
+  },
+  "dynamic-block-inspector-query-terms": {
+    "cat": "dynamic blocks",
+    "name": "dynamic-block-inspector-query-terms",
+    "include": false
+  },
+  "metabox-simple-block": {
+    "cat": "metaboxes",
+    "name": "metabox-simple-block",
+    "include": false
+  },
+  "metabox-document-settings": {
+    "cat": "metaboxes",
+    "name": "metabox-document-settings",
+    "include": false
+  },
+  "metabox-plugin-sidebar": {
+    "cat": "metaboxes",
+    "name": "metabox-plugin-sidebar",
+    "include": false
+  },
+  "metabox-with-media": {
+    "cat": "metaboxes",
+    "name": "metabox-with-media",
+    "include": false
+  },
+  "metabox-inner-blocks-inspector": {
+    "cat": "metaboxes",
+    "name": "metabox-inner-blocks-inspector",
+    "include": false
+  },
+  "metabox-notices-save-lock": {
+    "cat": "metaboxes",
+    "name": "metabox-notices-save-lock",
+    "include": false
+  },
+  "metabox-attribute": {
+    "cat": "metaboxes",
+    "name": "metabox-attribute",
+    "include": false
+  },
+  "metabox-with-select-doc-settings": {
+    "cat": "metaboxes",
+    "name": "metabox-with-select-doc-settings",
+    "include": false
+  },
+  "filter-core-block-supports": {
+    "cat": "filter",
+    "name": "filter-core-block-supports",
+    "include": false
+  },
+  "filter-core-block-class-names": {
+    "cat": "filter",
+    "name": "filter-core-block-class-names",
+    "include": false
+  },
+  "filter-core-block-controls": {
+    "cat": "filter",
+    "name": "filter-core-block-controls",
+    "include": false
+  },
   "custom-class": {
-    "name": "block-json",
+    "cat": "classes",
+    "name": "custom-class",
     "include": false
   }
 }
