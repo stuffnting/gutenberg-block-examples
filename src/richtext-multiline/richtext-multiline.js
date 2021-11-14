@@ -2,20 +2,15 @@ const { registerBlockType, createBlock } = wp.blocks;
 const { RichText, useBlockProps } = wp.blockEditor;
 const { __ } = wp.i18n;
 
-registerBlockType("myprefix/richtext-multiline", {
-  apiVersion: 2,
-  title: "RichText Multiline",
-  icon: "lightbulb",
-  category: "text",
-  attributes: {
-    content: {
-      type: "string", // Can use `array`, with `source: "children"`
-      default: "", // If `source: "children"` use `[]`
-      source: "html",
-      selector: "section",
-      multiline: "p",
-    },
-  },
+/**
+ * *** NOTE ***
+ * Using a metadata object requires the use of the Node import command;
+ * otherwise, an asynchronous request has to be made to the server for the JSON file.
+ *
+ */
+import metadata from "./richtext-multiline.json";
+
+registerBlockType(metadata, {
   edit: (props) => {
     const { attributes, setAttributes } = props;
     const { content } = attributes;
@@ -24,11 +19,12 @@ registerBlockType("myprefix/richtext-multiline", {
     return (
       <RichText
         identifier="content"
-        tagName="section"
+        tagName="div"
+        /*A div element wraps the multilines in the editor, the save function can be different*/
         multiline="p"
         value={content}
         onChange={(value) => setAttributes({ content: value })}
-        placeholder={__("Write heading…", "textDomain")}
+        placeholder={__("Write a line…", "textDomain")}
         {...blockProps}
       />
     );
@@ -38,7 +34,12 @@ registerBlockType("myprefix/richtext-multiline", {
     const blockProps = useBlockProps.save();
 
     return (
-      <RichText.Content tagName="section" value={content} {...blockProps} />
+      <RichText.Content
+        tagName="section"
+        /*A section element wraps the multilines on the frontend*/
+        value={content}
+        {...blockProps}
+      />
     );
   },
 });

@@ -21,14 +21,17 @@ function myprefix_enqueue_context_block_json_editor_assets() {
     true
   ); 
 
-  register_block_type( __DIR__ . '/context-parent.json');
+  //register_block_type( __DIR__ . '/context-parent.json');
 
-  register_block_type( __DIR__ . '/context-child.json', array(
+  //snt_dump( file_exists(__DIR__ . '/context-parent.json'));
+
+  
+ /*  register_block_type( __DIR__ . '/context-child.json', array(
     'render_callback' => function( $attributes, $content, $block ) {
       $my_number = array_key_exists( 'myprefix/myNiceNumber', $block->context ) 
         ?  $block->context['myprefix/myNiceNumber'] 
         : "No number";
       return "<p>The current record ID is: $my_number</p>";
     },
-  ));
+  )); */
 }

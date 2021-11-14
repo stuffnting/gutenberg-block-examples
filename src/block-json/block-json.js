@@ -2,7 +2,15 @@ const { registerBlockType, createBlock } = wp.blocks;
 const { useBlockProps, RichText } = wp.blockEditor;
 const { __ } = wp.i18n;
 
-registerBlockType("myprefix/test-block-json", {
+/**
+ * *** NOTE ***
+ * Using a metadata object requires the use of the Node import command;
+ * otherwise, an asynchronous request has to be made to the server for the JSON file.
+ *
+ */
+import metadata from "./block-json.json";
+
+registerBlockType(metadata, {
   merge: (attributes, attributesToMerge) => {
     return {
       content: (attributes.content || "") + (attributesToMerge.content || ""),

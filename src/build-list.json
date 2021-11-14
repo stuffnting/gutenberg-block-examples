@@ -17,7 +17,7 @@
   "richtext-multiline": {
     "cat": "richtext",
     "name": "richtext-multiline",
-    "include": false
+    "include": true
   },
   "richtext-multiple-instances": {
     "cat": "richtext",
@@ -102,12 +102,12 @@
   "context": {
     "cat": "templates and patterns",
     "name": "context",
-    "include": true
+    "include": false
   },
   "context-block-json": {
     "cat": "templates and patterns",
     "name": "context-block-json",
-    "include": true
+    "include": false
   },
   "dynamic-block-simple": {
     "cat": "dynamic blocks",
