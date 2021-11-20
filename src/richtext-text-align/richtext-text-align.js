@@ -2,30 +2,13 @@
 import classnames from "classnames";
 
 const { registerBlockType } = wp.blocks;
-const {
-  RichText,
-  useBlockProps,
-  BlockControls,
-  AlignmentToolbar,
-} = wp.blockEditor;
+const { RichText, useBlockProps, BlockControls, AlignmentToolbar } =
+  wp.blockEditor;
 const { __ } = wp.i18n;
 
-registerBlockType("myprefix/richtext-text-align", {
-  apiVersion: 2,
-  title: "RichText Text Align",
-  icon: "lightbulb",
-  category: "text",
-  attributes: {
-    content: {
-      type: "string",
-      source: "html", // Not 'text'
-      selector: "h2",
-      default: "",
-    },
-    textAlign: {
-      type: "string",
-    },
-  },
+import metadata from "./richtext-text-align.json";
+
+registerBlockType(metadata, {
   edit: (props) => {
     const { attributes, setAttributes } = props;
     const { content, textAlign } = attributes;

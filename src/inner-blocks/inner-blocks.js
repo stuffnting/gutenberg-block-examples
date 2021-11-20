@@ -4,6 +4,10 @@ const { InnerBlocks, useBlockProps } = wp.blockEditor;
 // WP 5.8 uses this experimental feature for the core/column block
 const useInnerBlocksProps = wp.blockEditor.__experimentalUseInnerBlocksProps;
 
+import metadata from "./inner-blocks.json";
+
+const allowedBlocks = ["core/paragraph", "core/heading", "core/quote"];
+
 const STYLE = {
   color: "white",
   padding: "20px",
@@ -11,16 +15,11 @@ const STYLE = {
   border: "5px solid yellow",
 };
 
-registerBlockType("myprefix/inner-blocks", {
-  apiVersion: 2,
-  title: "Inner Blocks",
-  category: "layout",
-  icon: "lightbulb",
+registerBlockType(metadata, {
   edit: () => {
     const blockProps = useBlockProps({ style: STYLE });
 
-    const allowedBlocks = ["core/paragraph", "core/heading", "core/quote"];
-
+    // Experimental in WP 5.8
     const innerBlockProps = useInnerBlocksProps(
       { ...blockProps },
       { allowedBlocks }

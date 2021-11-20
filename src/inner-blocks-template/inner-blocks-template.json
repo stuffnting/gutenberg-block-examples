@@ -1,0 +1,10 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "myprefix/inner-bocks-template",
+  "title": "Inner Blocks with a template",
+  "category": "design",
+  "icon": "lightbulb",
+  "description": "Uses a template to populate parent with child blocks",
+  "editorScript": "myprefix-inner-blocks-template-script"
+}

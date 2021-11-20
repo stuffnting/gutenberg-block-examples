@@ -14,8 +14,6 @@
  * Text Domain: sntEvents
  */
 
-use function PHPSTORM_META\type;
-
 if( !defined( 'ABSPATH') ) {
   exit;
 }
@@ -41,18 +39,19 @@ function process_require_from_json( $build_list ) {
     return;
   }
 
+  // Ignore these keys in the JSON data
+  $ignore_keys = [ 'NOTE' ];
+
   foreach ( $build_list as $key => $value ) {
+
+    if ( in_array( $key, $ignore_keys ) ) {
+      continue;
+    }
 
     $file = __DIR__ . '/' . $value['name'] . '/index.php';
 
-    if ( $value['include'] === true && file_exists($file)  ) {
+    if ( $value['include'] === true && file_exists( $file )  ) {
       require_once( $file );
     }
-
   }
-
 }
-
-
-
-

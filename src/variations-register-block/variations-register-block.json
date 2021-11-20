@@ -1,0 +1,21 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "myprefix/variations-register-block",
+  "title": "Variations Register Block",
+  "description": "A block with variations that allow for initial attribute values to be set",
+  "icon": "lightbulb",
+  "category": "text",
+  "attributes": {
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": "h2"
+    },
+    "textAlign": {
+      "type": "string"
+    }
+  },
+  "editorScript": "myprefix-variations-register-block-script",
+  "style": "myprefix-variations-register-block-style"
+}

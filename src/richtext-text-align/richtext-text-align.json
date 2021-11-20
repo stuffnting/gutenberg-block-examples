@@ -1,0 +1,21 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "myprefix/richtext-text-align",
+  "title": "RichText Text Align",
+  "icon": "lightbulb",
+  "category": "text",
+  "description": "Adds text align to toolbar.",
+  "attributes": {
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": "h2",
+      "default": ""
+    },
+    "textAlign": {
+      "type": "string"
+    }
+  },
+  "editorScript": "myprefix-richtext-text-align-script"
+}

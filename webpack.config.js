@@ -66,6 +66,46 @@ const filterCB = (absoluteSourcePath) => {
   return false;
 };
 
+/**
+ * Define the more complex copy-webpack-plugin patterns here.
+ */
+const phpPattern = {
+  context: "src",
+  from: "*/*.php",
+  to: "./[path]/index.php",
+  filter: filterCB,
+  noErrorOnMissing: true,
+};
+
+const cssPattern = {
+  context: "src",
+  from: "*/*.css",
+  to: "./[path]/styles.css",
+  filter: filterCB,
+  noErrorOnMissing: true,
+};
+
+const jsonPattern = {
+  context: "src",
+  from: "*/*.json",
+  to({ absoluteFilename }) {
+    var pathArray = absoluteFilename.split("/");
+    var fileName = pathArray.slice(-1).join();
+    var name = fileName.split(".").slice(0, 1).join();
+    var fileDirectory = pathArray.slice(-2, -1).join();
+
+    /**
+     * ./src/block-name/block-name.json becomes ./start/block-name/block.json
+     * ./src/block-name/any-other-name.json becomes ./start/block-name/any-other-name.json
+     */
+    return name === fileDirectory
+      ? "./[path]/block.json"
+      : "./[path]/[name].json";
+  },
+  filter: filterCB,
+  noErrorOnMissing: true,
+};
+
 module.exports = {
   ...defaultConfig,
   externals: {
@@ -74,43 +114,14 @@ module.exports = {
   plugins: [
     new CopyPlugin({
       patterns: [
+        // Single files
         { from: "README.md", to: "./" },
         { context: "src", from: "plugin.php", to: "./" },
         { context: "src", from: "build-list.json", to: "./" },
-        {
-          context: "src",
-          from: "*/*.php",
-          to: "./[path]/index.php",
-          filter: filterCB,
-          noErrorOnMissing: true,
-        },
-        {
-          context: "src",
-          from: "*/*.css",
-          to: "./[path]/styles.css",
-          filter: filterCB,
-          noErrorOnMissing: true,
-        },
-        {
-          context: "src",
-          from: "*/*.json",
-          to({ absoluteFilename }) {
-            var pathArray = absoluteFilename.split("/");
-            var fileName = pathArray.slice(-1).join();
-            var name = fileName.split(".").slice(0, 1).join();
-            var fileDirectory = pathArray.slice(-2, -1).join();
-
-            /**
-             * ./src/block-name/block-name.json becomes ./start/block-name/block.json
-             * ./src/block-name/any-other-name.json becomes ./start/block-name/any-other-name.json
-             */
-            return name === fileDirectory
-              ? "./[path]/block.json"
-              : "./[path]/[name].json";
-          },
-          filter: filterCB,
-          noErrorOnMissing: true,
-        },
+        // Patterns
+        phpPattern,
+        cssPattern,
+        jsonPattern,
       ],
     }),
     new CleanWebpackPlugin({

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "myprefix/meta-notices-save-lock",
+  "title": "Meta Notices and Save-Lock",
+  "icon": "lightbulb",
+  "category": "text",
+  "description": "A block with a meta field, including a warning notice and a save-lock",
+  "editorScript": "myprefix-meta-notices-save-lock-script",
+  "metaField": "_myprefix_meta_notices_save_lock_field"
+}

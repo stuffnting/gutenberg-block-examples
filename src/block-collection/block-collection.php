@@ -1,8 +1,8 @@
 <?php
 
-add_action( 'enqueue_block_editor_assets', 'myprefix_enqueue_block_collection_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'myprefix_block_collection' );
 
-function myprefix_enqueue_block_collection_editor_assets() {
+function myprefix_block_collection() {
   
   if ( ! function_exists( 'register_block_type' ) ) {
     // Gutenberg is not active.
@@ -16,4 +16,18 @@ function myprefix_enqueue_block_collection_editor_assets() {
     filemtime( MYPREFIX_GUT_BLOCKS_PLUGIN_PATH . basename( __DIR__ ) . '/index.js' ), // *** Dev only
     true
   ); 
+}
+
+
+/**
+ * Filter block categories.
+ */
+//add_filter("block_categories_all", "myprefix_inserter_order", 99, 2);
+
+function myprefix_inserter_order($block_categories, $block_editor_context) {
+  echo "<pre>";
+  print_r($block_categories);
+  echo "</pre>";
+
+  return $block_categories;
 }

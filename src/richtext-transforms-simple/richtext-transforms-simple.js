@@ -2,21 +2,12 @@ const { registerBlockType, createBlock } = wp.blocks;
 const { RichText, useBlockProps } = wp.blockEditor;
 const { __ } = wp.i18n;
 
-const BLOCK_NAME = "myprefix/richtext-transforms-simple";
+import metadata from "./richtext-transforms-simple.json";
 
-registerBlockType(BLOCK_NAME, {
-  apiVersion: 2,
-  title: "RichText Transforms Simple",
-  icon: "lightbulb",
-  category: "text",
-  attributes: {
-    content: {
-      type: "string",
-      source: "html", // Not 'text'
-      selector: "h2",
-      default: "",
-    },
-  },
+// Defined here because it occurs several times in the code below
+const BLOCK_NAME = metadata.name;
+
+registerBlockType(metadata, {
   transforms: {
     /**
      * `from` transformations appear in the transform menu

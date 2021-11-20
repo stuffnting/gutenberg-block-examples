@@ -1,0 +1,42 @@
+const { registerBlockType } = wp.blocks;
+const { useSelect } = wp.data;
+const { InnerBlocks, useBlockProps } = wp.blockEditor;
+
+import metadata from "./dynamic-inner-blocks.json";
+
+registerBlockType(metadata, {
+  edit: () => {
+    // Get the list of posts. Previously done using useSelect.
+    const posts = useSelect((select) => {
+      return select("core").getEntityRecords("postType", "post");
+    }, []);
+
+    const blockProps = useBlockProps();
+
+    // Function component with implicit return of post list
+    const PostList = () => (
+      <ul>
+        {posts.map((post) => (
+          <li key={post.id}>
+            <a href={post.link}>{post.title.rendered}</a>
+          </li>
+        ))}
+      </ul>
+    );
+
+    return (
+      <div {...blockProps}>
+        <h2>Last Posts</h2>
+        {!posts && "Loading..."}
+        {posts && posts.length === 0 && "No posts."}
+        {/* Function component defined above */}
+        {posts && posts.length > 0 && <PostList />}
+        <InnerBlocks />
+      </div>
+    );
+  },
+  save: () => {
+    // Save inner blocks only
+    return <InnerBlocks.Content />;
+  },
+});

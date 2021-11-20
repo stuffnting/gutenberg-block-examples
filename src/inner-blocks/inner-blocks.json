@@ -1,0 +1,10 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "myprefix/inner-blocks",
+  "title": "Inner Blocks",
+  "icon": "lightbulb",
+  "category": "design",
+  "description": "Basic inner-blocks using useInnerBlocksProps.",
+  "editorScript": "myprefix-inner-blocks-script"
+}

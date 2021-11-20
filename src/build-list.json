@@ -1,102 +1,25 @@
 {
-  "richtext-basic-block": {
-    "cat": "richtext",
-    "name": "richtext-basic-block",
-    "include": false
+  "NOTE": "This file is needed by plugin.php and needs to be on the server.",
+  "block-collection": {
+    "cat": "templates and styles",
+    "name": "block-collection",
+    "include": true,
+    "json": false
   },
   "block-json": {
     "cat": "richtext",
     "name": "block-json",
-    "include": false
-  },
-  "richtext-flexible-paragraph": {
-    "cat": "richtext",
-    "name": "richtext-flexible-paragraph",
-    "include": false
-  },
-  "richtext-multiline": {
-    "cat": "richtext",
-    "name": "richtext-multiline",
-    "include": true
-  },
-  "richtext-multiple-instances": {
-    "cat": "richtext",
-    "name": "richtext-multiple-instances",
-    "include": false
-  },
-  "richtext-formatting-options": {
-    "cat": "richtext",
-    "name": "richtext-formatting-options",
-    "include": false
-  },
-  "richtext-text-align": {
-    "cat": "richtext",
-    "name": "richtext-text-align",
-    "include": false
-  },
-  "richtext-custom-toolbar-buttons": {
-    "cat": "richtext",
-    "name": "richtext-custom-toolbar-buttons",
-    "include": false
-  },
-  "richtext-supports": {
-    "cat": "richtext",
-    "name": "richtext-supports",
-    "include": false
-  },
-  "richtext-split-merge": {
-    "cat": "richtext",
-    "name": "richtext-split-merge",
-    "include": false
-  },
-  "richtext-transforms-simple": {
-    "cat": "richtext",
-    "name": "richtext-transforms-simple",
-    "include": false
-  },
-  "richtext-transforms-multiblock": {
-    "cat": "richtext",
-    "name": "richtext-transforms-multiblock",
-    "include": false
-  },
-  "variations-existing-blocks": {
-    "cat": "variations and styles",
-    "name": "variations-existing-blocks",
-    "include": false
-  },
-  "variations-register-blocks": {
-    "cat": "variations and styles",
-    "name": "variations-register-blocks",
-    "include": false
+    "include": false,
+    "json": false
   },
   "block-styles": {
     "cat": "variations and styles",
     "name": "block-style",
     "include": false
   },
-  "templates": {
-    "cat": "templates and styles",
-    "name": "templates",
-    "include": false
-  },
   "block-patterns": {
     "cat": "templates and styles",
     "name": "block-patterns",
-    "include": false
-  },
-  "block-collection": {
-    "cat": "templates and styles",
-    "name": "block-collection",
-    "include": false
-  },
-  "inner-blocks": {
-    "cat": "innerblocks and context",
-    "name": "inner-blocks",
-    "include": false
-  },
-  "inner-blocks-template-child": {
-    "cat": "innerblocks and context",
-    "name": "inner-blocks-template-child",
     "include": false
   },
   "context": {
@@ -107,96 +30,209 @@
   "context-block-json": {
     "cat": "templates and patterns",
     "name": "context-block-json",
+    "include": false,
+    "json": true
+  },
+  "custom-class": {
+    "cat": "classes",
+    "name": "custom-class",
     "include": false
   },
-  "dynamic-block-simple": {
+  "dynamic-inner-blocks": {
     "cat": "dynamic blocks",
-    "name": "dynamic-block-simple",
-    "include": false
+    "name": "dynamic-inner-blocks",
+    "include": false,
+    "json": true
   },
-  "dynamic-block-serverside-render": {
+  "dynamic-inspector-controls": {
     "cat": "dynamic blocks",
-    "name": "dynamic-block-serverside-render",
-    "include": false
+    "name": "dynamic-inspector-controls",
+    "include": false,
+    "json": true
   },
-  "dynamic-block-inspector-controls": {
+  "dynamic-inspector-query-terms": {
     "cat": "dynamic blocks",
-    "name": "dynamic-block-inspector-controls",
-    "include": false
+    "name": "dynamic-inspector-query-terms",
+    "include": false,
+    "json": true
+  },
+  "dynamic-serverside-render": {
+    "cat": "dynamic blocks",
+    "name": "dynamic-serverside-render",
+    "include": false,
+    "json": true
+  },
+  "dynamic-simple": {
+    "cat": "dynamic blocks",
+    "name": "dynamic-simple",
+    "include": false,
+    "json": true
   },
   "dynamic-meta-block": {
     "cat": "dynamic blocks",
     "name": "dynamic-meta-block",
     "include": false
   },
-  "dynamic-block-inner-blocks": {
-    "cat": "dynamic blocks",
-    "name": "dynamic-block-inner-blocks",
-    "include": false
-  },
-  "dynamic-block-inspector-query-terms": {
-    "cat": "dynamic blocks",
-    "name": "dynamic-block-inspector-query-terms",
-    "include": false
-  },
-  "metabox-simple-block": {
-    "cat": "metaboxes",
-    "name": "metabox-simple-block",
-    "include": false
-  },
-  "metabox-document-settings": {
-    "cat": "metaboxes",
-    "name": "metabox-document-settings",
-    "include": false
-  },
-  "metabox-plugin-sidebar": {
-    "cat": "metaboxes",
-    "name": "metabox-plugin-sidebar",
-    "include": false
-  },
-  "metabox-with-media": {
-    "cat": "metaboxes",
-    "name": "metabox-with-media",
-    "include": false
-  },
-  "metabox-inner-blocks-inspector": {
-    "cat": "metaboxes",
-    "name": "metabox-inner-blocks-inspector",
-    "include": false
-  },
-  "metabox-notices-save-lock": {
-    "cat": "metaboxes",
-    "name": "metabox-notices-save-lock",
-    "include": false
-  },
-  "metabox-attribute": {
-    "cat": "metaboxes",
-    "name": "metabox-attribute",
-    "include": false
-  },
-  "metabox-with-select-doc-settings": {
-    "cat": "metaboxes",
-    "name": "metabox-with-select-doc-settings",
-    "include": false
-  },
   "filter-core-block-supports": {
     "cat": "filter",
     "name": "filter-core-block-supports",
-    "include": false
+    "include": false,
+    "json": false
   },
   "filter-core-block-class-names": {
     "cat": "filter",
     "name": "filter-core-block-class-names",
-    "include": false
+    "include": false,
+    "json": false
   },
   "filter-core-block-controls": {
     "cat": "filter",
     "name": "filter-core-block-controls",
+    "include": true,
+    "json": false
+  },
+  "inner-blocks": {
+    "cat": "innerblocks and context",
+    "name": "inner-blocks",
+    "include": false,
+    "json": false
+  },
+  "inner-blocks-template": {
+    "cat": "innerblocks and context",
+    "name": "inner-blocks-template",
+    "note": "Contains myprefix-inner-blocks-child which does not used JSON",
+    "include": false,
+    "json": false
+  },
+  "meta-attribute": {
+    "cat": "meta",
+    "name": "meta-attribute",
+    "note": "This is the old method with attribute.source.meta, rather than useSelect.",
+    "include": false,
+    "json": false
+  },
+  "meta-document-settings": {
+    "cat": "meta",
+    "name": "meta-document-settings",
+    "include": false,
+    "json": false
+  },
+  "meta-inner-blocks-inspector": {
+    "cat": "meta",
+    "name": "meta-inner-blocks-inspector",
+    "include": false,
+    "json": true
+  },
+  "meta-notices-save-lock": {
+    "cat": "meta",
+    "name": "meta-notices-save-lock",
+    "include": true,
+    "json": true
+  },
+  "meta-plugin-sidebar": {
+    "cat": "meta",
+    "name": "meta-plugin-sidebar",
+    "include": false,
+    "json": false
+  },
+  "meta-simple": {
+    "cat": "meta",
+    "name": "meta-simple",
+    "include": false,
+    "json": true
+  },
+  "meta-with-media": {
+    "cat": "meta",
+    "name": "meta-with-media",
+    "include": false,
+    "json": false
+  },
+  "meta-with-select-doc-settings": {
+    "cat": "meta",
+    "name": "meta-with-select-doc-settings",
+    "include": false,
+    "json": false
+  },
+  "richtext-basic-block": {
+    "cat": "richtext",
+    "name": "richtext-basic-block",
+    "include": false,
+    "json": false
+  },
+  "richtext-custom-toolbar-buttons": {
+    "cat": "richtext",
+    "name": "richtext-custom-toolbar-buttons",
+    "include": false,
+    "json": true
+  },
+  "richtext-flexible-paragraph": {
+    "cat": "richtext",
+    "name": "richtext-flexible-paragraph",
     "include": false
   },
-  "custom-class": {
-    "cat": "classes",
-    "name": "custom-class",
+  "richtext-formatting-options": {
+    "cat": "richtext",
+    "name": "richtext-formatting-options",
+    "include": false,
+    "json": true
+  },
+  "richtext-multi-instance": {
+    "cat": "richtext",
+    "name": "richtext-multi-instance",
+    "include": false,
+    "json": true
+  },
+  "richtext-multiline": {
+    "cat": "richtext",
+    "name": "richtext-multiline",
+    "include": false,
+    "json": true
+  },
+  "richtext-split-merge": {
+    "cat": "richtext",
+    "name": "richtext-split-merge",
+    "include": false,
+    "json": true
+  },
+  "richtext-supports": {
+    "cat": "richtext",
+    "name": "richtext-supports",
+    "include": false,
+    "json": true
+  },
+  "richtext-text-align": {
+    "cat": "richtext",
+    "name": "richtext-text-align",
+    "include": false,
+    "json": true
+  },
+  "richtext-transforms-multiblock": {
+    "cat": "richtext",
+    "name": "richtext-transforms-multiblock",
+    "include": false,
+    "json": true
+  },
+  "richtext-transforms-simple": {
+    "cat": "richtext",
+    "name": "richtext-transforms-simple",
     "include": false
+  },
+  "templates": {
+    "cat": "templates and styles",
+    "name": "templates",
+    "include": false,
+    "json": false
+  },
+  "variations-existing-blocks": {
+    "cat": "variations and styles",
+    "name": "variations-existing-blocks",
+    "include": false,
+    "json": false
+  },
+  "variations-register-block": {
+    "cat": "variations and styles",
+    "name": "variations-register-block",
+    "include": false,
+    "json": true
   }
 }

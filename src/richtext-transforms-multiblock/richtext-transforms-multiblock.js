@@ -2,21 +2,12 @@ const { registerBlockType, createBlock } = wp.blocks;
 const { RichText, useBlockProps } = wp.blockEditor;
 const { __ } = wp.i18n;
 
-const BLOCK_NAME = "myprefix/richtext-transforms-multiple";
+import metadata from "./richtext-transforms-multiblock.json";
 
-registerBlockType(BLOCK_NAME, {
-  apiVersion: 2,
-  title: "RichText Transforms Multiple",
-  icon: "lightbulb",
-  category: "text",
-  attributes: {
-    content: {
-      type: "string",
-      source: "html", // Not 'text'
-      selector: "h2",
-      default: "",
-    },
-  },
+// This is set here because it is used several time below.
+const BLOCK_NAME = metadata.name;
+
+registerBlockType(metadata, {
   transforms: {
     /**
      * `from` transformations appear in the transform menu
@@ -27,7 +18,7 @@ registerBlockType(BLOCK_NAME, {
     from: [
       {
         type: "block",
-        isMultiBlock: true,
+        isMultiBlock: true, // transforms with multiple blocks selected.
         blocks: ["core/paragraph"],
         transform: (attributes) =>
           // `attributes` contains an array, with one element per selected block.

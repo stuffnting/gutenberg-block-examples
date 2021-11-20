@@ -1,9 +1,10 @@
 {
+  "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 2,
   "name": "myprefix/test-block-json",
   "title": "Test block.json",
-  "category": "text",
   "icon": "lightbulb",
+  "category": "text",
   "description": "Test block.json file",
   "keywords": ["paragraph", "test"],
   "textdomain": "myprefix",

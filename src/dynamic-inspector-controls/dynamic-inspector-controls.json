@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "myprefix/dynamic-inspector-controls",
+  "title": "Dynamic Block Inspector Controls",
+  "icon": "lightbulb",
+  "category": "widgets",
+  "description": "Dynamic block with inspector controls related to the appearance of the block.",
+  "attributes": {
+    "_comment": "// All attributes are for the InspectorControls. The block's contents are Dynamic, and not stored.",
+    "showTitle": {
+      "_comment": "// Toggle button",
+      "type": "boolean",
+      "default": true
+    },
+    "title": {
+      "_comment": "// TextControl",
+      "type": "string",
+      "default": "A list of posts"
+    },
+    "font": {
+      "_comment": "// SelectControl - dropdown",
+      "type": "string",
+      "default": "sans-serif"
+    },
+    "underline": {
+      "_comment": "// CheckboxControl",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "editorScript": "myprefix-dynamic-inspector-controls-script"
+}

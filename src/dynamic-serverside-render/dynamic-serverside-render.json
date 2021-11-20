@@ -1,0 +1,10 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "myprefix/dynamic-serverside-render",
+  "title": "Dynamic block serverside rendering",
+  "icon": "lightbulb",
+  "category": "widgets",
+  "description": "A dynamic block which is rendered serverside for both front- and back-end.",
+  "editorScript": "myprefix-dynamic-serverside-render-script"
+}

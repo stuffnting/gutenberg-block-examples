@@ -1,0 +1,10 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "myprefix/dynamic-inner-blocks",
+  "title": "Dynamic Block Inner Blocks",
+  "icon": "lightbulb",
+  "category": "widgets",
+  "description": "Dynamic block which lists recent posts that also allows inner-blocks",
+  "editorScript": "myprefix-dynamic-inner-blocks-script"
+}

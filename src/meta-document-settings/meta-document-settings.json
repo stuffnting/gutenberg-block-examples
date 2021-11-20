@@ -1,0 +1,4 @@
+{
+  "description": "A metabox placed in the document settings panel.",
+  "metaField": "_myprefix_meta_document_settings_field"
+}

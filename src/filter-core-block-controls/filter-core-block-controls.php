@@ -1,8 +1,8 @@
 <?php
 
-add_action( 'enqueue_block_editor_assets', 'myprefix_enqueue_filter_core_block_controls_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'myprefix_filter_core_block_controls' );
 
-function myprefix_enqueue_filter_core_block_controls_editor_assets() {
+function myprefix_filter_core_block_controls() {
 
   if ( ! function_exists( 'register_block_type' ) ) {
     // Gutenberg is not active.

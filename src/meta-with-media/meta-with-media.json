@@ -1,0 +1,4 @@
+{
+  "description": "A meta sidebar plugin with a media loader.",
+  "metaField": "_myprefix_metabox_with_media_meta"
+}
