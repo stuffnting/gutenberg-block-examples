@@ -11,6 +11,7 @@ function myprefix_register_template() {
         array( 'core/heading', array( 
           'level' => '2', 
           'textAlign' => 'center', 
+          'lock' => ['move' => true, 'remove' => true],
           'placeholder' => 'Enter a heading...' ) ),
         array( 'core/paragraph', array( 
           'dropCap' => 'true', 

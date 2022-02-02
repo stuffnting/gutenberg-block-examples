@@ -3,8 +3,19 @@ const { InnerBlocks, useBlockProps, useInnerBlocksProps } = wp.blockEditor;
 
 import metadata from "./inner-blocks-template.json";
 
-// Initial child blocks populating parent
+/*  Initial child blocks populating parent. 
+    Each is an array containing the block name 
+    and an object defining the initial attribute values. 
+    The heading block is locked and can't be moved or removed.*/
 const innerBlocksTemplate = [
+  [
+    "core/heading",
+    {
+      level: 2,
+      lock: { move: true, remove: true },
+      placeholder: "Enter a locked heading",
+    },
+  ],
   ["core/image", {}],
   ["core/paragraph", { placeholder: "Image Details" }],
 ];
@@ -23,7 +34,6 @@ registerBlockType(metadata, {
   edit: () => {
     const blockProps = useBlockProps({ style: STYLE });
 
-    // Experimental in WP 5.8
     const innerBlockProps = useInnerBlocksProps(blockProps, {
       allowedBlocks,
       template: innerBlocksTemplate,

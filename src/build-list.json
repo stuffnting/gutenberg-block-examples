@@ -9,7 +9,7 @@
   "block-json": {
     "cat": "richtext",
     "name": "block-json",
-    "include": false,
+    "include": true,
     "json": false
   },
   "block-styles": {
@@ -39,9 +39,9 @@
     "include": false
   },
   "dynamic-inner-blocks": {
-    "cat": "dynamic blocks",
+    "cat": "dynamic innerblocks blocks",
     "name": "dynamic-inner-blocks",
-    "include": true,
+    "include": false,
     "json": true
   },
   "dynamic-inspector-controls": {
@@ -94,7 +94,7 @@
   "inner-blocks": {
     "cat": "innerblocks and context",
     "name": "inner-blocks",
-    "include": true,
+    "include": false,
     "json": false
   },
   "inner-blocks-template": {
@@ -220,7 +220,7 @@
   "templates": {
     "cat": "templates and styles",
     "name": "templates",
-    "include": false,
+    "include": true,
     "json": false
   },
   "variations-existing-blocks": {
