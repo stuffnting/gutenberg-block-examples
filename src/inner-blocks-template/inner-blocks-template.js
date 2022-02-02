@@ -1,8 +1,5 @@
 const { registerBlockType } = wp.blocks;
-const { InnerBlocks, useBlockProps } = wp.blockEditor;
-
-// WP 5.8 uses this experimental feature for the core/column block
-const useInnerBlocksProps = wp.blockEditor.__experimentalUseInnerBlocksProps;
+const { InnerBlocks, useBlockProps, useInnerBlocksProps } = wp.blockEditor;
 
 import metadata from "./inner-blocks-template.json";
 
@@ -27,10 +24,11 @@ registerBlockType(metadata, {
     const blockProps = useBlockProps({ style: STYLE });
 
     // Experimental in WP 5.8
-    const innerBlockProps = useInnerBlocksProps(
-      { ...blockProps },
-      { allowedBlocks, template: innerBlocksTemplate, templateLock: false }
-    );
+    const innerBlockProps = useInnerBlocksProps(blockProps, {
+      allowedBlocks,
+      template: innerBlocksTemplate,
+      templateLock: false,
+    });
 
     return <div {...innerBlockProps} />;
 

@@ -1,6 +1,6 @@
 const { registerBlockType } = wp.blocks;
 const { useSelect } = wp.data;
-const { InnerBlocks, useBlockProps } = wp.blockEditor;
+const { InnerBlocks, useBlockProps, useInnerBlocksProps } = wp.blockEditor;
 
 import metadata from "./dynamic-inner-blocks.json";
 
@@ -12,6 +12,7 @@ registerBlockType(metadata, {
     }, []);
 
     const blockProps = useBlockProps();
+    const innerBlockProps = useInnerBlocksProps();
 
     // Function component with implicit return of post list
     const PostList = () => (
@@ -31,7 +32,7 @@ registerBlockType(metadata, {
         {posts && posts.length === 0 && "No posts."}
         {/* Function component defined above */}
         {posts && posts.length > 0 && <PostList />}
-        <InnerBlocks />
+        <InnerBlocks {...innerBlockProps} />
       </div>
     );
   },

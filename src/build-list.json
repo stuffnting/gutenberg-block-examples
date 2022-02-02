@@ -3,7 +3,7 @@
   "block-collection": {
     "cat": "templates and styles",
     "name": "block-collection",
-    "include": true,
+    "include": false,
     "json": false
   },
   "block-json": {
@@ -41,7 +41,7 @@
   "dynamic-inner-blocks": {
     "cat": "dynamic blocks",
     "name": "dynamic-inner-blocks",
-    "include": false,
+    "include": true,
     "json": true
   },
   "dynamic-inspector-controls": {
@@ -88,20 +88,20 @@
   "filter-core-block-controls": {
     "cat": "filter",
     "name": "filter-core-block-controls",
-    "include": true,
+    "include": false,
     "json": false
   },
   "inner-blocks": {
     "cat": "innerblocks and context",
     "name": "inner-blocks",
-    "include": false,
+    "include": true,
     "json": false
   },
   "inner-blocks-template": {
     "cat": "innerblocks and context",
     "name": "inner-blocks-template",
     "note": "Contains myprefix-inner-blocks-child which does not used JSON",
-    "include": false,
+    "include": true,
     "json": false
   },
   "meta-attribute": {
@@ -126,7 +126,7 @@
   "meta-notices-save-lock": {
     "cat": "meta",
     "name": "meta-notices-save-lock",
-    "include": true,
+    "include": false,
     "json": true
   },
   "meta-plugin-sidebar": {
