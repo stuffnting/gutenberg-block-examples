@@ -101,7 +101,7 @@
     "cat": "innerblocks and context",
     "name": "inner-blocks-template",
     "note": "Contains myprefix-inner-blocks-child which does not used JSON",
-    "include": true,
+    "include": false,
     "json": false
   },
   "meta-attribute": {
@@ -220,7 +220,7 @@
   "templates": {
     "cat": "templates and styles",
     "name": "templates",
-    "include": true,
+    "include": false,
     "json": false
   },
   "variations-existing-blocks": {
