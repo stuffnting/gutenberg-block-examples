@@ -33,3 +33,4 @@ function myprefix_richtext_supports_extra_theme_setup() {
   add_theme_support('custom-spacing');
   add_theme_support('editor-font-sizes');
 }
+

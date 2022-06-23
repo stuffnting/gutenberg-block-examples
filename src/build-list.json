@@ -1,5 +1,5 @@
 {
-  "NOTE": "This file is needed by plugin.php and needs to be on the server.",
+  "_NOTE": "This file is needed by plugin.php and needs to be on the server.",
   "block-collection": {
     "cat": "templates and styles",
     "name": "block-collection",
@@ -9,8 +9,14 @@
   "block-json": {
     "cat": "richtext",
     "name": "block-json",
-    "include": true,
+    "include": false,
     "json": false
+  },
+  "block-lock": {
+    "cat": "templates and patterns",
+    "name": "block-lock",
+    "include": true,
+    "json": true
   },
   "block-styles": {
     "cat": "variations and styles",
