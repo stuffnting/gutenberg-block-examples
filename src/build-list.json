@@ -28,7 +28,7 @@
     "cat": "templates and styles",
     "name": "block-patterns",
     "json": false,
-    "include": true
+    "include": false
   },
   "context": {
     "cat": "templates and patterns",

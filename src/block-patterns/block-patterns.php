@@ -115,6 +115,30 @@ function myprefix_register_block_patterns() {
     ]);
 }
 
+/******************************************************************************
+ * 
+ * Disable the Page Construction Pattern modal by removing core/post-content
+ * from all patterns registered by the theme and plugins. There are no core
+ * patterns that use core/post-content.
+ * 
+ ******************************************************************************/
+
+add_action('init', 'myprefix_disable_page_constructor_modal', 99);
+
+function myprefix_disable_page_constructor_modal() {
+  $patterns = WP_Block_Patterns_Registry::get_instance()->get_all_registered();
+  foreach ( $patterns as $pattern ) {
+      if (
+          ! empty($pattern['blockTypes'] ) &&
+          in_array('core/post-content', $pattern['blockTypes'] )
+      ) {
+          unregister_block_pattern( $pattern['name'] );
+          $pattern['blockTypes'] = array_diff( $pattern['blockTypes'], array( 'core/post-content' ) );
+          register_block_pattern( $pattern['name'], $pattern );
+      }
+  }
+}
+
 
 /******************************************************************************
  * 
