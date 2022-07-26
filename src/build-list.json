@@ -81,8 +81,8 @@
   "dynamic-meta-block": {
     "cat": "dynamic blocks, meta",
     "name": "dynamic-meta-block",
-    "json": false,
-    "include": false
+    "json": true,
+    "include": true
   },
   "filter-core-block-supports": {
     "cat": "filter",

@@ -1,13 +1,10 @@
 const { registerBlockType } = wp.blocks;
-const {
-  InnerBlocks,
-  useBlockProps,
-  InspectorControls,
-  BlockControls,
-} = wp.blockEditor;
-const { DateTimePicker, PanelBody, TextControl } = wp.components;
+const { InnerBlocks, useBlockProps, InspectorControls } = wp.blockEditor;
+const { PanelBody, TextControl } = wp.components;
 const { useSelect } = wp.data;
 const { useEntityProp } = wp.coreData;
+
+import metadata from "./dynamic-meta-block.json";
 
 const ALLOWED_BLOCKS = ["core/paragraph", "core/heading", "core/list"];
 const META_FIELD_OBJECT_NAME = "_myprefix_dynamic_meta_block_object";
@@ -18,14 +15,7 @@ const STYLE = {
   border: "5px solid yellow",
 };
 
-registerBlockType("myprefix/dynamic-meta-block", {
-  apiVersion: 2,
-  title: "Dynamic Meta Block",
-  category: "widgets",
-  icon: "lightbulb",
-  supports: {
-    multiple: false,
-  },
+registerBlockType(metadata, {
   edit: () => {
     const blockProps = useBlockProps({ style: STYLE });
 
