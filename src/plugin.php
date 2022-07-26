@@ -3,7 +3,6 @@
  * Plugin Name: SNT Gutenberg Block Examples
  * Plugin URI: https://github.com/stuffnting/gutenberg-block-examples
  * Description: Code examples for Gutenberg blocks.
- * Description: Simple plugin that handles events with Gutenberg blocks.
  * Author: Grover Stones
  * Author URI: https://stuffnting.com
  * version: 1.0.0
@@ -11,7 +10,7 @@
  * Requires PHP: 7.2
  * License: GPL v3 or later
  * License URI: https://www.gnu.org/licenses/gpl-3.0.html
- * Text Domain: sntEvents
+ * Text Domain: sntGutBlocks
  */
 
 if( !defined( 'ABSPATH') ) {
