@@ -25,6 +25,7 @@ const { __ } = wp.i18n;
 
 import metadata from "./meta-document-settings.json";
 
+// The meta field name is defined in the JSON file
 const metaField = metadata.metaField;
 
 /********************************************************************

@@ -1,5 +1,12 @@
 <?php
-// register custom meta data field
+/**
+ * Register the meta field.
+ * 
+ * The meta field name is set in the JSON file.
+ * It is also possible to set the meta name in the PHP file,
+ * and make it available to the JS script using wp_add_inline_script().
+ * For examples of how to do this, see the dynamic-meta-block example.
+ */
 if ( file_exists( __DIR__ . '/block.json' ) ) {
   
   $block_json = file_get_contents( 'block.json', true );

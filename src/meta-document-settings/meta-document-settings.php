@@ -1,6 +1,13 @@
 <?php
 
-// register custom meta data field
+/**
+ * Register the meta field.
+ * 
+ * The meta field name is set in the JSON file.
+ * It is also possible to set the meta name in the PHP file,
+ * and make it available to the JS script using wp_add_inline_script().
+ * For examples of how to do this, see the dynamic-meta-block example.
+ */
 if ( file_exists( __DIR__ . '/block.json' ) ) {
   
   $block_json = file_get_contents( 'block.json', true );
@@ -17,14 +24,14 @@ if ( file_exists( __DIR__ . '/block.json' ) ) {
   error_log( "ERROR: block.json file not found. Logged from line" . __LINE__ . " in " . __FILE__ );
 }
 
-define( 'METABOX_DOCUMENT_SETTING_FIELD', $meta_field );
+define( 'MYPREFIX_METABOX_DOCUMENT_SETTING_FIELD', $meta_field );
 
 add_action( 'init', 'myprefix_meta_document_settings_field' );
 
 function myprefix_meta_document_settings_field() {
   register_meta( 
     'post', 
-    METABOX_DOCUMENT_SETTING_FIELD, 
+    MYPREFIX_METABOX_DOCUMENT_SETTING_FIELD, 
     array(
       'show_in_rest'       => true,
       'type'               => 'string',
@@ -63,7 +70,7 @@ function myprefix_meta_document_settings() {
 add_filter( 'the_content', 'myprefix_meta_document_settings_content_filter' );
 
 function myprefix_meta_document_settings_content_filter( $content ) {
-  $value = get_post_meta( get_the_ID(), METABOX_DOCUMENT_SETTING_FIELD, true );
+  $value = get_post_meta( get_the_ID(), MYPREFIX_METABOX_DOCUMENT_SETTING_FIELD, true );
 
   if ( $value ) {
       return sprintf( "%s \n <h4> Here is the META from the useSelect Document Settings </h4> \n <p>%s</p>", 

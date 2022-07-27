@@ -7,7 +7,6 @@ const { useEntityProp } = wp.coreData;
 import metadata from "./dynamic-meta-block.json";
 
 const ALLOWED_BLOCKS = ["core/paragraph", "core/heading", "core/list"];
-const META_FIELD_OBJECT_NAME = "_myprefix_dynamic_meta_block_object";
 const STYLE = {
   color: "white",
   padding: "20px",
@@ -26,16 +25,23 @@ registerBlockType(metadata, {
 
     const [meta, setMeta] = useEntityProp("postType", postType, "meta");
 
-    const metaFieldValue1 = meta[META_FIELD_OBJECT_NAME].field1 || "";
-    const metaFieldValue2 = meta[META_FIELD_OBJECT_NAME].field2 || "";
+    // MYPREFIX_DYNAMIC_META_BLOCK_OBJECT is defined in the PHP file using wp_add_inline_script()
+    const metaFieldValue1 =
+      meta[MYPREFIX_DYNAMIC_META_BLOCK_OBJECT].field1 || "";
+    const metaFieldValue2 =
+      meta[MYPREFIX_DYNAMIC_META_BLOCK_OBJECT].field2 || "";
 
     // Ths key is which item in the meta field array to use
     function updateMetaValue(newValue, fieldName) {
-      const newMetaObj = Object.assign({}, meta[META_FIELD_OBJECT_NAME], {
-        [fieldName]: newValue,
-      });
+      const newMetaObj = Object.assign(
+        {},
+        meta[MYPREFIX_DYNAMIC_META_BLOCK_OBJECT],
+        {
+          [fieldName]: newValue,
+        }
+      );
 
-      setMeta({ ...meta, [META_FIELD_OBJECT_NAME]: newMetaObj });
+      setMeta({ ...meta, [MYPREFIX_DYNAMIC_META_BLOCK_OBJECT]: newMetaObj });
     }
 
     return (

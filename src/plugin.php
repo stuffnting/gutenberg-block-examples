@@ -39,7 +39,7 @@ function process_require_from_json( $build_list ) {
   }
 
   // Ignore these keys in the JSON data
-  $ignore_keys = [ 'NOTE' ];
+  $ignore_keys = [ '_NOTE' ];
 
   foreach ( $build_list as $key => $value ) {
 

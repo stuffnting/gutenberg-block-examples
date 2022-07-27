@@ -10,6 +10,29 @@
  * the callback function sanitize_textarea_field is a built-in WP function.
  */
 
+// register custom meta data field
+
+define('MYPREFIX_META_ATTRIBUTE_FIELD', '_myprefix_meta_attribute_field');
+
+add_action( 'init', 'myprefix_meta_attribute_field' );
+
+function myprefix_meta_attribute_field() {
+  register_meta( 
+    'post', 
+    MYPREFIX_META_ATTRIBUTE_FIELD, 
+    array(
+      'show_in_rest'       => true,
+      'type'               => 'string',
+      'default'            => '',
+      'single'             => true,
+      'sanitize_callback'  => 'sanitize_textarea_field',
+      'auth_callback'      => function() { 
+        return current_user_can('edit_posts');
+      }
+    )
+  );
+}
+
 add_action( 'enqueue_block_editor_assets', 'myprefix_meta_attribute' );
 
 function myprefix_meta_attribute() {
@@ -25,31 +48,11 @@ function myprefix_meta_attribute() {
     array(),
     filemtime( MYPREFIX_GUT_BLOCKS_PLUGIN_PATH . basename( __DIR__ ) . '/index.js' ), // *** Dev only
     true
-  ); 
-}
-
-
-// register custom meta data field
-
-define('METABOX_ATTRIBUTE_FIELD', '_myprefix_meta_attribute');
-
-add_action( 'init', 'myprefix_meta_attribute_field' );
-
-function myprefix_meta_attribute_field() {
-  register_meta( 
-    'post', 
-    METABOX_ATTRIBUTE_FIELD, 
-    array(
-      'show_in_rest'       => true,
-      'type'               => 'string',
-      'default'            => '',
-      'single'             => true,
-      'sanitize_callback'  => 'sanitize_textarea_field',
-      'auth_callback'      => function() { 
-        return current_user_can('edit_posts');
-      }
-    )
   );
+
+  wp_add_inline_script( 'myprefix-meta-attribute-script', 
+  'const MYPREFIX_META_ATTRIBUTE_FIELD = "' . MYPREFIX_META_ATTRIBUTE_FIELD . '"', 
+  'before' );
 }
 
 /**
@@ -58,7 +61,7 @@ function myprefix_meta_attribute_field() {
 add_filter( 'the_content', 'myprefix_meta_attribute_content_filter' );
 
 function myprefix_meta_attribute_content_filter( $content ) {
-  $value = get_post_meta( get_the_ID(), METABOX_ATTRIBUTE_FIELD, true );
+  $value = get_post_meta( get_the_ID(), MYPREFIX_META_ATTRIBUTE_FIELD, true );
 
   if ( $value ) {
       return sprintf( "%s \n <h4> Here is the META from the metabox attribute block</h4> \n <p>%s</p>", 

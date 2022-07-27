@@ -1,11 +1,48 @@
 <?php
+/**
+ * In this example the meta field is named here, 
+ * and wp_add_inline_script() is used to make the name available to the JS script.
+ * It is possible to name the meta field in the JSON file.
+ * For examples of how to do this, see the other meta block examples.
+ */
+define('MYPREFIX_DYNAMIC_META_BLOCK_OBJECT', '_myprefix_dynamic_meta_block_object');
+
+// register custom meta data field
+add_action( 'init', 'myprefix_register_dynamic_meta_block_meta' );
+
+function myprefix_register_dynamic_meta_block_meta() {
+  register_post_meta( 
+    'post', 
+    MYPREFIX_DYNAMIC_META_BLOCK_OBJECT, 
+    array(
+      'type'          => 'object',
+      'single'        => true,
+      'show_in_rest'  => array(
+        'schema' => array(
+          'type'       => 'object',
+          'properties' => array(
+            'field1' => array(
+              'type' => 'string',
+            ),
+            'field2' => array(
+              'type' => 'string',
+            ),
+          ),
+        ),
+      ),
+      'auth_callback' => function() { 
+        return current_user_can('edit_posts');
+      }
+    )
+  );
+}
 
 function myprefix_dynamic_meta_block_cb( $attributes, $inner_blocks ) {
   // Format the meta values as HTML
   $meta_out = '<h2 style="margin-top: 0">Meta save test with inner blocks</h2>';
 
   //Get a flattened array
-  $meta = array_merge( [], get_post_meta( get_the_ID(), META_FIELD_OBJECT_NAME, true ) );
+  $meta = array_merge( [], get_post_meta( get_the_ID(), MYPREFIX_DYNAMIC_META_BLOCK_OBJECT, true ) );
 
   $meta_out .= $meta ? sprintf( "<p>Field 1: %s</p>\n<p>Field 2: %s</p>",
     esc_html( $meta['field1'] ?? '' ),
@@ -53,36 +90,8 @@ function myprefix_enqueue_dynamic_meta_block_editor_assets() {
     'editor_script'   => 'myprefix-dynamic-meta-block-script',
     'render_callback' => 'myprefix_dynamic_meta_block_cb'
   ) );
-}
 
-define('META_FIELD_OBJECT_NAME', '_myprefix_dynamic_meta_block_object');
-
-// register custom meta data field
-add_action( 'init', 'myprefix_register_dynamic_meta_block_meta' );
-
-function myprefix_register_dynamic_meta_block_meta() {
-  register_post_meta( 
-    'post', 
-    META_FIELD_OBJECT_NAME, 
-    array(
-      'type'          => 'object',
-      'single'        => true,
-      'show_in_rest'  => array(
-        'schema' => array(
-          'type'       => 'object',
-          'properties' => array(
-            'field1' => array(
-              'type' => 'string',
-            ),
-            'field2' => array(
-              'type' => 'string',
-            ),
-          ),
-        ),
-      ),
-      'auth_callback' => function() { 
-        return current_user_can('edit_posts');
-      }
-    )
-  );
+  wp_add_inline_script( 'myprefix-dynamic-meta-block-script', 
+  'const MYPREFIX_DYNAMIC_META_BLOCK_OBJECT = "' . MYPREFIX_DYNAMIC_META_BLOCK_OBJECT . '"', 
+  'before' );
 }
