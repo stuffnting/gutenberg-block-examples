@@ -1,0 +1,18 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "myprefix/dynamic-attribute",
+  "title": "Dynamic Attribute",
+  "icon": "lightbulb",
+  "category": "widgets",
+  "description": "A dynamic block that uses an attribute to store a value, in a way similar to metaboxes",
+  "keywords": ["test"],
+  "textdomain": "myprefix",
+  "attributes": {
+    "content": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "myprefix-dynamic-attribute-script"
+}

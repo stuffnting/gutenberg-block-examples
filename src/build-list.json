@@ -10,13 +10,13 @@
     "cat": "richtext",
     "name": "block-json",
     "json": false,
-    "include": false
+    "include": true
   },
   "block-lock": {
     "cat": "templates and patterns",
     "name": "block-lock",
     "json": true,
-    "include": true
+    "include": false
   },
   "block-styles": {
     "cat": "variations and styles",
@@ -47,6 +47,12 @@
     "name": "custom-class",
     "json": false,
     "include": false
+  },
+  "dynamic-attribute": {
+    "cat": "dynamic",
+    "name": "dynamic-attribute",
+    "json": true,
+    "include": true
   },
   "dynamic-inner-blocks": {
     "cat": "dynamic innerblocks blocks",
