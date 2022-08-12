@@ -1,0 +1,17 @@
+{
+  "apiVersion": 2,
+  "title": "RichText Basic Block",
+  "name": "myprefix/richtext-basic-block",
+  "description": "A very simple RichText block.",
+  "icon": "lightbulb",
+  "category": "text",
+  "attributes": {
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": "h2",
+      "default": ""
+    }
+  },
+  "editorScript": "myprefix-richtext-basic-block-script"
+}

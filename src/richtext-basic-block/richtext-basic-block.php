@@ -16,4 +16,6 @@ function myprefix_enqueue_richtext_basic_block_editor_assets() {
     filemtime( MYPREFIX_GUT_BLOCKS_PLUGIN_PATH . basename( __DIR__ ) . '/index.js' ), // *** Dev only
     true
   ); 
+
+  register_block_type( __DIR__ );
 }

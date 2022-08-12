@@ -2,20 +2,9 @@ const { registerBlockType } = wp.blocks;
 const { RichText, useBlockProps } = wp.blockEditor;
 const { __ } = wp.i18n;
 
-registerBlockType("myprefix/richtext-basic-block", {
-  apiVersion: 2,
-  title: "RichText Basic Block",
-  description: __("A very simple RichText block.", "textDomain"),
-  icon: "lightbulb",
-  category: "text",
-  attributes: {
-    content: {
-      type: "string",
-      source: "html", // Not 'text'
-      selector: "h2",
-      default: "",
-    },
-  },
+import metadata from "./richtext-basic-block.json";
+
+registerBlockType(metadata, {
   edit: (props) => {
     const { attributes, setAttributes } = props;
     const { content } = attributes;
