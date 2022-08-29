@@ -1,0 +1,15 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "title": "Dynamic block inspector query terms",
+  "name": "prefix/dynamic-inserter-query-terms",
+  "icon": "lightbulb",
+  "category": "widgets",
+  "description": "A dynamic block with inspector controls to set query terms.",
+  "attributes": {
+    "perPage": {
+      "type": "string",
+      "default": "5"
+    }
+  },
+  "editorScript": "myprefix-dynamic-inspector-query-terms-script"
+}

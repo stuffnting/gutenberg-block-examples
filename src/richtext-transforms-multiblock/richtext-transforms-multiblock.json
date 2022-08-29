@@ -1,0 +1,18 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "myprefix/richtext-transforms-multiblock",
+  "title": "RichText Transforms Multiblock",
+  "icon": "lightbulb",
+  "category": "text",
+  "description": "Allows transforms with multiple blocks selected.",
+  "attributes": {
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": "h2",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js"
+}

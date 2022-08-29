@@ -1,0 +1,21 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "myprefix/richtext-multiline",
+  "title": "RichText Multiline",
+  "icon": "lightbulb",
+  "category": "text",
+  "description": "Allows the blocks to contain multiple line. Hitting Return starts a new line in the same block, rather than creating a new block (compare with core/paragraph block).).",
+  "attributes": {
+    "content": {
+      "type": "string",
+      "_comment 1": "// Can use type: array, with source: children",
+      "default": "",
+      "source": "html",
+      "selector": "section",
+      "_comment 2": "// Selector should match RichText.Content tagName in the save function, the edit function RichText tagName can be different.",
+      "multiline": "p"
+    }
+  },
+  "editorScript": "file:./index.js"
+}

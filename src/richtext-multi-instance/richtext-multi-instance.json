@@ -1,0 +1,29 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "myprefix/richtext-multi-instance",
+  "title": "RichText Multiple Instances",
+  "icon": "lightbulb",
+  "category": "text",
+  "description": "Multiple RichText elements in one block.",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "source": "html",
+      "selector": "header h1",
+      "default": ""
+    },
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": "p",
+      "default": ""
+    },
+    "footer": {
+      "type": "string",
+      "selector": "footer p",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js"
+}

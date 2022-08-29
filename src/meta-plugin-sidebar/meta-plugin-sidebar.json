@@ -1,0 +1,5 @@
+{
+  "_NOTE": "No block is registered, a metabox is placed in a plugin sidebar.",
+  "description": "A metabox in a plugin sidebar separate from the document settings and block inspector. It uses an object meta field for two settings, rather than two separate meta fields.",
+  "metaField": "_meta-plugin-sidebar-field"
+}

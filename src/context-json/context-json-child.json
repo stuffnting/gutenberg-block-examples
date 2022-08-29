@@ -1,0 +1,10 @@
+{
+  "apiVersion": 2,
+  "name": "myprefix/context-json-child",
+  "title": "Context child",
+  "icon": "lightbulb",
+  "description": "The child block for the context ",
+  "category": "text",
+  "keywords": ["context", "test"],
+  "textdomain": "textDomain"
+}

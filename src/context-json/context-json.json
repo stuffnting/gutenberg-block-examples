@@ -1,0 +1,15 @@
+{
+  "apiVersion": 2,
+  "name": "myprefix/context-json-parent",
+  "title": "Context parent",
+  "icon": "lightbulb",
+  "description": "Test block.json file",
+  "category": "text",
+  "keywords": ["context", "test"],
+  "textdomain": "textDomain",
+  "attributes": {
+    "myNumber": {
+      "type": "number"
+    }
+  }
+}

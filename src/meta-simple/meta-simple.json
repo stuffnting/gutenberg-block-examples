@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "myprefix/meta-simple",
+  "title": "Meta Simple",
+  "icon": "lightbulb",
+  "category": "widgets",
+  "description": "A simple metabox in a block that stores a value as metadata, and not as a block attribute",
+  "supports": {
+    "multiple": false
+  },
+  "editorScript": "myprefix-meta-simple-script",
+  "metaField": "_myprefix_meta_simple_field"
+}

@@ -1,0 +1,6 @@
+.wp-block-button.has-size-large .wp-block-button__link {
+  padding: 1.5rem 3rem;
+}
+.wp-block-button.has-size-small .wp-block-button__link {
+  padding: 0.25rem 1rem;
+}

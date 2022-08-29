@@ -1,0 +1,11 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "myprefix/meta-inner-blocks-inspector",
+  "apiVersion": 2,
+  "title": "Meta Inner-blocks Inspector",
+  "icon": "lightbulb",
+  "category": "widgets",
+  "description": "A block with a meta field in the Inspector and inner-blocks",
+  "editorScript": "myprefix-meta-inner-blocks-inspector-script",
+  "metaField": "_myprefix_inner_blocks_inspector_field"
+}
