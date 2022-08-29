@@ -1,6 +1,12 @@
 <?php
 
 /**
+ * ***NOTE*** This is the old way of doing things.
+ * See meta-simple for the more modern method that utilises
+ * useEntityProp.
+ */
+
+/**
  * 
  * *** NOTE ***
  * Meta data field names that begin with an underscore are private.

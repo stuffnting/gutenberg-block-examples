@@ -1,6 +1,6 @@
-const { registerBlockType } = wp.blocks;
-const { TextControl } = wp.components;
-const { __ } = wp.i18n;
+import { registerBlockType } from "@wordpress/blocks";
+import { TextControl } from "@wordpress/components";
+import { __ } from "@wordpress/i18n";
 
 registerBlockType("myprefix/meta-attribute", {
   title: "Metabox Attribute",

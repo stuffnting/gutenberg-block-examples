@@ -1,15 +1,19 @@
+/**
+ * This code does not register a block type.
+ */
+
 /********************************************************************
  *
  * wp destructuring and constants
  *
  ********************************************************************/
 
-const { registerPlugin } = wp.plugins;
-const { PluginSidebar, PluginSidebarMoreMenuItem } = wp.editPost;
-const { DateTimePicker, ColorPicker, PanelRow, PanelBody } = wp.components;
-const { useSelect } = wp.data;
-const { useEntityProp } = wp.coreData;
-const { __ } = wp.i18n;
+import { registerPlugin } from "@wordpress/plugins";
+import { PluginSidebar, PluginSidebarMoreMenuItem } from "@wordpress/edit-post";
+import { DateTimePicker, ColorPicker, PanelBody } from "@wordpress/components";
+import { useSelect } from "@wordpress/data";
+import { useEntityProp } from "@wordpress/core-data";
+import { __ } from "@wordpress/i18n";
 
 import metadata from "./meta-plugin-sidebar.json";
 

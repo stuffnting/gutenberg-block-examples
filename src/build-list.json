@@ -10,7 +10,7 @@
     "name": "block-json",
     "cat": ["richtext"],
     "converted to import": true,
-    "include": true
+    "include": false
   },
   "block-lock": {
     "name": "block-lock",
@@ -97,65 +97,65 @@
     "include": false
   },
   "inner-blocks": {
-    "cat": "innerblocks and context",
     "name": "inner-blocks",
-    "converted to import": false,
+    "cat": ["innerblocks", "context"],
+    "converted to import": true,
     "include": false
   },
   "inner-blocks-template": {
-    "cat": "innerblocks and context",
     "name": "inner-blocks-template",
+    "cat": ["innerblocks", "context"],
     "note": "Contains myprefix-inner-blocks-child which does not used JSON",
     "converted to import": false,
     "include": false
   },
   "meta-attribute": {
-    "cat": "meta",
     "name": "meta-attribute",
+    "cat": ["meta"],
     "note": "This is the old method with attribute.source.meta, rather than useSelect.",
     "converted to import": false,
     "include": false
   },
   "meta-document-settings": {
-    "cat": "meta",
     "name": "meta-document-settings",
+    "cat": ["meta"],
     "converted to import": false,
     "include": false
   },
   "meta-inner-blocks-inspector": {
-    "cat": "meta",
     "name": "meta-inner-blocks-inspector",
-    "converted to import": false,
+    "cat": ["meta"],
+    "converted to import": true,
     "include": false
   },
   "meta-notices-save-lock": {
-    "cat": "meta",
     "name": "meta-notices-save-lock",
-    "converted to import": false,
+    "cat": ["meta", "notices"],
+    "converted to import": true,
     "include": false
   },
   "meta-plugin-sidebar": {
-    "cat": "meta",
     "name": "meta-plugin-sidebar",
+    "cat": ["meta", "plugin sidebar"],
     "converted to import": false,
     "include": false
   },
   "meta-simple": {
-    "cat": "meta",
     "name": "meta-simple",
+    "cat": ["meta"],
     "converted to import": false,
     "include": false
   },
   "meta-with-media": {
-    "cat": "meta",
     "name": "meta-with-media",
-    "converted to import": false,
+    "cat": ["meta", "media", "plugin sidebar"],
+    "converted to import": true,
     "include": false
   },
   "meta-with-select-doc-settings": {
-    "cat": "meta",
     "name": "meta-with-select-doc-settings",
-    "converted to import": false,
+    "cat": ["meta", "plugin sidebar"],
+    "converted to import": true,
     "include": false
   },
   "richtext-basic-block": {

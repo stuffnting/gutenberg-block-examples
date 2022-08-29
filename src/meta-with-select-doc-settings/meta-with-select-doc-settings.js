@@ -1,8 +1,8 @@
-const { registerPlugin } = wp.plugins;
-const { PluginDocumentSettingPanel } = wp.editPost;
-const { __ } = wp.i18n;
-const { TextControl } = wp.components;
-const { withSelect, withDispatch } = wp.data;
+import { registerPlugin } from "@wordpress/plugins";
+import { PluginDocumentSettingPanel } from "@wordpress/editPost";
+import { __ } from "@wordpress/i18n";
+import { TextControl } from "@wordpress/components";
+import { withSelect, withDispatch } from "@wordpress/data";
 
 import metadata from "./meta-with-select-doc-settings.json";
 

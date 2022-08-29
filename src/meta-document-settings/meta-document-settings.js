@@ -1,27 +1,21 @@
 /**
- * As code adds a meta box to the Document Settings sidebar.
+ * This code adds a meta box to the Document Settings sidebar.
  * The values entered in the box are saved in a meta field.
- *
- */
-
-/**
- * If installing @wordpress packages and using `import`
- * put the `import` statements here at the top before the
- * `export default` statement below
+ * It does not register a block type.
  */
 
 /********************************************************************
  *
- * wp destructuring and constants
+ * Importing @wordpress packages.
  *
  ********************************************************************/
 
-const { TextControl } = wp.components;
-const { useSelect } = wp.data;
-const { useEntityProp } = wp.coreData;
-const { registerPlugin } = wp.plugins;
-const { PluginDocumentSettingPanel } = wp.editPost;
-const { __ } = wp.i18n;
+import { TextControl } from "@wordpress/components";
+import { useSelect } from "@wordpress/data";
+import { useEntityProp } from "@wordpress/core-data";
+import { registerPlugin } from "@wordpress/plugins";
+import { PluginDocumentSettingPanel } from "@wordpress/edit-post";
+import { __ } from "@wordpress/i18n";
 
 import metadata from "./meta-document-settings.json";
 

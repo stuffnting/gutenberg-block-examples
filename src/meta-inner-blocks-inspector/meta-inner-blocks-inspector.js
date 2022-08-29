@@ -1,9 +1,13 @@
-const { registerBlockType } = wp.blocks;
-const { DateTimePicker, PanelBody } = wp.components;
-const { useSelect } = wp.data;
-const { useEntityProp } = wp.coreData;
-const { useBlockProps, InspectorControls, InnerBlocks } = wp.blockEditor;
-const { __ } = wp.i18n;
+import { registerBlockType } from "@wordpress/blocks";
+import { DateTimePicker, PanelBody } from "@wordpress/components";
+import { useSelect } from "@wordpress/data";
+import { useEntityProp } from "@wordpress/core-data";
+import {
+  useBlockProps,
+  InspectorControls,
+  InnerBlocks,
+} from "@wordpress/block-editor";
+import { __ } from "@wordpress/i18n";
 
 import metadata from "./meta-inner-blocks-inspector.json";
 
@@ -11,7 +15,7 @@ const metaField = metadata.metaField;
 
 const allowedBlocks = ["core/paragraph", "core/heading"];
 
-registerBlockType(metadata, {
+registerBlockType(metadata.name, {
   edit: () => {
     const blockProps = useBlockProps();
 

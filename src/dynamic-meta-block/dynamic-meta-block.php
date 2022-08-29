@@ -1,7 +1,7 @@
 <?php
 /**
  * In this example the meta field is named here, 
- * and wp_add_inline_script() is used to make the name available to the JS script.
+ * and wp_localize_script() is used to make the name available to the JS script.
  * It is possible to name the meta field in the JSON file.
  * For examples of how to do this, see the other meta block examples.
  */

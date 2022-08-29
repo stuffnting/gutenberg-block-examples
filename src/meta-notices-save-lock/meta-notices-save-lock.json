@@ -4,8 +4,12 @@
   "name": "myprefix/meta-notices-save-lock",
   "title": "Meta Notices and Save-Lock",
   "icon": "lightbulb",
-  "category": "text",
   "description": "A block with a meta field, including a warning notice and a save-lock",
-  "editorScript": "myprefix-meta-notices-save-lock-script",
+  "category": "widgets",
+  "supports": {
+    "multiple": false
+  },
+  "textdomain": "my-plugin",
+  "editorScript": "file:./index.js",
   "metaField": "_myprefix_meta_notices_save_lock_field"
 }

@@ -1,15 +1,15 @@
-const { registerBlockType } = wp.blocks;
-const { TextControl } = wp.components;
-const { useSelect } = wp.data;
-const { useEntityProp } = wp.coreData;
-const { useBlockProps } = wp.blockEditor;
-const { __ } = wp.i18n;
+import { registerBlockType } from "@wordpress/blocks";
+import { TextControl } from "@wordpress/components";
+import { useSelect } from "@wordpress/data";
+import { useEntityProp } from "@wordpress/core-data";
+import { useBlockProps } from "@wordpress/block-editor";
+import { __ } from "@wordpress/i18n";
 
 import metadata from "./meta-simple.json";
 
 const metaField = metadata.metaField;
 
-registerBlockType(metadata, {
+registerBlockType(metadata.name, {
   edit() {
     const blockProps = useBlockProps();
 

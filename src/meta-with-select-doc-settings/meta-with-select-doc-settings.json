@@ -1,5 +1,5 @@
 {
-  "_NOTE": "No block is registered, a metabox is placed in the plugin sidebar.",
+  "_comment": "No block is registered, a metabox is placed in the plugin sidebar.",
   "description": "The old way of doing a metabox in the document settings panel using withSelect, rather than useMeta.",
   "metaField": "_myprefix_meta_with_select_doc_settings_field"
 }

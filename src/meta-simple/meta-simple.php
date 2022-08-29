@@ -5,7 +5,7 @@
  * 
  * The meta field name is set in the JSON file.
  * It is also possible to set the meta name in the PHP file,
- * and make it available to the JS script using wp_add_inline_script().
+ * and make it available to the JS script using wp_localize_script().
  * For examples of how to do this, see the dynamic-meta-block example.
  * 
  * *** NOTE *** Because metaField is not in the schema for block.json file,
@@ -87,14 +87,6 @@ function myprefix_meta_simple() {
     // Gutenberg is not active.
     return;
   }
-
-  wp_register_script(
-    'myprefix-meta-simple-script',
-    MYPREFIX_GUT_BLOCKS_PLUGIN_URL . basename( __DIR__ ) . '/index.js',
-    array(),
-    filemtime( MYPREFIX_GUT_BLOCKS_PLUGIN_PATH . basename( __DIR__ ) . '/index.js' ), // *** Dev only
-    true
-  );
 
   // Register the call_back for rendering on the front end
   register_block_type( __DIR__, array(

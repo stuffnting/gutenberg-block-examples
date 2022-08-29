@@ -48,7 +48,7 @@ function myprefix_register_metabox_notices_save_lock_meta() {
     );
 }
   
-add_action( 'enqueue_block_editor_assets', 'myprefix_metabox_notices_save_lock' );
+add_action( 'init', 'myprefix_metabox_notices_save_lock' );
   
 function myprefix_metabox_notices_save_lock() {
   
@@ -56,15 +56,6 @@ function myprefix_metabox_notices_save_lock() {
     // Gutenberg is not active.
     return;
   }
-  
-  // Your Gutenberg Block JS code
-  wp_register_script( 
-    'myprefix-meta-notices-save-lock-script', 
-    MYPREFIX_GUT_BLOCKS_PLUGIN_URL . basename( __DIR__ ) . '/index.js',
-    array(),
-    filemtime( MYPREFIX_GUT_BLOCKS_PLUGIN_PATH . basename( __DIR__ ) . '/index.js' ), // *** Dev only
-    true
-  );
 
   // Register the call_back for rendering on the front end
   register_block_type( __DIR__, array(
@@ -73,7 +64,7 @@ function myprefix_metabox_notices_save_lock() {
 }
 
 function myprefix_metabox_notices_save_lock_cb( $attributes, $inner_blocks ) {
-    //Get a flattened array
+  //Get a flattened array
   $meta = get_post_meta( get_the_ID() );
   $date_string = $meta[MYPREFIX_META_NOTICES_SAVE_LOCK_FIELD][0] ?? '';
   

@@ -4,8 +4,8 @@
   "apiVersion": 2,
   "title": "Meta Inner-blocks Inspector",
   "icon": "lightbulb",
-  "category": "widgets",
   "description": "A block with a meta field in the Inspector and inner-blocks",
-  "editorScript": "myprefix-meta-inner-blocks-inspector-script",
+  "category": "widgets",
+  "editorScript": "file:./index.js",
   "metaField": "_myprefix_inner_blocks_inspector_field"
 }

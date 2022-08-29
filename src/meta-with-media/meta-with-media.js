@@ -1,10 +1,10 @@
-const { MediaUpload, MediaUploadCheck } = wp.blockEditor;
-const { PluginDocumentSettingPanel } = wp.editPost;
-const { Button, ResponsiveWrapper } = wp.components;
-const { useSelect } = wp.data;
-const { useEntityProp } = wp.coreData;
-const { registerPlugin } = wp.plugins;
-const { __ } = wp.i18n;
+import { MediaUpload, MediaUploadCheck } from "@wordpress/block-editor";
+import { PluginDocumentSettingPanel } from "@wordpress/editPost";
+import { Button, ResponsiveWrapper } from "@wordpress/components";
+import { useSelect } from "@wordpress/data";
+import { useEntityProp } from "@wordpress/core-data";
+import { registerPlugin } from "@wordpress/plugins";
+import { __ } from "@wordpress/i18n";
 
 import metadata from "./meta-with-media.json";
 
@@ -25,7 +25,7 @@ function MetaImagePanel() {
     // Meta value must be a integer, so can't use `undefined` or `false`. Therefore if removing the image, use 0.
     let id = 0;
 
-    // If changing the image use the id from the attachment object passed by media uploader or 0 is id is not set
+    // If changing the image, use the id from the attachment object passed by media uploader, or 0 is id is not set
     if (updateType === "change") {
       id = newValue.id || 0;
     }

@@ -20,7 +20,7 @@ registerBlockType("myprefix/context-parent", {
   }, */
 
   edit: (props) => {
-    const MY_TEMPLATE = [["myprefix/context-child", {}]];
+    const template = [["myprefix/context-child", {}]];
 
     const blockProps = useBlockProps();
 
@@ -36,7 +36,7 @@ registerBlockType("myprefix/context-parent", {
           value={myNumber}
           onChange={(val) => setAttributes({ myNumber: Number(val) })}
         />
-        <InnerBlocks template={MY_TEMPLATE} templateLock="all" />
+        <InnerBlocks template={template} templateLock="all" />
       </div>
     );
   },

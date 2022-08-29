@@ -1,10 +1,14 @@
 <?php
 /**
+ * This code does not register a block type.
+ */
+
+/**
  * Register the meta field.
  * 
  * The meta field name is set in the JSON file.
  * It is also possible to set the meta name in the PHP file,
- * and make it available to the JS script using wp_add_inline_script().
+ * and make it available to the JS script using wp_localize_script().
  * For examples of how to do this, see the dynamic-meta-block example.
  * 
  * *** NOTE *** Because metaField is not in the schema for block.json file,
@@ -79,15 +83,13 @@ function myprefix_meta_with_media_filter( $content ) {
   $value = get_post_meta( get_the_ID(), METABOX_WITH_MEDIA_FIELD, true );
 
   if ( $value ) {
-    $img_src = wp_get_attachment_image_url( intval($value), 'medium' );
-    $img_srcset = wp_get_attachment_image_srcset( intval($value), 'medium' );
-    
-    $img_out = printf("<img src='%s' srcset='%s' sizes='(max-width: 50em) 87vw, 680px' alt='Foo Bar' style='margin: 0 auto'>",
-      esc_url( $img_src ),
-      esc_attr( $img_srcset )
+    $atts = array(
+      "alt" => "My metabox uploaded image."
     );
 
-    return $content . $img_out;
+    $image = wp_get_attachment_image( $value, 'large', false, $atts );
+
+    return $content . "<div id='meta-image'><figure class='wp-block-image size-full'>$image</figure></div>";
   } else {
       return $content;
   }

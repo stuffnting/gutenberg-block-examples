@@ -9,7 +9,8 @@ import { useEntityProp } from "@wordpress/core-data";
 
 import { style } from "./dynamic-meta-block-style";
 
-const allowed_blocks = ["core/paragraph", "core/heading", "core/list"];
+const allowedBlocks = ["core/paragraph", "core/heading", "core/list"];
+
 // MYPREFIX_DYNAMIC_META_BLOCK_OBJECT is defined in the PHP file using wp_localize_script()
 const MYPREFIX_DYNAMIC_META_BLOCK_OBJECT =
   localizeObject.MYPREFIX_DYNAMIC_META_BLOCK_OBJECT;
@@ -61,7 +62,7 @@ export const edit = () => {
         </InspectorControls>
         <p>{metaFieldValue1}</p>
         <p>{metaFieldValue2}</p>
-        <InnerBlocks allowedBlocks={allowed_blocks} />
+        <InnerBlocks allowedBlocks={allowedBlocks} />
       </div>
     </>
   );

@@ -4,7 +4,7 @@
  * 
  * The meta field name is set in the JSON file.
  * It is also possible to set the meta name in the PHP file,
- * and make it available to the JS script using wp_add_inline_script().
+ * and make it available to the JS script using wp_localize_script().
  * For examples of how to do this, see the dynamic-meta-block example.
  * 
  * *** NOTE *** Because metaField is not in the schema for block.json file,
