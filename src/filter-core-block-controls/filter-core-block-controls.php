@@ -18,9 +18,9 @@ function myprefix_filter_core_block_controls() {
   ); 
 }
 
-add_action( 'enqueue_block_assets', 'myprefix_enqueue_filter_core_block_controls_styles' );
+add_action( 'enqueue_block_assets', 'myprefix_filter_core_block_controls_styles' );
 
-function myprefix_enqueue_filter_core_block_controls_styles() {
+function myprefix_filter_core_block_controls_styles() {
   wp_enqueue_style(
     'myprefix-filter-core-block-controls-style',
     MYPREFIX_GUT_BLOCKS_PLUGIN_URL . basename( __DIR__ ) . '/style.css',

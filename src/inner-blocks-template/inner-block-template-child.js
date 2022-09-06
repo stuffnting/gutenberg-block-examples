@@ -3,12 +3,12 @@ import { useBlockProps } from "@wordpress/block-editor";
 /**
  * ***NOTE*** This block does not use a block.json file.
  */
-registerBlockType("myprefix/inner-blocks-child", {
+registerBlockType("myprefix/inner-blocks-template-child", {
   apiVersion: 2,
   title: "Inner Blocks Child",
   category: "design",
   icon: "lightbulb",
-  parent: ["myprefix/inner-blocks-template"], // This block must be listed in parent's allowedBlocks
+  parent: ["myprefix/inner-blocks-template-parent"], // This block must be listed in parent's allowedBlocks
   edit: () => {
     const blockProps = useBlockProps();
     return (

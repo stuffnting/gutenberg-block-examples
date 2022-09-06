@@ -8,7 +8,7 @@ if ( ! function_exists( 'register_block_type' ) ) {
 add_action( 'init', 'myprefix_block_json' );
 
 function myprefix_block_json() {
-  register_block_type( __DIR__ . "/named.json" );
+  register_block_type( __DIR__ );
 }
 
 /**

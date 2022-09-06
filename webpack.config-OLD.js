@@ -1,9 +1,9 @@
 const defaultConfig = require("@wordpress/scripts/config/webpack.config");
-const { merge } = require("webpack-merge");
 
 const fs = require("fs");
 const path = require("path");
 
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 // Get the build list from the JSON file. `require` converts JSON to an object.
@@ -16,27 +16,27 @@ const BUILD_LIST_DATA = require("./src/build-list.json");
  * Filter out the "include" : false.
  * Map each `name` to a new array.
  */
-const buildListArray = Object.values(BUILD_LIST_DATA)
+const build_list_arr = Object.values(BUILD_LIST_DATA)
   .filter((el) => (el.include ? true : false))
   .map((el) => el.name);
 
 /**
- * Make an entry point object for Webpack.
+ * Make a build list object for Webpack.
  *
  * Each property is name: source
- * ./src/${el}/${el}.index.js is in form ./src/block-name/block-name.index.js
+ * ./src/${el}/${el}.js is in form ./src/block-name/block-name.js
  *
  * Some block examples don't have a JS file.
  * fs.existsSync(`./src/${el}/${el}.js`) checks the existence of the file before
  * placing in buildListObj.
  */
-const buildListObj = buildListArray.length
-  ? buildListArray.reduce(
+const buildListObj = build_list_arr.length
+  ? build_list_arr.reduce(
       (acc, el) =>
-        fs.existsSync(`./src/${el}/${el}.index.js`)
+        fs.existsSync(`./src/${el}/${el}.js`)
           ? {
               ...acc,
-              [el]: `./src/${el}/${el}.index.js`,
+              [el]: `./src/${el}/${el}.js`,
             }
           : {
               ...acc,
@@ -58,7 +58,7 @@ const filterCB = (absoluteSourcePath) => {
   var pathArray = absoluteSourcePath.split("/");
   var fileDirectory = pathArray.slice(-2, -1).join();
 
-  if (buildListArray.includes(fileDirectory)) {
+  if (build_list_arr.includes(fileDirectory)) {
     return true;
   }
   return false;
@@ -87,19 +87,18 @@ const jsonPattern = {
   context: "src",
   from: "*/*.json",
   to({ absoluteFilename }) {
-    const directory = absoluteFilename.split("/").slice(-2, -1).join();
-    const filenameArray = absoluteFilename
-      .split("/")
-      .slice(-1)
-      .join()
-      .split(".");
-    console.log();
-    // ./src/example-name/example-name.block.js becomes block.json
-    // All other JSON files get copied without a name change
-    return filenameArray.length === 3 &&
-      [directory, "block", "json"].every((el, i) => el === filenameArray[i])
-      ? `./${directory}/block.json`
-      : `./${directory}/[name].json`;
+    var pathArray = absoluteFilename.split("/");
+    var fileName = pathArray.slice(-1).join();
+    var name = fileName.split(".").slice(0, 1).join();
+    var fileDirectory = pathArray.slice(-2, -1).join();
+
+    /**
+     * ./src/block-name/block-name.json becomes ./start/block-name/block.json
+     * ./src/block-name/any-other-name.json becomes ./start/block-name/any-other-name.json
+     */
+    return name === fileDirectory
+      ? "./[path]/block.json"
+      : "./[path]/[name].json";
   },
   filter: filterCB,
   noErrorOnMissing: true,
@@ -124,14 +123,20 @@ const extraPlugins = [
       jsonPattern,
     ],
   }),
+  new CleanWebpackPlugin({
+    dry: false,
+    cleanOnceBeforeBuildPatterns: ["**/*"],
+  }),
 ];
 
-module.exports = merge(defaultConfig, {
-  plugins: [...extraPlugins],
+//const plugins = defaultConfig.plugins.concat(extraPlugins);
+
+module.exports = {
+  ...defaultConfig,
+  plugins: [...defaultConfig.plugins, ...extraPlugins],
   entry: buildListObj,
   output: {
     path: path.join(__dirname, "/start"),
     filename: "[name]/index.js",
-    clean: true,
   },
-});
+};

@@ -1,7 +1,7 @@
 {
   "_NOTE": "This file is needed by plugin.php and needs to be on the server.",
   "block-collection": {
-    "cat": ["templates", "styles"],
+    "cat": ["collections", "categories"],
     "name": "block-collection",
     "converted to import": false,
     "include": false
@@ -32,7 +32,7 @@
   },
   "context": {
     "name": "context",
-    "cat": "templates and patterns",
+    "cat": ["templates", "patterns"],
     "converted to import": true,
     "include": false
   },
@@ -158,9 +158,9 @@
     "converted to import": true,
     "include": false
   },
-  "richtext-basic-block": {
+  "richtext-basic": {
     "cat": ["richtext"],
-    "name": "richtext-basic-block",
+    "name": "richtext-basic",
     "converted to import": true,
     "include": false
   },

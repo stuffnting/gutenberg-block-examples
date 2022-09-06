@@ -14,3 +14,6 @@ start/
 # pnpm
 pnpm-lock.yaml
 package-lock.json
+
+# Other
+webpack.config-OLD

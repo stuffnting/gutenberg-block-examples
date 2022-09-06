@@ -16,17 +16,9 @@ function myprefix_enqueue_context() {
     return;
   }
 
-  wp_enqueue_script(
-    'myprefix-context-json-script',
-    MYPREFIX_GUT_BLOCKS_PLUGIN_URL . basename( __DIR__ ) . '/index.js',
-    array( "wp-edit-posts" ),
-    filemtime( MYPREFIX_GUT_BLOCKS_PLUGIN_PATH . basename( __DIR__ ) . '/index.js' ), // *** Dev only
-    true
-  ); 
-  
   register_block_type( __DIR__ );
 
-  register_block_type( __DIR__ . '/context-json-child.json', array(
+  register_block_type( __DIR__ . '/context-json-child.block.json', array(
     'render_callback' => function( $attributes, $content, $block ) {
       $my_number = array_key_exists( 'myprefix/myNumber', $block->context ) 
         ?  $block->context['myprefix/myNumber'] 

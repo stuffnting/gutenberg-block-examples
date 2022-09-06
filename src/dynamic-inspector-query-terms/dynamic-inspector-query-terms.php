@@ -1,6 +1,6 @@
 <?php
 
-function myprefix_dynamic_block_inspector_query_terms_cb( $attributes, $content ) {
+function myprefix_dynamic_inspector_query_terms_cb( $attributes, $content ) {
 
   $recent_posts = wp_get_recent_posts( array(
       'numberposts' => $attributes['perPage'],
@@ -33,15 +33,6 @@ function myprefix_dynamic_inspector_query_terms() {
       // Gutenberg is not active.
       return;
   }
-
-  // Your Gutenberg Block JS code
-  wp_register_script( 
-    'myprefix-dynamic-inspector-query-terms-script', 
-    MYPREFIX_GUT_BLOCKS_PLUGIN_URL . basename( __DIR__ ) . '/index.js',
-    array(),
-    filemtime( MYPREFIX_GUT_BLOCKS_PLUGIN_PATH . basename( __DIR__ ) . '/index.js' ), // *** Dev only
-    true
-  );
 
   // Register the call_back for rendering on the front end
   register_block_type( __dir__, array(

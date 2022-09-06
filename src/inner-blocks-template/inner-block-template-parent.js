@@ -5,7 +5,7 @@ import {
   useInnerBlocksProps,
 } from "@wordpress/block-editor";
 
-import metadata from "./inner-blocks-template.json";
+import metadata from "./inner-blocks-template.block.json";
 
 /*  Initial child blocks populating parent. 
     Each is an array containing the block name 
@@ -26,7 +26,10 @@ const innerBlocksTemplate = [
 ];
 
 // Other blocks that can be added. "myprefix/inner-blocks-child" is registered below
-const allowedBlocks = ["core/paragraph", "myprefix/inner-blocks-child"];
+const allowedBlocks = [
+  "core/paragraph",
+  "myprefix/inner-blocks-template-child",
+];
 
 const style = {
   color: "white",
