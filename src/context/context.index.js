@@ -1,26 +1,13 @@
-const { registerBlockType } = wp.blocks;
-const { InnerBlocks, useBlockProps } = wp.blockEditor;
-const { TextControl } = wp.components;
+import { registerBlockType } from "@wordpress/blocks";
+import { InnerBlocks, useBlockProps } from "@wordpress/block-editor";
+import { TextControl } from "@wordpress/components";
 
-registerBlockType("myprefix/context-parent", {
-  apiVersion: 2,
-  title: "Context parent",
-  category: "widgets",
-  icon: "lightbulb",
+import metadataParent from "./context-json.block.json";
+import metadataChild from "./context-json-child.block.json";
 
-  attributes: {
-    myNumber: {
-      type: "number",
-    },
-  },
-
-  // Because provides_context is defined in the PHP file this line is not needed here
-  /*   providesContext: {
-    "myprefix/myNumber": "myNumber",
-  }, */
-
+registerBlockType(metadataParent.name, {
   edit: (props) => {
-    const template = [["myprefix/context-child", {}]];
+    const MY_TEMPLATE = [["myprefix/context-json-child", {}]];
 
     const blockProps = useBlockProps();
 
@@ -36,7 +23,7 @@ registerBlockType("myprefix/context-parent", {
           value={myNumber}
           onChange={(val) => setAttributes({ myNumber: Number(val) })}
         />
-        <InnerBlocks template={template} templateLock="all" />
+        <InnerBlocks template={MY_TEMPLATE} templateLock="all" />
       </div>
     );
   },
@@ -53,24 +40,13 @@ registerBlockType("myprefix/context-parent", {
   },
 });
 
-registerBlockType("myprefix/context-child", {
-  apiVersion: 2,
-  title: "Context child",
-  category: "widgets",
-  icon: "lightbulb",
-
-  // Because uses_context is defined in the PHP file this line is not needed here
-  //usesContext: ["myprefix/myNumber"],
-
-  // Only allow the child block to be an innerblock for the parent. Child will not show in the inserter.
-  parent: ["test/parent-block"],
-
+registerBlockType(metadataChild.name, {
   edit(props) {
     const { context } = props;
     return "My Number IS: " + context["myprefix/myNumber"];
   },
-
   save() {
+    // Dynamically rendered to no save function needed.
     return null;
   },
 });

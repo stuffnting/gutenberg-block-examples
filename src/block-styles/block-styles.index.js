@@ -8,6 +8,8 @@ import domReady from "@wordpress/dom-ready";
 import { registerBlockStyle, unregisterBlockStyle } from "@wordpress/blocks";
 import { __ } from "@wordpress/i18n";
 
+import styles from "./block-styles.style.scss";
+
 domReady(() => {
   registerBlockStyle("core/paragraph", [
     /**

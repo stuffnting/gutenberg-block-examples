@@ -28,7 +28,7 @@ add_action( 'init', 'myprefix_variations_existing_blocks' );
 function myprefix_variations_existing_blocks() {
   
   if ( ! function_exists( 'register_block_type' ) ) {
-    // Gutenberg is not activemy.
+    // Gutenberg is not active.
     return;
   }
 

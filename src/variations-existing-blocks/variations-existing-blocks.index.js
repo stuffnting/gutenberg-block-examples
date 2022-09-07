@@ -16,6 +16,8 @@
 import { registerBlockVariation } from "@wordpress/blocks";
 import { __ } from "@wordpress/i18n";
 
+import scss from "./variations-existing-blocks.style.scss";
+
 /********************************************************************
  *
  * Register variations for existing core block types. (They don't

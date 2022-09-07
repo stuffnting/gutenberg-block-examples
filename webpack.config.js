@@ -1,10 +1,11 @@
+// const { merge } = require("webpack-merge");
 const defaultConfig = require("@wordpress/scripts/config/webpack.config");
-const { merge } = require("webpack-merge");
 
 const fs = require("fs");
 const path = require("path");
 
 const CopyPlugin = require("copy-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 // Get the build list from the JSON file. `require` converts JSON to an object.
 const BUILD_LIST_DATA = require("./src/build-list.json");
@@ -55,8 +56,8 @@ const buildListObj = buildListArray.length
  * @returns {boolean} - Whether to copy the file to the build folder.
  */
 const filterCB = (absoluteSourcePath) => {
-  var pathArray = absoluteSourcePath.split("/");
-  var fileDirectory = pathArray.slice(-2, -1).join();
+  const pathArray = absoluteSourcePath.split("/");
+  const fileDirectory = pathArray.slice(-2, -1).join();
 
   if (buildListArray.includes(fileDirectory)) {
     return true;
@@ -126,12 +127,29 @@ const extraPlugins = [
   }),
 ];
 
-module.exports = merge(defaultConfig, {
-  plugins: [...extraPlugins],
+/**
+ * Change the output folder for the MiniCssExtractPlugin in @WP/scripts config.
+ * If new MiniCssExtractPlugin is used, two instances exist and 2 copies of css files are made.
+ */
+const editMiniCss = defaultConfig.plugins.filter(
+  (el) => el instanceof MiniCssExtractPlugin
+)[0];
+
+editMiniCss.options.filename = "[name]/style.css";
+
+// Merge plugins
+const plugins = defaultConfig.plugins.concat(extraPlugins, editMiniCss);
+
+/**
+ * Export
+ */
+module.exports = {
+  ...defaultConfig,
+  plugins,
   entry: buildListObj,
   output: {
     path: path.join(__dirname, "/start"),
     filename: "[name]/index.js",
     clean: true,
   },
-});
+};

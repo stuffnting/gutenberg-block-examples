@@ -30,7 +30,7 @@ function myprefix_add_block_styles_editor() {
 /**
  * Enqueue the stylesheet here.
  */
-add_action( 'init', 'myprefix_add_block_styles' );
+add_action( 'enqueue_block_assets', 'myprefix_add_block_styles' );
 
 function myprefix_add_block_styles() {
 

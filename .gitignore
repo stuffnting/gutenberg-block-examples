@@ -16,4 +16,5 @@ pnpm-lock.yaml
 package-lock.json
 
 # Other
-webpack.config-OLD
+webpack.config-OLD.js
+webpack.config-OLLD-2-merge.js
