@@ -1,0 +1,10 @@
+{
+  "apiVersion": 2,
+  "name": "myprefix/inner-blocks-template-child",
+  "title": "Inner Blocks Child",
+  "category": "design",
+  "icon": "lightbulb",
+  "_comment": "// This block must be listed in parent's allowedBlocks",
+  "parent": ["myprefix/inner-blocks-template-parent"],
+  "editorScript": "file:./index.js"
+}

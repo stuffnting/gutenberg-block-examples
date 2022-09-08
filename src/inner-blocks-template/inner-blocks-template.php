@@ -10,4 +10,6 @@ function myprefix_inner_blocks_template() {
   }
 
   register_block_type( __DIR__ );
+  register_block_type( __DIR__ . "/inner-block-template-child.block.json" );
+
 }

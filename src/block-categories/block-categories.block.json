@@ -1,0 +1,8 @@
+{
+  "apiVersion": 2,
+  "name": "myprefix/change-inserter",
+  "title": "A block to test categories in the inserter",
+  "category": "custom-category-js",
+  "icon": "lightbulb",
+  "editorScript": "myprefix-change-inserter-script"
+}

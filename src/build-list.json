@@ -10,7 +10,7 @@
     "name": "block-json",
     "cat": ["richtext"],
     "converted to import": true,
-    "include": true
+    "include": false
   },
   "block-lock": {
     "name": "block-lock",
@@ -27,6 +27,12 @@
   "block-styles": {
     "name": "block-styles",
     "cat": ["variations", "styles"],
+    "converted to import": true,
+    "include": false
+  },
+  "block-categories": {
+    "name": "block-categories",
+    "cat": ["categories"],
     "converted to import": true,
     "include": true
   },
@@ -228,12 +234,12 @@
     "cat": "variations and styles",
     "name": "variations-existing-blocks",
     "converted to import": true,
-    "include": true
+    "include": false
   },
   "variations-register-block": {
     "cat": ["variations", "styles"],
     "name": "variations-register-block",
     "converted to import": true,
-    "include": true
+    "include": false
   }
 }

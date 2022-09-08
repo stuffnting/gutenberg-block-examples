@@ -7,9 +7,9 @@
  * The init action hook must be used when adding a render callback function,
  * Using enqueue_block_editor_assets will not work.
  */
-add_action( 'init', 'myprefix_enqueue_context' );
+add_action( 'init', 'myprefix_context' );
 
-function myprefix_enqueue_context() {
+function myprefix_context() {
 
   if ( ! function_exists( 'register_block_type' ) ) {
     // Gutenberg is not active.

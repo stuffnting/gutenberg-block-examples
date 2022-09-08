@@ -133,7 +133,7 @@ const extraPlugins = [
  */
 const editMiniCss = defaultConfig.plugins.filter(
   (el) => el instanceof MiniCssExtractPlugin
-)[0];
+)[0]; // Filter will return an array with one element
 
 editMiniCss.options.filename = "[name]/style.css";
 
