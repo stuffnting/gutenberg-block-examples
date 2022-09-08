@@ -11,9 +11,9 @@
  * its presence will be flagged as an error when using 
  * "$schema": "https://schemas.wp.org/trunk/block.json"
  */
-if ( file_exists( __DIR__ . '/block.json' ) ) {
+if ( file_exists( __DIR__ . '/meta-notices-save-lock.metafield.json' ) ) {
   
-  $block_json = file_get_contents( 'block.json', true );
+  $block_json = file_get_contents( 'meta-notices-save-lock.metafield.json', true );
 
   $json_array = $block_json 
   ? json_decode( $block_json, true ) 

@@ -6,7 +6,7 @@ import { useEntityProp } from "@wordpress/core-data";
 import { registerPlugin } from "@wordpress/plugins";
 import { __ } from "@wordpress/i18n";
 
-import metadata from "./meta-with-media.block.json";
+import metadata from "./meta-with-media.metafield.json";
 
 const metaField = metadata.metaField;
 

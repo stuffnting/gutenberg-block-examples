@@ -15,7 +15,7 @@ import { useSelect } from "@wordpress/data";
 import { useEntityProp } from "@wordpress/core-data";
 import { __ } from "@wordpress/i18n";
 
-import metadata from "./meta-plugin-sidebar.block.json";
+import metadata from "./meta-plugin-sidebar.metafield.json";
 
 const metaField = metadata.metaField;
 

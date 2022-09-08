@@ -1,5 +1,11 @@
 {
   "_NOTE": "This file is needed by plugin.php and needs to be on the server.",
+  "block-categories": {
+    "name": "block-categories",
+    "cat": ["categories"],
+    "converted to import": true,
+    "include": false
+  },
   "block-collection": {
     "cat": ["collections", "categories"],
     "name": "block-collection",
@@ -29,12 +35,6 @@
     "cat": ["variations", "styles"],
     "converted to import": true,
     "include": false
-  },
-  "block-categories": {
-    "name": "block-categories",
-    "cat": ["categories"],
-    "converted to import": true,
-    "include": true
   },
   "context": {
     "name": "context",
@@ -156,7 +156,7 @@
     "name": "meta-with-select-doc-settings",
     "cat": ["meta", "plugin sidebar"],
     "converted to import": true,
-    "include": false
+    "include": true
   },
   "richtext-basic": {
     "cat": ["richtext"],

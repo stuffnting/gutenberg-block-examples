@@ -9,6 +9,5 @@
   "supports": {
     "multiple": false
   },
-  "editorScript": "file:./index.js",
-  "metaField": "_myprefix_meta_simple_field"
+  "editorScript": "file:./index.js"
 }

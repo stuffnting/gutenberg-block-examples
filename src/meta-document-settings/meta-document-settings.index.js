@@ -17,7 +17,8 @@ import { registerPlugin } from "@wordpress/plugins";
 import { PluginDocumentSettingPanel } from "@wordpress/edit-post";
 import { __ } from "@wordpress/i18n";
 
-import metadata from "./meta-document-settings.block.json";
+// This is not a block.json file. It stores the meta field name,so that it is accessible to JS and PHP
+import metadata from "./meta-document-settings.metafield.json";
 
 // The meta field name is defined in the JSON file
 const metaField = metadata.metaField;

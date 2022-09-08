@@ -5,10 +5,10 @@ import { DateTimePicker, PanelBody } from "@wordpress/components";
 import { useBlockProps, InspectorControls } from "@wordpress/block-editor";
 import { __ } from "@wordpress/i18n";
 
-import metadata from "./meta-notices-save-lock.block.json";
+import metaFieldData from "./meta-notices-save-lock.metafield.json";
 import { notices } from "./meta-notices-save-lock-notices";
 
-const metaField = metadata.metaField;
+const metaField = metaFieldData.metaField;
 
 export const edit = () => {
   const blockProps = useBlockProps();

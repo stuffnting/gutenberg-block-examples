@@ -1,0 +1,4 @@
+{
+  "_comment": "The meta  filed is stored here, and not in block.json to prevent https://schemas.wp.org/trunk/block.json getting upset",
+  "metaField": "_myprefix_meta_simple_field"
+}

@@ -6,6 +6,5 @@
   "icon": "lightbulb",
   "description": "A block with a meta field in the Inspector and inner-blocks",
   "category": "widgets",
-  "editorScript": "file:./index.js",
-  "metaField": "_myprefix_inner_blocks_inspector_field"
+  "editorScript": "file:./index.js"
 }

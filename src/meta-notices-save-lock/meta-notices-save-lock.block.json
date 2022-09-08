@@ -10,6 +10,5 @@
     "multiple": false
   },
   "textdomain": "my-plugin",
-  "editorScript": "file:./index.js",
-  "metaField": "_myprefix_meta_notices_save_lock_field"
+  "editorScript": "file:./index.js"
 }

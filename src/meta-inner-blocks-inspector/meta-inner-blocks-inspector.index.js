@@ -10,8 +10,9 @@ import {
 import { __ } from "@wordpress/i18n";
 
 import metadata from "./meta-inner-blocks-inspector.block.json";
+import metaFieldData from "./meta-inner-blocks.metafield.json";
 
-const metaField = metadata.metaField;
+const metaField = metaFieldData.metaField;
 
 const allowedBlocks = ["core/paragraph", "core/heading"];
 

@@ -6,8 +6,9 @@ import { useBlockProps } from "@wordpress/block-editor";
 import { __ } from "@wordpress/i18n";
 
 import metadata from "./meta-simple.block.json";
+import metaFieldData from "./meta-simple.metafield.json";
 
-const metaField = metadata.metaField;
+const metaField = metaFieldData.metaField;
 
 registerBlockType(metadata.name, {
   edit() {

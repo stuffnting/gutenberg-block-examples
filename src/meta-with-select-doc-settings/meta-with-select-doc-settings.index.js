@@ -4,7 +4,7 @@ import { __ } from "@wordpress/i18n";
 import { TextControl } from "@wordpress/components";
 import { withSelect, withDispatch } from "@wordpress/data";
 
-import metadata from "./meta-with-select-doc-settings.block.json";
+import metadata from "./meta-with-select-doc-settings.metafield.json";
 
 const metaField = metadata.metaField;
 
