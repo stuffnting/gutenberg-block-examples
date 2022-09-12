@@ -156,7 +156,7 @@
     "name": "meta-with-select-doc-settings",
     "cat": ["meta", "plugin sidebar"],
     "converted to import": true,
-    "include": true
+    "include": false
   },
   "richtext-basic": {
     "cat": ["richtext"],
@@ -216,7 +216,7 @@
     "cat": ["richtext"],
     "name": "richtext-transforms-multiblock",
     "converted to import": true,
-    "include": false
+    "include": true
   },
   "richtext-transforms-simple": {
     "cat": ["richtext"],
