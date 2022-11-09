@@ -79,7 +79,7 @@ function myprefix_register_block_patterns() {
   );
   
   /**
-   * This pattern appears in the transform menu for core/paragraph and core/image blocks,
+   * This pattern appears in the inserter, the transform menu for core/paragraph and core/image blocks,
    * was well as the 'page creation pattern' modal. Inclusion in modal is achieved by adding
    * core/post-content to the blockTypes array.
    */
@@ -96,10 +96,10 @@ function myprefix_register_block_patterns() {
   ]);
 
   /**
-   * This pattern appears in the transform menu for the core/heading block, but not the 
+   * This pattern appears in the inserter, the transform menu for the core/heading block, but not the 
    * 'page creation pattern' modal.
    */
-  $pattern_escaped_html_2 = ' <!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+  $pattern_single_quote_html_1 = ' <!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
   <figure class="wp-block-image size-large"><img src="https://www.stuffnting.com/wp-content/uploads/2017/08/D-R_test_DSC00280_sml.jpg" alt=""/></figure>
   <!-- /wp:image --><!-- wp:heading {"level":3,"backgroundColor":"black","textColor":"white"} -->
   <h3 class="has-white-color has-black-background-color has-text-color has-background">My most excellent heading</h3>
@@ -111,9 +111,32 @@ function myprefix_register_block_patterns() {
         'categories'    => array( 'myprefix-patterns' ),
         'blockTypes'    => array( 'core/heading' ), // These are the block for which this pattern will be suggested
         'viewportWidth' => 500,
-        'content'       => $pattern_escaped_html_2,
+        'content'       => $pattern_single_quote_html_1,
     ]);
+
+/**
+ * This pattern has templateLock: contentOnly set on the outer group block.
+ * Only the text within this pattern can be changed, unless 'modify' is clicked in the groups's toolbar.
+ */
+$pattern_single_quote_html_2 = '<!-- wp:group {"templateLock":"contentOnly", "layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:heading {"backgroundColor":"pale-pink","textColor":"base"} -->
+<h2 class="has-base-color has-pale-pink-background-color has-text-color has-background"></h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->';
+
+register_block_pattern(
+  'lock-example', [
+      'title'         => __( 'Template lock tester' ),
+      'categories'    => array( 'myprefix-patterns' ),
+      'blockTypes'    => array( 'core/heading' ), // These are the block for which this pattern will be suggested
+      'viewportWidth' => 500,
+      'content'       => $pattern_single_quote_html_2,
+  ]);
 }
+
 
 /******************************************************************************
  * 

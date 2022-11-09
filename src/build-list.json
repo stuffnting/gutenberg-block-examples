@@ -16,7 +16,7 @@
     "name": "block-json",
     "cat": ["richtext"],
     "converted to import": true,
-    "include": false
+    "include": true
   },
   "block-lock": {
     "name": "block-lock",
@@ -28,7 +28,7 @@
     "name": "block-patterns",
     "cat": ["templates", "styles"],
     "converted to import": false,
-    "include": false
+    "include": true
   },
   "block-styles": {
     "name": "block-styles",
