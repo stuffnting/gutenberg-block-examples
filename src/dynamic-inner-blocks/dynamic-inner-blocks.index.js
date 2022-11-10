@@ -1,5 +1,6 @@
 import { registerBlockType } from "@wordpress/blocks";
-import { useSelect } from "@wordpress/data";
+import { useEntityRecords } from "@wordpress/core-data";
+import { memo } from "@wordpress/element";
 import {
   InnerBlocks,
   useBlockProps,
@@ -8,34 +9,58 @@ import {
 
 import metadata from "./dynamic-inner-blocks.block.json";
 
+function ListPosts({ posts }) {
+  const out = (
+    <ul>
+      {posts.map((post) => (
+        <li key={"query-terms-" + post.id}>
+          <a href={post.link}>{post.title.rendered}</a>
+        </li>
+      ))}
+    </ul>
+  );
+
+  return out;
+}
+
+/**
+ * Memo prevents GetPosts from rerendering when perPage has not changed.
+ *
+ * @see https://reactjs.org/docs/react-api.html#reactmemo
+ */
+const GetPosts = memo(({ perPage }) => {
+  const {
+    isResolving,
+    hasResolved,
+    records: posts,
+  } = useEntityRecords("postType", "post", {
+    per_page: 5,
+  });
+
+  if (isResolving) {
+    return "Loading...";
+  }
+
+  if (hasResolved && posts.length === 0) {
+    return "No posts";
+  }
+
+  if (hasResolved && posts.length > 0) {
+    return <ListPosts posts={posts} />;
+  }
+
+  return "Error?";
+});
+
 registerBlockType(metadata.name, {
   edit: () => {
-    // Get the list of posts. Previously done using useSelect.
-    const posts = useSelect((select) => {
-      return select("core").getEntityRecords("postType", "post");
-    }, []);
-
     const blockProps = useBlockProps();
     const innerBlockProps = useInnerBlocksProps();
-
-    // Function component with implicit return of post list
-    const PostList = () => (
-      <ul>
-        {posts.map((post) => (
-          <li key={post.id}>
-            <a href={post.link}>{post.title.rendered}</a>
-          </li>
-        ))}
-      </ul>
-    );
 
     return (
       <div {...blockProps}>
         <h2>Last Posts</h2>
-        {!posts && "Loading..."}
-        {posts && posts.length === 0 && "No posts."}
-        {/* Function component defined above */}
-        {posts && posts.length > 0 && <PostList />}
+        <GetPosts />
         <InnerBlocks {...innerBlockProps} />
       </div>
     );

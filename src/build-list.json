@@ -16,7 +16,7 @@
     "name": "block-json",
     "cat": ["richtext"],
     "converted to import": true,
-    "include": true
+    "include": false
   },
   "block-lock": {
     "name": "block-lock",
@@ -28,7 +28,7 @@
     "name": "block-patterns",
     "cat": ["templates", "styles"],
     "converted to import": false,
-    "include": true
+    "include": false
   },
   "block-styles": {
     "name": "block-styles",
@@ -46,25 +46,25 @@
     "name": "dynamic-attribute",
     "cat": ["dynamic"],
     "converted to import": true,
-    "include": false
+    "include": true
   },
   "dynamic-inner-blocks": {
     "cat": ["dynamic", "innerblocks"],
     "name": "dynamic-inner-blocks",
     "converted to import": false,
-    "include": false
+    "include": true
   },
   "dynamic-inspector-controls": {
     "name": "dynamic-inspector-controls",
     "cat": ["dynamic"],
     "converted to import": true,
-    "include": false
+    "include": true
   },
   "dynamic-inspector-query-terms": {
     "name": "dynamic-inspector-query-terms",
     "cat": ["dynamic"],
     "converted to import": true,
-    "include": false
+    "include": true
   },
   "dynamic-meta-block": {
     "name": "dynamic-meta-block",
@@ -76,13 +76,13 @@
     "name": "dynamic-serverside-render",
     "cat": ["dynamic"],
     "converted to import": true,
-    "include": false
+    "include": true
   },
   "dynamic-simple": {
     "name": "dynamic-simple",
     "cat": ["dynamic"],
     "converted to import": true,
-    "include": false
+    "include": true
   },
   "filter-core-block-controls": {
     "cat": "filter",
@@ -216,7 +216,7 @@
     "cat": ["richtext"],
     "name": "richtext-transforms-multiblock",
     "converted to import": true,
-    "include": true
+    "include": false
   },
   "richtext-transforms-simple": {
     "cat": ["richtext"],

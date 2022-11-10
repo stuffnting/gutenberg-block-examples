@@ -7,7 +7,7 @@
 function myprefix_dynamic_inspector_controls_cb( $attributes, $content ) {
 
   $recent_posts = wp_get_recent_posts( array(
-      'numberposts' => 3,
+      'numberposts' => 5,
       'post_status' => 'publish',
   ) );
 

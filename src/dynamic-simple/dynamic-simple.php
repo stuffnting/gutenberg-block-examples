@@ -6,7 +6,9 @@
 function myprefix_dynamic_simple_cb( $attributes, $content ) {
   
   $recent_posts = wp_get_recent_posts( array(
-      'numberposts' => 3,
+      'numberposts' => 5,
+      'category'    => 1,
+      'order'       => 'ASC',
       'post_status' => 'publish',
   ) );
 

@@ -1,12 +1,13 @@
-const { registerBlockType } = wp.blocks;
-const { InspectorControls } = wp.blockEditor;
-const { withSelect, useSelect } = wp.data;
-const { __ } = wp.i18n;
-const {
+import { registerBlockType } from "@wordpress/blocks";
+import { InspectorControls, useBlockProps } from "@wordpress/block-editor";
+import { useEntityRecords } from "@wordpress/core-data";
+import { memo } from "@wordpress/element";
+import { __ } from "@wordpress/i18n";
+import {
   PanelBody,
   PanelRow,
-  __experimentalNumberControl: NumberControl,
-} = wp.components;
+  __experimentalNumberControl as NumberControl,
+} from "@wordpress/components";
 
 import metadata from "./dynamic-inspector-query-terms.block.json";
 
@@ -55,37 +56,45 @@ function ListPosts({ posts }) {
   return out;
 }
 
-const GetPosts = ({ perPage }) => {
-  const posts = useSelect(
-    (select) => {
-      return select("core").getEntityRecords("postType", "post", {
-        per_page: perPage,
-      });
-    },
-    [perPage]
-  );
-  return processPosts(posts);
-};
+/**
+ * Memo prevents GetPosts from rerendering when perPage has not changed.
+ *
+ * @see https://reactjs.org/docs/react-api.html#reactmemo
+ */
+const GetPosts = memo(({ perPage }) => {
+  const {
+    isResolving,
+    hasResolved,
+    records: posts,
+  } = useEntityRecords("postType", "post", {
+    per_page: perPage,
+  });
 
-function processPosts(posts) {
-  if (!posts) {
+  if (isResolving) {
     return "Loading...";
   }
 
-  if (posts && posts.length === 0) {
+  if (hasResolved && posts.length === 0) {
     return "No posts";
   }
 
-  return <ListPosts posts={posts} />;
-}
+  if (hasResolved && posts.length > 0) {
+    return <ListPosts posts={posts} />;
+  }
+
+  return "Error?";
+});
 
 registerBlockType(metadata, {
   edit: (props) => {
+    const blockProps = useBlockProps();
     return (
       <>
-        <h2 key="1">Query term posts</h2>
         <TheInspectorControls parentProps={props} />
-        <GetPosts perPage={props.attributes.perPage} />
+        <div {...blockProps}>
+          <h2 key="1">Query term posts</h2>
+          <GetPosts perPage={props.attributes.perPage} />
+        </div>
       </>
     );
   },

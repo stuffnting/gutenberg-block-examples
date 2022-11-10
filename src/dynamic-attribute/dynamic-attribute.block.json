@@ -5,7 +5,7 @@
   "title": "Dynamic Attribute",
   "icon": "lightbulb",
   "category": "widgets",
-  "description": "A dynamic block that uses an attribute to store a value, in a way similar to metaboxes",
+  "description": "A dynamic block that uses an attribute to store a value, in a way similar to old style metaboxes",
   "keywords": ["test"],
   "textdomain": "myprefix",
   "attributes": {
