@@ -1,17 +1,11 @@
 /**
  * This code adds variations to exiting block;
- * in this case, existing core blocks/
+ * in this case, existing core blocks.
  *
  * Variations are not the same as styles,
  * also sometimes called style variations.
  *
  * */
-
-/**
- * If installing @wordpress packages and using `import`
- * put the `import` statements here at the top before the
- * `export default` statement below
- */
 
 import { registerBlockVariation } from "@wordpress/blocks";
 import { __ } from "@wordpress/i18n";
@@ -40,24 +34,24 @@ registerBlockVariation("core/paragraph", {
   },
   scope: ["inserter", "transform"],
   isActive: (blockAttributes, variationAttributes) =>
-    blockAttributes.className === variationAttributes.className,
+    blockAttributes.className
+      ? blockAttributes.className.includes(variationAttributes.className)
+      : false,
 });
 
-/**
- * Add multiple variations for a core block in one go.
+/********************************************************************
  *
- * These appear in the Variation Transformer only.
- */
+ * Add multiple variations for a core block in one go.
+ * These appear in the Variation Transformer only (top of inspector).
+ *
+ *******************************************************************/
+
 registerBlockVariation("core/heading", [
   {
     name: "myprefix-default-heading",
     title: __("Heading", "textDomain"),
     description: __("Default heading settings."),
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M6.2 5.2v13.4l5.8-4.8 5.8 4.8V5.2z" />
-      </svg>
-    ),
+    icon: "lightbulb",
     attributes: {
       placeholder: __("Add some text...", "textDomain"),
       level: 2,
@@ -70,7 +64,9 @@ registerBlockVariation("core/heading", [
     },
     scope: ["transform"],
     isActive: (blockAttributes, variationAttributes) =>
-      blockAttributes.className === variationAttributes.className,
+      blockAttributes.className
+        ? blockAttributes.className.includes(variationAttributes.className)
+        : false,
   },
   {
     name: "myprefix-pink-heading",
@@ -86,7 +82,8 @@ registerBlockVariation("core/heading", [
     },
     scope: ["transform"],
     isActive: (blockAttributes, variationAttributes) =>
-      blockAttributes.className === variationAttributes.className,
+      blockAttributes.level === variationAttributes.level &&
+      blockAttributes.placeholder === variationAttributes.placeholder,
   },
   {
     name: "myprefix-green-heading",
@@ -102,7 +99,8 @@ registerBlockVariation("core/heading", [
     },
     scope: ["transform"],
     isActive: (blockAttributes, variationAttributes) =>
-      blockAttributes.className === variationAttributes.className,
+      blockAttributes.level === variationAttributes.level &&
+      blockAttributes.placeholder === variationAttributes.placeholder,
   },
 ]);
 
@@ -118,16 +116,17 @@ registerBlockVariation("core/columns", {
   title: __("My Three Columns of stuff", "textDomain"),
   description: __("Three columns of stuff.", "textDomain"),
   icon: "lightbulb",
-  // Make the variation appear in the Placeholder, where you chose the
-  // starting column format when inserting the columns.
+  /* Make the variation appear in the Placeholder, where you chose the
+     starting column format when inserting the columns. */
   scope: ["block"],
   attributes: {
     align: "full",
     className: "is-my-three-columns",
   },
   isActive: (blockAttributes, variationAttributes) =>
-    blockAttributes.className === variationAttributes.className &&
-    blockAttributes.align === variationAttributes.align,
+    blockAttributes.className
+      ? blockAttributes.className.includes(variationAttributes.className)
+      : false && blockAttributes.align === variationAttributes.align,
   innerBlocks: [
     [
       "core/column",
@@ -165,5 +164,47 @@ registerBlockVariation("core/columns", {
         ],
       ],
     ],
+  ],
+});
+
+/********************************************************************
+ *
+ * Register a variation of the core/query block.
+ * @see https://make.wordpress.org/core/2022/10/10/extending-the-query-loop-block/
+ *
+ ********************************************************************/
+
+const MY_VARIATION_NAME = "myprefix/post-list";
+
+registerBlockVariation("core/query", {
+  name: MY_VARIATION_NAME,
+  title: "Post list variation",
+  description: "A variation on a list of posts",
+  isActive: ({ namespace, query }) => {
+    return namespace === MY_VARIATION_NAME && query.postType === "post";
+  },
+  icon: "lightbulb",
+  attributes: {
+    namespace: MY_VARIATION_NAME,
+    query: {
+      perPage: 5,
+      pages: 0,
+      offset: 0,
+      postType: "post",
+      order: "asc",
+      orderBy: "title",
+      author: "",
+      search: "",
+      exclude: [],
+      sticky: "",
+      inherit: false,
+    },
+  },
+  allowedControls: ["inherit", "order", "postType"],
+  scope: ["inserter"],
+  innerBlocks: [
+    ["core/post-template", {}, [["core/post-title"], ["core/post-excerpt"]]],
+    ["core/query-pagination"],
+    ["core/query-no-results"],
   ],
 });

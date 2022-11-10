@@ -16,7 +16,7 @@
     "name": "block-json",
     "cat": ["richtext"],
     "converted to import": true,
-    "include": false
+    "include": true
   },
   "block-lock": {
     "name": "block-lock",
@@ -46,25 +46,25 @@
     "name": "dynamic-attribute",
     "cat": ["dynamic"],
     "converted to import": true,
-    "include": true
+    "include": false
   },
   "dynamic-inner-blocks": {
     "cat": ["dynamic", "innerblocks"],
     "name": "dynamic-inner-blocks",
     "converted to import": false,
-    "include": true
+    "include": false
   },
   "dynamic-inspector-controls": {
     "name": "dynamic-inspector-controls",
     "cat": ["dynamic"],
     "converted to import": true,
-    "include": true
+    "include": false
   },
   "dynamic-inspector-query-terms": {
     "name": "dynamic-inspector-query-terms",
     "cat": ["dynamic"],
     "converted to import": true,
-    "include": true
+    "include": false
   },
   "dynamic-meta-block": {
     "name": "dynamic-meta-block",
@@ -76,13 +76,13 @@
     "name": "dynamic-serverside-render",
     "cat": ["dynamic"],
     "converted to import": true,
-    "include": true
+    "include": false
   },
   "dynamic-simple": {
     "name": "dynamic-simple",
     "cat": ["dynamic"],
     "converted to import": true,
-    "include": true
+    "include": false
   },
   "filter-core-block-controls": {
     "cat": "filter",
@@ -234,12 +234,12 @@
     "cat": "variations and styles",
     "name": "variations-existing-blocks",
     "converted to import": true,
-    "include": false
+    "include": true
   },
   "variations-register-block": {
     "cat": ["variations", "styles"],
     "name": "variations-register-block",
     "converted to import": true,
-    "include": false
+    "include": true
   }
 }
