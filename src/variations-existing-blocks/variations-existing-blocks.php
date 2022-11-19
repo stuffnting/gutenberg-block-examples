@@ -8,7 +8,7 @@ add_action( 'enqueue_block_editor_assets', 'myprefix_variations_existing_blocks_
 function myprefix_variations_existing_blocks_editor() {
   
   if ( ! function_exists( 'register_block_type' ) ) {
-    // Gutenberg is not activemy.
+    // Gutenberg is not active.
     return;
   }
 
@@ -39,3 +39,4 @@ function myprefix_variations_existing_blocks() {
     filemtime( MYPREFIX_GUT_BLOCKS_PLUGIN_PATH . basename( __DIR__ ) . '/style.css' )
   );
 }
+

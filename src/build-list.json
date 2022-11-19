@@ -16,7 +16,7 @@
     "name": "block-json",
     "cat": ["richtext"],
     "converted to import": true,
-    "include": true
+    "include": false
   },
   "block-lock": {
     "name": "block-lock",
@@ -234,12 +234,18 @@
     "cat": "variations and styles",
     "name": "variations-existing-blocks",
     "converted to import": true,
+    "include": false
+  },
+  "variations-query-block": {
+    "cat": "variations",
+    "name": "variations-query-block",
+    "converted to import": true,
     "include": true
   },
   "variations-register-block": {
     "cat": ["variations", "styles"],
     "name": "variations-register-block",
     "converted to import": true,
-    "include": true
+    "include": false
   }
 }
