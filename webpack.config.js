@@ -88,10 +88,10 @@ const phpPattern = {
   from: "*/*.php",
   to({ absoluteFilename }) {
     const { directory, filenameArray } = processFilename(absoluteFilename);
-    // ./src/example-name/example-name.php becomes plugin.php
+    // ./src/example-name/example-name.php becomes index.php
     // All other PHP files get copied without a name change
     return filenameArray[0] === directory
-      ? `./${directory}/plugin.php`
+      ? `./${directory}/index.php`
       : `./${directory}/[name].php`;
   },
   filter: filterCB,

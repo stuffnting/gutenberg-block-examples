@@ -72,6 +72,12 @@
     "converted to import": true,
     "include": false
   },
+  "dynamic-render-php": {
+    "name": "dynamic-render-php",
+    "cat": ["dynamic"],
+    "converted to import": true,
+    "include": true
+  },
   "dynamic-serverside-render": {
     "name": "dynamic-serverside-render",
     "cat": ["dynamic"],
@@ -152,17 +158,11 @@
     "converted to import": true,
     "include": false
   },
-  "meta-with-select-doc-settings": {
-    "name": "meta-with-select-doc-settings",
-    "cat": ["meta", "plugin sidebar"],
-    "converted to import": true,
-    "include": false
-  },
   "richtext-basic": {
     "cat": ["richtext"],
     "name": "richtext-basic",
     "converted to import": true,
-    "include": false
+    "include": true
   },
   "richtext-custom-toolbar-buttons": {
     "cat": ["richtext"],
@@ -240,7 +240,7 @@
     "cat": "variations",
     "name": "variations-query-block",
     "converted to import": true,
-    "include": true
+    "include": false
   },
   "variations-register-block": {
     "cat": ["variations", "styles"],
