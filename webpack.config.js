@@ -48,8 +48,9 @@ const buildListObj = buildListArray.length
 
 /**
  * A callback function for the copy-webpack-plugin `filter`.
+ * It checks the build list, to see if the current example is being built.
  *
- * When a file matches the `from` glob, decide wether to copy it  * or not
+ * When a file matches the `from` glob, decide wether to copy it, or not,
  * based on the contents of buildListObj.
  *
  * @param {string} absoluteSourcePath - Absolute path to the file that matched the glob.
@@ -66,12 +67,33 @@ const filterCB = (absoluteSourcePath) => {
 };
 
 /**
+ * Splits the absolute path and filename into its component parts.
+ *
+ * @param {string} absoluteFilename - The absolute path and filename with extension.
+ * @returns {object} -  The directory name and an array containing the filename and extension.
+ *                      Either two elements for example-name.ext, or three elements for example-name.index.ext
+ */
+const processFilename = (absoluteFilename) => {
+  const directory = absoluteFilename.split("/").slice(-2, -1).join();
+  const filenameArray = absoluteFilename.split("/").slice(-1).join().split(".");
+
+  return { directory, filenameArray };
+};
+
+/**
  * Define the more complex copy-webpack-plugin patterns here.
  */
 const phpPattern = {
   context: "src",
   from: "*/*.php",
-  to: "./[path]/index.php",
+  to({ absoluteFilename }) {
+    const { directory, filenameArray } = processFilename(absoluteFilename);
+    // ./src/example-name/example-name.php becomes plugin.php
+    // All other PHP files get copied without a name change
+    return filenameArray[0] === directory
+      ? `./${directory}/plugin.php`
+      : `./${directory}/[name].php`;
+  },
   filter: filterCB,
   noErrorOnMissing: true,
 };
@@ -88,13 +110,7 @@ const jsonPattern = {
   context: "src",
   from: "*/*.json",
   to({ absoluteFilename }) {
-    const directory = absoluteFilename.split("/").slice(-2, -1).join();
-    const filenameArray = absoluteFilename
-      .split("/")
-      .slice(-1)
-      .join()
-      .split(".");
-    console.log();
+    const { directory, filenameArray } = processFilename(absoluteFilename);
     // ./src/example-name/example-name.block.js becomes block.json
     // All other JSON files get copied without a name change
     return filenameArray.length === 3 &&
