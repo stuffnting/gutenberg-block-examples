@@ -1,13 +1,13 @@
 <?php
 
-if ( ! function_exists( 'register_block_type' ) ) {
-  // Gutenberg is not active.
-  return;
-}
-
 add_action( 'init', 'myprefix_block_json' );
 
 function myprefix_block_json() {
+  if ( ! function_exists( 'register_block_type' ) ) {
+    // Gutenberg is not active.
+    return;
+  }
+  
   register_block_type( __DIR__ );
 }
 
