@@ -28,7 +28,7 @@
     "name": "block-patterns",
     "cat": ["templates", "styles"],
     "converted to import": false,
-    "include": false
+    "include": true
   },
   "block-styles": {
     "name": "block-styles",
@@ -76,7 +76,7 @@
     "name": "dynamic-render-php",
     "cat": ["dynamic"],
     "converted to import": true,
-    "include": true
+    "include": false
   },
   "dynamic-serverside-render": {
     "name": "dynamic-serverside-render",
@@ -162,7 +162,7 @@
     "cat": ["richtext"],
     "name": "richtext-basic",
     "converted to import": true,
-    "include": true
+    "include": false
   },
   "richtext-custom-toolbar-buttons": {
     "cat": ["richtext"],
