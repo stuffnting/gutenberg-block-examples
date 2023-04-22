@@ -35,11 +35,18 @@ registerBlockType(metadata.name, {
   },
   save: () => {
     const blockProps = useBlockProps.save({ style });
+    const innerBlocksProps = useInnerBlocksProps.save(blockProps);
 
-    return (
-      <div {...blockProps}>
-        <InnerBlocks.Content />
-      </div>
-    );
+    return <div {...innerBlocksProps} />;
+
+    /**
+     * Old way, without useInnerBlocksProps
+     * 
+        <div {...blockProps}>
+          <InnerBlocks
+            allowedBlocks={allowedBlocks}
+          />
+        </div>
+     */
   },
 });
