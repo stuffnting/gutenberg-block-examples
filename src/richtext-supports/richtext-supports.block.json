@@ -24,9 +24,16 @@
     "color": {
       "gradient": true
     },
+    "dimensions": {
+      "minHeight": true
+    },
     "html": false,
     "_comment-5": "// Prevents Edit HTML in `...` menu",
-    "_comment-6": "//multiple: false, // Only allows on of this block in each post",
+    "multiple": true,
+    "_comment-6": "// False only allows on of this block in each post",
+    "position": {
+      "sticky": true
+    },
     "typography": {
       "fontSize": true,
       "_comment-7": "// Adds a drop down to the Block Inspector WP 5.6",

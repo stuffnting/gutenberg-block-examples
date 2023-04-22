@@ -28,7 +28,7 @@
     "name": "block-patterns",
     "cat": ["templates", "styles"],
     "converted to import": false,
-    "include": true
+    "include": false
   },
   "block-styles": {
     "name": "block-styles",
@@ -90,6 +90,12 @@
     "converted to import": true,
     "include": false
   },
+  "filter-block-settings": {
+    "cat": "filter",
+    "name": "filter-block-settings",
+    "converted to import": true,
+    "include": true
+  },
   "filter-core-block-controls": {
     "cat": "filter",
     "name": "filter-core-block-controls",
@@ -106,7 +112,7 @@
     "name": "inner-blocks",
     "cat": ["innerblocks", "context"],
     "converted to import": true,
-    "include": false
+    "include": true
   },
   "inner-blocks-template": {
     "name": "inner-blocks-template",
@@ -204,7 +210,7 @@
     "cat": ["richtext"],
     "name": "richtext-supports",
     "converted to import": false,
-    "include": false
+    "include": true
   },
   "richtext-text-align": {
     "cat": ["richtext"],

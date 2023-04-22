@@ -1,6 +1,6 @@
-const { registerBlockType } = wp.blocks;
-const { RichText, useBlockProps } = wp.blockEditor;
-const { __ } = wp.i18n;
+import { registerBlockType } from "@wordpress/blocks";
+import { RichText, useBlockProps } from "@wordpress/block-editor";
+import { __ } from "@wordpress/i18n";
 
 import metadata from "./richtext-supports.block.json";
 
