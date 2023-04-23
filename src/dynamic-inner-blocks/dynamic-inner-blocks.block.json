@@ -5,6 +5,6 @@
   "title": "Dynamic Block Inner Blocks",
   "icon": "lightbulb",
   "category": "widgets",
-  "description": "Dynamic block which lists recent posts that also allows inner-blocks",
+  "description": "Dynamic block that has a date picker in the Inspector Controls, and also allows inner-blocks",
   "editorScript": "file:./index.js"
 }

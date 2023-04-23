@@ -3,147 +3,129 @@
   "block-categories": {
     "name": "block-categories",
     "cat": ["categories"],
-    "converted to import": true,
     "include": false
   },
   "block-collection": {
     "cat": ["collections", "categories"],
     "name": "block-collection",
-    "converted to import": false,
     "include": false
   },
   "block-json": {
     "name": "block-json",
     "cat": ["richtext"],
-    "converted to import": true,
+
     "include": false
   },
   "block-lock": {
     "name": "block-lock",
     "cat": ["templates", "patterns"],
-    "converted to import": true,
+
     "include": false
   },
   "block-patterns": {
     "name": "block-patterns",
     "cat": ["templates", "styles"],
-    "converted to import": false,
     "include": false
   },
   "block-styles": {
     "name": "block-styles",
     "cat": ["variations", "styles"],
-    "converted to import": true,
     "include": false
   },
   "context": {
     "name": "context",
     "cat": ["templates", "patterns"],
-    "converted to import": true,
     "include": false
   },
   "dynamic-attribute": {
     "name": "dynamic-attribute",
     "cat": ["dynamic"],
-    "converted to import": true,
     "include": false
   },
   "dynamic-inner-blocks": {
-    "cat": ["dynamic", "innerblocks"],
     "name": "dynamic-inner-blocks",
-    "converted to import": false,
+    "cat": ["dynamic", "innerblocks", "inspector-controls"],
     "include": false
   },
   "dynamic-inspector-controls": {
     "name": "dynamic-inspector-controls",
-    "cat": ["dynamic"],
-    "converted to import": true,
+    "cat": ["dynamic", "inspector-controls"],
     "include": false
   },
   "dynamic-inspector-query-terms": {
     "name": "dynamic-inspector-query-terms",
-    "cat": ["dynamic"],
-    "converted to import": true,
+    "cat": ["dynamic", "inspector-controls"],
     "include": false
   },
   "dynamic-meta-block": {
     "name": "dynamic-meta-block",
     "cat": ["dynamic", "meta"],
-    "converted to import": true,
     "include": false
   },
   "dynamic-render-php": {
     "name": "dynamic-render-php",
     "cat": ["dynamic"],
-    "converted to import": true,
     "include": false
   },
   "dynamic-serverside-render": {
     "name": "dynamic-serverside-render",
     "cat": ["dynamic"],
-    "converted to import": true,
     "include": false
   },
   "dynamic-simple": {
     "name": "dynamic-simple",
     "cat": ["dynamic"],
-    "converted to import": true,
     "include": false
   },
   "filter-block-settings": {
     "cat": "filter",
     "name": "filter-block-settings",
-    "converted to import": true,
-    "include": true
+    "include": false
   },
   "filter-core-block-controls": {
     "cat": "filter",
     "name": "filter-core-block-controls",
-    "converted to import": true,
     "include": false
   },
   "filter-core-block-supports": {
     "name": "filter-core-block-supports",
     "cat": ["filter"],
-    "converted to import": true,
     "include": false
   },
   "inner-blocks": {
     "name": "inner-blocks",
     "cat": ["innerblocks", "context"],
-    "converted to import": true,
-    "include": true
+    "include": false
   },
   "inner-blocks-template": {
     "name": "inner-blocks-template",
     "cat": ["innerblocks", "context"],
-    "note": "Contains myprefix-inner-blocks-child which does not used JSON",
-    "converted to import": false,
     "include": false
+  },
+  "inspector-control-tabs": {
+    "name": "inspector-control-tabs",
+    "cat": ["inspector-controls", "context"],
+    "include": true
   },
   "meta-attribute": {
     "name": "meta-attribute",
     "cat": ["meta"],
     "note": "This is the old method with attribute.source.meta, rather than useSelect.",
-    "converted to import": false,
     "include": false
   },
   "meta-document-settings": {
     "name": "meta-document-settings",
     "cat": ["meta"],
-    "converted to import": false,
     "include": false
   },
   "meta-inner-blocks-inspector": {
     "name": "meta-inner-blocks-inspector",
     "cat": ["meta"],
-    "converted to import": true,
     "include": false
   },
   "meta-notices-save-lock": {
     "name": "meta-notices-save-lock",
     "cat": ["meta", "notices"],
-    "converted to import": true,
     "include": false
   },
   "meta-plugin-sidebar": {
@@ -161,19 +143,16 @@
   "meta-with-media": {
     "name": "meta-with-media",
     "cat": ["meta", "media", "plugin sidebar"],
-    "converted to import": true,
     "include": false
   },
   "richtext-basic": {
     "cat": ["richtext"],
     "name": "richtext-basic",
-    "converted to import": true,
     "include": false
   },
   "richtext-custom-toolbar-buttons": {
     "cat": ["richtext"],
     "name": "richtext-custom-toolbar-buttons",
-    "converted to import": true,
     "include": false
   },
   "richtext-flexible-paragraph": {
@@ -185,73 +164,62 @@
   "richtext-formatting-options": {
     "cat": ["richtext"],
     "name": "richtext-formatting-options",
-    "converted to import": true,
     "include": false
   },
   "richtext-multi-instance": {
     "cat": ["richtext"],
     "name": "richtext-multi-instance",
-    "converted to import": true,
     "include": false
   },
   "richtext-multiline": {
     "cat": ["richtext"],
     "name": "richtext-multiline",
-    "converted to import": true,
     "include": false
   },
   "richtext-split-merge": {
     "cat": ["richtext"],
     "name": "richtext-split-merge",
-    "converted to import": true,
     "include": false
   },
   "richtext-supports": {
     "cat": ["richtext"],
     "name": "richtext-supports",
     "converted to import": false,
-    "include": true
+    "include": false
   },
   "richtext-text-align": {
     "cat": ["richtext"],
     "name": "richtext-text-align",
-    "converted to import": true,
     "include": false
   },
   "richtext-transforms-multiblock": {
     "cat": ["richtext"],
     "name": "richtext-transforms-multiblock",
-    "converted to import": true,
     "include": false
   },
   "richtext-transforms-simple": {
     "cat": ["richtext"],
     "name": "richtext-transforms-simple",
-    "converted to import": true,
     "include": false
   },
   "templates": {
     "cat": ["templates", "styles"],
     "name": "templates",
-    "converted to import": true,
     "include": false
   },
   "variations-existing-blocks": {
     "cat": "variations and styles",
     "name": "variations-existing-blocks",
-    "converted to import": true,
     "include": false
   },
   "variations-query-block": {
     "cat": "variations",
     "name": "variations-query-block",
-    "converted to import": true,
     "include": false
   },
   "variations-register-block": {
     "cat": ["variations", "styles"],
     "name": "variations-register-block",
-    "converted to import": true,
     "include": false
   }
 }

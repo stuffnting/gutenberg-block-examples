@@ -1,0 +1,59 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "myprefix/inspector-control-tabs",
+  "title": "Inspector Control Tabs",
+  "icon": "lightbulb",
+  "category": "widgets",
+  "description": "Dynamic Block to demonstrate inspector control tabs.",
+  "attributes": {
+    "_comment": {
+      "type": "string",
+      "_comment": "// All attributes are for the InspectorControls. The block's contents are Dynamic, and not stored."
+    },
+    "showTitle": {
+      "_comment": "// Toggle button",
+      "type": "boolean",
+      "default": true
+    },
+    "title": {
+      "_comment": "// TextControl",
+      "type": "string",
+      "default": "A list of posts"
+    },
+    "font": {
+      "_comment": "// SelectControl - dropdown",
+      "type": "string",
+      "default": "sans-serif"
+    },
+    "underline": {
+      "_comment": "// CheckboxControl",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "supports": {
+    "anchor": true,
+    "align": true,
+    "color": {
+      "background": true,
+      "text": true,
+      "link": false
+    },
+    "dimensions": {
+      "minHeight": true
+    },
+    "position": {
+      "sticky": true
+    },
+    "typography": {
+      "fontSize": true,
+      "lineHeight": true
+    },
+    "spacing": {
+      "margin": ["top", "bottom"],
+      "padding": true
+    }
+  },
+  "editorScript": "file:./index.js"
+}
