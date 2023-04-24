@@ -5,7 +5,7 @@
   "title": "Render PHP Template",
   "icon": "lightbulb",
   "category": "text",
-  "description": "Test rendering with PHP template file",
+  "description": "Test rendering with PHP template file, rather than a callback function",
   "keywords": ["heading", "test"],
   "textdomain": "textDomain",
   "attributes": {

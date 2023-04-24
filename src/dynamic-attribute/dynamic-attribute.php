@@ -13,10 +13,22 @@ function myprefix_dynamic_attribute() {
   ) );
 }
 
+
 /**
  * The second parameter will not be used, because there are no inner-blocks, therefore, there is no content.
  */
-function myprefix_dynamic_attribute_cb( $attributes, $content ) {
+function myprefix_dynamic_attribute_cb( $attributes, $content, $block_object ) {
   
- return "<div class='my-dynamic-block'><h2>{$attributes["content"]}</h2></div>";
+  $out = "<h2>{$attributes['content']}</h2>";
+  
+  /**
+   * Get the class, style and id attributes for the block currently being rendered.
+   * @link https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/
+   */
+  $wrapper_attributes = get_block_wrapper_attributes();
+
+  return sprintf( '<div %1$s>%2$s</div>',
+          $wrapper_attributes,
+          $out
+        );
 }

@@ -18,13 +18,24 @@ function myprefix_dynamic_inner_blocks_cb( $attributes, $content ) {
   $out = '<h2 class="has-text-align-center">Dynamic with inner blocks</h2>';
 
   foreach ( $recent_posts as $a_post ) {
-    $out .= sprintf( '<p class="has-text-align-center"><a class="wp-block-my-plugin-latest-post" href="%1$s">%2$s</a></p>',
+    $out .= sprintf( '<p class="has-text-align-center"><a href="%1$s">%2$s</a></p>',
       esc_url( get_permalink( $a_post['ID'] ) ),
       esc_html( get_the_title( $a_post['ID'] ) )
     );
   }
 
-  return "<div class='my-dynamic-block'>$out \n $content</div>";
+  /**
+   * Get the class, style and id attributes for the block currently being rendered.
+   * @link https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/
+   */
+  $wrapper_attributes = get_block_wrapper_attributes();
+
+  return sprintf( '<div %1$s>%2$s %3$s %4$s</div>',
+          $wrapper_attributes,
+          $out,
+          "\n",
+          $content
+        );
 }
 
 add_action( 'init', 'myprefix_dynamic_inner_blocks' );

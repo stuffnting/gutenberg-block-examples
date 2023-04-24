@@ -1,6 +1,6 @@
 <?php
 
-function myprefix_dynamic_inspector_query_terms_cb( $attributes, $content ) {
+function myprefix_dynamic_inspector_query_terms_cb( $attributes, $content, $block_object ) {
 
   $recent_posts = wp_get_recent_posts( array(
       'numberposts' => $attributes['perPage'],
@@ -11,7 +11,7 @@ function myprefix_dynamic_inspector_query_terms_cb( $attributes, $content ) {
       return 'No posts';
   }
 
-  $out = '<h2 class="has-text-align-center">Dynamic block query terms</h2>';
+  $out = '<h2 class="has-text-align-center">Server Side Rendering</h2>';
 
   foreach ( $recent_posts as $a_post ) {
     $out .= sprintf( '<p class="has-text-align-center"><a class="wp-block-my-plugin-latest-post" href="%1$s">%2$s</a></p>',
@@ -20,9 +20,16 @@ function myprefix_dynamic_inspector_query_terms_cb( $attributes, $content ) {
     );
   }
 
-  $extra_class = isset( $attributes['className'] ) ? " {$attributes['className']}" : '';
+  /**
+   * Get the class, style and id attributes for the block currently being rendered.
+   * @link https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/
+   */
+  $wrapper_attributes = get_block_wrapper_attributes();
 
-  return "<div class='my-dynamic-block{$extra_class}'>$out</div>";
+  return sprintf( '<div %1$s>%2$s</div>',
+          $wrapper_attributes,
+          $out
+        );
 }
 
 add_action( 'init', 'myprefix_dynamic_inspector_query_terms' );

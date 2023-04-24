@@ -6,5 +6,21 @@
   "icon": "lightbulb",
   "category": "widgets",
   "description": "A dynamic block which is rendered serverside for both front- and back-end.",
+  "supports": {
+    "align": true,
+    "color": {
+      "text": true,
+      "background": true,
+      "link": true
+    },
+    "typography": {
+      "fontSize": true,
+      "lineHeight": true
+    },
+    "spacing": {
+      "margin": ["top", "bottom"],
+      "padding": true
+    }
+  },
   "editorScript": "file:./index.js"
 }

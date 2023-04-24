@@ -1,9 +1,5 @@
 import { registerBlockType } from "@wordpress/blocks";
-import {
-  InnerBlocks,
-  useBlockProps,
-  useInnerBlocksProps,
-} from "@wordpress/block-editor";
+import { useBlockProps, useInnerBlocksProps } from "@wordpress/block-editor";
 
 import metadata from "./inner-blocks.block.json";
 

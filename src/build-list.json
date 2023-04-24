@@ -40,42 +40,42 @@
   "dynamic-attribute": {
     "name": "dynamic-attribute",
     "cat": ["dynamic"],
-    "include": false
+    "include": true
   },
   "dynamic-inner-blocks": {
     "name": "dynamic-inner-blocks",
     "cat": ["dynamic", "innerblocks", "inspector-controls"],
-    "include": false
+    "include": true
   },
   "dynamic-inspector-controls": {
     "name": "dynamic-inspector-controls",
     "cat": ["dynamic", "inspector-controls"],
-    "include": false
+    "include": true
   },
   "dynamic-inspector-query-terms": {
     "name": "dynamic-inspector-query-terms",
     "cat": ["dynamic", "inspector-controls"],
-    "include": false
+    "include": true
   },
   "dynamic-meta-block": {
     "name": "dynamic-meta-block",
     "cat": ["dynamic", "meta"],
-    "include": false
+    "include": true
   },
   "dynamic-render-php": {
     "name": "dynamic-render-php",
     "cat": ["dynamic"],
-    "include": false
+    "include": true
   },
   "dynamic-serverside-render": {
     "name": "dynamic-serverside-render",
     "cat": ["dynamic"],
-    "include": false
+    "include": true
   },
   "dynamic-simple": {
     "name": "dynamic-simple",
     "cat": ["dynamic"],
-    "include": false
+    "include": true
   },
   "filter-block-settings": {
     "cat": "filter",

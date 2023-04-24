@@ -1,6 +1,6 @@
 import {
-  InnerBlocks,
   useBlockProps,
+  useInnerBlocksProps,
   InspectorControls,
 } from "@wordpress/block-editor";
 import { PanelBody, TextControl } from "@wordpress/components";
@@ -17,7 +17,9 @@ const MYPREFIX_DYNAMIC_META_BLOCK_OBJECT =
 
 export const edit = () => {
   const blockProps = useBlockProps({ style });
+  const innerBlockProps = useInnerBlocksProps(blockProps, { allowedBlocks });
 
+  // Deal with the metadata
   const postType = useSelect(
     (select) => select("core/editor").getCurrentPostType(),
     []
@@ -62,7 +64,7 @@ export const edit = () => {
         </InspectorControls>
         <p>{metaFieldValue1}</p>
         <p>{metaFieldValue2}</p>
-        <InnerBlocks allowedBlocks={allowedBlocks} />
+        <div {...innerBlockProps} />
       </div>
     </>
   );

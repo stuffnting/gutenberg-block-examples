@@ -37,7 +37,7 @@ function myprefix_register_dynamic_meta_block_meta() {
   );
 }
 
-function myprefix_dynamic_meta_block_cb( $attributes, $inner_blocks ) {
+function myprefix_dynamic_meta_block_cb( $attributes, $inner_blocks, $block_object ) {
   // Format the meta values as HTML
   $meta_out = '<h2 style="margin-top: 0">Meta save test with inner blocks</h2>';
 

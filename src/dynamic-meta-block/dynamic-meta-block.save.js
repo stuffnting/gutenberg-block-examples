@@ -1,13 +1,10 @@
-import { InnerBlocks, useBlockProps } from "@wordpress/block-editor";
+import { useBlockProps, useInnerBlocksProps } from "@wordpress/block-editor";
 
 import { style } from "./dynamic-meta-block.style";
 
 export const save = (props) => {
   const blockProps = useBlockProps.save({ style });
+  const innerBlocksProps = useInnerBlocksProps.save(blockProps);
 
-  return (
-    <div {...blockProps}>
-      <InnerBlocks.Content />
-    </div>
-  );
+  return <div {...innerBlocksProps} />;
 };
