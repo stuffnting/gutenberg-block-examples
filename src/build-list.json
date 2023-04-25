@@ -3,6 +3,7 @@
   "block-categories": {
     "name": "block-categories",
     "cat": ["categories"],
+    "readme": true,
     "include": false
   },
   "block-collection": {
@@ -40,42 +41,42 @@
   "dynamic-attribute": {
     "name": "dynamic-attribute",
     "cat": ["dynamic"],
-    "include": true
+    "include": false
   },
   "dynamic-inner-blocks": {
     "name": "dynamic-inner-blocks",
     "cat": ["dynamic", "innerblocks", "inspector-controls"],
-    "include": true
+    "include": false
   },
   "dynamic-inspector-controls": {
     "name": "dynamic-inspector-controls",
     "cat": ["dynamic", "inspector-controls"],
-    "include": true
+    "include": false
   },
   "dynamic-inspector-query-terms": {
     "name": "dynamic-inspector-query-terms",
     "cat": ["dynamic", "inspector-controls"],
-    "include": true
+    "include": false
   },
   "dynamic-meta-block": {
     "name": "dynamic-meta-block",
     "cat": ["dynamic", "meta"],
-    "include": true
+    "include": false
   },
   "dynamic-render-php": {
     "name": "dynamic-render-php",
     "cat": ["dynamic"],
-    "include": true
+    "include": false
   },
   "dynamic-serverside-render": {
     "name": "dynamic-serverside-render",
     "cat": ["dynamic"],
-    "include": true
+    "include": false
   },
   "dynamic-simple": {
     "name": "dynamic-simple",
     "cat": ["dynamic"],
-    "include": true
+    "include": false
   },
   "filter-block-settings": {
     "cat": "filter",
@@ -105,7 +106,7 @@
   "inspector-control-tabs": {
     "name": "inspector-control-tabs",
     "cat": ["inspector-controls", "context"],
-    "include": true
+    "include": false
   },
   "meta-attribute": {
     "name": "meta-attribute",

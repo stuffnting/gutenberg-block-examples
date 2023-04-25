@@ -16,16 +16,21 @@ function myprefix_change_inserter() {
     false
   ); 
 
-  register_block_type( __DIR__ );
+  // Register the test block
+  register_block_type( __DIR__ . "/block-categories-test-block.block.json" );
 }
 
-/**
+/******************************************************************************
+ * 
  * Add a new block category.
  * 
+ *****************************************************************************/
+ 
+ /**
  * The core/spacer block is added to this category in the JS file.
- * 
  * Similar code can be used to remove block categories.
  * 
+ * @see {@link https://developer.wordpress.org/reference/hooks/block_categories_all/}
  * @see {@link https://developer.wordpress.org/reference/functions/wp_list_pluck/}
  */
 add_filter( 'block_categories_all', 'myprefix_block_categories', 10, 2 );
@@ -34,7 +39,9 @@ function myprefix_block_categories( $block_categories, $block_editor_context ) {
   $category_slugs = wp_list_pluck( $block_categories, 'slug' );
 
   if ( $block_editor_context->post->post_type === 'post' ) {
-    return in_array( 'custom-category-php', $category_slugs, true ) ? $block_categories : array_merge(
+    return in_array( 'custom-category-php', $category_slugs, true ) 
+      ? $block_categories 
+      : array_merge(
       $block_categories,
         array(
           array(
@@ -48,6 +55,12 @@ function myprefix_block_categories( $block_categories, $block_editor_context ) {
     return $block_categories;
   }
 }
+
+/******************************************************************************
+ * 
+ * Filter which blocks are in a category.
+ * 
+ *****************************************************************************/
 
 /**
  * Filter which blocks are allowed in the 'widgets' block category.

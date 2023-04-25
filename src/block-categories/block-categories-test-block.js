@@ -1,7 +1,13 @@
+/**
+ * WordPress dependencies
+ */
 import { useBlockProps } from "@wordpress/block-editor";
 import { registerBlockType } from "@wordpress/blocks";
 
-import metadata from "./block-categories.block.json";
+/**
+ * Local dependencies
+ */
+import metadata from "./block-categories-test-block.block.json";
 
 registerBlockType(metadata.name, {
   edit: () => {
