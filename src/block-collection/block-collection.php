@@ -17,17 +17,3 @@ function myprefix_block_collection() {
     true
   ); 
 }
-
-
-/**
- * Filter block categories.
- */
-//add_filter("block_categories_all", "myprefix_inserter_order", 99, 2);
-
-function myprefix_inserter_order($block_categories, $block_editor_context) {
-  echo "<pre>";
-  print_r($block_categories);
-  echo "</pre>";
-
-  return $block_categories;
-}

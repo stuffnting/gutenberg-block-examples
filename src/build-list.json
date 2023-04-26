@@ -14,13 +14,11 @@
   "block-json": {
     "name": "block-json",
     "cat": ["richtext"],
-
-    "include": false
+    "include": true
   },
   "block-lock": {
     "name": "block-lock",
     "cat": ["templates", "patterns"],
-
     "include": false
   },
   "block-patterns": {
@@ -101,7 +99,7 @@
   "inner-blocks-template": {
     "name": "inner-blocks-template",
     "cat": ["innerblocks", "context"],
-    "include": false
+    "include": true
   },
   "inspector-control-tabs": {
     "name": "inspector-control-tabs",
@@ -159,7 +157,6 @@
   "richtext-flexible-paragraph": {
     "cat": ["richtext"],
     "name": "richtext-flexible-paragraph",
-    "converted to import": false,
     "include": false
   },
   "richtext-formatting-options": {
