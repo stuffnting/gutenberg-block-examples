@@ -5,6 +5,5 @@
   "category": "design",
   "icon": "lightbulb",
   "_comment": "// This block must be listed in parent's allowedBlocks",
-  "parent": ["myprefix/inner-blocks-template-parent"],
-  "editorScript": "file:./index.js"
+  "parent": ["myprefix/inner-blocks-template-parent"]
 }
