@@ -24,7 +24,7 @@ The block that is registered is initial locked for move and remove in posts, but
 
 ## Notes
 
-## The JSON file
+### The JSON file
 
 Support for block locking is `true` by default, and so `supports.lock` does not have to be included in the `block.json` file if locking is to be allowed; for demonstration purposes it has been included in this example.
 

@@ -1,11 +1,10 @@
 <?php
-/**
- * This code does stuff related to block patterns
- */
 
 /******************************************************************************
  * 
- * Enable the core block patterns
+ * Enable/disable the core block patterns.
+ * 
+ * This still leaves patterns registered by themes and plugins.
  * 
  ******************************************************************************/
 
@@ -14,6 +13,9 @@ add_action( 'after_setup_theme', 'myprefix_block_patterns_setup' );
 function myprefix_block_patterns_setup() {
   if ( !current_theme_supports( 'core-block-patterns' ) ) {
     add_theme_support('core-block-patterns');
+  }
+  if ( current_theme_supports( 'core-block-patterns' ) ) {
+    // remove_theme_support('core-block-patterns');
   }
 }
 
@@ -79,10 +81,9 @@ function myprefix_register_block_patterns() {
   );
   
   /**
-   * This pattern appears in the inserter, the transform menu for core/paragraph and core/image blocks,
-   * was well as the pattern modal when a new post is created. Inclusion in modal is achieved by adding
-   * core/post-content to the blockTypes array. postTypes is used to limit the pattern to the'post' 
-   * post-type only, it will not appear on pages or custom post-types.
+   * myprefix/image-and-text
+   * 
+   * See README.md for details
    */
   $pattern_escaped_html_1 = "<!-- wp:group {\"align\":\"full\"} -->\r\n<div class=\"wp-block-group alignfull\"><div class=\"wp-block-group__inner-container\"><!-- wp:columns {\"verticalAlignment\":\"top\",\"align\":\"full\"} -->\r\n<div class=\"wp-block-columns alignfull are-vertically-aligned-top\"><!-- wp:column {\"verticalAlignment\":\"top\"} -->\r\n<div class=\"wp-block-column is-vertically-aligned-top\"><!-- wp:image {\"sizeSlug\":\"large\"} -->\r\n<figure class=\"wp-block-image size-large\"><img src=\"https://www.stuffnting.com/wp-content/uploads/2017/08/D-R_test_DSC00280_sml.jpg\" alt=\"\"/><figcaption>Caption number one</figcaption></figure>\r\n<!-- /wp:image -->\r\n\r\n<!-- wp:paragraph {\"className\":\"is-style-default\"} -->\r\n<p class=\"is-style-default\">One advanced diverted domestic sex repeated bringing you old. Possible procured her trifling laughter thoughts property she met way. Companions shy had solicitude favourable own. Which could saw guest man now heard but. Lasted my coming uneasy marked so should. Gravity letters it amongst herself dearest an windows by. Wooded ladies she basket season age her uneasy saw. Discourse unwilling am no described dejection incommode no listening of. Before nature his parish boy.</p>\r\n<!-- /wp:paragraph --></div>\r\n<!-- /wp:column -->\r\n\r\n<!-- wp:column {\"verticalAlignment\":\"top\"} -->\r\n<div class=\"wp-block-column is-vertically-aligned-top\"><!-- wp:image {\"sizeSlug\":\"large\"} -->\r\n<figure class=\"wp-block-image size-large\"><img src=\"https://www.stuffnting.com/wp-content/uploads/2017/08/D-R_test_DSC00280_sml.jpg\" alt=\"\"/><figcaption>Caption number 3</figcaption></figure>\r\n<!-- /wp:image -->\r\n\r\n<!-- wp:paragraph {\"className\":\"is-style-default\"} -->\r\n<p class=\"is-style-default\">Folly words widow one downs few age every seven. If miss part by fact he park just shew. Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly. Easy mind life fact with see has bore ten. Parish any chatty can elinor direct for former. Up as meant widow equal an share least.</p>\r\n<!-- /wp:paragraph --></div>\r\n<!-- /wp:column -->\r\n\r\n<!-- wp:column {\"verticalAlignment\":\"top\"} -->\r\n<div class=\"wp-block-column is-vertically-aligned-top\"><!-- wp:image {\"sizeSlug\":\"large\"} -->\r\n<figure class=\"wp-block-image size-large\"><img src=\"https://www.stuffnting.com/wp-content/uploads/2017/08/D-R_test_DSC00280_sml.jpg\" alt=\"\"/><figcaption>Caption number three</figcaption></figure>\r\n<!-- /wp:image -->\r\n\r\n<!-- wp:paragraph {\"className\":\"is-style-default\"} -->\r\n<p class=\"is-style-default\">Village did removed enjoyed explain nor ham saw calling talking. Securing as informed declared or margaret. Joy horrible moreover man feelings own shy. Request norland neither mistake for yet. Between the for morning assured country believe. On even feet time have an no at. Relation so in confined smallest children unpacked delicate. Why sir end believe uncivil respect. Always get adieus nature day course for common. My little garret repair to desire he esteem.</p>\r\n<!-- /wp:paragraph --></div>\r\n<!-- /wp:column --></div>\r\n<!-- /wp:columns --></div></div>\r\n<!-- /wp:group -->";
     
@@ -98,9 +99,11 @@ function myprefix_register_block_patterns() {
   ]);
 
   /**
-   * This pattern appears in the inserter, the transform menu for the core/heading block, but not the 
-   * 'page creation pattern' modal.
+   * myprefix/heading-example
+   * 
+   * See README.md for details
    */
+
   $pattern_single_quote_html_1 = ' <!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
   <figure class="wp-block-image size-large"><img src="https://www.stuffnting.com/wp-content/uploads/2017/08/D-R_test_DSC00280_sml.jpg" alt=""/></figure>
   <!-- /wp:image --><!-- wp:heading {"level":3,"backgroundColor":"black","textColor":"white"} -->
@@ -108,7 +111,7 @@ function myprefix_register_block_patterns() {
   <!-- /wp:heading -->';
 
   register_block_pattern(
-    'heading-example', [
+    'myprefix/heading-example', [
         'title'         => __( 'Black heading with a nice image' ),
         'categories'    => array( 'myprefix-patterns' ),
         'blockTypes'    => array( 'core/heading' ), // These are the block for which this pattern will be suggested
@@ -117,20 +120,21 @@ function myprefix_register_block_patterns() {
     ]);
 
 /**
- * This pattern has templateLock: contentOnly set on the outer group block.
- * Only the text within this pattern can be changed, unless 'modify' is clicked in the groups's toolbar.
+ * myprefix/lock-example
+ * 
+ * See README.md for details
  */
 $pattern_single_quote_html_2 = '<!-- wp:group {"templateLock":"contentOnly", "layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"backgroundColor":"pale-pink","textColor":"base"} -->
-<h2 class="has-base-color has-pale-pink-background-color has-text-color has-background"></h2>
+<h2 class="has-base-color has-pale-pink-background-color has-text-color has-background">A heading here</h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph -->
-<p></p>
+<p>A paragraph here</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->';
 
 register_block_pattern(
-  'lock-example', [
+  'myprefix/lock-example', [
       'title'         => __( 'Template lock tester' ),
       'categories'    => array( 'myprefix-patterns' ),
       'blockTypes'    => array( 'core/heading' ), // These are the block for which this pattern will be suggested
@@ -168,18 +172,17 @@ function myprefix_disable_page_constructor_modal() {
 /******************************************************************************
  * 
  * List registered patterns and pattern categories
- * 
- * *** NOTE: This will place the lists on a front-end page one the 
- *           print_r statements are uncommented.
+ *
+ * ***NOTE*** Needs PHP 7+
  * 
  ******************************************************************************/
 
-add_filter( 'the_content', 'myprefix_list_block_patterns', 1);
+add_filter( 'wp_loaded', 'myprefix_list_block_patterns' );
 
-function myprefix_list_block_patterns($content) {
+function myprefix_list_block_patterns() {
   // Don't let this code break versions of WP < 5.5
-  if ( is_admin() || !is_main_query() || !class_exists( 'WP_Block_Patterns_Registry' ) ) {
-      return $content;
+  if ( !class_exists( 'WP_Block_Patterns_Registry' ) ) {
+      return;
   }
 
   $pattern_array = WP_Block_Patterns_Registry::get_instance()->get_all_registered();
@@ -198,10 +201,32 @@ function myprefix_list_block_patterns($content) {
     $pattern_cats_list[] = $cat['name'];
   }
 
-/*   echo "<pre>";
-  print_r($pattern_list);
-  print_r($pattern_cats_list);
-  echo "</pre>"; */
+  myprefix_print_patterns_to_console( $pattern_list, "Pattern List" );
+  myprefix_print_patterns_to_console( $pattern_cats_list, "Pattern Cats List" );
 
-  return $content;
+}
+
+/**
+ * Log a filter parameters to the browser console.
+ * 
+ * ***NOTE*** This function needs PHP 7+.
+ * 
+ * @param array $list A list of registered patterns or pattern categories.
+ * @param string $list_name The list name. 
+ */
+function myprefix_print_patterns_to_console( $list, $list_name ) {
+
+  $myprefix_print_to_console = function() use ( $list, $list_name ) {
+
+    $string =  print_r( $list, true );
+    echo '<script>';
+    echo "console.log( '*****$list_name*****' );";
+    echo 'console.log( `'. addslashes( $string ) . '` );';
+    echo '</script>';
+  
+  };
+
+  add_action( 'wp_print_footer_scripts', $myprefix_print_to_console );
+  add_action( 'admin_footer', $myprefix_print_to_console );
+
 }

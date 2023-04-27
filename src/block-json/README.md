@@ -52,10 +52,10 @@ The function `myprefix_print_metadata_to_console()` contains a neat bit of code 
 
 - [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
   - `useBlockProps`
+  - `RichText`
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
   - `registerBlockType`
   - `createBlock`
-  - `RichText`
 - [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
   - `__`
 
@@ -72,4 +72,4 @@ The function `myprefix_print_metadata_to_console()` contains a neat bit of code 
 
 **PHP WP functions**
 
-[`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
+- [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
