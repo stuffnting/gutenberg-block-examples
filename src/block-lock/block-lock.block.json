@@ -17,7 +17,7 @@
       "_comment": "Using this attribute sets an initial value for the lock",
       "type": "object",
       "default": {
-        "_comment_a": "The block is initially locked, the block's toolbar Option menu lock will change this value.",
+        "_comment_a": "The block is initially locked, the block's toolbar option menu lock will change this value.",
         "_comment_b": "If the block is initially locked, and `supports.lock` is false (below), the block can not be unlocked in the editor.",
         "move": true,
         "remove": true

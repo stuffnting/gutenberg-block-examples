@@ -1,7 +1,13 @@
+/**
+ * WordPress dependencies
+ */
 import { registerBlockType } from "@wordpress/blocks";
 import { RichText, useBlockProps } from "@wordpress/block-editor";
 import { __ } from "@wordpress/i18n";
 
+/**
+ * Local dependencies
+ */
 import metadata from "./block-lock.block.json";
 
 registerBlockType(metadata.name, {
