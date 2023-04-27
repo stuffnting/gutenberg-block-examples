@@ -67,6 +67,12 @@ Confusingly, all the category names are the same as their titles in the inserter
 
 - [`blocks.registerBlockType`](https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/#blocks-registerblocktype)
 
+**PHP WP functions**
+
+- [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
+- [`wp_list_pluck`](https://developer.wordpress.org/reference/functions/wp_list_pluck/)
+- [`WP_Block_Type_Registry::get_all_registered`](https://developer.wordpress.org/reference/classes/wp_block_type_registry/get_all_registered/)
+
 **PHP WP actions**
 
 - [`init`](https://developer.wordpress.org/reference/hooks/init/)
@@ -76,9 +82,3 @@ Confusingly, all the category names are the same as their titles in the inserter
 - [`block_categories_all`](https://developer.wordpress.org/reference/hooks/block_categories_all/)
 
 - [`allowed_block_types_all`](https://developer.wordpress.org/reference/hooks/allowed_block_types_all/)
-
-**PHP WP functions**
-
-- [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
-- [`wp_list_pluck`](https://developer.wordpress.org/reference/functions/wp_list_pluck/)
-- [`WP_Block_Type_Registry::get_all_registered`](https://developer.wordpress.org/reference/classes/wp_block_type_registry/get_all_registered/)

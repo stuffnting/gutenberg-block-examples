@@ -59,6 +59,10 @@ The function `myprefix_print_metadata_to_console()` contains a neat bit of code 
 - [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
   - `__`
 
+**PHP WP functions**
+
+- [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
+
 **PHP WP actions**
 
 - [`init`](https://developer.wordpress.org/reference/hooks/init/)
@@ -69,7 +73,3 @@ The function `myprefix_print_metadata_to_console()` contains a neat bit of code 
 
 - [`block_type_metadata`](https://developer.wordpress.org/reference/hooks/block_type_metadata/)
 - [`block_type_metadata_settings`](https://developer.wordpress.org/reference/hooks/block_type_metadata_settings/)
-
-**PHP WP functions**
-
-- [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)

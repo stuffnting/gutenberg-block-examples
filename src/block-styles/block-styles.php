@@ -1,13 +1,4 @@
 <?php
-/**
- * This code contains the PHP needed to register and
- * unregister block styles. 
- * 
- * Also see block-styles.js for more styles related code.
- * 
- */
-
-
  /**
  * Only enqueue the index.js in the editor.
  */
@@ -43,9 +34,6 @@ function myprefix_add_block_styles() {
 }
  
 /**
- * register_block_style() can be top-level code, and does not need to be called 
- * by an action hook. It is called here using `init` for neatness.
- * 
  * More styles are registered in the JS file.
  */
 add_action( 'init', 'myprefix_add_block_register_styles' );
@@ -94,16 +82,9 @@ function myprefix_add_block_register_styles() {
 }
 
 /**
- * This code unregisters block styles, and is called from an
- * action hook to make sure any styles it needs to unregister, 
- * have been registered.
- * 
- * *** NOTE ***
- * unregister_block_style() can only unregister styles registered with PHP.
- * For all styles registered with JS, including all of the built-in styles,
- * use the JS code in src/block-styles.js.
+ * Unregister block styles
  */
-add_action('init', 'myprefix_unregister_block_styles', 99);
+add_action('wp_loaded', 'myprefix_unregister_block_styles', 99);
 
 function myprefix_unregister_block_styles() {
     // This one registered above

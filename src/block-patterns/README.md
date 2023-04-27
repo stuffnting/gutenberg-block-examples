@@ -54,14 +54,6 @@ The function `myprefix_print_list_to_console()` contains a neat bit of code to p
 
 ## Uses
 
-**PHP WP actions**
-
-- [`init`](https://developer.wordpress.org/reference/hooks/init/)
-- [`wp_loaded`](https://developer.wordpress.org/reference/hooks/wp_loaded/)
-- [`after_setup_theme`](https://developer.wordpress.org/reference/hooks/after_setup_theme/)
-- [`wp_print_footer_scripts`](https://developer.wordpress.org/reference/functions/wp_print_footer_scripts/)
-- [`admin_footer`](https://developer.wordpress.org/reference/hooks/admin_footer/)
-
 **PHP WP function**
 
 - [`add_theme_support`](https://developer.wordpress.org/reference/functions/add_theme_support/)
@@ -71,6 +63,14 @@ The function `myprefix_print_list_to_console()` contains a neat bit of code to p
 - [`unregister_block_pattern_category`](https://developer.wordpress.org/reference/functions/unregister_block_pattern_category/)
 - [`WP_Block_Patterns_Registry::get_all_registered`](https://developer.wordpress.org/reference/classes/wp_block_patterns_registry/get_all_registered/)
 - [`WP_Block_Pattern_Categories_Registry::get_all_registered`](https://developer.wordpress.org/reference/classes/wp_block_pattern_categories_registry/get_all_registered/)
+
+**PHP WP actions**
+
+- [`init`](https://developer.wordpress.org/reference/hooks/init/)
+- [`wp_loaded`](https://developer.wordpress.org/reference/hooks/wp_loaded/)
+- [`after_setup_theme`](https://developer.wordpress.org/reference/hooks/after_setup_theme/)
+- [`wp_print_footer_scripts`](https://developer.wordpress.org/reference/functions/wp_print_footer_scripts/)
+- [`admin_footer`](https://developer.wordpress.org/reference/hooks/admin_footer/)
 
 ## Also see
 

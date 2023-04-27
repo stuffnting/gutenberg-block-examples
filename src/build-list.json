@@ -29,7 +29,7 @@
   "block-styles": {
     "name": "block-styles",
     "cat": ["variations", "styles"],
-    "include": false
+    "include": true
   },
   "context": {
     "name": "context",
