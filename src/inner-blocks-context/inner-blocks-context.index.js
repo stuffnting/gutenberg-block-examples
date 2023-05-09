@@ -1,13 +1,26 @@
+/**
+ * Wordpress dependencies
+ */
 import { registerBlockType } from "@wordpress/blocks";
 import { InnerBlocks, useBlockProps } from "@wordpress/block-editor";
 import { TextControl } from "@wordpress/components";
 
-import metadataParent from "./context-json.block.json";
-import metadataChild from "./context-json-child.block.json";
+/**
+ * Local dependencies
+ */
+import metadataParent from "./context-parent.block.json";
+import metadataChild from "./context-child.block.json";
+
+/******************************************************************************
+ *
+ * Parent block
+ *
+ *****************************************************************************/
 
 registerBlockType(metadataParent.name, {
   edit: (props) => {
-    const MY_TEMPLATE = [["myprefix/context-json-child", {}]];
+    // Only allow the child block as an inner block.
+    const MY_TEMPLATE = [["myprefix/context-child", {}]];
 
     const blockProps = useBlockProps();
 
@@ -20,7 +33,7 @@ registerBlockType(metadataParent.name, {
       <div {...blockProps}>
         <TextControl
           label="My Number:"
-          value={myNumber}
+          value={myNumber || ""}
           onChange={(val) => setAttributes({ myNumber: Number(val) })}
         />
         <InnerBlocks template={MY_TEMPLATE} templateLock="all" />
@@ -39,6 +52,12 @@ registerBlockType(metadataParent.name, {
     );
   },
 });
+
+/******************************************************************************
+ *
+ * Child block
+ *
+ *****************************************************************************/
 
 registerBlockType(metadataChild.name, {
   edit(props) {

@@ -1,5 +1,5 @@
 /**
- * Wordpress metadata
+ * Wordpress dependencies
  */
 import { registerBlockType } from "@wordpress/blocks";
 

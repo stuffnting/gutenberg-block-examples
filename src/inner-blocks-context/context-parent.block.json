@@ -1,0 +1,20 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "myprefix/context-parent",
+  "title": "Inner Blocks Context parent",
+  "icon": "lightbulb",
+  "description": "The parent fot the inner blocks context example.",
+  "category": "text",
+  "keywords": ["context", "innerblock", "test"],
+  "textdomain": "textDomain",
+  "attributes": {
+    "myNumber": {
+      "type": "number"
+    }
+  },
+  "providesContext": {
+    "myprefix/myNumber": "myNumber"
+  },
+  "editorScript": ":./index.js"
+}

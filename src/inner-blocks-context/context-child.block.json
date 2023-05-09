@@ -1,0 +1,15 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "myprefix/context-child",
+  "title": "Inner Blocks child",
+  "icon": "lightbulb",
+  "description": "The child block for the inner blocks context example.",
+  "category": "text",
+  "keywords": ["context", "test"],
+  "textdomain": "textDomain",
+  "_comment": "// Only allow the child block to be an inner block for the parent. Child will not show in the inserter.",
+  "parent": ["myprefix/context-parent"],
+  "usesContext": ["myprefix/myNumber"],
+  "editorScript": "file:./index.js"
+}

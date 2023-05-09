@@ -1,24 +1,17 @@
 <?php
-/**
- * 
- */
 
-/**
- * The init action hook must be used when adding a render callback function,
- * Using enqueue_block_editor_assets will not work.
- */
-add_action( 'init', 'myprefix_context' );
+add_action( 'init', 'myprefix_inner_blocks_context' );
 
-function myprefix_context() {
+function myprefix_inner_blocks_context() {
 
   if ( ! function_exists( 'register_block_type' ) ) {
     // Gutenberg is not active.
     return;
   }
 
-  register_block_type( __DIR__ );
+  register_block_type( __DIR__ . '/context-parent.block.json' );
 
-  register_block_type( __DIR__ . '/context-json-child.block.json', array(
+  register_block_type( __DIR__ . '/context-child.block.json', array(
     'render_callback' => function( $attributes, $content, $block ) {
       $my_number = array_key_exists( 'myprefix/myNumber', $block->context ) 
         ?  $block->context['myprefix/myNumber'] 
@@ -27,6 +20,13 @@ function myprefix_context() {
     },
   ));
 }
+
+/**
+ * Old way of registering blocks that use context, before block.json
+ * the recommended method of registering blocks.
+ * 
+ * Note, the init hook should be used.
+ */
 /* 
 register_block_type( './context-parent.json', array(
   'api_version'       => 2,  

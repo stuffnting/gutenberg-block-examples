@@ -29,11 +29,6 @@
   "block-styles": {
     "name": "block-styles",
     "cat": ["variations", "styles"],
-    "include": true
-  },
-  "context": {
-    "name": "context",
-    "cat": ["templates", "patterns"],
     "include": false
   },
   "dynamic-attribute": {
@@ -96,6 +91,11 @@
     "cat": ["innerblocks", "context"],
     "include": false
   },
+  "inner-blocks-context": {
+    "name": "inner-blocks-context",
+    "cat": ["dynamic", "innerblocks"],
+    "include": true
+  },
   "inner-blocks-template": {
     "name": "inner-blocks-template",
     "cat": ["innerblocks", "context"],
@@ -147,7 +147,7 @@
   "richtext-basic": {
     "cat": ["richtext"],
     "name": "richtext-basic",
-    "include": true
+    "include": false
   },
   "richtext-custom-toolbar-buttons": {
     "cat": ["richtext"],

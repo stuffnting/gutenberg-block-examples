@@ -19,7 +19,7 @@ When registering the second block, the file path to its JSON file needs to be us
 
 **`block-json.index.js`**
 
-- Registers the two blocks&mdash; `myprefix/block-json` and `myprefix/another-block-json`&mdash;with via `@import`.
+- Registers the two blocks&mdash; `myprefix/block-json` and `myprefix/another-block-json`&mdash;with via `import`.
 - Imports the SCSS file.
 
 ## Notes
