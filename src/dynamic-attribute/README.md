@@ -58,3 +58,7 @@ The callback function uses [`get_block_wrapper_attributes()`](https://developer.
 **PHP WP actions**
 
 - [`init`](https://developer.wordpress.org/reference/hooks/init/)
+
+## Also see
+
+The `dynamic-meta-block` example similar to this one, however, it stores the value as using post metadata, rather than an block attribute.

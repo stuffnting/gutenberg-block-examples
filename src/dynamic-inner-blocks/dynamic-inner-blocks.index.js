@@ -1,6 +1,12 @@
+/**
+ * WordPress dependencies
+ */
 import { registerBlockType } from "@wordpress/blocks";
 import { useBlockProps, useInnerBlocksProps } from "@wordpress/block-editor";
 
+/**
+ * Local dependencies
+ */
 import { GetPosts } from "./get-posts";
 import metadata from "./dynamic-inner-blocks.block.json";
 

@@ -1,9 +1,13 @@
 <?php
 
-/**
+/******************************************************************************
+ * 
+ * Callback function
+ * 
  * Code for laying out a simple dynamic block that contains the 3 latest posts,
  * as well as the inner blocks ($content)
- */
+ * 
+ *****************************************************************************/
 function myprefix_dynamic_inner_blocks_cb( $attributes, $content ) {
 
   $recent_posts = wp_get_recent_posts( array(
@@ -26,7 +30,7 @@ function myprefix_dynamic_inner_blocks_cb( $attributes, $content ) {
 
   /**
    * Get the class, style and id attributes for the block currently being rendered.
-   * @link https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/
+   * @see {@link https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/}
    */
   $wrapper_attributes = get_block_wrapper_attributes();
 
@@ -37,6 +41,12 @@ function myprefix_dynamic_inner_blocks_cb( $attributes, $content ) {
           $content
         );
 }
+
+/******************************************************************************
+ * 
+ * Register the block
+ * 
+ *****************************************************************************/
 
 add_action( 'init', 'myprefix_dynamic_inner_blocks' );
 

@@ -39,7 +39,7 @@
   "dynamic-inner-blocks": {
     "name": "dynamic-inner-blocks",
     "cat": ["dynamic", "inner-blocks", "inspector-controls"],
-    "include": false
+    "include": true
   },
   "dynamic-inspector-controls": {
     "name": "dynamic-inspector-controls",

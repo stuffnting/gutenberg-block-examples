@@ -58,7 +58,6 @@ Alternatively, a default value for the `content` attribute can be set in the JSO
   - `InnerBlocks`
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
   - `registerBlockType`
-  - `createBlock`
 - [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
   - [`TextControl`](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/)
 

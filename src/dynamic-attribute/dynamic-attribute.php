@@ -4,6 +4,8 @@
  * 
  * Callback function
  * 
+ * Code that uses the stored `attributes.content` value
+ * 
  *****************************************************************************/
 function myprefix_dynamic_attribute_cb( $attributes, $content, $block_object ) {
   
