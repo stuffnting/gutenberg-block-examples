@@ -14,7 +14,7 @@
   "block-json": {
     "name": "block-json",
     "cat": ["richtext"],
-    "include": false
+    "include": true
   },
   "block-lock": {
     "name": "block-lock",
@@ -34,11 +34,11 @@
   "dynamic-attribute": {
     "name": "dynamic-attribute",
     "cat": ["dynamic"],
-    "include": false
+    "include": true
   },
   "dynamic-inner-blocks": {
     "name": "dynamic-inner-blocks",
-    "cat": ["dynamic", "innerblocks", "inspector-controls"],
+    "cat": ["dynamic", "inner-blocks", "inspector-controls"],
     "include": false
   },
   "dynamic-inspector-controls": {
@@ -88,17 +88,17 @@
   },
   "inner-blocks": {
     "name": "inner-blocks",
-    "cat": ["innerblocks", "context"],
+    "cat": ["inner-blocks", "context"],
     "include": false
   },
   "inner-blocks-context": {
     "name": "inner-blocks-context",
-    "cat": ["dynamic", "innerblocks"],
+    "cat": ["dynamic", "inner-blocks"],
     "include": true
   },
   "inner-blocks-template": {
     "name": "inner-blocks-template",
-    "cat": ["innerblocks", "context"],
+    "cat": ["inner-blocks", "context"],
     "include": false
   },
   "inspector-control-tabs": {

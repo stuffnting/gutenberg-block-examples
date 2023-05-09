@@ -34,9 +34,9 @@ For example the `src/block-name/block-name.index.js` file would use:
 
     import metadata from "./block-name.block.json";
 
-### The double enqueue problem
+### The double enqueue problem @@@@CHECK THIS@@@@
 
-In this example, the two blocks are registered from a single PHP file and a single index.js file, but each block has its own JSON file. One of the JSON files has the normal name of `block.json`, the other has the name `another-block-json.block.json`.
+In this example, the two blocks are registered from a single PHP file and a single index.js file, but each block has its own JSON file. When transpiled, one of the JSON files has the normal name of `block.json`, while the other has the name `another-block-json.block.json`.
 
 Because two blocks are registered, WordPress enqueues a JS file for each one. However, because both blocks are contained within the same JS file, that file gets enqueued twice, which leads to an error in the console: Block `myprefix/block-name` is already registered.
 

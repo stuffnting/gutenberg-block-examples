@@ -32,7 +32,7 @@ Contains the settings to define context, and the attribute used by the context.
 
 **`context-child.json`**
 
-Contains the settings that define the context to be inherited, as well as the parent block.
+Contains the settings that define the parent block, as well as the context to be inherited.
 
     "parent": ["myprefix/context-parent"],
     "usesContext": ["myprefix/myNumber"],
@@ -47,6 +47,8 @@ Contains the settings that define the context to be inherited, as well as the pa
 
 [See here](https://stackoverflow.com/a/47012342)
 
+Alternatively, a default value for the `content` attribute can be set in the JSON file.
+
 ## Uses
 
 **JS WP dependencies**
@@ -58,7 +60,7 @@ Contains the settings that define the context to be inherited, as well as the pa
   - `registerBlockType`
   - `createBlock`
 - [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
-  - ['TextControl'](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/)
+  - [`TextControl`](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/)
 
 **PHP WP functions**
 

@@ -5,5 +5,6 @@
   "title": "Test another block JSON",
   "description": "A block to test using JSON files that are not named block.json",
   "category": "text",
-  "icon": "lightbulb"
+  "icon": "lightbulb",
+  "editorScript": ":./index.js"
 }

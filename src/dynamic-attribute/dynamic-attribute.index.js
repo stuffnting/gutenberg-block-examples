@@ -1,7 +1,13 @@
+/**
+ * WordPress dependencies
+ */
 import { registerBlockType } from "@wordpress/blocks";
 import { TextControl } from "@wordpress/components";
 import { useBlockProps } from "@wordpress/block-editor";
 
+/**
+ * Local dependencies
+ */
 import metadata from "./dynamic-attribute.block.json";
 
 registerBlockType(metadata.name, {
@@ -10,6 +16,7 @@ registerBlockType(metadata.name, {
 
     const { attributes, setAttributes } = props;
     const { content } = attributes;
+
     const onChangeUrl = (value) => {
       setAttributes({ content: value });
     };
