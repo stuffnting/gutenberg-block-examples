@@ -2,15 +2,15 @@
 
 ## Description
 
-This code demonstrates the use of `context` to pass attribute values from a parent block to a child block.
+This code demonstrates the use of block context to pass attribute values from a parent block to a child block.
 
-For more one block context, see [here](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-context/).
+For more on block context, see [here](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-context/).
 
 ## In this code
 
 **`inner-blocks-context.php`**
 
-- Registers two blocks: `myprefix/context-parent` and `myprefix/context-child`. On transpiling, neither block's JSON file ends up named `block.json`, therefore, both are registered using `__DIR__` and the file name.
+- Registers two blocks: `myprefix/context-parent` and `myprefix/context-child`. On transpiling neither block's JSON file ends up named `block.json`, therefore, both are registered using `__DIR__` _and_ the file name.
 - The registration of the child block includes a callback to render the child, including the value inherited from the parent block, on the front-end.
 
 **`inner-blocks-context.index.js`**
@@ -32,7 +32,7 @@ Contains the settings to define context, and the attribute used by the context.
 
 **`context-child.json`**
 
-Contains the settings that define the context which is inherited, as well as the parent block.
+Contains the settings that define the context to be inherited, as well as the parent block.
 
     "parent": ["myprefix/context-parent"],
     "usesContext": ["myprefix/myNumber"],
