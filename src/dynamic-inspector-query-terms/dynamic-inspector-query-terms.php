@@ -1,5 +1,10 @@
 <?php
 
+/******************************************************************************
+ * 
+ * Callback function
+ * 
+ *****************************************************************************/
 function myprefix_dynamic_inspector_query_terms_cb( $attributes, $content, $block_object ) {
 
   $recent_posts = wp_get_recent_posts( array(
@@ -14,7 +19,8 @@ function myprefix_dynamic_inspector_query_terms_cb( $attributes, $content, $bloc
   $out = '<h2 class="has-text-align-center">Server Side Rendering</h2>';
 
   foreach ( $recent_posts as $a_post ) {
-    $out .= sprintf( '<p class="has-text-align-center"><a class="wp-block-my-plugin-latest-post" href="%1$s">%2$s</a></p>',
+    $out .= sprintf( '<p class="%1$s"><a href="%2$s">%3$s</a></p>',
+      esc_url( "has-text-align-center recent-post-item" ),
       esc_url( get_permalink( $a_post['ID'] ) ),
       esc_html( get_the_title( $a_post['ID'] ) )
     );
@@ -31,6 +37,12 @@ function myprefix_dynamic_inspector_query_terms_cb( $attributes, $content, $bloc
           $out
         );
 }
+
+/******************************************************************************
+ * 
+ * Register the block
+ * 
+ *****************************************************************************/
 
 add_action( 'init', 'myprefix_dynamic_inspector_query_terms' );
 

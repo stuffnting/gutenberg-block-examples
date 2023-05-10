@@ -1,8 +1,14 @@
+/**
+ * WordPress
+ */
 import { registerBlockType } from "@wordpress/blocks";
 import { useBlockProps } from "@wordpress/block-editor";
 import { __ } from "@wordpress/i18n";
 
-import { TheInspectorControls } from "./inspector-controls";
+/**
+ * Local dependencies
+ */
+import { TheInspectorControls } from "./the-inspector-controls";
 import { GetPosts } from "./get-posts";
 import metadata from "./dynamic-inspector-query-terms.block.json";
 

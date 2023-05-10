@@ -1,53 +1,36 @@
-# Dynamic Inspector Controls
+# Dynamic Inspector Query Terms
 
 ## Description
 
-This example creates a dynamic block that lists the most recent posts. A panel is added to the Block Inspector, which controls the appearance of the block's title.
-
-Note, this block does not control the dynamic aspect of the block, i.e. how many recent posts are displayed. For an example of controlling a dynamic block's query, see the `dynamic-inspector-query-terms` example.
+This code creates a dynamic block that lists the most recent posts. The number of posts displayed can be controlled from the block inspector.
 
 ## In this code
 
-**`dynamic-inner-blocks.php`**
+**`dynamic-inspector-query-terms.php`**
 
-- Registers the `myprefix/dynamic-inspector-controls` block.
+- Registers the `myprefix/dynamic-inspector-query-terms` block.
 - Adds a callback function to render the block on the front-end, which utilizes the block's attribute values.
 
-**`dynamic-inspector-controls.index.js`**
+**`dynamic-inspector-query-terms.index.js`**
 
-- Registers the `myprefix/dynamic-inspector-controls` block.
+- Registers the `myprefix/dynamic-inspector-query-terms` block.
 - Imports the `GetPosts` component form `get-posts.js`.
-- Imports the `PostListTitle` component from `post-list-title.js`.
-- imports the `TheInspectorControls` from `the-inspector-controls.js`.
+- imports the `TheInspectorControls` from `the-inspector-controls.index.js`\*\*
 
 **`get-posts.js`**
 
 - Adds the `GetPosts` component, which uses `useEntityRecords` to get the most recent posts.
 - Renders the fetched posts into a list to display in the editor.
 
-**`post-list-title.js`**
-
-- Adds the `PostListTitle` component, which uses the block's attributes to format the block title.
-
 **`the-inspector-controls.js`**
 
 - Adds the `TheInspectorControls` component, which adds and manages the Block Inspector controls.
-
-**`dynamic-inspector-controls.block.js`**
-
-- Adds the block's four attributes:
-  - `attribute.showTitle`&mdash;whether the block title is displayed.
-  - `attribute.title`&mdash;the title shown in the block.
-  - `attribute.font`&mdash;which style of font to use for the title.
-  - `attribute.underline`&mdash;whether to underline the title.
 
 ## Notes
 
 ### `React.memo`
 
-The `GetPosts` component uses [`React.memo`](https://legacy.reactjs.org/docs/react-api.html#reactmemo) to prevent the list of recent posts re-rendering when `perPage` has not changed.
-
-In this example `perPage` does not actually. For an example where `perPage` can be changed from the Block Inspector, see the `dynamic-inspector-query-terms` example.
+The `GetPosts` component uses [`React.memo`](https://legacy.reactjs.org/docs/react-api.html#reactmemo) to prevent the list of recent posts re-rendering when `perPage` has not changed. When the Block Inspector controls change `perPage`, the `GetPosts` will re-render.
 
 ### `useEntityRecords`
 
@@ -82,10 +65,7 @@ The callback function uses [`get_block_wrapper_attributes()`](https://developer.
 - [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
   - [`PanelBody`](https://developer.wordpress.org/block-editor/reference-guides/components/panel/)
   - [`PanelRow`](https://developer.wordpress.org/block-editor/reference-guides/components/panel/)
-  - [`TextControl`](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/)
-  - [`ToggleControl`](https://developer.wordpress.org/block-editor/reference-guides/components/toggle-control/)
-  - [`SelectControl`](https://developer.wordpress.org/block-editor/reference-guides/components/select-control/)
-  - [`CheckboxControl`](https://developer.wordpress.org/block-editor/reference-guides/components/checkbox-control/)
+  - [`__experimentalNumberControl`](https://developer.wordpress.org/block-editor/reference-guides/components/number-control/) as `NumberControl`
 - [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
   - `useEntityRecords`
 - [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
@@ -103,6 +83,4 @@ The callback function uses [`get_block_wrapper_attributes()`](https://developer.
 
 ## Also see
 
-For an example of controlling a dynamic block's query, see the `dynamic-inspector-query-terms` example.
-
-For an example of how to include inner blocks within the dynamic block, see the `dynamic-inner-blocks` example.
+For more BLock Inspector controls see the `dynamic-inspector-controls` example.
