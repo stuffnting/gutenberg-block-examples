@@ -1,3 +1,6 @@
+/**
+ * WordPress dependencies
+ */
 import { useEntityRecords } from "@wordpress/core-data";
 import { memo } from "@wordpress/element";
 

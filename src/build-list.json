@@ -34,22 +34,22 @@
   "dynamic-attribute": {
     "name": "dynamic-attribute",
     "cat": ["dynamic"],
-    "include": true
+    "include": false
   },
   "dynamic-inner-blocks": {
     "name": "dynamic-inner-blocks",
     "cat": ["dynamic", "inner-blocks", "inspector-controls"],
-    "include": true
+    "include": false
   },
   "dynamic-inspector-controls": {
     "name": "dynamic-inspector-controls",
     "cat": ["dynamic", "inspector-controls"],
-    "include": false
+    "include": true
   },
   "dynamic-inspector-query-terms": {
     "name": "dynamic-inspector-query-terms",
     "cat": ["dynamic", "inspector-controls"],
-    "include": false
+    "include": true
   },
   "dynamic-meta-block": {
     "name": "dynamic-meta-block",

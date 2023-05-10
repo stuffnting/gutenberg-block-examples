@@ -1,25 +1,45 @@
-# Dynamic Inner Blocks
+# Dynamic Inspector Controls
 
 ## Description
 
-This block has a dynamic section, which lists the latest posts, and also allows inner blocks to be added.
+This example adds a panel to the Block Inspector which controls the appearance of the block's title.
+
+Note, this block does not control the dynamic aspect of the block, i.e. how many recent posts are displayed. For an example of controlling a dynamic block's query, see the `dynamic-inspector-query-terms` example.
 
 ## In this code
 
 **`dynamic-inner-blocks.php`**
 
-- Registers the `myprefix/dynamic-inner-blocks` block.
-- Adds a callback function to render the block on the front-end. It renders both the list of recent posts, and the inner blocks.
+- Registers the `myprefix/dynamic-inspector-controls` block.
+- Adds a callback function to render the block on the front-end, which utilizes the block's attribute values.
 
-**`dynamic-inner-blocks.index.js`**
+**`dynamic-inspector-controls.index.js`**
 
-- Registers the `myprefix/dynamic-inner-blocks` block.
+- Registers the `myprefix/dynamic-inspector-controls` block.
 - Imports the `GetPosts` component form `get-posts.js`.
+- Imports the `PostListTitle` component from `post-list-title.js`.
+- imports the `TheInspectorControls` from `the-inspector-controls.js`.
 
 **`get-posts.js`**
 
 - Adds the `GetPosts` component, which uses `useEntityRecords` to get the most recent posts.
 - Renders the fetched posts into a list to display in the editor.
+
+**`post-list-title.js`**
+
+- Adds the `PostListTitle` component, which uses the block's attributes to format the block title.
+
+**`the-inspector-controls.js`**
+
+- Adds the `TheInspectorControls` component, which adds and manages the Block Inspector controls.
+
+**`dynamic-inspector-controls.block.js`**
+
+- Adds the block's four attributes:
+  - `attribute.showTitle`&mdash;whether the block title is displayed.
+  - `attribute.title`&mdash;the title shown in the block.
+  - `attribute.font`&mdash;which style of font to use for the title.
+  - `attribute.underline`&mdash;whether to underline the title.
 
 ## Notes
 
@@ -54,16 +74,23 @@ The callback function uses [`get_block_wrapper_attributes()`](https://developer.
 
 - [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
   - `useBlockProps`
-  - `useInnerBlocksProps`
-  - `InnerBlocks`
+  - `InspectorControls`
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
   - `registerBlockType`
-- [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
-  - [`TextControl`](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/)
+  - `createBlock`
 - [`@wordpress/element`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-element/)
   - `memo`
+- [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
+  - [`PanelBody`](https://developer.wordpress.org/block-editor/reference-guides/components/panel/)
+  - [`PanelRow`](https://developer.wordpress.org/block-editor/reference-guides/components/panel/)
+  - [`TextControl`](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/)
+  - [`ToggleControl`](https://developer.wordpress.org/block-editor/reference-guides/components/toggle-control/)
+  - [`SelectControl`](https://developer.wordpress.org/block-editor/reference-guides/components/select-control/)
+  - [`CheckboxControl`](https://developer.wordpress.org/block-editor/reference-guides/components/checkbox-control/)
 - [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
   - `useEntityRecords`
+- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+  - `__`
 
 **PHP WP functions**
 
@@ -77,4 +104,6 @@ The callback function uses [`get_block_wrapper_attributes()`](https://developer.
 
 ## Also see
 
-For an example where `perPage` can be changed from the Block Inspector, see the `dynamic-inspector-query-terms` example.
+For an example of controlling a dynamic block's query, see the `dynamic-inspector-query-terms` example.
+
+For an example of how to include inner blocks within the dynamic block, see the `dynamic-inner-blocks` example.

@@ -1,9 +1,13 @@
 <?php
 
-/**
- * Code for laying out a more complex dynamic block.
- * This used attributes saved from the Block Inspector.
- */
+/******************************************************************************
+ * 
+ * Callback function
+ * 
+ * This used attributes saved from the Block Inspector. However, since there
+ * are no inner blocks, the $content parameter is not used.
+ * 
+ *****************************************************************************/
 function myprefix_dynamic_inspector_controls_cb( $attributes, $content, $block_object ) {
 
   $recent_posts = wp_get_recent_posts( array(
@@ -46,6 +50,11 @@ function myprefix_dynamic_inspector_controls_cb( $attributes, $content, $block_o
         );
 }
 
+/******************************************************************************
+ * 
+ * Register the block
+ * 
+ *****************************************************************************/
 add_action( 'init', 'myprefix_dynamic_inspector_controls' );
 
 function myprefix_dynamic_inspector_controls() {

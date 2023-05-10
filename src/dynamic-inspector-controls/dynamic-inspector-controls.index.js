@@ -1,7 +1,13 @@
+/**
+ * WordPress dependencies
+ */
 import { registerBlockType } from "@wordpress/blocks";
 import { useBlockProps } from "@wordpress/block-editor";
 import { __ } from "@wordpress/i18n";
 
+/**
+ * Local dependencies
+ */
 import { GetPosts } from "./get-posts";
 import { PostListTitle } from "./post-list-title";
 import { TheInspectorControls } from "./the-inspector-controls";
