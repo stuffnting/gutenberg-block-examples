@@ -1,0 +1,13 @@
+.wp-block-myprefix-dynamic-inner-blocks {
+  background-color: lightcoral;
+  text-align: center;
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  *:not(h2) {
+    color: white !important;
+  }
+}

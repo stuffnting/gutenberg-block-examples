@@ -6,5 +6,6 @@
   "icon": "lightbulb",
   "category": "widgets",
   "description": "Dynamic block that has a date picker in the Inspector Controls, and also allows inner-blocks",
-  "editorScript": "file:./index.js"
+  "editorScript": "file:./index.js",
+  "style": "file:./style.css"
 }

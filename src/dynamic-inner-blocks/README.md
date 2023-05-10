@@ -15,6 +15,7 @@ This block has a dynamic section, which lists the latest posts, and also allows 
 
 - Registers the `myprefix/dynamic-inner-blocks` block.
 - Imports the `GetPosts` component form `get-posts.js`.
+- imports the stylesheet.
 
 **`get-posts.js`**
 
@@ -44,9 +45,17 @@ The hook returns an object with three items, which are destructured to:
 - `hasResolved`: a boolean.
 - `records`: an array of the fetched posts.
 
+### `useBlockProps` and `useInnerBlockProps`
+
+In `dynamic-inner-blocks.index.js` the `edit` function renders the block in the editor. It adds an outer wrapper for the whole block, using `useBlockProps` to add the correct classname (`wp-block-myprefix-dynamic-inner-blocks`) to the `div` tag.
+
+In both the `edit` and `save` functions, `useInnerBlockProps` is used to insert the inner blocks without a wrapper tag. This is achieved using `innerBlockProps.children`.
+
+There is no need to use `useBlockProps` in the `save` function, because the outer dynamic part of the block is not stored in the post. For the front-end, the dynamic part is rendered by the callback function in the PHP file, where `get_block_wrapper_attributes()` is used to add the correct classname for the outer wrapper.
+
 ### Front-end block wrapper
 
-The callback function uses [`get_block_wrapper_attributes()`](https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/) to generate the HTML attributes for the block's wrapping tag.
+The callback function uses [`get_block_wrapper_attributes()`](https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/) to generate the HTML attributes for the block's wrapping tag. In this case it adds the `wp-block-myprefix-dynamic-inner-blocks` classname.
 
 ## Uses
 

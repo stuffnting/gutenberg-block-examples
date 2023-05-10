@@ -9,7 +9,7 @@
  * 
  *****************************************************************************/
 function myprefix_dynamic_inner_blocks_cb( $attributes, $content ) {
-
+  snt_dump($content);
   $recent_posts = wp_get_recent_posts( array(
       'numberposts' => 5,
       'post_status' => 'publish',
@@ -19,17 +19,21 @@ function myprefix_dynamic_inner_blocks_cb( $attributes, $content ) {
       return 'No posts';
   }
 
-  $out = '<h2 class="has-text-align-center">Dynamic with inner blocks</h2>';
-
+  $out = '<h2>Dynamic with inner blocks</h2>';
+  $out .= '<ul>';
+  
   foreach ( $recent_posts as $a_post ) {
-    $out .= sprintf( '<p class="has-text-align-center"><a href="%1$s">%2$s</a></p>',
-      esc_url( get_permalink( $a_post['ID'] ) ),
-      esc_html( get_the_title( $a_post['ID'] ) )
-    );
-  }
+    $out .= sprintf( '<li><a href="%1$s">%2$s</a></li>',
+    esc_url( get_permalink( $a_post['ID'] ) ),
+    esc_html( get_the_title( $a_post['ID'] ) )
+  );
+}
+
+$out .= '</ul>';
 
   /**
    * Get the class, style and id attributes for the block currently being rendered.
+   * In this case, the outer block.
    * @see {@link https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/}
    */
   $wrapper_attributes = get_block_wrapper_attributes();
