@@ -28,7 +28,7 @@ registerBlockType(metadata.name, {
     );
   },
   save: () => {
-    // For dynamic blocks return null
+    // For dynamic blocks without inner blocks return null
     return null;
   },
 });
