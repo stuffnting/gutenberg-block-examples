@@ -26,6 +26,10 @@ This code creates a dynamic block that lists the most recent posts. The number o
 
 - Adds the `TheInspectorControls` component, which adds and manages the Block Inspector controls.
 
+**`dynamic-inspector-query-terms.block.json`**
+
+- Adds the `perPage` attribute.
+
 ## Notes
 
 ### `React.memo`
@@ -46,6 +50,10 @@ The hook returns an object with three items, which are destructured to:
 - `isResolving`: a boolean.
 - `hasResolved`: a boolean.
 - `records`: an array of the fetched posts.
+
+### The `save` function
+
+Because the dynamic block is rendered on the front-end by the callback function in the PHP file, there is no need to save anything within the post. Therefore, the `save` function returns `null`.
 
 ### Front-end block wrapper
 

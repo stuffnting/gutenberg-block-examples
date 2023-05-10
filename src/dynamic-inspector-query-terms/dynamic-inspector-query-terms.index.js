@@ -25,5 +25,8 @@ registerBlockType(metadata, {
       </>
     );
   },
-  save: () => null,
+  save: () => {
+    // Dynamic functions return null
+    return null;
+  },
 });
