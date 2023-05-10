@@ -9,5 +9,6 @@
   "supports": {
     "multiple": false
   },
-  "editorScript": "file:./index.js"
+  "editorScript": "file:./index.js",
+  "style": "file:./style.css"
 }

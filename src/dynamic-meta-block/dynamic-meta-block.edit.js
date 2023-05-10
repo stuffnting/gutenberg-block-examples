@@ -1,25 +1,24 @@
-import {
-  useBlockProps,
-  useInnerBlocksProps,
-  InspectorControls,
-} from "@wordpress/block-editor";
+/**
+ * Wordpress dependencies
+ */
+import { useBlockProps, InspectorControls } from "@wordpress/block-editor";
 import { PanelBody, TextControl } from "@wordpress/components";
 import { useSelect } from "@wordpress/data";
 import { useEntityProp } from "@wordpress/core-data";
 
-import { style } from "./dynamic-meta-block.style";
-
 const allowedBlocks = ["core/paragraph", "core/heading", "core/list"];
 
-// MYPREFIX_DYNAMIC_META_BLOCK_OBJECT is defined in the PHP file using wp_localize_script()
-const MYPREFIX_DYNAMIC_META_BLOCK_OBJECT =
-  localizeObject.MYPREFIX_DYNAMIC_META_BLOCK_OBJECT;
-
 export const edit = () => {
-  const blockProps = useBlockProps({ style });
-  const innerBlockProps = useInnerBlocksProps(blockProps, { allowedBlocks });
+  const blockProps = useBlockProps();
 
-  // Deal with the metadata
+  /**
+   * Deal with the metadata
+   */
+
+  // MYPREFIX_DYNAMIC_META_BLOCK_OBJECT is defined in the PHP file using wp_localize_script()
+  const MYPREFIX_DYNAMIC_META_BLOCK_OBJECT =
+    localizeObject.MYPREFIX_DYNAMIC_META_BLOCK_OBJECT;
+
   const postType = useSelect(
     (select) => select("core/editor").getCurrentPostType(),
     []
@@ -45,26 +44,25 @@ export const edit = () => {
 
   return (
     <>
+      <InspectorControls>
+        <PanelBody title="Meta Values" initialOpen={false}>
+          <TextControl
+            label="Text 1"
+            help="Enter some text"
+            value={metaFieldValue1}
+            onChange={(newValue) => updateMetaValue(newValue, "field1")}
+          />
+          <TextControl
+            label="Text 2"
+            help="Enter some text"
+            value={metaFieldValue2}
+            onChange={(newValue) => updateMetaValue(newValue, "field2")}
+          />
+        </PanelBody>
+      </InspectorControls>
       <div {...blockProps}>
-        <InspectorControls>
-          <PanelBody title="Meta Values" initialOpen={false}>
-            <TextControl
-              label="Text 1"
-              help="Enter some text"
-              value={metaFieldValue1}
-              onChange={(newValue) => updateMetaValue(newValue, "field1")}
-            />
-            <TextControl
-              label="Text 2"
-              help="Enter some text"
-              value={metaFieldValue2}
-              onChange={(newValue) => updateMetaValue(newValue, "field2")}
-            />
-          </PanelBody>
-        </InspectorControls>
         <p>{metaFieldValue1}</p>
         <p>{metaFieldValue2}</p>
-        <div {...innerBlockProps} />
       </div>
     </>
   );
