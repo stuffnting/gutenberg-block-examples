@@ -45,11 +45,13 @@ The hook returns an object with three items, which are destructured to:
 - `hasResolved`: a boolean.
 - `records`: an array of the fetched posts.
 
-### `useBlockProps` and `useInnerBlockProps`
+### `edit` and `save` functions
 
 In `dynamic-inner-blocks.index.js` the `edit` function renders the block in the editor. It adds an outer wrapper for the whole block, using `useBlockProps` to add the correct classname (`wp-block-myprefix-dynamic-inner-blocks`) to the `div` tag.
 
 In both the `edit` and `save` functions, `useInnerBlockProps` is used to insert the inner blocks without a wrapper tag. This is achieved using `innerBlockProps.children`.
+
+Normally, the `save` functions of dynamic blocks return `null`, because the callback function in the PHP file renders the block on the front end. In this case however, the `save` function needs to return the inner blocks, otherwise they will not be "remembered".
 
 There is no need to use `useBlockProps` in the `save` function, because the outer dynamic part of the block is not stored in the post. For the front-end, the dynamic part is rendered by the callback function in the PHP file, where `get_block_wrapper_attributes()` is used to add the correct classname for the outer wrapper.
 
