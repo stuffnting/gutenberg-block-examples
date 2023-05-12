@@ -53,6 +53,10 @@ It is worth noting that any block can be rendered on the front-end using a PHP c
 
 The callback function uses [`get_block_wrapper_attributes()`](https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/) to generate the HTML attributes for the block's wrapping tag.
 
+## Uses
+
+**JS WP dependencies**
+
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
   - `registerBlockType`
 - [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)

@@ -9,7 +9,7 @@ This example block adds a `TextControl` component to the editor, and the value e
 **`dynamic-attribute.php`**
 
 - Registers the `myprefix/dynamic-attribute` block.
-- Defines a callback function, which is used to display the value stored in the `content` attribute on the front-end.
+- Defines a callback function, which is used to render the block on the front-end.
 
 **`dynamic-attribute.index.js`**
 
@@ -46,7 +46,6 @@ The callback function uses [`get_block_wrapper_attributes()`](https://developer.
   - `useBlockProps`
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
   - `registerBlockType`
-  - `createBlock`
 - [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
   - [`TextControl`](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/)
 

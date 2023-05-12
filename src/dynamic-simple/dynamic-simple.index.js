@@ -1,17 +1,17 @@
+/**
+ * Wordpress dependencies
+ */
 import { registerBlockType } from "@wordpress/blocks";
-// import { useSelect } from "@wordpress/data"; // Old method
 import { useEntityRecords } from "@wordpress/core-data";
 import { useBlockProps } from "@wordpress/block-editor";
 
+/**
+ * Local dependencies
+ */
 import metadata from "./dynamic-simple.block.json";
 
 registerBlockType(metadata, {
   edit: () => {
-    // Get the list of posts. Previously done using useSelect.
-    /*const posts = useSelect((select) => {
-      return select("core").getEntityRecords("postType", "post");
-    }, []); */
-
     /**
      * New way WP 6.1+
      *

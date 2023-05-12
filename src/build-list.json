@@ -33,32 +33,32 @@
   },
   "dynamic-attribute": {
     "name": "dynamic-attribute",
-    "cat": ["dynamic"],
+    "cat": ["dynamic", "php-render"],
     "include": false
   },
   "dynamic-inner-blocks": {
     "name": "dynamic-inner-blocks",
-    "cat": ["dynamic", "inner-blocks", "inspector-controls"],
+    "cat": ["dynamic", "inner-blocks", "php-render"],
     "include": false
   },
   "dynamic-inspector-controls": {
     "name": "dynamic-inspector-controls",
-    "cat": ["dynamic", "inspector-controls"],
+    "cat": ["dynamic", "inspector-controls", "php-render"],
     "include": false
   },
   "dynamic-inspector-query-terms": {
     "name": "dynamic-inspector-query-terms",
-    "cat": ["dynamic", "inspector-controls"],
+    "cat": ["dynamic", "inspector-controls", "php-render"],
     "include": false
   },
   "dynamic-serverside-render": {
     "name": "dynamic-serverside-render",
-    "cat": ["dynamic"],
+    "cat": ["dynamic", "php-render"],
     "include": false
   },
   "dynamic-simple": {
     "name": "dynamic-simple",
-    "cat": ["dynamic"],
+    "cat": ["dynamic", "php-render"],
     "include": false
   },
   "filter-block-settings": {
@@ -131,8 +131,7 @@
   "meta-simple": {
     "name": "meta-simple",
     "cat": ["meta"],
-    "converted to import": false,
-    "include": false
+    "include": true
   },
   "meta-with-media": {
     "name": "meta-with-media",
@@ -141,8 +140,8 @@
   },
   "render-php-template": {
     "name": "render-php-template",
-    "cat": ["dynamic"],
-    "include": true
+    "cat": ["dynamic", "php-render"],
+    "include": false
   },
   "richtext-basic": {
     "cat": ["richtext"],

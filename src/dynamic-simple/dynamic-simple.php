@@ -1,11 +1,10 @@
 <?php
 
-/**
- * Code for laying out a simple dynamic block that contains the 3 latest posts. 
- */
-/**
- * Code for laying out a simple dynamic block that contains the 3 latest posts.
- */
+/******************************************************************************
+ * 
+ * Callback function
+ * 
+ *****************************************************************************/
 function myprefix_dynamic_simple_cb( $attributes, $content, $block_object ) {
   $recent_posts = wp_get_recent_posts( array(
       'numberposts' => 3,
@@ -36,6 +35,12 @@ function myprefix_dynamic_simple_cb( $attributes, $content, $block_object ) {
           $out
         );
 }
+
+/******************************************************************************
+ * 
+ * Register the block
+ * 
+ *****************************************************************************/
 
 add_action( 'init', 'myprefix_dynamic_simple' );
 
