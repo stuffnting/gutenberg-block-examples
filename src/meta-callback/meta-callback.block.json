@@ -1,11 +1,11 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 2,
-  "name": "myprefix/dynamic-meta-block",
-  "title": "Dynamic Meta Block",
+  "name": "myprefix/meta-callback",
+  "title": "Meta Callback",
   "icon": "lightbulb",
   "category": "widgets",
-  "description": "A dynamic block with meta boxes and inner-blocks.",
+  "description": "A block with meta boxes and a callback function.",
   "supports": {
     "multiple": false
   },

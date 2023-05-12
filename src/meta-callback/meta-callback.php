@@ -4,15 +4,15 @@
  * Register the meta key
  * 
  *****************************************************************************/
-define('MYPREFIX_DYNAMIC_META_BLOCK_OBJECT', '_myprefix_dynamic_meta_block_object');
+define('MYPREFIX_META_CB_OBJECT', '_myprefix_meta_callback_object');
 
 // register custom meta data field
-add_action( 'init', 'myprefix_register_dynamic_meta_block_meta' );
+add_action( 'init', 'myprefix_register_meta_callback_meta' );
 
-function myprefix_register_dynamic_meta_block_meta() {
+function myprefix_register_meta_callback_meta() {
   register_post_meta( 
     'post', 
-    MYPREFIX_DYNAMIC_META_BLOCK_OBJECT, 
+    MYPREFIX_META_CB_OBJECT, 
     array(
       'type'          => 'object',
       'single'        => true,
@@ -42,12 +42,12 @@ function myprefix_register_dynamic_meta_block_meta() {
  * 
  *****************************************************************************/
 
-function myprefix_dynamic_meta_block_cb( $attributes, $content, $block_object ) {
+function myprefix_meta_callback_cb( $attributes, $content, $block_object ) {
   // Format the meta values as HTML
   $title = '<h2 style="margin-top: 0">Dynamic Meta Block</h2>';
 
   //Get a flattened array
-  $meta_raw = get_post_meta( get_the_ID(), MYPREFIX_DYNAMIC_META_BLOCK_OBJECT, true );
+  $meta_raw = get_post_meta( get_the_ID(), MYPREFIX_META_CB_OBJECT, true );
 
   $meta = is_array( $meta_raw ) ? array_merge( [], $meta_raw ) : false;
 
@@ -75,9 +75,9 @@ function myprefix_dynamic_meta_block_cb( $attributes, $content, $block_object ) 
  * 
  *****************************************************************************/
 
-add_action( 'init', 'myprefix_dynamic_meta_block' );
+add_action( 'init', 'myprefix_meta_callback' );
 
-function myprefix_dynamic_meta_block() {
+function myprefix_meta_callback() {
 
   if ( ! function_exists( 'register_block_type' ) ) {
     // Gutenberg is not active.
@@ -86,11 +86,11 @@ function myprefix_dynamic_meta_block() {
 
   // Register the call_back for rendering on the front end
   register_block_type( __Dir__, array(
-    'render_callback' => 'myprefix_dynamic_meta_block_cb'
+    'render_callback' => 'myprefix_meta_callback_cb'
   ) );
 
   // Make the meta key available to index.js. The script handle (1st param), is set by WP, as block.json registers index.js.
-  wp_localize_script( 'myprefix-dynamic-meta-block-editor-script', 'localizeObject', array(
-    "MYPREFIX_DYNAMIC_META_BLOCK_OBJECT" => MYPREFIX_DYNAMIC_META_BLOCK_OBJECT
+  wp_localize_script( 'myprefix-meta-callback-editor-script', 'localizeObject', array(
+    "MYPREFIX_META_CB_OBJECT" => MYPREFIX_META_CB_OBJECT
   ) );
 }
