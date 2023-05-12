@@ -1,25 +1,29 @@
 <?php
 
-/**
+/******************************************************************************
+ * 
+ * Callback function
+ * 
  * Code for laying out a simple dynamic block that contains the 3 latest posts.
- */
+ *
+ *****************************************************************************/
 function myprefix_dynamic_serverside_render_cb( $attributes, $content, $block_object ) {
   $recent_posts = wp_get_recent_posts( array(
       'numberposts' => 3,
       'post_status' => 'publish',
   ) );
 
-  if ( count( $recent_posts ) === 0 ) {
-      return 'No posts';
-  }
-
-  $out = '<h2 class="has-text-align-center">Server Side Rendering</h2>';
+  $out = '<h2>Server Side Rendering</h2>';
 
   foreach ( $recent_posts as $a_post ) {
-    $out .= sprintf( '<p class="has-text-align-center"><a class="wp-block-my-plugin-latest-post" href="%1$s">%2$s</a></p>',
+    $out .= sprintf( '<p><a href="%1$s">%2$s</a></p>',
       esc_url( get_permalink( $a_post['ID'] ) ),
       esc_html( get_the_title( $a_post['ID'] ) )
     );
+  }
+
+  if ( is_admin() ) {
+    return $out;
   }
 
   /**
@@ -33,6 +37,12 @@ function myprefix_dynamic_serverside_render_cb( $attributes, $content, $block_ob
           $out
         );
 }
+
+/******************************************************************************
+ * 
+ * Register the block
+ * 
+ *****************************************************************************/
 
 add_action( 'init', 'myprefix_dynamic_serverside_render' );
 

@@ -7,7 +7,6 @@
   "category": "widgets",
   "description": "A dynamic block which is rendered serverside for both front- and back-end.",
   "supports": {
-    "align": true,
     "color": {
       "text": true,
       "background": true,

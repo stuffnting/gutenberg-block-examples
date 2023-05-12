@@ -14,7 +14,7 @@
   "block-json": {
     "name": "block-json",
     "cat": ["richtext"],
-    "include": true
+    "include": false
   },
   "block-lock": {
     "name": "block-lock",
@@ -44,16 +44,11 @@
   "dynamic-inspector-controls": {
     "name": "dynamic-inspector-controls",
     "cat": ["dynamic", "inspector-controls"],
-    "include": true
+    "include": false
   },
   "dynamic-inspector-query-terms": {
     "name": "dynamic-inspector-query-terms",
     "cat": ["dynamic", "inspector-controls"],
-    "include": true
-  },
-  "dynamic-meta-block": {
-    "name": "dynamic-meta-block",
-    "cat": ["dynamic", "meta"],
     "include": false
   },
   "dynamic-render-php": {
@@ -64,7 +59,7 @@
   "dynamic-serverside-render": {
     "name": "dynamic-serverside-render",
     "cat": ["dynamic"],
-    "include": false
+    "include": true
   },
   "dynamic-simple": {
     "name": "dynamic-simple",
@@ -94,7 +89,7 @@
   "inner-blocks-context": {
     "name": "inner-blocks-context",
     "cat": ["dynamic", "inner-blocks"],
-    "include": true
+    "include": false
   },
   "inner-blocks-template": {
     "name": "inner-blocks-template",
@@ -110,6 +105,11 @@
     "name": "meta-attribute",
     "cat": ["meta"],
     "note": "This is the old method with attribute.source.meta, rather than useSelect.",
+    "include": false
+  },
+  "meta-callback": {
+    "name": "meta-callback",
+    "cat": ["dynamic", "meta"],
     "include": false
   },
   "meta-document-settings": {
