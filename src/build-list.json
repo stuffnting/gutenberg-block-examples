@@ -51,15 +51,10 @@
     "cat": ["dynamic", "inspector-controls"],
     "include": false
   },
-  "dynamic-render-php": {
-    "name": "dynamic-render-php",
-    "cat": ["dynamic"],
-    "include": false
-  },
   "dynamic-serverside-render": {
     "name": "dynamic-serverside-render",
     "cat": ["dynamic"],
-    "include": true
+    "include": false
   },
   "dynamic-simple": {
     "name": "dynamic-simple",
@@ -143,6 +138,11 @@
     "name": "meta-with-media",
     "cat": ["meta", "media", "plugin sidebar"],
     "include": false
+  },
+  "render-php-template": {
+    "name": "render-php-template",
+    "cat": ["dynamic"],
+    "include": true
   },
   "richtext-basic": {
     "cat": ["richtext"],

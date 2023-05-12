@@ -1,8 +1,14 @@
+/**
+ * WordPress dependencies
+ */
 import { registerBlockType } from "@wordpress/blocks";
 import { RichText, useBlockProps } from "@wordpress/block-editor";
 import { __ } from "@wordpress/i18n";
 
-import metadata from "./dynamic-render-php.block.json";
+/**
+ * Local dependencies
+ */
+import metadata from "./render-php-template.block.json";
 
 registerBlockType(metadata.name, {
   edit: (props) => {
@@ -24,7 +30,6 @@ registerBlockType(metadata.name, {
   },
   save: ({ attributes }) => {
     const { content } = attributes;
-
     const blockProps = useBlockProps.save();
 
     return (

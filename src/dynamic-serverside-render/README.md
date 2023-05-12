@@ -38,10 +38,11 @@ The callback function uses [`get_block_wrapper_attributes()`](https://developer.
 ## Uses
 
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
-  - registerBlockType -[`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
-  - useBlockProps
+  - `registerBlockType`
+- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+  - `useBlockProps`
 - [`@wordpress/server-side-render`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-server-side-render/)
-  - ServerSideRender
+  - `ServerSideRender`
 
 **PHP WP functions**
 
@@ -52,3 +53,7 @@ The callback function uses [`get_block_wrapper_attributes()`](https://developer.
 **PHP WP actions**
 
 - [`init`](https://developer.wordpress.org/reference/hooks/init/)
+
+## Also see
+
+As well as rendering dynamic blocks using a callback function in the PHP file, it is also possible to use a PHP template file. For an example of how to do this, see the `render-PHP-template` example.

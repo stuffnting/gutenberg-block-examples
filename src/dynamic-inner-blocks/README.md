@@ -89,3 +89,5 @@ The callback function uses [`get_block_wrapper_attributes()`](https://developer.
 ## Also see
 
 For an example where `perPage` can be changed from the Block Inspector, see the `dynamic-inspector-query-terms` example.
+
+As well as rendering dynamic blocks using a callback function in the PHP file, it is also possible to use a PHP template file. For an example of how to do this, see the `render-PHP-template` example.

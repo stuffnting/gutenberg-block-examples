@@ -106,3 +106,5 @@ The callback function uses [`get_block_wrapper_attributes()`](https://developer.
 For an example of controlling a dynamic block's query, see the `dynamic-inspector-query-terms` example.
 
 For an example of how to include inner blocks within the dynamic block, see the `dynamic-inner-blocks` example.
+
+As well as rendering dynamic blocks using a callback function in the PHP file, it is also possible to use a PHP template file. For an example of how to do this, see the `render-PHP-template` example.

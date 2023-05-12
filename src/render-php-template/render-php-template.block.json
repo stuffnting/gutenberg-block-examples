@@ -1,11 +1,11 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 2,
-  "name": "myprefix/dynamic-render-php",
+  "name": "myprefix/render-php-template",
   "title": "Render PHP Template",
   "icon": "lightbulb",
   "category": "text",
-  "description": "Test rendering with PHP template file, rather than a callback function",
+  "description": "Test rendering a block with PHP template file.",
   "keywords": ["heading", "test"],
   "textdomain": "textDomain",
   "attributes": {
@@ -14,6 +14,21 @@
       "source": "html",
       "selector": "h2",
       "default": ""
+    }
+  },
+  "supports": {
+    "color": {
+      "text": true,
+      "background": true,
+      "link": true
+    },
+    "typography": {
+      "fontSize": true,
+      "lineHeight": true
+    },
+    "spacing": {
+      "margin": ["top", "bottom"],
+      "padding": true
     }
   },
   "example": {

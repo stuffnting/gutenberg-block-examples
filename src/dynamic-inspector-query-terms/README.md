@@ -92,3 +92,5 @@ The callback function uses [`get_block_wrapper_attributes()`](https://developer.
 ## Also see
 
 For more BLock Inspector controls see the `dynamic-inspector-controls` example.
+
+As well as rendering dynamic blocks using a callback function in the PHP file, it is also possible to use a PHP template file. For an example of how to do this, see the `render-PHP-template` example.
