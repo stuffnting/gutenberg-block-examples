@@ -34,6 +34,8 @@ This example adds a parent block, `myprefix/inner-blocks-template-parent`, which
 
 In this example `templateLock` is set to `false`, meaning that blocks can be added, removed, and moved. However, only blocks in the `ALLOWED` constant can be added to the parent in the editor, that's: `core/paragraph` and `myprefix/inner-blocks-template-child`.
 
+To add extra block to the parent, with the parent selected, click on the plus button ("Add Blocks"). You will see just the two blocks available.
+
 The `block.json` file for `myprefix/inner-blocks-template-child` states `"parent": ["myprefix/inner-blocks-template-parent"]`, therefore, it can only be added to the parent block, and can't be used in other circumstances.
 
 See [here](https://fullsiteediting.com/how-to-lock-blocks-and-templates/) for more on locking template.

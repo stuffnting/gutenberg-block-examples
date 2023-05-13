@@ -89,7 +89,7 @@
   "inner-blocks-template": {
     "name": "inner-blocks-template",
     "cat": ["inner-blocks", "context"],
-    "include": true
+    "include": false
   },
   "inspector-control-tabs": {
     "name": "inspector-control-tabs",
