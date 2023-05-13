@@ -1,6 +1,12 @@
+/**
+ * Wordpress dependencies
+ */
 import { registerBlockType } from "@wordpress/blocks";
 import { useBlockProps, useInnerBlocksProps } from "@wordpress/block-editor";
 
+/**
+ * Local dependencies
+ */
 import metadata from "./inner-blocks.block.json";
 
 const allowedBlocks = ["core/paragraph", "core/heading", "core/quote"];
@@ -15,19 +21,19 @@ const style = {
 registerBlockType(metadata.name, {
   edit: () => {
     const blockProps = useBlockProps({ style });
-    const innerBlockProps = useInnerBlocksProps(blockProps, { allowedBlocks });
+    const innerBlocksProps = useInnerBlocksProps(blockProps, { allowedBlocks });
 
-    return <div {...innerBlockProps} />;
+    return <div {...innerBlocksProps} />;
 
     /**
-     * Old way, without useInnerBlocksProps
-     * 
-        <div {...blockProps}>
-          <InnerBlocks
-            allowedBlocks={allowedBlocks}
-          />
-        </div>
-     */
+ * Old way, without useInnerBlocksProps
+ * 
+    <div {...blockProps}>
+      <InnerBlocks
+        allowedBlocks={allowedBlocks}
+      />
+    </div>
+  */
   },
   save: () => {
     const blockProps = useBlockProps.save({ style });
@@ -39,9 +45,7 @@ registerBlockType(metadata.name, {
      * Old way, without useInnerBlocksProps
      * 
         <div {...blockProps}>
-          <InnerBlocks
-            allowedBlocks={allowedBlocks}
-          />
+          <InnerBlocks.Content />
         </div>
      */
   },

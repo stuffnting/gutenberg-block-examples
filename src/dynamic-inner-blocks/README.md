@@ -53,7 +53,7 @@ In both the `edit` and `save` functions, `useInnerBlockProps` is used to insert 
 
 Normally, the `save` functions of dynamic blocks return `null`, because the callback function in the PHP file renders the block on the front end. In this case however, the `save` function needs to return the inner blocks, otherwise they will not be "remembered".
 
-There is no need to use `useBlockProps` in the `save` function, because the outer dynamic part of the block is not stored in the post. For the front-end, the dynamic part is rendered by the callback function in the PHP file, where `get_block_wrapper_attributes()` is used to add the correct classname for the outer wrapper.
+There is no need to have `useBlockProps` in the `save` function, because the outer dynamic part of the block is not stored in the post. For the front-end, the dynamic part is rendered by the callback function in the PHP file, where `get_block_wrapper_attributes()` is used to add the correct classname for the outer wrapper.
 
 ### Front-end block wrapper
 
@@ -87,6 +87,8 @@ The callback function uses [`get_block_wrapper_attributes()`](https://developer.
 - [`init`](https://developer.wordpress.org/reference/hooks/init/)
 
 ## Also see
+
+For more ways to use `useInnerBlockProps` see the other inner block examples.
 
 For an example where `perPage` can be changed from the Block Inspector, see the `dynamic-inspector-query-terms` example.
 

@@ -79,7 +79,7 @@
   "inner-blocks": {
     "name": "inner-blocks",
     "cat": ["inner-blocks", "context"],
-    "include": false
+    "include": true
   },
   "inner-blocks-context": {
     "name": "inner-blocks-context",
@@ -131,7 +131,7 @@
   "meta-simple": {
     "name": "meta-simple",
     "cat": ["meta"],
-    "include": true
+    "include": false
   },
   "meta-with-media": {
     "name": "meta-with-media",
