@@ -1,5 +1,11 @@
 <?php
 
+/******************************************************************************
+ * 
+ * Register the parent and child blocks
+ * 
+ *****************************************************************************/
+
 add_action( 'init', 'myprefix_inner_blocks_context' );
 
 function myprefix_inner_blocks_context() {
@@ -16,7 +22,8 @@ function myprefix_inner_blocks_context() {
       $my_number = array_key_exists( 'myprefix/myNumber', $block->context ) 
         ?  $block->context['myprefix/myNumber'] 
         : "No number";
-      return "<p>My Number Is (from render_callback): $my_number</p>";
+        $wrapper_attributes = get_block_wrapper_attributes();
+      return "<div $wrapper_attributes><p>My Number Is (from render_callback): $my_number</p><p> $content</p></div>";
     },
   ));
 }

@@ -11,7 +11,7 @@ For more on block context, see [here](https://developer.wordpress.org/block-edit
 **`inner-blocks-context.php`**
 
 - Registers two blocks: `myprefix/context-parent` and `myprefix/context-child`. On transpiling neither block's JSON file ends up named `block.json`, therefore, both are registered using `__DIR__` _and_ the file name.
-- The registration of the child block includes a callback to render the child, including the value inherited from the parent block, on the front-end.
+- The registration of the child block includes a callback to render the child, including its contents and the value inherited from the parent block.
 
 **`inner-blocks-context.index.js`**
 
@@ -39,15 +39,22 @@ Contains the settings that define the parent block, as well as the context to be
 
 ## Notes
 
-### React warning from the `TextControl` component
+### The child `save` function
 
-`value={myNumber || ""}` is used to prevent the warning:
+In this example, the child's `save` function returns some aleatory content to demonstrate how the callback will handle it. However, if there is no content needed from the chid, the `save` function can return `null`.
 
-> Warning: A component is changing an uncontrolled input to be controlled. This is likely caused by the value changing from undefined to a defined value, which should not happen.
+### The parent `save` function
 
-[See here](https://stackoverflow.com/a/47012342)
+The parent's `save` function includes the content from the child block using `innerBlocksProps.children`. This is done to avoid adding an extra wrapping tag. The child's classname is added in the callback, to a wrapper that contains the context value and the content, `using get_block_wrapper_attributes()`.
 
-Alternatively, a default value for the `content` attribute can be set in the JSON file.
+Even if there is no content returned by the child, the parent must include child must be included by the parent (as inner blocks), otherwise, the callback function to render it on the front-end is not triggered. At least, an empty block must be saved in the editor:
+
+    <!-- wp:myprefix/context-parent -->
+      <div class="wp-block-myprefix-context-parent">
+        <p>My Number Is (Rendered from parent): </p>
+        <!-- wp:myprefix/context-child /-->
+      </div>
+    <!-- /wp:myprefix/context-parent -->
 
 ## Uses
 
@@ -55,7 +62,7 @@ Alternatively, a default value for the `content` attribute can be set in the JSO
 
 - [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
   - `useBlockProps`
-  - `InnerBlocks`
+  - `innerBlocksProps`
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
   - `registerBlockType`
 - [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
@@ -64,6 +71,7 @@ Alternatively, a default value for the `content` attribute can be set in the JSO
 **PHP WP functions**
 
 - [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
+- [`get_block_wrapper_attributes`](https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/)
 
 **PHP WP actions**
 

@@ -79,7 +79,7 @@
   "inner-blocks": {
     "name": "inner-blocks",
     "cat": ["inner-blocks", "context"],
-    "include": true
+    "include": false
   },
   "inner-blocks-context": {
     "name": "inner-blocks-context",
