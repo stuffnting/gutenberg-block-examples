@@ -84,7 +84,7 @@
   "inner-blocks-context": {
     "name": "inner-blocks-context",
     "cat": ["dynamic", "inner-blocks"],
-    "include": false
+    "include": true
   },
   "inner-blocks-template": {
     "name": "inner-blocks-template",

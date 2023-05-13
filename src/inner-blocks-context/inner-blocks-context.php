@@ -15,9 +15,9 @@ function myprefix_inner_blocks_context() {
     return;
   }
 
-  register_block_type( __DIR__ . '/context-parent.block.json' );
+  register_block_type( __DIR__ . '/inner-blocks-context-parent.block.json' );
 
-  register_block_type( __DIR__ . '/context-child.block.json', array(
+  register_block_type( __DIR__ . '/inner-blocks-context-child.block.json', array(
     'render_callback' => function( $attributes, $content, $block ) {
       $my_number = array_key_exists( 'myprefix/myNumber', $block->context ) 
         ?  $block->context['myprefix/myNumber'] 

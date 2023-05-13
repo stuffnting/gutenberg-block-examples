@@ -8,8 +8,8 @@ import { TextControl } from "@wordpress/components";
 /**
  * Local dependencies
  */
-import metadataParent from "./context-parent.block.json";
-import metadataChild from "./context-child.block.json";
+import metadataParent from "./inner-blocks-context-parent.block.json";
+import metadataChild from "./inner-blocks-context-child.block.json";
 
 /******************************************************************************
  *
@@ -20,7 +20,7 @@ import metadataChild from "./context-child.block.json";
 registerBlockType(metadataParent.name, {
   edit: (props) => {
     // Only allow the child block as an inner block.
-    const MY_TEMPLATE = [["myprefix/context-child", {}]];
+    const MY_TEMPLATE = [["myprefix/inner-blocks-context-child", {}]];
     const blockProps = useBlockProps();
     const innerBlocksProps = useInnerBlocksProps(
       {},
