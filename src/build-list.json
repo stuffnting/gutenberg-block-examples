@@ -84,12 +84,12 @@
   "inner-blocks-context": {
     "name": "inner-blocks-context",
     "cat": ["dynamic", "inner-blocks"],
-    "include": true
+    "include": false
   },
   "inner-blocks-template": {
     "name": "inner-blocks-template",
     "cat": ["inner-blocks", "context"],
-    "include": false
+    "include": true
   },
   "inspector-control-tabs": {
     "name": "inspector-control-tabs",

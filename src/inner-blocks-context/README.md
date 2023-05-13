@@ -56,6 +56,14 @@ Even if there is no content returned by the child, the parent must include child
       </div>
     <!-- /wp:myprefix/context-parent -->
 
+## Template and lock
+
+The constant `MY_TEMPLATE` contains the inner blocks that will initially populate the parent. In this case the only allowed block, is the child block.
+
+To start with the child block is locked, using: `templateLock: "all"`. The lock can be released, and the child deleted, from the Document Overview in the editor (top-left 3-line menu button).
+
+See [here](https://fullsiteediting.com/how-to-lock-blocks-and-templates/) for more on locking template.
+
 ## Uses
 
 **JS WP dependencies**
@@ -76,3 +84,7 @@ Even if there is no content returned by the child, the parent must include child
 **PHP WP actions**
 
 - [`init`](https://developer.wordpress.org/reference/hooks/init/)
+
+## Also see
+
+For another example of inner block templates, see `inner-blocks-template`.
