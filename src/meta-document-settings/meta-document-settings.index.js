@@ -1,9 +1,3 @@
-/**
- * This code adds a meta box to the Document Settings sidebar.
- * The values entered in the box are saved in a meta field.
- * It does not register a block type.
- */
-
 /********************************************************************
  *
  * Importing @wordpress packages.
@@ -55,7 +49,7 @@ const DocPanelMetaFields = () => {
 /********************************************************************
  *
  * Register the plugin to create the sidebar and the
- * Document Settings Panel metabox
+ * Document Settings Panel meta box
  *
  ********************************************************************/
 

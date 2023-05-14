@@ -98,8 +98,13 @@ The meta data is not available to the `save` function, and can not be used there
 - [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
 - [`wp_localize_script`](https://developer.wordpress.org/reference/functions/wp_localize_script/)
 - [`register_post_meta`](https://developer.wordpress.org/reference/functions/register_post_meta/)
+- [`get_post_meta`](https://developer.wordpress.org/reference/functions/get_post_meta/)
 - [`get_block_wrapper_attributes`](https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/)
 
 **PHP WP actions**
 
 - [`init`](https://developer.wordpress.org/reference/hooks/init/)
+
+## Also see
+
+The Gutenberg Handbook's section on [Meta Boxes](https://developer.wordpress.org/block-editor/how-to-guides/metabox/)

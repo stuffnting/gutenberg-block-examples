@@ -91,3 +91,5 @@ The meta data is not available to the `save` function, and can not be used there
 - [`the_content`](https://developer.wordpress.org/reference/functions/the_content/)
 
 ## Also see
+
+The Gutenberg Handbook's section on [Meta Boxes](https://developer.wordpress.org/block-editor/how-to-guides/metabox/)

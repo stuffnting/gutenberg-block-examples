@@ -110,7 +110,7 @@
   "meta-document-settings": {
     "name": "meta-document-settings",
     "cat": ["meta"],
-    "include": false
+    "include": true
   },
   "meta-inner-blocks-inspector": {
     "name": "meta-inner-blocks-inspector",
@@ -131,7 +131,7 @@
   "meta-simple": {
     "name": "meta-simple",
     "cat": ["meta"],
-    "include": true
+    "include": false
   },
   "meta-with-media": {
     "name": "meta-with-media",

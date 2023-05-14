@@ -1,12 +1,13 @@
 <?php
 
-/**
- * Register the meta field.
+/******************************************************************************
  * 
- * The meta field name is set in the JSON file.
- * It is also possible to set the meta name in the PHP file,
- * and make it available to the JS script using wp_add_inline_script().
- * For examples of how to do this, see the dynamic-meta-block example.
+ * Register the meta field
+ * 
+ *****************************************************************************/
+
+/**
+ * Fetch the meta key from the meta-simple.metafield.json file.
  */
 if ( file_exists( __DIR__ . '/meta-document-settings.metafield.json' ) ) {
   
@@ -27,6 +28,9 @@ if ( file_exists( __DIR__ . '/meta-document-settings.metafield.json' ) ) {
 // Define a constant to make it easily available across functions
 define( 'MYPREFIX_METABOX_DOCUMENT_SETTING_FIELD', $meta_field );
 
+/**
+ * Register the meta field
+ */
 add_action( 'init', 'myprefix_meta_document_settings_field' );
 
 function myprefix_meta_document_settings_field() {
@@ -46,6 +50,33 @@ function myprefix_meta_document_settings_field() {
   );
 }
 
+/******************************************************************************
+ * 
+ * Use the meta value in a post
+ * 
+ *****************************************************************************/
+
+add_filter( 'the_content', 'myprefix_meta_document_settings_content_filter' );
+
+function myprefix_meta_document_settings_content_filter( $content ) {
+  $value = get_post_meta( get_the_ID(), MYPREFIX_METABOX_DOCUMENT_SETTING_FIELD, true );
+
+  if ( $value ) {
+      return sprintf( "%s \n <h4> Here is the META from the useSelect Document Settings </h4> \n <p>%s</p>", 
+        $content, 
+        esc_html( $value )
+      );
+  } else {
+      return $content;
+  }
+}
+
+/******************************************************************************
+ * 
+ * Enqueue the script file
+ * 
+ *****************************************************************************/
+
 add_action( 'enqueue_block_editor_assets', 'myprefix_meta_document_settings' );
 
 function myprefix_meta_document_settings() {
@@ -62,23 +93,4 @@ function myprefix_meta_document_settings() {
     filemtime( MYPREFIX_GUT_BLOCKS_PLUGIN_PATH . basename( __DIR__ ) . '/index.js' ), // *** Dev only
     true
   ); 
-}
-
-
-/**
- * Use the meta value in a post
- */
-add_filter( 'the_content', 'myprefix_meta_document_settings_content_filter' );
-
-function myprefix_meta_document_settings_content_filter( $content ) {
-  $value = get_post_meta( get_the_ID(), MYPREFIX_METABOX_DOCUMENT_SETTING_FIELD, true );
-
-  if ( $value ) {
-      return sprintf( "%s \n <h4> Here is the META from the useSelect Document Settings </h4> \n <p>%s</p>", 
-        $content, 
-        esc_html( $value )
-      );
-  } else {
-      return $content;
-  }
 }
