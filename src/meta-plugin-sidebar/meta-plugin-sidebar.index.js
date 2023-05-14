@@ -2,12 +2,9 @@
  * This code does not register a block type.
  */
 
-/********************************************************************
- *
- * wp destructuring and constants
- *
- ********************************************************************/
-
+/**
+ * WordPress dependencies
+ */
 import { registerPlugin } from "@wordpress/plugins";
 import { PluginSidebar, PluginSidebarMoreMenuItem } from "@wordpress/edit-post";
 import { DateTimePicker, ColorPicker, PanelBody } from "@wordpress/components";
@@ -15,8 +12,13 @@ import { useSelect } from "@wordpress/data";
 import { useEntityProp } from "@wordpress/core-data";
 import { __ } from "@wordpress/i18n";
 
+/**
+ * Local dependencies
+ */
+// This is not a block.json file. It stores the meta field name,so that it is accessible to JS and PHP
 import metadata from "./meta-plugin-sidebar.metafield.json";
 
+// The meta field name is defined in the JSON file
 const metaField = metadata.metaField;
 
 /********************************************************************
@@ -76,15 +78,9 @@ function PluginSidebarMetaFields() {
 }
 
 /******************************************************************************
+ *
  * Register the plugin with Gutenberg and create the sidebar.
- * `PluginSidebarMoreMenuItem` adds an item in
- * Gutenberg's 3-dot menu (top-right).
- * `PluginSidebar` creates the sidebar and puts a button in the toolbar,
- * next to Gutenberg's cog (top-right), to toggle the sidebar.
- * See SlotFills in Gutenberg documentation:
- * https://developer.wordpress.org/block-editor/developers/slotfills/plugin-sidebar/
- * and
- * https://developer.wordpress.org/block-editor/packages/packages-plugins/
+ *
  *****************************************************************************/
 registerPlugin("myprefix-sidebar", {
   icon: "lightbulb",

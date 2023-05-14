@@ -1,43 +1,36 @@
-# Meta Simple
+# Meta Block Inspector
 
 ## Description
 
-This example adds a block that contains a `TextControl` component, which is used to enter a value for the post meta. The meta is then used on the front-end, using the `the_content` filter.
+This example adds a block that displays the date-time that is entered via a date-picker in the Block Inspector. The chosen date-time is saved as post meta, and displayed on the front-end using a callback function.
 
 ## In this code
 
-**`meta-simple.php`**
+**`meta-block-inspector.php`**
 
 - Registers the block.
-- Fetches the meta key from `meta-simple.metafield.json`.
+- Fetches the meta key from `meta-block-inspector.metafield.json`.
 - Registers the meta filed.
-- Adds a `the_content` filter to use the meta on the front-end.
+- Adds a callback to render the block on the front-end.
 
-**`meta-simple.index.js`**
+**`meta-block-inspector.index.js`**
 
 - Registers the block.
-- Fetches the meta key from `meta-simple.metafield.json`.
-- Processes the metadata using `useEntityProp`.
+- Adds the Block Inspector controls for the date-picker.
+- Handles the post meta using `useEntityProp`.
+- The `save` function returns `null`, as the meta values are not available to it.
 
-**`meta-simple.block.json`**
+**`meta-block-inspector.metafield.json`**
 
-- Uses `supports.multiple` to only allow a single instance of the block in the editor. Thus, the metadata can only be set from a single block.
+- Contains the meta filed key.
 
-      "supports": {
-        "multiple": false
-      },
-
-**`meta-simple.metafield.json`**
-
-- Contains the key for the meta field.
-
-## Note
+## Notes
 
 ### The meta key
 
-The meta field name is defined only once, in `meta-simple.metafield.json` file, making it easily available to JS and PHP code.
+The meta field name is defined only once, in `meta-document-settings.metafield.json` file, making it easily available to JS and PHP code.
 
-The meta key is not set in `meta-simple.block.json`, because `metaField` (or, equivalent) is not in the schema for the `block.json` file. Thus, its presence will be flagged as an error when using `"$schema": "https://schemas.wp.org/trunk/block.json"`.
+The meta key is not set in `meta-document-settings-simple.block.json`, because `metaField` (or, equivalent) is not in the schema for the `block.json` file. Thus, its presence will be flagged as an error when using `"$schema": "https://schemas.wp.org/trunk/block.json"`.
 
 It is also possible to set the meta name in the PHP file, and make it available to the JS script using `wp_localize_script()`, or `wp_add_inline_script()`. These methods are demonstrated in `meta-callback` and `meta-attribute` respectively.
 
@@ -70,7 +63,8 @@ The meta data is not available to the `save` function, and can not be used there
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
   - `registerBlockType`
 - [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
-  - [`TextControl`](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/)
+  - [`DateTimePicker`](https://developer.wordpress.org/block-editor/reference-guides/components/date-time/)
+  - [`PanelBody`](https://developer.wordpress.org/block-editor/reference-guides/components/panel/)
 - [`@wordpress/data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-data/)
   - `useSelect`
 - [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
@@ -81,6 +75,7 @@ The meta data is not available to the `save` function, and can not be used there
 **PHP WP functions**
 
 - [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
+- [`get_block_wrapper_attributes`](https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/)
 - [`register_post_meta`](https://developer.wordpress.org/reference/functions/register_post_meta/)
 - [`get_post_meta`](https://developer.wordpress.org/reference/functions/get_post_meta/)
 
@@ -88,10 +83,4 @@ The meta data is not available to the `save` function, and can not be used there
 
 - [`init`](https://developer.wordpress.org/reference/hooks/init/)
 
-**PHP WP filters**
-
-- [`the_content`](https://developer.wordpress.org/reference/functions/the_content/)
-
 ## Also see
-
-The Gutenberg Handbook's section on [Meta Boxes](https://developer.wordpress.org/block-editor/how-to-guides/metabox/)

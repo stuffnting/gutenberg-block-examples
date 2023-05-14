@@ -1,20 +1,20 @@
+/**
+ * WordPress Dependencies
+ */
 import { registerBlockType } from "@wordpress/blocks";
 import { DateTimePicker, PanelBody } from "@wordpress/components";
 import { useSelect } from "@wordpress/data";
 import { useEntityProp } from "@wordpress/core-data";
-import {
-  useBlockProps,
-  InspectorControls,
-  InnerBlocks,
-} from "@wordpress/block-editor";
+import { useBlockProps, InspectorControls } from "@wordpress/block-editor";
 import { __ } from "@wordpress/i18n";
 
-import metadata from "./meta-inner-blocks-inspector.block.json";
-import metaFieldData from "./meta-inner-blocks.metafield.json";
+/**
+ * Local dependencies
+ */
+import metadata from "./meta-block-inspector.block.json";
+import metaFieldData from "./meta-block-inspector.metafield.json";
 
 const metaField = metaFieldData.metaField;
-
-const allowedBlocks = ["core/paragraph", "core/heading"];
 
 registerBlockType(metadata.name, {
   edit: () => {
@@ -49,18 +49,11 @@ registerBlockType(metadata.name, {
         </InspectorControls>
         <div {...blockProps}>
           <p>{date || __("Enter a date...", "textDomain")}</p>
-          <InnerBlocks allowedBlocks={allowedBlocks} />
         </div>
       </>
     );
   },
   save: () => {
-    const blockProps = useBlockProps.save();
-
-    return (
-      <div {...blockProps}>
-        <InnerBlocks.Content />
-      </div>
-    );
+    return null;
   },
 });

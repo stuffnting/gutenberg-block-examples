@@ -1,11 +1,13 @@
 <?php
-/**
- * Register the meta field.
+
+/******************************************************************************
  * 
- * The meta field name is set in the JSON file.
- * It is also possible to set the meta name in the PHP file,
- * and make it available to the JS script using wp_add_inline_script().
- * For examples of how to do this, see the dynamic-meta-block example.
+ * Register the meta field
+ * 
+ *****************************************************************************/
+
+/**
+ * Fetch the meta key from the meta-simple.metafield.json file.
  */
 if ( file_exists( __DIR__ . '/meta-plugin-sidebar.metafield.json' ) ) {
   
@@ -26,6 +28,9 @@ if ( file_exists( __DIR__ . '/meta-plugin-sidebar.metafield.json' ) ) {
 // Define a constant to make it easily available across functions
 define( 'MYPREFIX_META_PLUGIN_SIDEBAR_FIELD', $meta_field );
 
+/**
+ * Register the meta field
+ */
 add_action( 'init', 'myprefix_register_meta_plugin_sidebar_field' );
 
 function myprefix_register_meta_plugin_sidebar_field() {
@@ -54,28 +59,13 @@ function myprefix_register_meta_plugin_sidebar_field() {
       )
     );
   }
-  
-  add_action( 'enqueue_block_editor_assets', 'myprefix_meta_plugin_sidebar' );
-  
-  function myprefix_meta_plugin_sidebar() {
-    
-    if ( ! function_exists( 'register_block_type' ) ) {
-      // Gutenberg is not active.
-      return;
-    }
-    
-    wp_enqueue_script(
-      'myprefix-meta-plugin-sidebar-script',
-      MYPREFIX_GUT_BLOCKS_PLUGIN_URL . basename( __DIR__ ) . '/index.js',
-      array(),
-      filemtime( MYPREFIX_GUT_BLOCKS_PLUGIN_PATH . basename( __DIR__ ) . '/index.js' ), // *** Dev only
-      true
-    ); 
-  }
-  
-  /**
-   * Use the meta value in a post
-   */
+
+/******************************************************************************
+ * 
+ * Use the meta value in a post
+ * 
+ *****************************************************************************/
+
   if ( !is_admin() ) {
     add_filter( 'the_content', 'myprefix_meta_plugin_sidebar_content_filter' );
   }
@@ -98,3 +88,28 @@ function myprefix_register_meta_plugin_sidebar_field() {
     return $content;
   }
 }
+
+/******************************************************************************
+ * 
+ * Enqueue the script file.
+ * 
+ *****************************************************************************/
+  
+add_action( 'enqueue_block_editor_assets', 'myprefix_meta_plugin_sidebar' );
+  
+function myprefix_meta_plugin_sidebar() {
+  
+  if ( ! function_exists( 'register_block_type' ) ) {
+    // Gutenberg is not active.
+    return;
+  }
+  
+  wp_enqueue_script(
+    'myprefix-meta-plugin-sidebar-script',
+    MYPREFIX_GUT_BLOCKS_PLUGIN_URL . basename( __DIR__ ) . '/index.js',
+    array(),
+    filemtime( MYPREFIX_GUT_BLOCKS_PLUGIN_PATH . basename( __DIR__ ) . '/index.js' ), // *** Dev only
+    true
+  ); 
+}
+  

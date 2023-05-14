@@ -1,24 +1,27 @@
-# Meta Document Settings
+# Meta Plugin Sidebar
 
 ## Description
 
-This example adds a [meta box](https://developer.wordpress.org/plugins/metadata/custom-meta-boxes/) to the Document Settings sidebar. The metadata is then used on the front-end, using the `the_content` filter.
+This example adds a plugin sidebar, which can be opened from the lightbulb icon at the top-left of the editor.
+
+Two meta [meta boxes](https://developer.wordpress.org/plugins/metadata/custom-meta-boxes/) to the sidebar. The metadata is then used on the front-end, using the `the_content` filter.
 
 ## In this code
 
-**`meta-document-settings.php`**
+**`meta-plugin-sidebar.php`**
 
 - Enqueues the script file. Note, there is no block to register for this example.
-- Fetches the meta key from `meta-simple.metafield.json`.
+- Fetches the meta key from `meta-document-sidebar.metafield.json`.
 - Registers the meta filed.
 - Adds a `the_content` filter to use the meta on the front-end.
 
-**`meta-document-settings.index.js`**
+**`meta-plugin-sidebar.index.js`**
 
 - Registers a plugin to add the meta box.
-- Adds the `DocPanelMetaFields` component that deals with the post meta.
+- Adds the `PluginSidebarMoreMenuItem` component that deals with the post meta.
+- `PluginSidebar` creates the sidebar and puts a button in the toolbar.
 
-**`meta-document-settings.metafield.json`**
+**`meta-plugin-sidebar.metafield.json`**
 
 - Contains the key for the meta field.
 
@@ -42,7 +45,8 @@ The meta values are managed using the `useEntityProp` React hook.
 
 - [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
   - [`PanelBody`](https://developer.wordpress.org/block-editor/reference-guides/components/panel/)
-  - [`TextControl`](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/)
+  - [`DateTimePicker`](https://developer.wordpress.org/block-editor/reference-guides/components/date-time/)
+  - [`ColorPicker`](https://developer.wordpress.org/block-editor/reference-guides/components/color-picker/)
 - [`@wordpress/data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-data/)
   - `useSelect`
 - [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
@@ -50,7 +54,8 @@ The meta values are managed using the `useEntityProp` React hook.
 - [`@wordpress/plugins`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-plugins/)
   - `registerPlugin`
 - [`@wordpress/edit-post`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-edit-post/)
-  - `PluginDocumentSettingPanel`
+  - `PluginSidebar`
+  - `PluginSidebarMoreMenuItem`
 - [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
   - `__`
 
@@ -71,4 +76,6 @@ The meta values are managed using the `useEntityProp` React hook.
 
 ## Also see
 
-The Gutenberg Handbook's section on [Meta Boxes](https://developer.wordpress.org/block-editor/how-to-guides/metabox/)
+The [`SlotFills`](https://developer.wordpress.org/block-editor/packages/packages-plugins/) documentation in the Gutenberg Handbook.
+
+The [`Plugins API`](https://developer.wordpress.org/block-editor/packages/packages-plugins/) documentation in the Gutenberg Handbook.

@@ -93,7 +93,7 @@
   },
   "inspector-control-tabs": {
     "name": "inspector-control-tabs",
-    "cat": ["inspector-controls", "context"],
+    "cat": ["inspector-controls", "context", "php-render"],
     "include": false
   },
   "meta-attribute": {
@@ -104,18 +104,18 @@
   },
   "meta-callback": {
     "name": "meta-callback",
-    "cat": ["dynamic", "meta"],
+    "cat": ["meta", "php-render"],
     "include": false
   },
   "meta-document-settings": {
     "name": "meta-document-settings",
     "cat": ["meta"],
-    "include": true
-  },
-  "meta-inner-blocks-inspector": {
-    "name": "meta-inner-blocks-inspector",
-    "cat": ["meta"],
     "include": false
+  },
+  "meta-block-inspector": {
+    "name": "meta-block-inspector",
+    "cat": ["meta", "php-render"],
+    "include": true
   },
   "meta-notices-save-lock": {
     "name": "meta-notices-save-lock",
@@ -125,7 +125,6 @@
   "meta-plugin-sidebar": {
     "name": "meta-plugin-sidebar",
     "cat": ["meta", "plugin sidebar"],
-    "converted to import": false,
     "include": false
   },
   "meta-simple": {

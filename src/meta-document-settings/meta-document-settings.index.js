@@ -1,9 +1,6 @@
-/********************************************************************
- *
- * Importing @wordpress packages.
- *
- ********************************************************************/
-
+/**
+ * WordPress dependencies
+ */
 import { TextControl } from "@wordpress/components";
 import { useSelect } from "@wordpress/data";
 import { useEntityProp } from "@wordpress/core-data";
@@ -11,6 +8,9 @@ import { registerPlugin } from "@wordpress/plugins";
 import { PluginDocumentSettingPanel } from "@wordpress/edit-post";
 import { __ } from "@wordpress/i18n";
 
+/**
+ * Local dependencies
+ */
 // This is not a block.json file. It stores the meta field name,so that it is accessible to JS and PHP
 import metadata from "./meta-document-settings.metafield.json";
 
