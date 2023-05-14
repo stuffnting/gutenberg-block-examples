@@ -1,9 +1,11 @@
 <?php
 
-/**
- * Code for laying out a more complex dynamic block.
- * This used attributes saved from the Block Inspector.
- */
+/******************************************************************************
+ * 
+ * The callback function
+ * 
+ *****************************************************************************/
+
 function myprefix_inspector_control_tabs_cb( $attributes, $content ) {
 
   $recent_posts = wp_get_recent_posts( array(
@@ -31,10 +33,22 @@ function myprefix_inspector_control_tabs_cb( $attributes, $content ) {
   );
   }
 
-  $extra_class = isset( $attributes['className'] ) ? " {$attributes['className']}" : '';
+  /**
+   * Get the class, style and id attributes for the block currently being rendered,
+   * and add in the extra style from the custom attributes for underline and font-family.
+   * @link https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/
+   */
+  $wrapper_attributes = get_block_wrapper_attributes( array( "style" => $style ) );
 
-  return "<div class='my-dynamic-block{$extra_class}'>$out</div>";
+  return sprintf( '<div %1$s>%2$s</div>',
+          $wrapper_attributes,
+          $out
+        );
 }
+
+/**
+ * Register the block
+ */
 
 add_action( 'init', 'myprefix_inspector_control_tabs' );
 
@@ -50,6 +64,12 @@ function myprefix_inspector_control_tabs() {
   ) );
 }
 
+
+/******************************************************************************
+ * 
+ * Filters
+ * 
+ *****************************************************************************/
 
 /**
  * Uncommenting to disable the Block Inspector control tabs for all blocks'.

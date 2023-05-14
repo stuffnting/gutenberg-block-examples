@@ -94,7 +94,7 @@
   "inspector-control-tabs": {
     "name": "inspector-control-tabs",
     "cat": ["inspector-controls", "context"],
-    "include": false
+    "include": true
   },
   "meta-attribute": {
     "name": "meta-attribute",
