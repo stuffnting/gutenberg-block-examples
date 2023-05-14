@@ -67,16 +67,20 @@ The meta data is not available to the `save` function, and can not be used there
 
 - [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
   - `useBlockProps`
+- [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
+  - [`TextControl`](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/)
 - [`@wordpress/data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-data/)
   - `useSelect`
 - [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
   - `useEntityProp`
+- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+  - `__`
 
 **PHP WP functions**
 
 - [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
-- [`get_post_meta`](https://developer.wordpress.org/reference/functions/get_post_meta/)
 - [`register_post_meta`](https://developer.wordpress.org/reference/functions/register_post_meta/)
+- [`get_post_meta`](https://developer.wordpress.org/reference/functions/get_post_meta/)
 
 **PHP WP actions**
 
