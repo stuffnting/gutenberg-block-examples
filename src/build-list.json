@@ -94,7 +94,7 @@
   "inspector-control-tabs": {
     "name": "inspector-control-tabs",
     "cat": ["inspector-controls", "context"],
-    "include": true
+    "include": false
   },
   "meta-attribute": {
     "name": "meta-attribute",
@@ -131,7 +131,7 @@
   "meta-simple": {
     "name": "meta-simple",
     "cat": ["meta"],
-    "include": false
+    "include": true
   },
   "meta-with-media": {
     "name": "meta-with-media",

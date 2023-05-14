@@ -42,7 +42,9 @@ It is also possible to register two meta keys, one for each field.
 
 ### The meta key
 
-In this example the meta key is registered in the PHP file, using `register_post_meta()`. The key's name is then made available to the JS files via [`wp_localize_script()`](https://developer.wordpress.org/reference/functions/wp_localize_script/). The WordPress documentation says that [`wp_add_inline_script()`](https://developer.wordpress.org/reference/functions/wp_add_inline_script/), but the `wp_localize_script()` method seems neater.
+In this example the meta key is registered in the PHP file, using `register_post_meta()`. The key's name is then made available to the JS code via [`wp_localize_script()`](https://developer.wordpress.org/reference/functions/wp_localize_script/). The WordPress documentation says that [`wp_add_inline_script()`](https://developer.wordpress.org/reference/functions/wp_add_inline_script/), but the `wp_localize_script()` method seems neater.
+
+It is also possible to set the meta key using [`wp_add_inline_script()`](https://developer.wordpress.org/reference/functions/wp_add_inline_script/), or a JSON file. These methods are demonstrated in `meta-attribute` and `meta-simple` respectively.
 
 The code is:
 
@@ -54,7 +56,7 @@ where, `myprefix-meta-callback-editor-script-js` is the handle assigned, by Word
 
 It is possible to name the meta key in the JSON file. For examples of how to do this, see the other meta block examples.
 
-### Meta values and the `save` function
+### `useEntityProp` vs `source: meta`
 
 The old method for dealing with metadata in blocks was to use an attribute with `source` set to meta. For example:
 

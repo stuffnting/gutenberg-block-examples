@@ -1,3 +1,6 @@
+/**
+ * WordPress dependencies
+ */
 import { registerBlockType } from "@wordpress/blocks";
 import { TextControl } from "@wordpress/components";
 import { useSelect } from "@wordpress/data";
@@ -5,6 +8,9 @@ import { useEntityProp } from "@wordpress/core-data";
 import { useBlockProps } from "@wordpress/block-editor";
 import { __ } from "@wordpress/i18n";
 
+/**
+ * Local dependencies
+ */
 import metadata from "./meta-simple.block.json";
 import metaFieldData from "./meta-simple.metafield.json";
 
@@ -14,6 +20,9 @@ registerBlockType(metadata.name, {
   edit() {
     const blockProps = useBlockProps();
 
+    /**
+     * Process the post meta
+     */
     const postType = useSelect(
       (select) => select("core/editor").getCurrentPostType(),
       []
@@ -29,7 +38,7 @@ registerBlockType(metadata.name, {
     return (
       <div {...blockProps}>
         <TextControl
-          label={__("Metabox Block Field", "textDomain")}
+          label={__("Meta Box Block Field", "textDomain")}
           placeholder={__("Enter some metadata...", "textDomain")}
           value={metaFieldValue}
           onChange={updateMetaValue}
@@ -38,9 +47,9 @@ registerBlockType(metadata.name, {
     );
   },
 
-  // No information saved to the block
-  // Data is saved to post meta via the hook
   save() {
+    // No information saved to the block
+    // Data is saved to post meta via setMeta
     return null;
   },
 });

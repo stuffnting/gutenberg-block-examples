@@ -4,7 +4,7 @@
   "name": "myprefix/meta-simple",
   "title": "Meta Simple",
   "icon": "lightbulb",
-  "description": "A simple metabox in a block that stores a value as metadata, and not as a block attribute",
+  "description": "A simple meta box in a block that stores a value as metadata, and not as a block attribute",
   "category": "widgets",
   "supports": {
     "multiple": false
