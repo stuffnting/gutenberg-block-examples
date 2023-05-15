@@ -119,6 +119,8 @@ Note, here the `type` is set to `string`, so that the multiple paragraphs will b
 
 ## Also see
 
+When enter is hit in the middle of the text in a `RichText` block, the block can be made to split into two of the same type of block. Similarly, two adjacent instances of the same block can be made to merge into a single block using the delete, or backspace keys. For an example of split and merge behaviour, see `richtext-split-merge`.
+
 For a basic example of how to use block attributes, see `richtext-basic`.
 
 For the basic use of `RichText` see [documentation on GitHub](https://github.com/WordPress/gutenberg/blob/trunk/packages/block-editor/src/components/rich-text/README.md)

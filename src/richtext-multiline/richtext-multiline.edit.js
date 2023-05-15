@@ -1,3 +1,6 @@
+/**
+ * WordPress dependencies
+ */
 import { RichText, useBlockProps } from "@wordpress/block-editor";
 import { __ } from "@wordpress/i18n";
 
@@ -6,6 +9,10 @@ export const edit = (props) => {
   const { content } = attributes;
   const blockProps = useBlockProps();
 
+  /**
+   * Note, here tagName="div", whereas is in the save function, tagName="section".
+   * Also, multiline="p", must match the value of multiline in the JSON file.
+   */
   return (
     <RichText
       identifier="content"

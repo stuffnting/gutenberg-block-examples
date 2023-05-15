@@ -1,3 +1,6 @@
+/**
+ * WordPress dependencies
+ */
 import { RichText, useBlockProps } from "@wordpress/block-editor";
 
 export const save = ({ attributes }) => {
