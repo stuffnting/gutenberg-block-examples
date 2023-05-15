@@ -36,6 +36,12 @@ It is also possible to set the meta name in the PHP file, and make it available 
 
 The meta values are managed using the `useEntityProp` React hook.
 
+### Meta field keys starting with an underscore
+
+Meta data field names that begin with an underscore are private. Private fields will not appear in the editor's Custom Fields section. To update a private field, `auth_callback` must return `true`.
+
+To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences -> Panels -> Additional -> Custom Fields.
+
 ## Uses
 
 **JS WP dependencies**

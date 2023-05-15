@@ -2,7 +2,7 @@
 
 ## Description
 
-This example adds a block that displays the date-time that is entered via a date-picker in the Block Inspector. The chosen date-time is saved as post meta, and displayed on the front-end using a callback function.
+This example adds a block that displays the date-time, entered via a date-picker in the Block Inspector. The chosen date-time is saved as post meta, and displayed on the front-end using a callback function.
 
 ## In this code
 
@@ -53,6 +53,12 @@ Since WordPress 5.4, the recommended method is to use the `useEntityProp` hook. 
 ### Meta values and the `save` function
 
 The meta data is not available to the `save` function, and can not be used there. In this example, because the block is rendered by a callback function on the front-end, and because there are no inner blocks, there is nothing for the `save` function to process, therefore, `null` is returned.
+
+### Meta field keys starting with an underscore
+
+Meta data field names that begin with an underscore are private. Private fields will not appear in the editor's Custom Fields section. To update a private field, `auth_callback` must return `true`.
+
+To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences -> Panels -> Additional -> Custom Fields.
 
 ## Uses
 

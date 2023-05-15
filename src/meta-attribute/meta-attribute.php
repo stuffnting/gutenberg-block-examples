@@ -1,22 +1,10 @@
 <?php
 
-/**
- * ***NOTE*** This is the old way of doing things.
- * See meta-simple for the more modern method that utilises
- * useEntityProp.
- */
-
-/**
+/******************************************************************************
  * 
- * *** NOTE ***
- * Meta data field names that begin with an underscore are private.
- * This means the will not appear in WordPress' Custom Fields.
- * To update a private field, `auth_callback` must return `true`.
+ * Register the meta field
  * 
- * the callback function sanitize_textarea_field is a built-in WP function.
- */
-
-// register custom meta data field
+ *****************************************************************************/
 
 define('MYPREFIX_META_ATTRIBUTE_FIELD', '_myprefix_meta_attribute_field');
 
@@ -38,6 +26,32 @@ function myprefix_meta_attribute_field() {
     )
   );
 }
+
+/******************************************************************************
+ * 
+ * Use the post meta on the font-end
+ * 
+ *****************************************************************************/
+add_filter( 'the_content', 'myprefix_meta_attribute_content_filter' );
+
+function myprefix_meta_attribute_content_filter( $content ) {
+  $value = get_post_meta( get_the_ID(), MYPREFIX_META_ATTRIBUTE_FIELD, true );
+
+  if ( $value ) {
+      return sprintf( "%s \n <h4> Here is the META from the metabox attribute block</h4> \n <p>%s</p>", 
+        $content, 
+        esc_html( $value )
+      );
+  } else {
+      return $content;
+  }
+}
+
+/******************************************************************************
+ * 
+ * Enqueue the script file and make the meta field key available to the JS code
+ * 
+ *****************************************************************************/
 
 add_action( 'enqueue_block_editor_assets', 'myprefix_meta_attribute' );
 
@@ -61,20 +75,4 @@ function myprefix_meta_attribute() {
   'before' );
 }
 
-/**
- * Use the meta value in a post
- */
-add_filter( 'the_content', 'myprefix_meta_attribute_content_filter' );
 
-function myprefix_meta_attribute_content_filter( $content ) {
-  $value = get_post_meta( get_the_ID(), MYPREFIX_META_ATTRIBUTE_FIELD, true );
-
-  if ( $value ) {
-      return sprintf( "%s \n <h4> Here is the META from the metabox attribute block</h4> \n <p>%s</p>", 
-        $content, 
-        esc_html( $value )
-      );
-  } else {
-      return $content;
-  }
-}

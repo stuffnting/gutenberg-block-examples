@@ -73,3 +73,7 @@ The function `myprefix_print_metadata_to_console()` contains a neat bit of code 
 
 - [`block_type_metadata`](https://developer.wordpress.org/reference/hooks/block_type_metadata/)
 - [`block_type_metadata_settings`](https://developer.wordpress.org/reference/hooks/block_type_metadata_settings/)
+
+## Also see
+
+For an example of how to register blocks to old way, without using a `block.json` file, see `meta-attribute`.

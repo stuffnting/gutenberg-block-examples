@@ -41,6 +41,12 @@ The meta key is not set in `meta-simple.block.json`, because `metaField` (or, eq
 
 It is also possible to set the meta name in the PHP file, and make it available to the JS script using `wp_localize_script()`, or `wp_add_inline_script()`. These methods are demonstrated in `meta-callback` and `meta-attribute` respectively.
 
+### Meta field keys starting with an underscore
+
+Meta data field names that begin with an underscore are private. Private fields will not appear in the editor's Custom Fields section. To update a private field, `auth_callback` must return `true`.
+
+To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences -> Panels -> Additional -> Custom Fields.
+
 ### `useEntityProp` vs `source: meta`
 
 The old method for dealing with metadata in blocks was to use an attribute with `source` set to meta. For example:

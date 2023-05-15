@@ -100,7 +100,7 @@
     "name": "meta-attribute",
     "cat": ["meta"],
     "note": "This is the old method with attribute.source.meta, rather than useSelect.",
-    "include": false
+    "include": true
   },
   "meta-callback": {
     "name": "meta-callback",
@@ -115,7 +115,7 @@
   "meta-block-inspector": {
     "name": "meta-block-inspector",
     "cat": ["meta", "php-render"],
-    "include": true
+    "include": false
   },
   "meta-notices-save-lock": {
     "name": "meta-notices-save-lock",
