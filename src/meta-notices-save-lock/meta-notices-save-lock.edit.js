@@ -1,3 +1,6 @@
+/**
+ * WordPress Dependencies
+ */
 import { useEffect } from "@wordpress/element";
 import { useSelect } from "@wordpress/data";
 import { useEntityProp } from "@wordpress/core-data";
@@ -5,14 +8,20 @@ import { DateTimePicker, PanelBody } from "@wordpress/components";
 import { useBlockProps, InspectorControls } from "@wordpress/block-editor";
 import { __ } from "@wordpress/i18n";
 
+/**
+ * Local dependencies
+ */
 import metaFieldData from "./meta-notices-save-lock.metafield.json";
-import { notices } from "./meta-notices-save-lock-notices";
+import { notices } from "./notices";
 
 const metaField = metaFieldData.metaField;
 
 export const edit = () => {
   const blockProps = useBlockProps();
 
+  /**
+   * Deal with the meta field
+   */
   const postType = useSelect(
     (select) => select("core/editor").getCurrentPostType(),
     []
@@ -25,6 +34,9 @@ export const edit = () => {
     setMeta({ ...meta, [metaField]: newDate });
   }
 
+  /**
+   * Deal with the notices
+   */
   useEffect(notices(date));
 
   return (

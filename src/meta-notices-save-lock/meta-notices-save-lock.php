@@ -1,17 +1,13 @@
 <?php
+/******************************************************************************
+ * 
+ * Deal with the Meta
+ * 
+ *****************************************************************************/
 /**
- * Register the meta field.
- * 
- * The meta field name is set in the JSON file.
- * It is also possible to set the meta name in the PHP file,
- * and make it available to the JS script using wp_add_inline_script().
- * For examples of how to do this, see the dynamic-meta-block example.
- * 
- * *** NOTE *** Because metaField is not in the schema for block.json file,
- * its presence will be flagged as an error when using 
- * "$schema": "https://schemas.wp.org/trunk/block.json"
+ * Get the meta field key from the JSON file
  */
-if ( file_exists( __DIR__ . '/meta-notices-save-lock.metafield.json' ) ) {
+ if ( file_exists( __DIR__ . '/meta-notices-save-lock.metafield.json' ) ) {
   
   $block_json = file_get_contents( 'meta-notices-save-lock.metafield.json', true );
 
@@ -27,11 +23,14 @@ if ( file_exists( __DIR__ . '/meta-notices-save-lock.metafield.json' ) ) {
   error_log( "ERROR: block.json file not found. Logged from line" . __LINE__ . " in " . __FILE__ );
 }
 
+/**
+ * Register the meta field
+ */
 define( 'MYPREFIX_META_NOTICES_SAVE_LOCK_FIELD', $meta_field );
 
-add_action( 'init', 'myprefix_register_metabox_notices_save_lock_meta' );
+add_action( 'init', 'myprefix_register_meta_notices_save_lock_meta' );
 
-function myprefix_register_metabox_notices_save_lock_meta() {
+function myprefix_register_meta_notices_save_lock_meta() {
   register_meta( 
     'post', 
     MYPREFIX_META_NOTICES_SAVE_LOCK_FIELD, 
@@ -47,23 +46,14 @@ function myprefix_register_metabox_notices_save_lock_meta() {
       )
     );
 }
-  
-add_action( 'init', 'myprefix_metabox_notices_save_lock' );
-  
-function myprefix_metabox_notices_save_lock() {
-  
-  if ( ! function_exists( 'register_block_type' ) ) {
-    // Gutenberg is not active.
-    return;
-  }
 
-  // Register the call_back for rendering on the front end
-  register_block_type( __DIR__, array(
-    'render_callback' => 'myprefix_metabox_notices_save_lock_cb'        
-  ) );
-}
+/******************************************************************************
+ * 
+ * Callback function
+ * 
+ *****************************************************************************/
 
-function myprefix_metabox_notices_save_lock_cb( $attributes, $inner_blocks ) {
+function myprefix_meta_notices_save_lock_cb( $attributes, $inner_blocks ) {
   //Get a flattened array
   $meta = get_post_meta( get_the_ID() );
   $date_string = $meta[MYPREFIX_META_NOTICES_SAVE_LOCK_FIELD][0] ?? '';
@@ -71,5 +61,35 @@ function myprefix_metabox_notices_save_lock_cb( $attributes, $inner_blocks ) {
   $meta_out = '<p>From date meta</p>';
   $meta_out .= $date_string ? "<p>$date_string</p>" : "";
   
-  return $meta_out;
+    /**
+   * Get the class, style and id attributes for the block currently being rendered.
+   * @link https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/
+   */
+  $wrapper_attributes = get_block_wrapper_attributes();
+
+  return sprintf( '<div %1$s>%2$s</div>',
+          $wrapper_attributes,
+          $meta_out
+        );;
+}
+
+/******************************************************************************
+ * 
+ * Register the block
+ * 
+ *****************************************************************************/
+
+add_action( 'init', 'myprefix_meta_notices_save_lock' );
+  
+function myprefix_meta_notices_save_lock() {
+  
+  if ( ! function_exists( 'register_block_type' ) ) {
+    // Gutenberg is not active.
+    return;
+  }
+
+  // Register the call_back for rendering on the front-end
+  register_block_type( __DIR__, array(
+    'render_callback' => 'myprefix_meta_notices_save_lock_cb'        
+  ) );
 }

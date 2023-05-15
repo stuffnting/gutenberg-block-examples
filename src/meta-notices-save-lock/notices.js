@@ -1,3 +1,6 @@
+/**
+ * WordPress dependencies
+ */
 import { useSelect, select, dispatch } from "@wordpress/data";
 import { __ } from "@wordpress/i18n";
 
