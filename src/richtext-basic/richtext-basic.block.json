@@ -1,7 +1,8 @@
 {
+  "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 2,
-  "title": "RichText Basic Block",
-  "name": "myprefix/richtext-basic-block",
+  "name": "myprefix/richtext-basic",
+  "title": "RichText Basic",
   "description": "A very simple RichText block.",
   "icon": "lightbulb",
   "category": "text",

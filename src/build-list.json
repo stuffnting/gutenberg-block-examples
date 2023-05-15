@@ -120,7 +120,7 @@
   "meta-notices-save-lock": {
     "name": "meta-notices-save-lock",
     "cat": ["meta", "notices", "php-render"],
-    "include": true
+    "include": false
   },
   "meta-plugin-sidebar": {
     "name": "meta-plugin-sidebar",
@@ -145,7 +145,7 @@
   "richtext-basic": {
     "cat": ["richtext"],
     "name": "richtext-basic",
-    "include": false
+    "include": true
   },
   "richtext-custom-toolbar-buttons": {
     "cat": ["richtext"],
