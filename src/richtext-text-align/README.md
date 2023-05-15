@@ -2,7 +2,7 @@
 
 ## Description
 
-By default `RichText` components don't get alignment controls. This example adds a `RichText` block, which has text [alignment controls](https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/block-controls-toolbar-and-sidebar/) added to its toolbar. The current text alignment is stired in a block attribute.
+By default [`RichText`](https://github.com/WordPress/gutenberg/blob/trunk/packages/block-editor/src/components/rich-text/README.md) components don't get alignment controls. This example adds a `RichText` block, which has text [alignment controls](https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/block-controls-toolbar-and-sidebar/) added to its toolbar. The current text alignment is stired in a block attribute.
 
 ## In this code
 

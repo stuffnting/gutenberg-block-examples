@@ -4,12 +4,5 @@ export const save = ({ attributes }) => {
   const { content } = attributes;
   const blockProps = useBlockProps.save();
 
-  return (
-    <RichText.Content
-      tagName="section"
-      /*A section element wraps the multilines on the frontend*/
-      value={content}
-      {...blockProps}
-    />
-  );
+  return <RichText.Content tagName="section" value={content} {...blockProps} />;
 };

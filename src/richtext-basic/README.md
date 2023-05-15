@@ -2,7 +2,7 @@
 
 ## Description
 
-This example adds a block containing a very simple [`RichText`](https://developer.wordpress.org/block-editor/reference-guides/richtext/) component.
+This example adds a block containing a very simple [`RichText`](https://github.com/WordPress/gutenberg/blob/trunk/packages/block-editor/src/components/rich-text/README.md) component.
 
 ## In this code
 

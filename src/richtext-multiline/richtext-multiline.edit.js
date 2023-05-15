@@ -10,7 +10,6 @@ export const edit = (props) => {
     <RichText
       identifier="content"
       tagName="div"
-      /*A div element wraps the multilines in the editor, the save function can be different*/
       multiline="p"
       value={content}
       onChange={(value) => setAttributes({ content: value })}

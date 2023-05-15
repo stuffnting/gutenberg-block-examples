@@ -170,7 +170,7 @@
   "richtext-multiline": {
     "cat": ["richtext"],
     "name": "richtext-multiline",
-    "include": false
+    "include": true
   },
   "richtext-split-merge": {
     "cat": ["richtext"],
