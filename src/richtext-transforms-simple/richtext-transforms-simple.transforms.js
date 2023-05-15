@@ -1,5 +1,11 @@
-import { registerBlockType, createBlock } from "@wordpress/blocks";
+/**
+ * Register dependencies
+ */
+import { createBlock } from "@wordpress/blocks";
 
+/**
+ * Local dependencies
+ */
 import metadata from "./richtext-transforms-simple.block.json";
 
 export const transforms = {

@@ -180,7 +180,7 @@
   "richtext-supports": {
     "cat": ["richtext"],
     "name": "richtext-supports",
-    "include": true
+    "include": false
   },
   "richtext-text-align": {
     "cat": ["richtext"],
@@ -195,7 +195,7 @@
   "richtext-transforms-simple": {
     "cat": ["richtext"],
     "name": "richtext-transforms-simple",
-    "include": false
+    "include": true
   },
   "templates": {
     "cat": ["templates", "styles"],
