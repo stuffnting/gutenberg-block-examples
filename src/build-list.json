@@ -175,13 +175,12 @@
   "richtext-split-merge": {
     "cat": ["richtext"],
     "name": "richtext-split-merge",
-    "include": true
+    "include": false
   },
   "richtext-supports": {
     "cat": ["richtext"],
     "name": "richtext-supports",
-    "converted to import": false,
-    "include": false
+    "include": true
   },
   "richtext-text-align": {
     "cat": ["richtext"],

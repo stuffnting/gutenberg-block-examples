@@ -18,33 +18,39 @@
     "anchor": true,
     "_comment-1": "// Adds the anchor field to the Advanced panel in the block inspector",
     "align": true,
-    "_comment-2": "// This is for block alignment",
-    "_comment-3": "//color: true, // This will add text and background but not gradient",
-    "_comment-4": "// Adds colour pickers to the block inspector (WP 5.6), Supports background, text and gradient. Adding support for gradient, as done here, also adds support for background and text colours because `color` is `true` if it contains a non-empty object. see https://developer.wordpress.org/block-editor/developers/block-api/block-supports/#color*/",
+    "className": false,
+    "_comment-2": "// Removes the automatic classname from the block's wrapper tag on the front-end e.g. .wp-block-your-block-name",
+    "_comment-3": "// This is for block alignment (not text alignment)",
     "color": {
-      "gradient": true
+      "gradient": false,
+      "background": true,
+      "text": true,
+      "link": false
     },
+    "_comment-4": "// Adds colour pickers to the block inspector (WP 5.6), Supports background, text and gradient. Adding support for gradient, as done here, also adds support for background and text colours because `color` is `true` if it contains a non-empty object. see https://developer.wordpress.org/block-editor/developers/block-api/block-supports/#color*/",
+    "customClassName": false,
+    "_comment-5": "// Remove the classname field from the Advanced panel in the block inspector",
     "dimensions": {
       "minHeight": true
     },
     "html": false,
-    "_comment-5": "// Prevents Edit HTML in `...` menu",
+    "_comment-6": "// Prevents Edit HTML in `...` menu",
     "multiple": true,
-    "_comment-6": "// False only allows on of this block in each post",
+    "_comment-7": "// False only allows on of this block in each post",
     "position": {
       "sticky": true
     },
     "typography": {
       "fontSize": true,
-      "_comment-7": "// Adds a drop down to the Block Inspector WP 5.6",
+      "_comment-8": "// Adds a drop down to the Block Inspector WP 5.6",
       "lineHeight": true,
-      "_comment-8": "// Adds a control to Block Inspector WP 5.6, this needs theme support, see the PHP file"
+      "_comment-9": "// Adds a control to Block Inspector WP 5.6, this needs theme support, see the PHP file"
     },
     "spacing": {
       "margin": ["top", "bottom"],
-      "_comment-9": "// Enable margin UI control. *** Not working WP 5.8",
+      "_comment-10": "// Enable margin UI control.",
       "padding": true,
-      "_comment-10": "// Enable padding UI control."
+      "_comment-11": "// Enable padding UI control."
     },
     "lock": true
   },
