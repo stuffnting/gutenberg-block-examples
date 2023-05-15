@@ -1,3 +1,6 @@
+/**
+ * WordPress dependencies
+ */
 import {
   RichText,
   useBlockProps,
@@ -6,7 +9,11 @@ import {
 } from "@wordpress/block-editor";
 import { __ } from "@wordpress/i18n";
 
-// classnames is an external dependency installed by @wordpress/block-editor
+/**
+ * External Dependencies
+ *
+ * classnames is an external dependency installed by @wordpress/block-editor
+ */
 import classnames from "classnames";
 
 export const edit = (props) => {
@@ -24,8 +31,10 @@ export const edit = (props) => {
       <BlockControls>
         <AlignmentToolbar
           value={textAlign}
-          onChange={(nextAlign) => {
-            setAttributes({ textAlign: nextAlign });
+          onChange={(newAlign) => {
+            setAttributes({
+              textAlign: newAlign === undefined ? "none" : newAlign,
+            });
           }}
         />
       </BlockControls>
@@ -35,7 +44,6 @@ export const edit = (props) => {
         value={content}
         onChange={(value) => setAttributes({ content: value })}
         placeholder={__("Write heading…", "textDomain")}
-        textAlign={textAlign}
         {...blockProps}
       />
     </>

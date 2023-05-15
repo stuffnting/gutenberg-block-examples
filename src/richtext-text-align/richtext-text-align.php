@@ -1,5 +1,11 @@
 <?php
 
+/******************************************************************************
+ * 
+ * Register the block
+ * 
+ *****************************************************************************/
+
 add_action( 'init', 'myprefix_richtext_text_align' );
 
 function myprefix_richtext_text_align() {

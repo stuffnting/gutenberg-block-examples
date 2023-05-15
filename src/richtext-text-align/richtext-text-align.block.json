@@ -14,7 +14,8 @@
       "default": ""
     },
     "textAlign": {
-      "type": "string"
+      "type": "string",
+      "default": "none"
     }
   },
   "editorScript": "file:./index.js"

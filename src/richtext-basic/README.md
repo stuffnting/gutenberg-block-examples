@@ -50,6 +50,8 @@ Block's use [attributes](https://developer.wordpress.org/block-editor/reference-
 
 In this case, the data-type is a `string`, the value is sourced from the block's `html`, and the selector used to identify the value to be stored in `content` is `h2`.
 
+### The `save` function
+
 When an instance of the block is placed in a post, it is in the database as:
 
 ```
@@ -61,6 +63,8 @@ When an instance of the block is placed in a post, it is in the database as:
 So, when the post is reloaded in the editor, the value to place in the `content` attribute is found by looking in the stored `html`, and finding the `string` between the `h2` tags.
 
 ## Uses
+
+**JS WP dependencies**
 
 - [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
   - `useBlockProps`

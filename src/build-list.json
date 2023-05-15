@@ -145,7 +145,7 @@
   "richtext-basic": {
     "cat": ["richtext"],
     "name": "richtext-basic",
-    "include": true
+    "include": false
   },
   "richtext-custom-toolbar-buttons": {
     "cat": ["richtext"],
