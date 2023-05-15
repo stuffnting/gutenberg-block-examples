@@ -33,7 +33,7 @@ This example adds a block containing a very simple [`RichText`](https://develope
 
 ### Attributes
 
-Block's use attributes to store data. This block uses the `content` attribute to store the text from the `RichText` component.
+Block's use [attributes](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-attributes/) to store data. This block uses the `content` attribute to store the text from the `RichText` component.
 
 `content` is defined in the `richtext-basic.block.json` file:
 
@@ -79,3 +79,5 @@ So, when the post is reloaded in the editor, the value to place in the `content`
 - [`init`](https://developer.wordpress.org/reference/hooks/init/)
 
 ## Also see
+
+The Gutenberg Handbook's documentation on [attributes](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-attributes/).
