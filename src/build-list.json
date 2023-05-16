@@ -190,12 +190,12 @@
   "richtext-transforms-multiblock": {
     "cat": ["richtext"],
     "name": "richtext-transforms-multiblock",
-    "include": false
+    "include": true
   },
   "richtext-transforms-simple": {
     "cat": ["richtext"],
     "name": "richtext-transforms-simple",
-    "include": true
+    "include": false
   },
   "templates": {
     "cat": ["templates", "styles"],

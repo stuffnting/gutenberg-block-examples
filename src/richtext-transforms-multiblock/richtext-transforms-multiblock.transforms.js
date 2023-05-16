@@ -42,15 +42,17 @@ export const transforms = {
       type: "block",
       isMultiBlock: true,
       blocks: ["core/paragraph"],
-      transform: (attributes) =>
+      transform: (attributes) => {
+        console.log(attributes);
         // `attributes` contains an array, with one element per selected block.
-        attributes.map(({ content, className }) =>
+        return attributes.map(({ content, className }) =>
           // `map` returns an array. One new block created per selected block.
           createBlock("core/paragraph", {
             content,
             className,
           })
-        ),
+        );
+      },
     },
     {
       // Lifted from core/list Gutenberg version 12.8
