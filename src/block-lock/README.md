@@ -71,3 +71,7 @@ Because blocks have locking enabled by default, the attribute will automatically
 **PHP WP Filters**
 
 - [`block_type_metadata_settings`](https://developer.wordpress.org/reference/hooks/block_type_metadata_settings/)
+
+## Also see
+
+The `templates` example.

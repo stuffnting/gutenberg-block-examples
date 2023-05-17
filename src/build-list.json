@@ -3,7 +3,6 @@
   "block-categories": {
     "name": "block-categories",
     "cat": ["categories"],
-    "readme": true,
     "include": false
   },
   "block-collection": {
@@ -190,7 +189,7 @@
   "richtext-transforms-multiblock": {
     "cat": ["richtext"],
     "name": "richtext-transforms-multiblock",
-    "include": true
+    "include": false
   },
   "richtext-transforms-simple": {
     "cat": ["richtext"],
@@ -205,7 +204,7 @@
   "variations-existing-blocks": {
     "cat": "variations and styles",
     "name": "variations-existing-blocks",
-    "include": false
+    "include": true
   },
   "variations-query-block": {
     "cat": "variations",

@@ -34,11 +34,15 @@ This example adds a parent block, `myprefix/inner-blocks-template-parent`, which
 
 In this example `templateLock` is set to `false`, meaning that blocks can be added, removed, and moved. However, only blocks in the `ALLOWED` constant can be added to the parent in the editor, that's: `core/paragraph` and `myprefix/inner-blocks-template-child`.
 
-To add extra block to the parent, with the parent selected, click on the plus button ("Add Blocks"). You will see just the two blocks available.
+To add extra blocks to the parent, with the parent selected, click on the plus button ("Add Blocks"). You will see just the two blocks available.
 
 The `block.json` file for `myprefix/inner-blocks-template-child` states `"parent": ["myprefix/inner-blocks-template-parent"]`, therefore, it can only be added to the parent block, and can't be used in other circumstances.
 
+If `templateLock` is set to `contentOnly`, blocks can not be moved, removed, or inserted. With the block selected, the inserter is inactive, the List View lists only the parent, and in the block inspector, the settings are replaced by a list of inner blocks.
+
 See [here](https://fullsiteediting.com/how-to-lock-blocks-and-templates/) for more on locking template.
+
+Also see, the `template` example.
 
 ### `useBlockProps` and `useInnerBlockProps`
 
@@ -67,6 +71,10 @@ See here for more details about [`useInnerBlockProps`](https://make.wordpress.or
 - [`init`](https://developer.wordpress.org/reference/hooks/init/)
 
 ## Also see
+
+The `templates` example.
+
+The `block-lock` example.
 
 For a simple example of inner blocks without using a template see `inner-blocks`.
 

@@ -2,7 +2,7 @@
 /**
  * This file contains several examples of templates with different types of lock.
  * 
- * Uncomment one at a time to test them.
+ * Uncomment one at a time to test them by starting a new post.
  * 
  */
 
@@ -43,7 +43,7 @@ function myprefix_register_template_1() {
  * 
  ******************************************************************************/
 
-//add_action( 'init', 'myprefix_register_template_2' );
+// add_action( 'init', 'myprefix_register_template_2' );
 
 function myprefix_register_template_2() {
     $post_type_object = get_post_type_object( 'post' );
@@ -73,6 +73,7 @@ function myprefix_register_template_2() {
       )),      
     );
 }
+
 
 /******************************************************************************
  * 
