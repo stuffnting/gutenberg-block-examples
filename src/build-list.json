@@ -214,6 +214,6 @@
   "variations-register-block": {
     "cat": ["variations", "styles"],
     "name": "variations-register-block",
-    "include": false
+    "include": true
   }
 }

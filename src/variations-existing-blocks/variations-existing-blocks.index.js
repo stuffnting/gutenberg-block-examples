@@ -18,31 +18,38 @@ import scss from "./variations-existing-blocks.style.scss";
  * have to be core, but they do need to be registered before this
  * code runs).
  *
+ * This example replaces the default core/preformatted with a
+ * variation that has pink text. The variation appears in the
+ * Inserter, and not the Transformer.
+ *
  ********************************************************************/
 
-registerBlockVariation("core/paragraph", {
-  name: "myprefix-pink-paragraph",
-  title: __("A pink paragraph", "textDomain"),
-  description: __(
-    "A paragraph that has a class added to make the text pink.",
-    "textDomain"
-  ),
-  icon: "lightbulb",
-  attributes: {
-    // Don't forget to add class CSS rule to editor stylesheet
-    className: "is-variation-pink",
+registerBlockVariation("core/preformatted", [
+  {
+    name: "myprefix-pink-preformatted",
+    title: __("Pink preformatted", "textDomain"),
+    description: __(
+      "A preformatted block that has a class added to make the text pink.",
+      "textDomain"
+    ),
+    icon: "lightbulb",
+    // Replace the core block with this variation in the inserter
+    isDefault: true,
+    attributes: {
+      // Don't forget to add class CSS rule to editor stylesheet
+      className: "is-variation-pink",
+    },
+    scope: ["inserter"],
   },
-  scope: ["inserter", "transform"],
-  isActive: (blockAttributes, variationAttributes) =>
-    blockAttributes.className
-      ? blockAttributes.className.includes(variationAttributes.className)
-      : false,
-});
+]);
 
 /********************************************************************
  *
  * Add multiple variations for a core block in one go.
  * These appear in the Variation Transformer only (top of inspector).
+ *
+ * The first variation resets the core/heading block's attribute, to
+ * how they are in the block.json file.
  *
  *******************************************************************/
 
@@ -50,8 +57,9 @@ registerBlockVariation("core/heading", [
   {
     name: "myprefix-default-heading",
     title: __("Heading", "textDomain"),
-    description: __("Default heading settings."),
+    description: __("Default heading settings.", "textDomain"),
     icon: "lightbulb",
+    isDefault: true,
     attributes: {
       placeholder: __("Add some text...", "textDomain"),
       level: 2,
@@ -62,11 +70,10 @@ registerBlockVariation("core/heading", [
       style: {},
       className: "is-reset-variation",
     },
-    scope: ["transform"],
+    scope: ["transform", "inserter"],
     isActive: (blockAttributes, variationAttributes) =>
-      blockAttributes.className
-        ? blockAttributes.className.includes(variationAttributes.className)
-        : false,
+      blockAttributes.level === variationAttributes.level &&
+      blockAttributes.placeholder === variationAttributes.placeholder,
   },
   {
     name: "myprefix-pink-heading",
@@ -88,12 +95,12 @@ registerBlockVariation("core/heading", [
   {
     name: "myprefix-green-heading",
     title: __("A green heading", "textDomain"),
-    description: "An H3 heading, with green centered text.",
+    description: __("An H3 heading, with green centered text.", "textDomain"),
     icon: "lightbulb",
     attributes: {
       level: 3,
-      textAlign: "center",
-      placeholder: __("Add some green text...", "textDomain"),
+      textAlign: "right",
+      placeholder: __("Default paragraph text...", "textDomain"),
       // Don't forget to add class CSS rule to editor stylesheet
       className: "is-variation-green",
     },
@@ -108,6 +115,9 @@ registerBlockVariation("core/heading", [
  *
  * Register variations for a block type that has InnerBlocks,
  * in this case core/columns.
+ *
+ * Appears in the variation picker, displayed when the core/column
+ * block is first inserted into the post.
  *
  ********************************************************************/
 
