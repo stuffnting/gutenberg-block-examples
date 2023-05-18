@@ -4,10 +4,6 @@
 
 This code demonstrates adding and removing block styles vis PHP and JS.
 
-## Block styles
-
-Block styles provide a fancy way to add custom classes to a block, so that the appearance of the blocks can be changed. Block variations can do this too, as well as applying initial values to attributes and specify inner blocks. See the variation block examples.
-
 ## In this code
 
 **`block-styles.php`**
@@ -23,6 +19,10 @@ Block styles provide a fancy way to add custom classes to a block, so that the a
 - Unregisters two core styles used by the `core/image` block type.
 
 ## Notes
+
+### Block styles
+
+Block styles provide a fancy way to add custom classes to a block, so that the appearance of the blocks can be changed. Block variations can do this too, as well as applying initial values to attributes and specify inner blocks. See the variation block examples.
 
 ### Registering via PHP
 

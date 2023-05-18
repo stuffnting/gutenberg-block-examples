@@ -18,6 +18,13 @@ import {
 } from "@wordpress/blocks";
 
 /**
+ * This dependency is not used, but is included to force wp-scripts to
+ * add wp-edit-post to the dependencies in index.assets.php. Without
+ * this extra dependency, @wordpress/wp-dom does not work.
+ */
+import { PluginSidebar } from "@wordpress/edit-post";
+
+/**
  * Local dependencies
  */
 import "./block-categories-test-block";

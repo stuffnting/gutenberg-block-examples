@@ -4,15 +4,21 @@
 
 Creates a block collection for the namespace `myprefix`. When active, any of the blocks in these examples will be placed in this collection.
 
-## What is a block collection?
-
-A 'block collection' is a set of block that all have the same namespace (block types are named namespace/block-name). They allow all the blocks in a namespace to be grouped together in the Inserter, as well as appearing in their designated categories.
-
 ## In this code
+
+**`block-collection.php`**
+
+- Enqueues the JS file. Note, there is no block to register in this example.
 
 **`block-collection.index.js`**
 
 - Adds a block collection for the namespace `myprefix`.
+
+## Notes
+
+### What is a block collection?
+
+A 'block collection' is a set of block that all have the same namespace (block types are named namespace/block-name). They allow all the blocks in a namespace to be grouped together in the Inserter, as well as appearing in their designated categories.
 
 ## Uses
 

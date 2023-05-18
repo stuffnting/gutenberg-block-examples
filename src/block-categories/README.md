@@ -4,10 +4,13 @@
 
 This code demonstrates how to manipulate the block categories that appear in the Inserter. Including adding, removing and reordering categories, as well as moving blocks between categories.
 
+A test block, `myprefix/change-inserter-test-block`, is also added to the inserter.
+
 ## In this code
 
 **`block-categories.php`**
 
+- Registers a test block: `myprefix/change-inserter-test-block`.
 - Adds a new block category `custom-category-php` using the `block_categories_all` filter.
 - Filters which blocks are allowed in the `widget` category. The other widgets are remove from the editor completely.
 
@@ -37,13 +40,21 @@ This code demonstrates how to manipulate the block categories that appear in the
 
 (Last checked WP 6.2.)
 
-The only block in embed is core/embed.
-
-The other blocks under "embeds" in the inserter are block variations of core/embed.
+The only block in embed is core/embed. The other blocks under "embeds" in the inserter are block variations of core/embed.
 
 Confusingly, all the category names are the same as their titles in the inserter, apart from `embed`, which appears as "EMBEDS".
 
-### Of interest
+### The `dom-ready` dependency problem
+
+If the JS file imports `@wordpress/dom-ready`, `wp-edit-post` is needed as a dependency in the `index.asset.php` file. However, `wp-scripts` does not add it, therefore, the addition needs to be forced.
+
+To force `wp-scripts` to add `wp-edit-post` to `index.asset.php`, add the following, unused, import to the JS file:
+
+```
+import { PluginSidebar } from "@wordpress/edit-post";
+```
+
+### `getCategories`
 
 [`wp.blocks.getCategories()`](https://developer.wordpress.org/block-editor/reference-guides/data/data-core-blocks/#getcategories) fetches a list of core categories and any custom categories registered server-side with PHP.
 
@@ -60,6 +71,8 @@ Confusingly, all the category names are the same as their titles in the inserter
   - `setCategories`
 - [`@wordpress/dom-ready` ](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-dom-ready/)
   - `domReady`
+- [`@wordpress/edit-post`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-edit-post/)
+  - `PluginSidebar`
 - [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
   - `__`
 

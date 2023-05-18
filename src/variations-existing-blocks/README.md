@@ -76,8 +76,8 @@ This problem of a classname being carried over between transformations, also hap
 
 **PHP WP actions**
 
-- [`init`](https://developer.wordpress.org/reference/hooks/init/)
 - [`enqueue_block_editor_assets`](https://developer.wordpress.org/reference/hooks/enqueue_block_editor_assets/)
+- [`enqueue_block_assets`](https://developer.wordpress.org/reference/hooks/enqueue_block_assets/)
 
 ## Also see
 

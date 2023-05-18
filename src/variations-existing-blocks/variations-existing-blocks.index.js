@@ -1,15 +1,13 @@
 /**
- * This code adds variations to exiting block;
- * in this case, existing core blocks.
- *
- * Variations are not the same as styles,
- * also sometimes called style variations.
- *
+ * WordPress dependencies
  * */
 
 import { registerBlockVariation } from "@wordpress/blocks";
 import { __ } from "@wordpress/i18n";
 
+/**
+ * Local dependencies
+ */
 import scss from "./variations-existing-blocks.style.scss";
 
 /********************************************************************

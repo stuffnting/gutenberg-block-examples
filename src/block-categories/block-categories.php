@@ -1,22 +1,24 @@
 <?php
-add_action( 'init', 'myprefix_change_inserter' );
 
-function myprefix_change_inserter() {
+/******************************************************************************
+ * 
+ * Enqueue the script file and the test block.
+ *  
+ * Note, the block JS and category related JS all end up in index.js. This file is 
+ * enqueued by block.json, and so the category related JS does not need to be
+ * enqueued separately.
+ * 
+ *****************************************************************************/
+add_action( 'init', 'myprefix_block_categories' );
+
+function myprefix_block_categories() {
   
   if ( ! function_exists( 'register_block_type' ) ) {
     // Gutenberg is not active.
     return;
   }
 
-  wp_enqueue_script(
-    'myprefix-change-inserter-script',
-    MYPREFIX_GUT_BLOCKS_PLUGIN_URL . basename( __DIR__ ) . '/index.js',
-    array( 'wp-blocks', 'wp-dom-ready', 'wp-i18n', 'wp-element', 'wp-edit-post' ),
-    filemtime( MYPREFIX_GUT_BLOCKS_PLUGIN_PATH . basename( __DIR__ ) . '/index.js' ), // *** Dev only
-    false
-  ); 
-
-  // Register the test block
+  // Register the block type with a JSON file not named block.json
   register_block_type( __DIR__ . "/block-categories-test-block.block.json" );
 }
 
@@ -27,18 +29,24 @@ function myprefix_change_inserter() {
  *****************************************************************************/
  
  /**
- * The core/spacer block is added to this category in the JS file.
+ * The core/spacer block is added to this custom category in the JS file.
  * Similar code can be used to remove block categories.
  * 
  * @see {@link https://developer.wordpress.org/reference/hooks/block_categories_all/}
  * @see {@link https://developer.wordpress.org/reference/functions/wp_list_pluck/}
  */
-add_filter( 'block_categories_all', 'myprefix_block_categories', 10, 2 );
+add_filter( 'block_categories_all', 'myprefix_block_categories_add_custom', 10, 2 );
 
-function myprefix_block_categories( $block_categories, $block_editor_context ) {
+function myprefix_block_categories_add_custom( $block_categories, $block_editor_context ) {
+  // Extract all the block category slug into a new array.
   $category_slugs = wp_list_pluck( $block_categories, 'slug' );
 
+  // Only do this for 'post' post-type
   if ( $block_editor_context->post->post_type === 'post' ) {
+    /**
+     * If 'custom-category-php' is already registered return the $block_categories unchanged,
+     * otherwise, add it to the $block_categories array.
+     */ 
     return in_array( 'custom-category-php', $category_slugs, true ) 
       ? $block_categories 
       : array_merge(

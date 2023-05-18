@@ -6,12 +6,6 @@
 
 This code demonstrates how to register block patterns.
 
-## What are block patterns
-
-Block patterns are groups of blocks that make a reusable layout elements. They are defined server-side using PHP by theme and plugin developers, differing from "reusable blocks", which are defined on the editor by users.
-
-The registered patters can appear in the inserter, a specified block's transform menu, as well as the pattern modal when a new post is created.
-
 ## In this code
 
 **`block-patterns.php`**
@@ -23,6 +17,12 @@ The registered patters can appear in the inserter, a specified block's transform
 - Logs a list of registered patters and pattern categories to the console.
 
 ## Notes
+
+### What are block patterns
+
+Block patterns are groups of blocks that make a reusable layout elements. They are defined server-side using PHP by theme and plugin developers, differing from "reusable blocks", which are defined on the editor by users.
+
+The registered patters can appear in the inserter, a specified block's transform menu, as well as the pattern modal when a new post is created.
 
 ### Enable/disable core patterns
 

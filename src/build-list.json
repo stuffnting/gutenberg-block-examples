@@ -204,7 +204,7 @@
   "variations-existing-blocks": {
     "cat": "variations and styles",
     "name": "variations-existing-blocks",
-    "include": true
+    "include": false
   },
   "variations-query-block": {
     "cat": "variations",
@@ -214,6 +214,6 @@
   "variations-register-block": {
     "cat": ["variations", "styles"],
     "name": "variations-register-block",
-    "include": true
+    "include": false
   }
 }
