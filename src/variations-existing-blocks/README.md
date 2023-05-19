@@ -2,23 +2,23 @@
 
 This example registers several block variations for core blocks:
 
-- A single variation of `core/preformatted` that replaces the original block in the Inserter, but does not appear in the Transformer.
+-   A single variation of `core/preformatted` that replaces the original block in the Inserter, but does not appear in the Transformer.
 
-- Three variations of the `core/heading` block, all of which appear in the Transformer, but not the Inserter. The first variation replaces the original heading block in the Inserter, as well as appearing in the Transformer.
+-   Three variations of the `core/heading` block, all of which appear in the Transformer, but not the Inserter. The first variation replaces the original heading block in the Inserter, as well as appearing in the Transformer.
 
-- A variation of the `core/column` block. it appears in the modal with the column formats, when the column block is first inserted into the post.
+-   A variation of the `core/column` block. it appears in the modal with the column formats, when the column block is first inserted into the post.
 
 ## In this code
 
 **variations-existing-blocks**
 
-- Enqueues `index.js`, that contains the variations, back-end only.
+-   Enqueues `index.js`, that contains the variations, back-end only.
 
-- Enqueues the stylesheet on the front- and back-end.
+-   Enqueues the stylesheet on the front- and back-end.
 
 **variations-existing-blocks.index.js**
 
-- Registers the block variations
+-   Registers the block variations
 
 ## Notes
 
@@ -34,13 +34,17 @@ Unlike styles, variations can only be registered with JS, and not PHP.
 
 There are three possible scopes:
 
-- **`inserter`**—The block variation is shown on the Inserter.
+-   **`inserter`**—The block variation is shown on the Inserter.
 
-- **`transform`**—The block variation appears in the Transformer (actually the BlockVariation component), at the top of the block settings in the Block Inspector.
+-   **`transform`**—The block variation appears in the Transformer (actually the BlockVariation component), at the top of the block settings in the Block Inspector.
 
-- **`block`**—Appears in the variation picker, displayed when the block is first inserted into the post. For example, picking between column formats, when a `core/column` block is inserted into the post.
+-   **`block`**—Appears in the variation picker, displayed when the block is first inserted into the post. For example, picking between column formats, when a `core/column` block is inserted into the post.
 
 The `scope` parameter value is an array, and it can contain multiple elements. This allows the variation to appear in multiple locations.
+
+### `isActive`
+
+This function, that must return `true` or `false`, tells the editor if a variation is active, or not. It also provides information about the variation via the `useBlockDisplayInformation` hook (see [here](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-variations/)); for an example of this see the `variations-register-block` example.
 
 ### Reset to default and `isDefault`
 
@@ -52,9 +56,13 @@ When variations are registered for a core block, such that they can be accessed 
 
 Styles can be added to variations by adding a classname to the attributes' `className` property.
 
-**Note however, that 'block styles' are a better method of creating different styles for blocks, and variations should be used where control over the initial values of attribute, other than `className` are desired. These examples only use styles to make the transition between variations obvious.**
+**Note however, that 'block styles' are a better method of creating different styles for blocks using classnames, and variations should be used where control over the initial values of attribute, other than `className`, are desired. These examples only use styles to make the transition between variations obvious.**
 
 See the `block-styles` example.
+
+Also, see the `variations-register-block` example, to see how `supports` can be used to style a variation's colour, without using `className`.
+
+### The problem of a variation setting `className`
 
 There is a problem when setting `className` for variations that can be transformed. The attribute values defined in the variation, replace the blocks current attribute values when one variation is transformed to another. If the new variation does not contain `className`, the `className` from the original variation will remain (in Block Inspector -> Advanced -> "Additional CSS class(es)"),
 
@@ -64,22 +72,24 @@ This problem of a classname being carried over between transformations, also hap
 
 **JS WP dependencies**
 
-- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
-  - `registerBlockVariation`
-- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
-  - `__`
+-   [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+    -   `registerBlockVariation`
+-   [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+    -   `__`
 
 **PHP WP functions**
 
-- [`wp_enqueue_script`](https://developer.wordpress.org/reference/functions/wp_enqueue_script/)
-- [`wp_enqueue_style`](https://developer.wordpress.org/reference/functions/wp_enqueue_style/)
+-   [`wp_enqueue_script`](https://developer.wordpress.org/reference/functions/wp_enqueue_script/)
+-   [`wp_enqueue_style`](https://developer.wordpress.org/reference/functions/wp_enqueue_style/)
 
 **PHP WP actions**
 
-- [`enqueue_block_editor_assets`](https://developer.wordpress.org/reference/hooks/enqueue_block_editor_assets/)
-- [`enqueue_block_assets`](https://developer.wordpress.org/reference/hooks/enqueue_block_assets/)
+-   [`enqueue_block_editor_assets`](https://developer.wordpress.org/reference/hooks/enqueue_block_editor_assets/)
+-   [`enqueue_block_assets`](https://developer.wordpress.org/reference/hooks/enqueue_block_assets/)
 
 ## Also see
+
+The `variations-register-block` example, where variations are added to a custom block when it is registered.
 
 [fullsiteediting.com article](`https://fullsiteediting.com/lessons/block-variations/`).
 

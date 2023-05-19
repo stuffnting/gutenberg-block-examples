@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Register the block
+ */ 
+
 add_action( 'init', 'myprefix_variations_register_block' );
 
 function myprefix_variations_register_block(){
