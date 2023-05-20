@@ -36,6 +36,7 @@ registerBlockVariation( 'core/query', {
 	attributes: {
 		namespace: namespaceMeta,
 		query: {
+			commentCount: { value: 0, compare: '>=' },
 			perPage: perPageMeta,
 			pages: 0,
 			offset: 0,

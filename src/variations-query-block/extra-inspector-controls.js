@@ -34,18 +34,20 @@ const namespaceMeta = metadata.namespace;
  *****************************************************************************/
 
 export const withExtraQueryControls = ( BlockEdit ) => ( props ) => {
+	// Is this our variation of core/query?
 	if ( namespaceMeta !== props.attributes.namespace ) {
 		return <BlockEdit { ...props } />;
 	}
 
-	const {
-		attributes: { query, extraMessage },
-		setAttributes,
-	} = props;
+	const { attributes, setAttributes } = props;
+	const { query } = attributes;
+	const { commentCount: cC } = query;
 
-	if ( ! query.commentCount ) {
-		query.commentCount = 0;
+	if ( ! cC.value ) {
+		cC.value = 0;
 	}
+
+	console.log( cC.value );
 
 	return (
 		<>
@@ -58,7 +60,7 @@ export const withExtraQueryControls = ( BlockEdit ) => ( props ) => {
 					<PanelRow>
 						<NumberControl
 							label="Number of comments"
-							value={ query.commentCount }
+							value={ cC.value }
 							shiftStep="5"
 							step="1"
 							min={ 0 }
@@ -66,13 +68,26 @@ export const withExtraQueryControls = ( BlockEdit ) => ( props ) => {
 							onChange={ ( newVal ) =>
 								newVal >= 0 && newVal < 100
 									? setAttributes(
-											merge( query, {
-												commentCount:
-													parseInt( newVal ),
+											merge( attributes, {
+												query: merge( query, {
+													commentCount: {
+														value: parseInt(
+															newVal
+														),
+														compare: cC.compare,
+													},
+												} ),
 											} )
 									  )
 									: setAttributes(
-											merge( query, { commentCount: 0 } )
+											merge( attributes, {
+												query: merge( query, {
+													commentCount: {
+														value: 0,
+														compare: cC.compare,
+													},
+												} ),
+											} )
 									  )
 							}
 						/>

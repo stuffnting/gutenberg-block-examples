@@ -102,11 +102,8 @@ function myprefix_query_variation_front_end( $pre_render, $parsed_block, $parent
       function( $query, $block, $page ) {
         $json_data = myprefix_get_json_data();
 
-        // Add new attributes.commentCount
-        $query['comment_count'] = array(
-          'value' => $block->context['query']['commentCount'],
-          'compare' => '>=', // Posts with greater than or equal to comment_count
-        );
+        // Add new attributes.query.commentCount
+        $query['comment_count'] = $block->context['query']['commentCount'];
 
         // Change existing perPage (default is null) with attributes.perPage
         $query['posts_per_page'] = $json_data['per_page'];
@@ -132,15 +129,11 @@ function myprefix_query_variation_front_end( $pre_render, $parsed_block, $parent
 add_filter( 'rest_post_query', 'myprefix_query_variation_editor', 10, 2 );
   
 function myprefix_query_variation_editor( $args, $request ) {
-  // Is this out variation with attributes.commentCount added?
+  // Is this out variation with attributes.query.commentCount added?
   if ( $request->has_param( 'commentCount' ) ) {
-    $comment_count = $request->get_param( 'commentCount' );
-
-    $args['comment_count'] = array(
-      'value' => $comment_count,
-      'compare' => '>=',
-    );
+    $args['comment_count'] = $request->get_param( 'commentCount' );
   }
+
   
   return $args;
 };
