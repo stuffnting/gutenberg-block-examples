@@ -209,11 +209,11 @@
   "variations-query-block": {
     "cat": "variations",
     "name": "variations-query-block",
-    "include": false
+    "include": true
   },
   "variations-register-block": {
     "cat": ["variations", "styles"],
     "name": "variations-register-block",
-    "include": true
+    "include": false
   }
 }
