@@ -63,7 +63,7 @@
   "filter-block-settings": {
     "cat": "filter",
     "name": "filter-block-settings",
-    "include": false
+    "include": true
   },
   "filter-core-block-controls": {
     "cat": "filter",
@@ -209,7 +209,7 @@
   "variations-query-block": {
     "cat": "variations",
     "name": "variations-query-block",
-    "include": true
+    "include": false
   },
   "variations-register-block": {
     "cat": ["variations", "styles"],

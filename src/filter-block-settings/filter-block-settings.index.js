@@ -1,21 +1,17 @@
 /**
- * @link https://make.wordpress.org/core/2023/02/28/custom-settings-wordpress-6-2/
+ * @see{@link https://make.wordpress.org/core/2023/02/28/custom-settings-wordpress-6-2/}
  */
 
 import { addFilter } from "@wordpress/hooks";
 import { select } from "@wordpress/data";
 
 /******************************************************************************
- * Restrict the spacing units that can be
- * selected in the Column block to pixels:
+ *
+ * Restrict the spacing units that can be selected in the Column block to pixels.
+ *
  *****************************************************************************/
 
-function myprefixFilterColumnSpacingUnits(
-  settingValue,
-  settingName,
-  clientId,
-  blockName
-) {
+function myprefixFilterColumnSpacingUnits(settingValue, settingName, clientId, blockName) {
   if (blockName === "core/column" && settingName === "spacing.units") {
     return ["px"];
   }
@@ -29,15 +25,12 @@ addFilter(
 );
 
 /******************************************************************************
- * Disable text color controls on Heading blocks
- * when placed inside of Media & Text blocks.
+ *
+ * Disable text color controls on Heading blocks when placed inside
+ * core/media-text blocks. (Background and link colour controls remain.)
+ *
  *****************************************************************************/
-function myprefixNoColourHeading(
-  settingValue,
-  settingName,
-  clientId,
-  blockName
-) {
+function myprefixNoColourHeading(settingValue, settingName, clientId, blockName) {
   if (blockName === "core/heading") {
     const { getBlockParents, getBlockName } = select("core/block-editor");
     const blockParents = getBlockParents(clientId, true);
@@ -55,6 +48,6 @@ function myprefixNoColourHeading(
 
 addFilter(
   "blockEditor.useSetting.before",
-  "myPlugin/useSetting.before",
+  "myprefix/filter-heading-text-colour",
   myprefixNoColourHeading
 );
