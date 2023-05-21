@@ -1,5 +1,11 @@
 <?php
 
+/******************************************************************************
+ * 
+ * Register the script and style files
+ * 
+ *****************************************************************************/
+
 add_action( 'enqueue_block_editor_assets', 'myprefix_filter_core_block_controls' );
 
 function myprefix_filter_core_block_controls() {

@@ -1,219 +1,219 @@
 {
-  "_NOTE": "This file is needed by plugin.php and needs to be on the server.",
-  "block-categories": {
-    "name": "block-categories",
-    "cat": ["categories"],
-    "include": false
-  },
-  "block-collection": {
-    "cat": ["collections", "categories"],
-    "name": "block-collection",
-    "include": false
-  },
-  "block-json": {
-    "name": "block-json",
-    "cat": ["richtext"],
-    "include": false
-  },
-  "block-lock": {
-    "name": "block-lock",
-    "cat": ["templates", "patterns"],
-    "include": false
-  },
-  "block-patterns": {
-    "name": "block-patterns",
-    "cat": ["templates", "styles"],
-    "include": false
-  },
-  "block-styles": {
-    "name": "block-styles",
-    "cat": ["variations", "styles"],
-    "include": false
-  },
-  "dynamic-attribute": {
-    "name": "dynamic-attribute",
-    "cat": ["dynamic", "php-render"],
-    "include": false
-  },
-  "dynamic-inner-blocks": {
-    "name": "dynamic-inner-blocks",
-    "cat": ["dynamic", "inner-blocks", "php-render"],
-    "include": false
-  },
-  "dynamic-inspector-controls": {
-    "name": "dynamic-inspector-controls",
-    "cat": ["dynamic", "inspector-controls", "php-render"],
-    "include": false
-  },
-  "dynamic-inspector-query-terms": {
-    "name": "dynamic-inspector-query-terms",
-    "cat": ["dynamic", "inspector-controls", "php-render"],
-    "include": false
-  },
-  "dynamic-serverside-render": {
-    "name": "dynamic-serverside-render",
-    "cat": ["dynamic", "php-render"],
-    "include": false
-  },
-  "dynamic-simple": {
-    "name": "dynamic-simple",
-    "cat": ["dynamic", "php-render"],
-    "include": false
-  },
-  "filter-block-settings": {
-    "cat": "filter",
-    "name": "filter-block-settings",
-    "include": true
-  },
-  "filter-core-block-controls": {
-    "cat": "filter",
-    "name": "filter-core-block-controls",
-    "include": false
-  },
-  "filter-core-block-supports": {
-    "name": "filter-core-block-supports",
-    "cat": ["filter"],
-    "include": false
-  },
-  "inner-blocks": {
-    "name": "inner-blocks",
-    "cat": ["inner-blocks", "context"],
-    "include": false
-  },
-  "inner-blocks-context": {
-    "name": "inner-blocks-context",
-    "cat": ["dynamic", "inner-blocks"],
-    "include": false
-  },
-  "inner-blocks-template": {
-    "name": "inner-blocks-template",
-    "cat": ["inner-blocks", "context"],
-    "include": false
-  },
-  "inspector-control-tabs": {
-    "name": "inspector-control-tabs",
-    "cat": ["inspector-controls", "context", "php-render"],
-    "include": false
-  },
-  "meta-attribute": {
-    "name": "meta-attribute",
-    "cat": ["meta"],
-    "note": "This is the old method with attribute.source.meta, rather than useSelect.",
-    "include": false
-  },
-  "meta-callback": {
-    "name": "meta-callback",
-    "cat": ["meta", "php-render"],
-    "include": false
-  },
-  "meta-document-settings": {
-    "name": "meta-document-settings",
-    "cat": ["meta"],
-    "include": false
-  },
-  "meta-block-inspector": {
-    "name": "meta-block-inspector",
-    "cat": ["meta", "php-render"],
-    "include": false
-  },
-  "meta-notices-save-lock": {
-    "name": "meta-notices-save-lock",
-    "cat": ["meta", "notices", "php-render"],
-    "include": false
-  },
-  "meta-plugin-sidebar": {
-    "name": "meta-plugin-sidebar",
-    "cat": ["meta", "plugin sidebar"],
-    "include": false
-  },
-  "meta-simple": {
-    "name": "meta-simple",
-    "cat": ["meta"],
-    "include": false
-  },
-  "meta-with-media": {
-    "name": "meta-with-media",
-    "cat": ["meta", "media", "plugin sidebar"],
-    "include": false
-  },
-  "render-php-template": {
-    "name": "render-php-template",
-    "cat": ["dynamic", "php-render"],
-    "include": false
-  },
-  "richtext-basic": {
-    "cat": ["richtext"],
-    "name": "richtext-basic",
-    "include": false
-  },
-  "richtext-custom-toolbar-buttons": {
-    "cat": ["richtext"],
-    "name": "richtext-custom-toolbar-buttons",
-    "include": false
-  },
-  "richtext-flexible-paragraph": {
-    "cat": ["richtext"],
-    "name": "richtext-flexible-paragraph",
-    "include": false
-  },
-  "richtext-formatting-options": {
-    "cat": ["richtext"],
-    "name": "richtext-formatting-options",
-    "include": false
-  },
-  "richtext-multi-instance": {
-    "cat": ["richtext"],
-    "name": "richtext-multi-instance",
-    "include": false
-  },
-  "richtext-multiline": {
-    "cat": ["richtext"],
-    "name": "richtext-multiline",
-    "include": false
-  },
-  "richtext-split-merge": {
-    "cat": ["richtext"],
-    "name": "richtext-split-merge",
-    "include": false
-  },
-  "richtext-supports": {
-    "cat": ["richtext"],
-    "name": "richtext-supports",
-    "include": false
-  },
-  "richtext-text-align": {
-    "cat": ["richtext"],
-    "name": "richtext-text-align",
-    "include": false
-  },
-  "richtext-transforms-multiblock": {
-    "cat": ["richtext"],
-    "name": "richtext-transforms-multiblock",
-    "include": false
-  },
-  "richtext-transforms-simple": {
-    "cat": ["richtext"],
-    "name": "richtext-transforms-simple",
-    "include": false
-  },
-  "templates": {
-    "cat": ["templates", "styles"],
-    "name": "templates",
-    "include": false
-  },
-  "variations-existing-blocks": {
-    "cat": "variations and styles",
-    "name": "variations-existing-blocks",
-    "include": false
-  },
-  "variations-query-block": {
-    "cat": "variations",
-    "name": "variations-query-block",
-    "include": false
-  },
-  "variations-register-block": {
-    "cat": ["variations", "styles"],
-    "name": "variations-register-block",
-    "include": false
-  }
+	"_NOTE": "This file is needed by plugin.php and needs to be on the server.",
+	"block-categories": {
+		"name": "block-categories",
+		"cat": [ "categories" ],
+		"include": false
+	},
+	"block-collection": {
+		"cat": [ "collections", "categories" ],
+		"name": "block-collection",
+		"include": false
+	},
+	"block-json": {
+		"name": "block-json",
+		"cat": [ "richtext" ],
+		"include": false
+	},
+	"block-lock": {
+		"name": "block-lock",
+		"cat": [ "templates", "patterns" ],
+		"include": false
+	},
+	"block-patterns": {
+		"name": "block-patterns",
+		"cat": [ "templates", "styles" ],
+		"include": false
+	},
+	"block-styles": {
+		"name": "block-styles",
+		"cat": [ "variations", "styles" ],
+		"include": false
+	},
+	"dynamic-attribute": {
+		"name": "dynamic-attribute",
+		"cat": [ "dynamic", "php-render" ],
+		"include": false
+	},
+	"dynamic-inner-blocks": {
+		"name": "dynamic-inner-blocks",
+		"cat": [ "dynamic", "inner-blocks", "php-render" ],
+		"include": false
+	},
+	"dynamic-inspector-controls": {
+		"name": "dynamic-inspector-controls",
+		"cat": [ "dynamic", "inspector-controls", "php-render" ],
+		"include": false
+	},
+	"dynamic-inspector-query-terms": {
+		"name": "dynamic-inspector-query-terms",
+		"cat": [ "dynamic", "inspector-controls", "php-render" ],
+		"include": false
+	},
+	"dynamic-serverside-render": {
+		"name": "dynamic-serverside-render",
+		"cat": [ "dynamic", "php-render" ],
+		"include": false
+	},
+	"dynamic-simple": {
+		"name": "dynamic-simple",
+		"cat": [ "dynamic", "php-render" ],
+		"include": false
+	},
+	"filter-block-settings": {
+		"cat": "filter",
+		"name": "filter-block-settings",
+		"include": true
+	},
+	"filter-core-block-controls": {
+		"cat": "filter",
+		"name": "filter-core-block-controls",
+		"include": true
+	},
+	"filter-core-block-supports": {
+		"name": "filter-core-block-supports",
+		"cat": [ "filter" ],
+		"include": false
+	},
+	"inner-blocks": {
+		"name": "inner-blocks",
+		"cat": [ "inner-blocks", "context" ],
+		"include": false
+	},
+	"inner-blocks-context": {
+		"name": "inner-blocks-context",
+		"cat": [ "dynamic", "inner-blocks" ],
+		"include": false
+	},
+	"inner-blocks-template": {
+		"name": "inner-blocks-template",
+		"cat": [ "inner-blocks", "context" ],
+		"include": false
+	},
+	"inspector-control-tabs": {
+		"name": "inspector-control-tabs",
+		"cat": [ "inspector-controls", "context", "php-render" ],
+		"include": false
+	},
+	"meta-attribute": {
+		"name": "meta-attribute",
+		"cat": [ "meta" ],
+		"note": "This is the old method with attribute.source.meta, rather than useSelect.",
+		"include": false
+	},
+	"meta-callback": {
+		"name": "meta-callback",
+		"cat": [ "meta", "php-render" ],
+		"include": false
+	},
+	"meta-document-settings": {
+		"name": "meta-document-settings",
+		"cat": [ "meta" ],
+		"include": false
+	},
+	"meta-block-inspector": {
+		"name": "meta-block-inspector",
+		"cat": [ "meta", "php-render" ],
+		"include": false
+	},
+	"meta-notices-save-lock": {
+		"name": "meta-notices-save-lock",
+		"cat": [ "meta", "notices", "php-render" ],
+		"include": false
+	},
+	"meta-plugin-sidebar": {
+		"name": "meta-plugin-sidebar",
+		"cat": [ "meta", "plugin sidebar" ],
+		"include": false
+	},
+	"meta-simple": {
+		"name": "meta-simple",
+		"cat": [ "meta" ],
+		"include": false
+	},
+	"meta-with-media": {
+		"name": "meta-with-media",
+		"cat": [ "meta", "media", "plugin sidebar" ],
+		"include": false
+	},
+	"render-php-template": {
+		"name": "render-php-template",
+		"cat": [ "dynamic", "php-render" ],
+		"include": false
+	},
+	"richtext-basic": {
+		"cat": [ "richtext" ],
+		"name": "richtext-basic",
+		"include": false
+	},
+	"richtext-custom-toolbar-buttons": {
+		"cat": [ "richtext" ],
+		"name": "richtext-custom-toolbar-buttons",
+		"include": false
+	},
+	"richtext-flexible-paragraph": {
+		"cat": [ "richtext" ],
+		"name": "richtext-flexible-paragraph",
+		"include": false
+	},
+	"richtext-formatting-options": {
+		"cat": [ "richtext" ],
+		"name": "richtext-formatting-options",
+		"include": false
+	},
+	"richtext-multi-instance": {
+		"cat": [ "richtext" ],
+		"name": "richtext-multi-instance",
+		"include": false
+	},
+	"richtext-multiline": {
+		"cat": [ "richtext" ],
+		"name": "richtext-multiline",
+		"include": false
+	},
+	"richtext-split-merge": {
+		"cat": [ "richtext" ],
+		"name": "richtext-split-merge",
+		"include": false
+	},
+	"richtext-supports": {
+		"cat": [ "richtext" ],
+		"name": "richtext-supports",
+		"include": false
+	},
+	"richtext-text-align": {
+		"cat": [ "richtext" ],
+		"name": "richtext-text-align",
+		"include": false
+	},
+	"richtext-transforms-multiblock": {
+		"cat": [ "richtext" ],
+		"name": "richtext-transforms-multiblock",
+		"include": false
+	},
+	"richtext-transforms-simple": {
+		"cat": [ "richtext" ],
+		"name": "richtext-transforms-simple",
+		"include": false
+	},
+	"templates": {
+		"cat": [ "templates", "styles" ],
+		"name": "templates",
+		"include": false
+	},
+	"variations-existing-blocks": {
+		"cat": "variations and styles",
+		"name": "variations-existing-blocks",
+		"include": false
+	},
+	"variations-query-block": {
+		"cat": "variations",
+		"name": "variations-query-block",
+		"include": false
+	},
+	"variations-register-block": {
+		"cat": [ "variations", "styles" ],
+		"name": "variations-register-block",
+		"include": false
+	}
 }
