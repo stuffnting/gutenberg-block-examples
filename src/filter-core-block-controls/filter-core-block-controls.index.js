@@ -1,18 +1,18 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames';
-import { assign, merge } from 'lodash';
+import classnames from "classnames";
+import { assign, merge } from "lodash";
 
 /**
  * WordPRess dependencies
  */
-import { __ } from '@wordpress/i18n';
-import { addFilter } from '@wordpress/hooks';
-import { createHigherOrderComponent } from '@wordpress/compose';
-import { Fragment } from '@wordpress/element';
-import { InspectorControls } from '@wordpress/blockEditor';
-import { PanelBody, SelectControl } from '@wordpress/components';
+import { __ } from "@wordpress/i18n";
+import { addFilter } from "@wordpress/hooks";
+import { createHigherOrderComponent } from "@wordpress/compose";
+import { Fragment } from "@wordpress/element";
+import { InspectorControls } from "@wordpress/block-editor";
+import { PanelBody, SelectControl } from "@wordpress/components";
 
 /******************************************************************************
  *
@@ -26,129 +26,127 @@ import { PanelBody, SelectControl } from '@wordpress/components';
  *
  ******************************************************************************/
 
-function myprefixAddAttributes( settings, name ) {
-	if ( name === 'core/button' ) {
-		return assign( {}, settings, {
-			attributes: merge( settings.attributes, {
-				size: {
-					type: 'string',
-					default: '',
-				},
-			} ),
-		} );
-	}
-	return settings;
+function myprefixAddAttributes(settings, name) {
+  if (name === "core/list") {
+    const newSet = assign({}, settings, {
+      attributes: merge(settings.attributes, {
+        listType: {
+          type: "string",
+          default: "disc",
+        },
+      }),
+    });
+    console.log(newSet);
+    return newSet;
+  }
+  return settings;
 }
 
-addFilter(
-	'blocks.registerBlockType',
-	'textDomain/button-block/add-attributes',
-	myprefixAddAttributes
-);
+addFilter("blocks.registerBlockType", "myprefix/list-block/add-attributes", myprefixAddAttributes);
 
 /******************************************************************************
- * Add Size control to Button block.
- *
- * Edit is used to modify the block’s `edit` component.
- * It receives the original block BlockEdit component
- * and returns a new wrapped component.
+ * Add list-style-type control to Button block.
  *
  * @see {@link https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/#editor-blockedit}
  *
  *****************************************************************************/
 
-const myprefixAddInspectorControl = createHigherOrderComponent(
-	( BlockEdit ) => {
-		return ( props ) => {
-			const {
-				attributes: { size },
-				setAttributes,
-				name,
-			} = props;
-			if ( name !== 'core/button' ) {
-				return <BlockEdit { ...props } />;
-			}
-			return (
-				<Fragment>
-					<BlockEdit { ...props } />
-					<InspectorControls>
-						<PanelBody
-							title={ __( 'Size settings', 'textDomain' ) }
-							initialOpen={ false }
-						>
-							<SelectControl
-								label={ __( 'Size', 'textDomain' ) }
-								value={ size }
-								options={ [
-									{
-										label: __( 'Regular', 'textDomain' ),
-										value: 'regular',
-									},
-									{
-										label: __( 'Small', 'textDomain' ),
-										value: 'small',
-									},
-									{
-										label: __( 'Large', 'textDomain' ),
-										value: 'large',
-									},
-								] }
-								onChange={ ( value ) => {
-									setAttributes( { size: value } );
-								} }
-							/>
-						</PanelBody>
-					</InspectorControls>
-				</Fragment>
-			);
-		};
-	},
-	'withInspectorControl'
-);
+const myprefixAddInspectorControl = createHigherOrderComponent((BlockEdit) => {
+  return (props) => {
+    const {
+      attributes: { listType, ordered, className },
+      setAttributes,
+      name,
+    } = props;
+
+    // Check block is a list and unordered
+    if (name !== "core/list" || ordered === true) {
+      return <BlockEdit {...props} />;
+    }
+
+    // set listType and className
+    const onChange = (newListType) => {
+      // Take out any previous has-list-style-type- className, but keep other classNames
+      const classNamesKeep = className
+        .split(" ")
+        .filter((el) => !el.includes("has-list-style-type"))
+        .join(" ");
+
+      // Add new className
+      const NewClassName = classnames(
+        classNamesKeep,
+        listType ? `has-list-style-type-${newListType}` : ""
+      );
+
+      setAttributes({
+        listType: newListType,
+        className: NewClassName,
+      });
+    };
+
+    return (
+      <Fragment>
+        <BlockEdit {...props} />
+        <InspectorControls>
+          <PanelBody title={__("List Settings", "textDomain")} initialOpen={false}>
+            <SelectControl
+              label={__("List Style Type", "textDomain")}
+              value={listType}
+              options={[
+                {
+                  label: __("Disc", "textDomain"),
+                  value: "disc",
+                },
+                {
+                  label: __("Circle", "textDomain"),
+                  value: "circle",
+                },
+                {
+                  label: __("Square", "textDomain"),
+                  value: "square",
+                },
+              ]}
+              onChange={onChange}
+            />
+          </PanelBody>
+        </InspectorControls>
+      </Fragment>
+    );
+  };
+}, "withInspectorControl");
 
 addFilter(
-	'editor.BlockEdit',
-	'textDomain/button-block/add-inspector-controls',
-	myprefixAddInspectorControl
+  "editor.BlockEdit",
+  "myprefix/list-block/add-inspector-controls",
+  myprefixAddInspectorControl
 );
 
 /******************************************************************************
  *
- * Add size class to the block in the editor.
- *
- * BlockListBlock is used to modify the block’s wrapper component
- * containing the block’s `edit` component and all toolbars.
- * It receives the original BlockListBlock component and returns a new wrapped component.
+ * Add an extra class to the block in the editor.
  *
  * @see {@link https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/#editor-blocklistblock}
  *
  *****************************************************************************/
 
-const myprefixAddSizeClass = createHigherOrderComponent( ( BlockListBlock ) => {
-	return ( props ) => {
-		const {
-			attributes: { size },
-			className,
-			name,
-		} = props;
+const withAddListTypeClass = createHigherOrderComponent((BlockListBlock) => {
+  return (props) => {
+    const {
+      attributes: { listType, ordered },
+      className,
+      name,
+    } = props;
 
-		if ( name !== 'core/button' ) {
-			return <BlockListBlock { ...props } />;
-		}
-		return (
-			<BlockListBlock
-				{ ...props }
-				className={ classnames(
-					className,
-					size ? `has-size-${ size }` : ''
-				) }
-			/>
-		);
-	};
-}, 'withClientIdClassName' );
+    if (name !== "core/list" || ordered) {
+      return <BlockListBlock {...props} />;
+    }
+    return (
+      <BlockListBlock
+        {...props}
+        className={classnames(className, listType ? `extra-class-for-editor-${listType}` : "")}
+      />
+    );
+  };
+}, "withAddListTypeClass");
 
-addFilter(
-	'editor.BlockListBlock',
-	'intro-to-filters/button-block/add-editor-class',
-	myprefixAddSizeClass
-);
+addFilter("editor.BlockListBlock", "myprefix/list-block/add-editor-class", withAddListTypeClass);

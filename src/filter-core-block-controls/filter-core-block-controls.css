@@ -1,6 +1,39 @@
-.wp-block-button.has-size-large .wp-block-button__link {
-  padding: 1.5rem 3rem;
+/* List styles from Block Inspector control */
+.has-list-style-type-disc {
+	list-style-type: disc;
 }
-.wp-block-button.has-size-small .wp-block-button__link {
-  padding: 0.25rem 1rem;
+
+.has-list-style-type-circle {
+	list-style-type: circle;
+}
+
+.has-list-style-type-square {
+	list-style-type: square;
+}
+
+/* Styles added to editor only, using editor.BlockListBlock */
+.extra-class-for-editor-disc {
+	background-color: cornflowerblue;
+}
+
+.extra-class-for-editor-circle {
+	background-color: lightcoral;
+}
+
+.extra-class-for-editor-square {
+	background-color: lightseagreen;
+}
+
+/* Styles added to the front-end only, using render_block_core/list */
+
+.has-class-for-front-end-disc {
+	background-color: lightskyblue;
+}
+
+.has-class-for-front-end-circle {
+	background-color: lightcyan;
+}
+
+.has-class-for-front-end-square {
+	background-color: lightslategray;
 }
