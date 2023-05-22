@@ -56,4 +56,4 @@ If the theme does not opt in, the PHP file adds an action that will take care of
 
 The Gutenberg Handbook's documentation on [attributes](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-attributes/).
 
-## Also see
+The `filter-core-block-support-example` example.
