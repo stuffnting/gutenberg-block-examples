@@ -44,7 +44,7 @@ In WP 5.8 (July 2021) a group property was added to the `BlockControls` componen
 
 - `parent` - seems to add buttons to the same place as `block` (????)
 
-Buttons can be added to these groups with (see Buttons 1, 2 and 3:
+Buttons can be added to these groups with (see Buttons 1, 2 and 3):
 
 ```
 <BlockControls group='inline'>
