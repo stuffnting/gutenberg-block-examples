@@ -1,0 +1,131 @@
+# richtext-custom-toolbar-buttons
+
+## Description
+
+This example adds four buttons to the block toolbar. Two of the buttons interact with the content of the custom block that is registered by this example. The other two buttons add inline HTML tags around the selected text in core blocks using the [Formatting Toolbar API](https://developer.wordpress.org/block-editor/how-to-guides/format-api/).
+
+## In this code
+
+**`richtext-custom-toolbar-buttons.php`**
+
+- Registers the `myprefix/richtext-custom-toolbar-buttons` block.
+
+**`richtext-custom-toolbar-buttons.index.js`**
+
+- Registers the `myprefix/richtext-custom-toolbar-buttons` block.
+
+- Imports the custom toolbar buttons, used by the registered block, as the component `ExtraToolbarButtons`.
+
+- Imports the custom toolbar buttons used by core blocks as `MyprefixSmallTextButton` and `MyprefixBigTextButton`.
+
+**`richtext-extra-toolbar-buttons.js`**
+
+- Adds Button 1, a dropdown button, to the `block` group of the registered block's toolbar.
+
+- Adds Button 2, a single button, to the `other` group of the registered block's toolbar.
+
+**`richtext-inline-format-buttons.js`**
+
+- Registers Button 3, which adds `<small>` tags around the selected text, for core paragraph, heading, quote and list blocks, as well as the registered block.
+
+- Registers Button 4, which adds `<big>` tags around the selected text, for all core blocks, as well as the registered block.
+
+## Notes
+
+### Positions in the toolbar
+
+In WP 5.8 (July 2021) a group property was added to the `BlockControls` component. This allows custom buttons to be added at three predefined locations in the toolbar (see [here](https://github.com/WordPress/gutenberg/blob/trunk/packages/block-editor/src/components/block-toolbar/index.js#L152)):
+
+- `block` - where the block align button goes, for blocks that support it.
+
+- `inline` - where the bold and italic buttons go.
+
+- `other` - between `inline` and the 'Options' 3-dot menu.
+
+- `parent` - seems to add buttons to the same place as `block` (????)
+
+Buttons can be added to these groups with (see Buttons 1, 2 and 3:
+
+```
+<BlockControls group='inline'>
+  <ToolbarButton
+    label={__('Who is it?', 'textDomain')}
+    icon='superhero'
+    className={null}
+    onClick={/* Code here */}
+  />
+</BlockControls>
+```
+
+Buttons can also be added to the `inline` 'More' menu, with (see Button 4):
+
+```
+<RichTextToolbarButton
+  icon='arrow-down'
+  title='Small Text'
+  onClick={ /_ Code here _/ }
+  isActive={isActive}
+/>
+```
+
+### Inline buttons
+
+The buttons in the `inline` group, and the group's 'More' dropdown menu, add inline HTML tags to around the selected tags. For example, the bold button applied <strong> tags.
+
+More inline buttons, using different tags, can be added using `registerFormatType`. Button 3 and Button 4 in `richtext-inline-format-buttons.js`, where Button 3 is added to specific blocks, and uses `<small>` tags; and Button 4 is added to all blocks, and uses `<big>` tags.
+
+### Buttons added to a custom block's `edit` function
+
+Buttons 1 & 2 are added to the `edit` function of the custom block `myprefix/richtext-custom-toolbar-buttons`. Therefore, they have access to the the block's `attributes`, and `setAttributes` function. This make it possible for teh buttons to set the content of the block.
+
+## Uses
+
+**JS WP dependencies**
+
+- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
+  - `useBlockProps`
+
+  - `RichText`
+
+  - `BlockControls`
+
+  - `RichTextToolbarButton`
+
+- [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
+
+- [`ToolbarButton`](https://developer.wordpress.org/block-editor/reference-guides/components/toolbar-button/)
+
+- [`ToolbarDropdownMenu`](https://developer.wordpress.org/block-editor/reference-guides/components/toolbar-dropdown-menu/)
+
+- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
+  - `registerBlockType`
+
+- [`@wordpress/data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-data/)
+
+  - `useSelect`
+
+- [`@wordpress/rich-text`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-rich-text/)
+
+  - `registerFormatType`
+
+  - `toggleFormat`
+
+- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
+  - `__`
+
+**PHP WP functions**
+
+- [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
+
+**PHP WP actions**
+
+- [`init`](https://developer.wordpress.org/reference/hooks/init/)
+
+## Also see
+
+The Gutenberg Handbook's [Formatting Toolbar API](https://developer.wordpress.org/block-editor/how-to-guides/format-api/) section.
+
+The `richtext-text-align` example demonstrates how to add text-align controls to the toolbar of a custom block.

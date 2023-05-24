@@ -149,17 +149,12 @@
   "richtext-custom-toolbar-buttons": {
     "cat": ["richtext"],
     "name": "richtext-custom-toolbar-buttons",
-    "include": false
-  },
-  "richtext-flexible-paragraph": {
-    "cat": ["richtext"],
-    "name": "richtext-flexible-paragraph",
-    "include": false
+    "include": true
   },
   "richtext-formatting-options": {
     "cat": ["richtext"],
     "name": "richtext-formatting-options",
-    "include": true
+    "include": false
   },
   "richtext-multi-instance": {
     "cat": ["richtext"],
