@@ -61,13 +61,13 @@
     "include": false
   },
   "filter-block-settings": {
-    "cat": "filter",
     "name": "filter-block-settings",
+    "cat": "filter",
     "include": false
   },
   "filter-core-block-controls": {
-    "cat": "filter",
     "name": "filter-core-block-controls",
+    "cat": "filter",
     "include": false
   },
   "filter-core-block-supports": {
@@ -142,73 +142,73 @@
     "include": false
   },
   "richtext-basic": {
-    "cat": ["richtext"],
     "name": "richtext-basic",
+    "cat": ["richtext"],
     "include": false
   },
   "richtext-formatting-options": {
-    "cat": ["richtext"],
     "name": "richtext-formatting-options",
+    "cat": ["richtext"],
     "include": false
   },
-  "richtext-multi-instance": {
+  "richtext-components": {
+    "name": "richtext-multi-components",
     "cat": ["richtext"],
-    "name": "richtext-multi-instance",
     "include": true
   },
   "richtext-multiline": {
-    "cat": ["richtext"],
     "name": "richtext-multiline",
+    "cat": ["richtext"],
     "include": false
   },
   "richtext-split-merge": {
-    "cat": ["richtext"],
     "name": "richtext-split-merge",
+    "cat": ["richtext"],
     "include": false
   },
   "richtext-supports": {
-    "cat": ["richtext"],
     "name": "richtext-supports",
+    "cat": ["richtext"],
     "include": false
   },
   "richtext-text-align": {
-    "cat": ["richtext"],
     "name": "richtext-text-align",
+    "cat": ["richtext"],
     "include": false
   },
   "richtext-toolbar-buttons": {
-    "cat": ["richtext"],
     "name": "richtext-toolbar-buttons",
+    "cat": ["richtext"],
     "include": true
   },
   "richtext-transforms-multiblock": {
-    "cat": ["richtext"],
     "name": "richtext-transforms-multiblock",
+    "cat": ["richtext"],
     "include": false
   },
   "richtext-transforms-simple": {
-    "cat": ["richtext"],
     "name": "richtext-transforms-simple",
+    "cat": ["richtext"],
     "include": false
   },
   "templates": {
-    "cat": ["templates", "styles"],
     "name": "templates",
+    "cat": ["templates", "styles"],
     "include": false
   },
   "variations-existing-blocks": {
-    "cat": "variations and styles",
     "name": "variations-existing-blocks",
+    "cat": "variations and styles",
     "include": false
   },
   "variations-query-block": {
-    "cat": "variations",
     "name": "variations-query-block",
+    "cat": "variations",
     "include": false
   },
   "variations-register-block": {
-    "cat": ["variations", "styles"],
     "name": "variations-register-block",
+    "cat": ["variations", "styles"],
     "include": false
   }
 }

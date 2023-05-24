@@ -1,11 +1,11 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 2,
-  "name": "myprefix/richtext-multi-instance",
-  "title": "RichText Multiple Instances",
+  "name": "myprefix/richtext-multi-components",
+  "title": "RichText Multiple Components",
   "icon": "lightbulb",
   "category": "text",
-  "description": "Multiple RichText elements in one block.",
+  "description": "Uses multiple RichText components in one block.",
   "attributes": {
     "heading": {
       "type": "string",
