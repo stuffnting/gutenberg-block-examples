@@ -18,6 +18,8 @@ This example adds four buttons to the block toolbar. Two of the buttons interact
 
 - Imports the custom toolbar buttons used by core blocks as `MyprefixSmallTextButton` and `MyprefixBigTextButton`.
 
+- Adds the `RichText` component, and specifies `allowedFormats`.
+
 **`richtext-extra-toolbar-buttons.js`**
 
 - Adds Button 1, a dropdown button, to the `block` group of the registered block's toolbar.
@@ -74,9 +76,49 @@ The buttons in the `inline` group, and the group's 'More' dropdown menu, add inl
 
 More inline buttons, using different tags, can be added using `registerFormatType`. Button 3 and Button 4 in `richtext-inline-format-buttons.js`, where Button 3 is added to specific blocks, and uses `<small>` tags; and Button 4 is added to all blocks, and uses `<big>` tags.
 
+### `allowedFormats`
+
+This `attribute` of the `RichText` component can be used to elect which inline formatting buttons appear in the block's toolbar.
+
+The available core inline formatting buttons are:
+
+- `core/bold`—(`strong`)
+
+- `core/code`—(`code`) inline code
+
+- `core/image`—(`img`) inline image
+
+- `core/italic`—(`em`)
+
+- `core/link`—(`a`)
+
+- `core/strikethrough`—(`s`)
+
+- `core/underline`—(`span`)
+
+- `core/text-color`—(`mark`) highlight text
+
+- `core/subscript`—(`sub`)
+
+- `core/superscript`—(`sup`)
+
+- `core/keyboard`—(`kbd`) [keyboard input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/kbd)
+
+- `core/unknown`—clear unknown formatting. This is a button with a `?` on it, which only appears when the text is wrapped in unknown tags. To try is, edit the HTML of a block and wrap the text in a made up tag, e.g. `<mytag></mytag>`.
+
+Custom formatting buttons can also be allowed.
+
+The `RichText` component in this example allows the core bold, italic, and code buttons; as well as `myprefix/small-tag` (Button 3), and `myprefix/big-tag` (Button 4), which are added as custom buttons.
+
+### `withoutInteractiveFormatting`
+
+This is another `RichText` attribute, that removes buttons from the toolbar that would make the block interactive. In effect, this means removing the link button.
+
 ### Buttons added to a custom block's `edit` function
 
 Buttons 1 & 2 are added to the `edit` function of the custom block `myprefix/richtext-custom-toolbar-buttons`. Therefore, they have access to the the block's `attributes`, and `setAttributes` function. This make it possible for teh buttons to set the content of the block.
+
+Note, these two buttons are unaffected by their absence from the `allowedFormats` array of the `RichText` component.
 
 ## Uses
 

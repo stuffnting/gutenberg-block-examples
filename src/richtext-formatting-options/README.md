@@ -80,4 +80,4 @@ This attribute removes buttons from the toolbar that would make the block intera
 
 The Gutenberg's Handbook section on the [Formatting Toolbar API](https://developer.wordpress.org/block-editor/how-to-guides/format-api/).
 
-The `richtext-formatting-options` example.
+The `richtext-custom-toolbar-buttons` example, for examples of adding extra formatting buttons.

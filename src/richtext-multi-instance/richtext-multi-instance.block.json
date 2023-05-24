@@ -16,11 +16,12 @@
     "content": {
       "type": "string",
       "source": "html",
-      "selector": "p",
+      "selector": "section p",
       "default": ""
     },
     "footer": {
       "type": "string",
+      "source": "html",
       "selector": "footer p",
       "default": ""
     }

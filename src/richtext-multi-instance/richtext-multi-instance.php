@@ -1,5 +1,11 @@
 <?php
 
+/******************************************************************************
+ * 
+ * Register the block
+ * 
+ *****************************************************************************/
+
 add_action( 'init', 'myprefix_richtext_multi_instance' );
 
 function myprefix_richtext_multi_instance() {

@@ -159,7 +159,7 @@
   "richtext-multi-instance": {
     "cat": ["richtext"],
     "name": "richtext-multi-instance",
-    "include": false
+    "include": true
   },
   "richtext-multiline": {
     "cat": ["richtext"],

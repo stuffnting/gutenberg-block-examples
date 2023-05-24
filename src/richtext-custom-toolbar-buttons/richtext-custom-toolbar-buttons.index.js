@@ -28,6 +28,13 @@ registerBlockType(metadata.name, {
           value={content}
           onChange={(value) => setAttributes({ content: value })}
           placeholder={__('Write heading…', 'textDomain')}
+          allowedFormats={[
+            'core/bold',
+            'core/italic',
+            'core/code',
+            'myprefix/small-tag',
+            'myprefix/big-tag',
+          ]}
           {...blockProps}
         />
       </>
