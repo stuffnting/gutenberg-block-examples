@@ -146,11 +146,6 @@
     "name": "richtext-basic",
     "include": false
   },
-  "richtext-custom-toolbar-buttons": {
-    "cat": ["richtext"],
-    "name": "richtext-custom-toolbar-buttons",
-    "include": true
-  },
   "richtext-formatting-options": {
     "cat": ["richtext"],
     "name": "richtext-formatting-options",
@@ -180,6 +175,11 @@
     "cat": ["richtext"],
     "name": "richtext-text-align",
     "include": false
+  },
+  "richtext-toolbar-buttons": {
+    "cat": ["richtext"],
+    "name": "richtext-toolbar-buttons",
+    "include": true
   },
   "richtext-transforms-multiblock": {
     "cat": ["richtext"],

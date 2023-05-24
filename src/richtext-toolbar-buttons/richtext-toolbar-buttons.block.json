@@ -1,11 +1,11 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 2,
-  "name": "myprefix/richtext-custom-toolbar-buttons",
-  "title": "RichText Custom Toolbar Buttons",
+  "name": "myprefix/richtext-toolbar-buttons",
+  "title": "RichText Toolbar Buttons",
   "icon": "lightbulb",
   "category": "text",
-  "description": "Add custom buttons to the block's toolbar.",
+  "description": "Adds, and removes buttons to the block's toolbar.",
   "attributes": {
     "content": {
       "type": "string",

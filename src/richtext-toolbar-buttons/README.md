@@ -1,18 +1,20 @@
-# richtext-custom-toolbar-buttons
+# richtext-toolbar-buttons
 
 ## Description
 
 This example adds four buttons to the block toolbar. Two of the buttons interact with the content of the custom block that is registered by this example. The other two buttons add inline HTML tags around the selected text in core blocks using the [Formatting Toolbar API](https://developer.wordpress.org/block-editor/how-to-guides/format-api/).
 
+The registered block also limits the inline formatting buttons available for its `RichText` component, using the `allowedFormats` attribute.
+
 ## In this code
 
-**`richtext-custom-toolbar-buttons.php`**
+**`richtext-toolbar-buttons.php`**
 
-- Registers the `myprefix/richtext-custom-toolbar-buttons` block.
+- Registers the `myprefix/richtext-toolbar-buttons` block.
 
-**`richtext-custom-toolbar-buttons.index.js`**
+**`richtext-toolbar-buttons.index.js`**
 
-- Registers the `myprefix/richtext-custom-toolbar-buttons` block.
+- Registers the `myprefix/richtext-toolbar-buttons` block.
 
 - Imports the custom toolbar buttons, used by the registered block, as the component `ExtraToolbarButtons`.
 
@@ -116,7 +118,7 @@ This is another `RichText` attribute, that removes buttons from the toolbar that
 
 ### Buttons added to a custom block's `edit` function
 
-Buttons 1 & 2 are added to the `edit` function of the custom block `myprefix/richtext-custom-toolbar-buttons`. Therefore, they have access to the the block's `attributes`, and `setAttributes` function. This make it possible for teh buttons to set the content of the block.
+Buttons 1 & 2 are added to the `edit` function of the custom block `myprefix/richtext-toolbar-buttons`. Therefore, they have access to the the block's `attributes`, and `setAttributes` function. This make it possible for teh buttons to set the content of the block.
 
 Note, these two buttons are unaffected by their absence from the `allowedFormats` array of the `RichText` component.
 

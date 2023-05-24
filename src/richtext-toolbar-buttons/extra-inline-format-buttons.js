@@ -25,12 +25,12 @@ export const MyprefixSmallTextButton = ({ isActive, onChange, value }) => {
   const isRCTBRegistered = useSelect((select) => {
     return select('core/blocks')
       .getBlockTypes()
-      .some((block) => block.name === 'myprefix/richtext-custom-toolbar-buttons');
+      .some((block) => block.name === 'myprefix/richtext-toolbar-buttons');
   }, []);
 
   // Custom block-type exists? Add to allowedBlocks array.
   if (isRCTBRegistered) {
-    allowedBlocks.push('myprefix/richtext-custom-toolbar-buttons');
+    allowedBlocks.push('myprefix/richtext-toolbar-buttons');
   }
 
   // Find out the block-type of the currently selected block.

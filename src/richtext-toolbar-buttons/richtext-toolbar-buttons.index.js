@@ -8,10 +8,10 @@ import { __ } from '@wordpress/i18n';
 /**
  * Local dependencies
  */
-import { MyprefixSmallTextButton, MyprefixBigTextButton } from './richtext-inline-format-buttons';
-import { ExtraToolbarButtons } from './richtext-extra-toolbar-buttons';
+import { MyprefixSmallTextButton, MyprefixBigTextButton } from './extra-inline-format-buttons';
+import { ExtraToolbarButtons } from './extra-toolbar-buttons';
 
-import metadata from './richtext-custom-toolbar-buttons.block.json';
+import metadata from './richtext-toolbar-buttons.block.json';
 
 registerBlockType(metadata.name, {
   edit: (props) => {
