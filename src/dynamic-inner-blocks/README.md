@@ -1,8 +1,8 @@
-# Dynamic Inner Blocks
+# dynamic-inner-blocks
 
 ## Description
 
-This block has a dynamic section, which lists the latest posts, and also allows inner blocks to be added.
+This block has a dynamic section, which lists the latest posts, and also allows inner blocks to be added. The allowed inner blocks are limited to the core paragraph, heading, and list blocks. This example demonstrates how `innerBlockProps.children` can be used to add the inner blocks, without a wrapper tag.
 
 ## In this code
 
@@ -68,33 +68,15 @@ There is no need to have `useBlockProps` in the `save` function, because the out
 
 The callback function uses [`get_block_wrapper_attributes()`](https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/) to generate the HTML attributes for the block's wrapping tag. In this case it adds the `wp-block-myprefix-dynamic-inner-blocks` classname.
 
+## Also see
+
+For more ways to use `useInnerBlockProps`, including using it with a wrapper tag, see the other inner block examples.
+
+For an example where `perPage` can be changed from the Block Inspector, see the `dynamic-inspector-query-terms` example.
+
+As well as rendering dynamic blocks using a callback function in the PHP file, it is also possible to use a PHP template file. For an example of how to do this, see the `render-PHP-template` example.
+
 ## Uses
-
-**JS WP dependencies**
-
-- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
-
-  - `useBlockProps`
-
-  - `useInnerBlocksProps`
-
-  - `InnerBlocks`
-
-- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
-
-  - `registerBlockType`
-
-- [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
-
-  - [`TextControl`](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/)
-
-- [`@wordpress/element`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-element/)
-
-  - `memo`
-
-- [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
-
-  - `useEntityRecords`
 
 **PHP WP functions**
 
@@ -108,10 +90,28 @@ The callback function uses [`get_block_wrapper_attributes()`](https://developer.
 
 - [`init`](https://developer.wordpress.org/reference/hooks/init/)
 
-## Also see
+**JS WP dependencies**
 
-For more ways to use `useInnerBlockProps` see the other inner block examples.
+- [`@wordpress/element`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-element/)
 
-For an example where `perPage` can be changed from the Block Inspector, see the `dynamic-inspector-query-terms` example.
+  - `memo`
 
-As well as rendering dynamic blocks using a callback function in the PHP file, it is also possible to use a PHP template file. For an example of how to do this, see the `render-PHP-template` example.
+- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
+  - `registerBlockType`
+
+- [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
+
+  - [`TextControl`](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/)
+
+- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
+  - `useBlockProps`
+
+  - `useInnerBlocksProps`
+
+  - `InnerBlocks`
+
+- [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
+
+  - `useEntityRecords`
