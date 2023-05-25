@@ -1,4 +1,4 @@
-# Meta Document Settings
+# meta-document-settings
 
 ## Description
 
@@ -48,35 +48,13 @@ Meta data field names that begin with an underscore are private. Private fields 
 
 To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences -> Panels -> Additional -> Custom Fields.
 
+## Also see
+
+The Gutenberg Handbook's section on [Meta Boxes](https://developer.wordpress.org/block-editor/how-to-guides/metabox/)
+
+The `meta-with-media` example also uses a meta box in the document settings sidebar.
+
 ## Uses
-
-**JS WP dependencies**
-
-- [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
-
-  - [`PanelBody`](https://developer.wordpress.org/block-editor/reference-guides/components/panel/)
-
-  - [`TextControl`](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/)
-
-- [`@wordpress/data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-data/)
-
-  - `useSelect`
-
-- [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
-
-  - `useEntityProp`
-
-- [`@wordpress/plugins`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-plugins/)
-
-  - `registerPlugin`
-
-- [`@wordpress/edit-post`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-edit-post/)
-
-  - `PluginDocumentSettingPanel`
-
-- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
-
-  - `__`
 
 **PHP WP functions**
 
@@ -96,6 +74,30 @@ To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences ->
 
 - [`the_content`](https://developer.wordpress.org/reference/functions/the_content/)
 
-## Also see
+**JS WP dependencies**
 
-The Gutenberg Handbook's section on [Meta Boxes](https://developer.wordpress.org/block-editor/how-to-guides/metabox/)
+- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
+  - `__`
+
+- [`@wordpress/data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-data/)
+
+  - `useSelect`
+
+- [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
+
+  - [`PanelBody`](https://developer.wordpress.org/block-editor/reference-guides/components/panel/)
+
+  - [`TextControl`](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/)
+
+- [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
+
+  - `useEntityProp`
+
+- [`@wordpress/plugins`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-plugins/)
+
+  - `registerPlugin`
+
+- [`@wordpress/edit-post`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-edit-post/)
+
+  - `PluginDocumentSettingPanel`
