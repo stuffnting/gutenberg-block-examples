@@ -104,6 +104,12 @@ The meta data is not available to the `save` function, and can not be used there
 
   - `__`
 
+**JS WP data module**
+
+- [`core/editor`](https://developer.wordpress.org/block-editor/reference-guides/data/data-core-editor/)
+
+  - `getCurrentPostType`
+
 **PHP WP functions**
 
 - [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)

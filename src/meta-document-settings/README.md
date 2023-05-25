@@ -101,3 +101,9 @@ The `meta-with-media` example also uses a meta box in the document settings side
 - [`@wordpress/edit-post`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-edit-post/)
 
   - `PluginDocumentSettingPanel`
+
+**JS WP data module**
+
+- [`core/editor`](https://developer.wordpress.org/block-editor/reference-guides/data/data-core-editor/)
+
+  - `getCurrentPostType`

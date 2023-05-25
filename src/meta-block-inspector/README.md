@@ -97,3 +97,9 @@ The `dynamic-inspector-controls` and `dynamic-inspector-query-terms`.
 - [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
 
   - [`useEntityProp`](https://github.com/WordPress/gutenberg/blob/trunk/packages/core-data/src/entity-provider.js#L85)
+
+**JS WP data module**
+
+- [`core/editor`](https://developer.wordpress.org/block-editor/reference-guides/data/data-core-editor/)
+
+  - `getCurrentPostType`

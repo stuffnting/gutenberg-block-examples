@@ -82,6 +82,12 @@ To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences ->
 
   - `__`
 
+**JS WP data module**
+
+- [`core/editor`](https://developer.wordpress.org/block-editor/reference-guides/data/data-core-editor/)
+
+  - `getCurrentPostType`
+
 **PHP WP functions**
 
 - [`register_post_meta`](https://developer.wordpress.org/reference/functions/register_post_meta/)

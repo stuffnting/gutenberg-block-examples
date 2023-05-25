@@ -141,3 +141,9 @@ The `filter-block-settings` example.
   - `removeErrorNotice`
 
   - `getCurrentPostType`
+
+**JS WP data module**
+
+- [`core/editor`](https://developer.wordpress.org/block-editor/reference-guides/data/data-core-editor/)
+
+  - `getCurrentPostType`
