@@ -49,6 +49,27 @@ Note, this block does not control the dynamic aspect of the block, i.e. how many
 
   - `attribute.underline`&mdash;whether to underline the title.
 
+```
+"attributes": {
+  "showTitle": {
+    "type": "boolean",
+    "default": true
+  },
+  "title": {
+    "type": "string",
+    "default": "A list of posts"
+  },
+  "font": {
+    "type": "string",
+    "default": "sans-serif"
+  },
+  "underline": {
+    "type": "boolean",
+    "default": false
+  }
+},
+```
+
 ## Notes
 
 ### `React.memo`
@@ -81,23 +102,31 @@ The hook returns an object with three items, which are destructured to:
 
 The callback function uses [`get_block_wrapper_attributes()`](https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/) to generate the HTML attributes for the block's wrapping tag.
 
+## Also see
+
+For an example of controlling a dynamic block's query, see the `dynamic-inspector-query-terms` example.
+
+The `inspector-control-tabs` demonstrates how to place the Inspector controls in specific tabs. The tabs were introduced in WP 6.2.
+
+For an example of how to include inner blocks within the dynamic block, see the `dynamic-inner-blocks` example.
+
+As well as rendering dynamic blocks using a callback function in the PHP file, it is also possible to use a PHP template file. For an example of how to do this, see the `render-PHP-template` example.
+
 ## Uses
 
 **JS WP dependencies**
 
-- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
 
-  - `useBlockProps`
-
-  - `InspectorControls`
-
-- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
-
-  - `registerBlockType`
+  - `__`
 
 - [`@wordpress/element`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-element/)
 
   - `memo`
+
+- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
+  - `registerBlockType`
 
 - [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
 
@@ -113,13 +142,15 @@ The callback function uses [`get_block_wrapper_attributes()`](https://developer.
 
   - [`CheckboxControl`](https://developer.wordpress.org/block-editor/reference-guides/components/checkbox-control/)
 
+- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
+  - `useBlockProps`
+
+  - `InspectorControls`
+
 - [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
 
   - `useEntityRecords`
-
-- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
-
-  - `__`
 
 **PHP WP functions**
 
@@ -132,13 +163,3 @@ The callback function uses [`get_block_wrapper_attributes()`](https://developer.
 **PHP WP actions**
 
 - [`init`](https://developer.wordpress.org/reference/hooks/init/)
-
-## Also see
-
-For an example of controlling a dynamic block's query, see the `dynamic-inspector-query-terms` example.
-
-The `inspector-control-tabs` demonstrated how to place the Inspector controls in specific tabs. The tabs were introduced in WP 6.2.
-
-For an example of how to include inner blocks within the dynamic block, see the `dynamic-inner-blocks` example.
-
-As well as rendering dynamic blocks using a callback function in the PHP file, it is also possible to use a PHP template file. For an example of how to do this, see the `render-PHP-template` example.
