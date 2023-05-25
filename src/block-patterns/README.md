@@ -1,10 +1,10 @@
-# Block Patterns
+# block-patterns
 
 **_NOTE: This code needs PHP 7+._**
 
 ## Description
 
-This code demonstrates how to register block patterns.
+This code demonstrates how to register/unregister block patterns and pattern categories.
 
 ## In this code
 
@@ -56,6 +56,12 @@ If `core/post-content` is added to the patterns `blockTypes` array, the pattern 
 
 The function `myprefix_print_list_to_console()` contains a neat bit of code to print the filters' parameters to the browser console. In order to pass the an extra parameter to the action callback, it uses an anonymous function stored in a variable in, which requires PHP 7+.
 
+## Also see
+
+[Block Editor Handbook - Patterns](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-patterns/)
+
+[Full Site Editing With WordPress - Introduction to Block Patterns](https://fullsiteediting.com/lessons/introduction-to-block-patterns/)
+
 ## Uses
 
 **PHP WP function**
@@ -85,9 +91,3 @@ The function `myprefix_print_list_to_console()` contains a neat bit of code to p
 - [`wp_print_footer_scripts`](https://developer.wordpress.org/reference/functions/wp_print_footer_scripts/)
 
 - [`admin_footer`](https://developer.wordpress.org/reference/hooks/admin_footer/)
-
-## Also see
-
-[Block Editor Handbook - Patterns](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-patterns/)
-
-[Full Site Editing With WordPress - Introduction to Block Patterns](https://fullsiteediting.com/lessons/introduction-to-block-patterns/)
