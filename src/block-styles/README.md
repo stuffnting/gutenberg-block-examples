@@ -1,4 +1,4 @@
-# Block Styles
+# block-styles
 
 ## Description
 
@@ -28,6 +28,8 @@ This code demonstrates adding and removing block styles vis PHP and JS.
 
 Block styles provide a fancy way to add custom classes to a block, so that the appearance of the blocks can be changed. Block variations can do this too, as well as applying initial values to attributes and specify inner blocks. See the variation block examples.
 
+Note, block styles are sometime called style variations, but should not be confused with block variations. For examples of block variations, see the `variations-existing-blocks` and `variations-register-block` examples.
+
 ### Registering via PHP
 
 `register_block_style()` can be top-level plugin code, and does not need to be called from an action hook. It is called here using `init` for neatness.
@@ -52,13 +54,55 @@ The work around, used in `block-styles.index.js` is to use the blocks.`registerB
 
 **Note: All the core styles are registered using JS.**
 
+### The `dom-ready` dependency problem
+
+If the JS file imports `@wordpress/dom-ready`, `wp-edit-post` is needed as a dependency in the `index.asset.php` file. However, `wp-scripts` does not add it, therefore, the addition needs to be forced.
+
+To force `wp-scripts` to add `wp-edit-post` to `index.asset.php`, add the following, unused, import to the JS file:
+
+```
+import { PluginSidebar } from "@wordpress/edit-post";
+```
+
+## Also see
+
+[Block Editor Handbook - Styles](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-styles/)
+
+[Full Site Editing with WordPress - Custom Block Styles](https://fullsiteediting.com/lessons/custom-block-styles/)
+
 ## Uses
 
+**PHP WP functions**
+
+- [`wp_enqueue_style`](https://developer.wordpress.org/reference/functions/wp_enqueue_style/)
+
+- [`register_block_style`](https://developer.wordpress.org/reference/functions/register_block_style/)
+
+- [`unregister_block_style`](https://developer.wordpress.org/reference/functions/unregister_block_style/)
+
+**PHP WP actions**
+
+- [`init`](https://developer.wordpress.org/reference/hooks/init/)
+
+- [`enqueue_block_editor_assets`](https://developer.wordpress.org/reference/hooks/enqueue_block_editor_assets/)
+
+- [`enqueue_block_assets`](https://developer.wordpress.org/reference/hooks/enqueue_block_assets/)
+
+- [`wp_loaded`](https://developer.wordpress.org/reference/hooks/wp_loaded/)
+
 **JS WP dependencies**
+
+- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
+  - `__`
 
 - [`@wordpress/hooks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-hooks/)
 
   - `addFilter`
+
+- [`@wordpress/dom-ready`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-dom-ready/)
+
+  - `domReady`
 
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
 
@@ -66,33 +110,6 @@ The work around, used in `block-styles.index.js` is to use the blocks.`registerB
 
   - `unregisterBlockStyle`
 
-- [`@wordpress/dom-ready`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-dom-ready/)
-
-  - `domReady`
-
-- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
-
-  - `__`
-
 **JS WP filters**
 
 - [`blocks.registerBlockType`](https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/#blocks-registerblocktype)
-
-**PHP WP functions**
-
-- [`wp_enqueue_style`](https://developer.wordpress.org/reference/functions/wp_enqueue_style/)
-- [`register_block_style`](https://developer.wordpress.org/reference/functions/register_block_style/)
-- [`unregister_block_style`](https://developer.wordpress.org/reference/functions/unregister_block_style/)
-
-**PHP WP actions**
-
-- [`init`](https://developer.wordpress.org/reference/hooks/init/)
-- [`enqueue_block_editor_assets`](https://developer.wordpress.org/reference/hooks/enqueue_block_editor_assets/)
-- [`enqueue_block_assets`](https://developer.wordpress.org/reference/hooks/enqueue_block_assets/)
-- [`wp_loaded`](https://developer.wordpress.org/reference/hooks/wp_loaded/)
-
-## Also see
-
-[Block Editor Handbook - Styles](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-styles/)
-
-[Full Site Editing with WordPress - Custom Block Styles](https://fullsiteediting.com/lessons/custom-block-styles/)

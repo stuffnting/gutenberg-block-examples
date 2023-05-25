@@ -1,7 +1,10 @@
 <?php
- /**
- * Only enqueue the index.js in the editor.
- */
+ /*****************************************************************************
+  * 
+  * Only enqueue the index.js in the editor.
+  * 
+  ****************************************************************************/
+
 add_action( 'enqueue_block_editor_assets', 'myprefix_add_block_styles_editor' );
 
 function myprefix_add_block_styles_editor() {
@@ -23,9 +26,12 @@ function myprefix_add_block_styles_editor() {
   );
 }
 
-/**
- * Enqueue the stylesheet here.
- */
+ /*****************************************************************************
+  * 
+  * Only the stylesheet for front- and back -end.
+  * 
+  ****************************************************************************/
+
 add_action( 'enqueue_block_assets', 'myprefix_add_block_styles' );
 
 function myprefix_add_block_styles() {
@@ -38,9 +44,12 @@ function myprefix_add_block_styles() {
   );
 }
  
-/**
- * More styles are registered in the JS file.
- */
+/******************************************************************************
+ * 
+ * Register block styles. More styles are registered in the JS file.
+ * 
+ *****************************************************************************/
+
 add_action( 'init', 'myprefix_add_block_register_styles' );
 
 function myprefix_add_block_register_styles() {
@@ -86,9 +95,12 @@ function myprefix_add_block_register_styles() {
 
 }
 
-/**
- * Unregister block styles
- */
+/******************************************************************************
+ * 
+ * Unregister block styles.
+ * 
+ *****************************************************************************/
+
 add_action('wp_loaded', 'myprefix_unregister_block_styles', 99);
 
 function myprefix_unregister_block_styles() {

@@ -13,7 +13,7 @@
   "block-json": {
     "name": "block-json",
     "cat": ["richtext"],
-    "include": true
+    "include": false
   },
   "block-lock": {
     "name": "block-lock",
@@ -28,7 +28,7 @@
   "block-styles": {
     "name": "block-styles",
     "cat": ["variations", "styles"],
-    "include": false
+    "include": true
   },
   "dynamic-attribute": {
     "name": "dynamic-attribute",
