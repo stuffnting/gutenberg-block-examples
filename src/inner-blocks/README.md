@@ -1,4 +1,4 @@
-# Inner BLocks
+# inner-blocks
 
 ## Description
 
@@ -58,19 +58,15 @@ And the `save` function:
       <InnerBlocks.Content />
     </div>
 
+## Also see
+
+For an example that uses a block template for the inner blocks see `inner-blocks-template`
+
+For an example that uses block `context` to pass values from a parent block to a child block see `inner-blocks-context`.
+
+The `dynamic-inner-blocks` example demonstrates using inner blocks with other content.
+
 ## Uses
-
-**JS WP dependencies**
-
-- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
-
-  - `useBlockProps`
-
-  - `InnerBlocks`
-
-- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
-
-  - `registerBlockType`
 
 **PHP WP functions**
 
@@ -80,10 +76,14 @@ And the `save` function:
 
 - [`init`](https://developer.wordpress.org/reference/hooks/init/)
 
-## Also see
+**JS WP dependencies**
 
-For an example that uses a block template for the inner blocks see `inner-blocks-template`
+- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
 
-For an example that uses block `context` to pass values from a parent block to a child block see `inner-blocks-context`.
+  - `registerBlockType`
 
-The `dynamic-inner-blocks` example demonstrates using inner blocks with other content.
+- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
+  - `useBlockProps`
+
+  - `InnerBlocks`
