@@ -1,4 +1,4 @@
-# Dynamic Serverside Render
+# dynamic-serverside-render
 
 ## Description
 
@@ -40,6 +40,10 @@ For another example using [`ServerSideRender`](https://github.com/WordPress/gute
 
 The callback function uses [`get_block_wrapper_attributes()`](https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/) to generate the HTML attributes for the block's wrapping tag.
 
+## Also see
+
+As well as rendering dynamic blocks using a callback function in the PHP file, it is also possible to use a PHP template file. For an example of how to do this, see the `render-PHP-template` example.
+
 ## Uses
 
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
@@ -65,7 +69,3 @@ The callback function uses [`get_block_wrapper_attributes()`](https://developer.
 **PHP WP actions**
 
 - [`init`](https://developer.wordpress.org/reference/hooks/init/)
-
-## Also see
-
-As well as rendering dynamic blocks using a callback function in the PHP file, it is also possible to use a PHP template file. For an example of how to do this, see the `render-PHP-template` example.

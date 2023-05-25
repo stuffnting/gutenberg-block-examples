@@ -1,4 +1,4 @@
-# Dynamic Inspector Query Terms
+# dynamic-inspector-query-terms
 
 ## Description
 
