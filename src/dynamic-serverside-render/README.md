@@ -2,7 +2,7 @@
 
 ## Description
 
-This example adds a dynamic block that lists the three most recent posts. The block is rendered, both on the front- and back-ends, by the serverside callback function in the PHP file.
+This example adds a dynamic block that lists the three most recent posts. The block is rendered, both on the front- and back-ends, by the serverside callback function in the PHP file. This is essentially the same as `dynamic-simple`, however, PHP is used to render both in the editor, and on the front-end.
 
 ## In this code
 

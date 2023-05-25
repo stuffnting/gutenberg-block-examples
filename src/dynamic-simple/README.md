@@ -2,7 +2,7 @@
 
 ## Description
 
-This example adds a dynamic block that lists the last three posts.
+This example adds a dynamic block that lists the last three posts. The block is rendered on the front-end using a PHP callback function, but is rendered in the editor using JS. Essentially the same as `dynamic-serverside-render`, although that block uses PHP on the front- and back-ends.
 
 ## In this code
 
@@ -54,21 +54,13 @@ This example uses the newer `useEntityRecords` hook method. Before WP 6.1 the re
       return select("core").getEntityRecords("postType", "post");
     }, []);
 
+## Also see
+
+As well as rendering dynamic blocks using a callback function in the PHP file, it is also possible to use a PHP template file. For an example of how to do this, see the `render-PHP-template` example.
+
+There is an example of using dynamic content with inner blocks in `dynamic-inner-blocks`.
+
 ## Uses
-
-**JS WP dependencies**
-
-- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
-
-  - `useBlockProps`
-
-- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
-
-  - `registerBlockType`
-
-- [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
-
-  - `useEntityRecords`
 
 **PHP WP functions**
 
@@ -80,8 +72,16 @@ This example uses the newer `useEntityRecords` hook method. Before WP 6.1 the re
 
 - [`init`](https://developer.wordpress.org/reference/hooks/init/)
 
-## Also see
+**JS WP dependencies**
 
-As well as rendering dynamic blocks using a callback function in the PHP file, it is also possible to use a PHP template file. For an example of how to do this, see the `render-PHP-template` example.
+- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
 
-There is an example of using dynamic content with inner blocks in `dynamic-inner-blcoks`.
+  - `registerBlockType`
+
+- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
+  - `useBlockProps`
+
+- [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
+
+  - `useEntityRecords`
