@@ -1,4 +1,4 @@
-# Block JSON
+# block-json
 
 **_NOTE: This code needs PHP 7+._**
 

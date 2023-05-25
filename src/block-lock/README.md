@@ -1,10 +1,10 @@
-# Block Lock
+# block-lock
 
 ## Description
 
-This code demonstrates the ability to lock a block's position and prevent removal from the editor. The lock is accessed via the 3-dot options menu in the block's toolbar.
+This code demonstrates the ability to lock a block's position, and prevent its removal from the editor. The lock is accessed via the 3-dot options menu in the block's toolbar.
 
-The block that is registered is initial locked for move and remove in posts, but pages' support for block locking is removed using a filter in the PHP file.
+The block that is registered is initial locked for `move` and `remove` in Posts, however, support for block locking is completely removed for Pages, using a filter in the PHP file.
 
 ## In this code
 
@@ -50,7 +50,23 @@ The `lock` attribute is used to set an initial value for the `lock.move` and `lo
 
 Because blocks have locking enabled by default, the attribute will automatically be created if the lock is used. The attribute needs only be included in `block.json` if the block is to be initially locked for move, remove, or both.
 
+## Also see
+
+The `templates` example.
+
 ## Uses
+
+**PHP WP functions**
+
+- [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
+
+**PHP WP actions**
+
+- [`init`](https://developer.wordpress.org/reference/hooks/init/)
+
+**PHP WP Filters**
+
+- [`block_type_metadata_settings`](https://developer.wordpress.org/reference/hooks/block_type_metadata_settings/)
 
 **JS WP dependencies**
 
@@ -67,19 +83,3 @@ Because blocks have locking enabled by default, the attribute will automatically
 - [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
 
   - `__`
-
-**PHP WP functions**
-
-- [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
-
-**PHP WP actions**
-
-- [`init`](https://developer.wordpress.org/reference/hooks/init/)
-
-**PHP WP Filters**
-
-- [`block_type_metadata_settings`](https://developer.wordpress.org/reference/hooks/block_type_metadata_settings/)
-
-## Also see
-
-The `templates` example.

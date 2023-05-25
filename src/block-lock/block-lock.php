@@ -1,8 +1,10 @@
 <?php
 
-/**
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-templates/
- */
+/******************************************************************************
+ * 
+ * Register the block
+ * 
+ *****************************************************************************/
 
 add_action( 'init', 'myprefix_block_lock' );
 
@@ -16,7 +18,8 @@ function myprefix_block_lock() {
   register_block_type( __DIR__ );
 }
 
-/**
+/******************************************************************************
+ * 
  * Control how the block lock is used.
  * 
  * This code conditionally removes the lock from the block option menu.
@@ -25,7 +28,8 @@ function myprefix_block_lock() {
  * 
  * To prevent a block type from being locked, or initially setting a block as locked,
  * see this block's JSON file.
- */
+ * 
+ ******************************************************************************/
 
 add_filter( 'block_editor_settings_all', 'myprefix_control_block_lock', 10, 2 );
 
