@@ -1,4 +1,4 @@
-# Meta Attribute
+# meta-attributes
 
 ## Description
 
@@ -56,21 +56,11 @@ Meta data field names that begin with an underscore are private. Private fields 
 
 To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences -> Panels -> Additional -> Custom Fields.
 
+## Also see
+
+Compare with the `meta-simple` example, which uses the newer `useEntityProp` method.
+
 ## Uses
-
-**JS WP dependencies**
-
-- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
-
-  - `registerBlockType`
-
-- [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
-
-  - [`TextControl`](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/)
-
-- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
-
-  - `__`
 
 **PHP WP functions**
 
@@ -92,4 +82,16 @@ To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences ->
 
 - [`the_content`](https://developer.wordpress.org/reference/functions/the_content/)
 
-## Also see
+**JS WP dependencies**
+
+- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
+  - `__`
+
+- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
+  - `registerBlockType`
+
+- [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
+
+  - [`TextControl`](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/)
