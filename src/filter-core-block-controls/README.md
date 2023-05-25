@@ -40,49 +40,13 @@ Note, `attributes.listType` stores the value from the select control, although, 
 
 The role of `attributes.listType` is to pass the select control's value on to `editor.BlockListBlock` and `render_block_core/list`, which apply extra classnames.
 
+## Also see
+
+The Gutenberg's Handbook [section on hooks](https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/).
+
+Also, see the other filter examples.
+
 ## Uses
-
-**JS WP dependencies**
-
-- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
-
-  - `InspectorControls`
-
-- [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
-
-  - [`PanelBody`](https://developer.wordpress.org/block-editor/reference-guides/components/panel/)
-
-  - [`SelectControl`](https://developer.wordpress.org/block-editor/reference-guides/components/select-control/)
-
-- [`@wordpress/hooks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-hooks/)
-
-  - `addFilter`
-
-- [`@wordpress/data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-data/)
-
-  - `select`
-
-- [`@wordpress/compose`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-compose/)
-
-  - `createHigherOrderComponent`
-
-- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
-
-  - `__`
-
-**JS WP filters**
-
-- [`blocks.registerBlockType`](https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/#blocks-registerblocktype)
-
-- [`editor.BlockEdit`](https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/#editor-blockedit)
-
-- [`editor.BlockListBlock`](https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/#editor-blocklistblock)
-
-**JS external dependencies**
-
-- [`classnames`](https://www.npmjs.com/package/classnames)
-
-- [`lodash`](https://www.npmjs.com/package/lodash)
 
 **PHP WP functions**
 
@@ -100,6 +64,44 @@ The role of `attributes.listType` is to pass the select control's value on to `e
 
 - [`render_block_{$this->name}`](https://developer.wordpress.org/reference/hooks/render_block_this-name/)
 
-## Also see
+**JS WP dependencies**
 
-The Gutenberg's Handbook [section on hooks](https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/).
+- [`@wordpress/hooks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-hooks/)
+
+  - `addFilter`
+
+- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
+  - `__`
+
+- [`@wordpress/compose`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-compose/)
+
+  - `createHigherOrderComponent`
+
+- [`@wordpress/data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-data/)
+
+  - `select`
+
+- [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
+
+  - [`PanelBody`](https://developer.wordpress.org/block-editor/reference-guides/components/panel/)
+
+  - [`SelectControl`](https://developer.wordpress.org/block-editor/reference-guides/components/select-control/)
+
+- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
+  - `InspectorControls`
+
+**JS external dependencies**
+
+- [`classnames`](https://www.npmjs.com/package/classnames)
+
+- [`lodash`](https://www.npmjs.com/package/lodash)
+
+**JS WP filters**
+
+- [`blocks.registerBlockType`](https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/#blocks-registerblocktype)
+
+- [`editor.BlockEdit`](https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/#editor-blockedit)
+
+- [`editor.BlockListBlock`](https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/#editor-blocklistblock)

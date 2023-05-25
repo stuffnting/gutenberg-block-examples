@@ -28,7 +28,17 @@ for a full list of `supports` see the [`Gutenberg Handbook`](https://developer.w
 
 Changing the default `supports` for core block types is a straight forward process. The necessary `attributes`, that are used to store values for the supported features, are handled automatically.
 
+## Also see
+
+The `richtext-supports` example.
+
+The other filter examples.
+
 ## Uses
+
+**PHP WP actions**
+
+- [`enqueue_block_editor_assets`](https://developer.wordpress.org/reference/hooks/enqueue_block_editor_assets/)
 
 **JS WP dependencies**
 
@@ -36,20 +46,12 @@ Changing the default `supports` for core block types is a straight forward proce
 
   - `addFilter`
 
-**JS WP filters**
-
-- [`blocks.registerBlockType`](https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/#blocks-registerblocktype)
-
 **JS external dependencies**
 
 - [`classnames`](https://www.npmjs.com/package/classnames)
 
 - [`lodash`](https://www.npmjs.com/package/lodash)
 
-**PHP WP actions**
+**JS WP filters**
 
-- [`enqueue_block_editor_assets`](https://developer.wordpress.org/reference/hooks/enqueue_block_editor_assets/)
-
-## Also see
-
-The `richtext-supports` example.
+- [`blocks.registerBlockType`](https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/#blocks-registerblocktype)
