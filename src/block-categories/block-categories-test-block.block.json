@@ -1,7 +1,7 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 2,
-  "name": "myprefix/change-inserter-test-block",
+  "name": "myprefix/block-categories-test-block",
   "title": "A block to test categories in the inserter",
   "category": "custom-category-js",
   "icon": "lightbulb",

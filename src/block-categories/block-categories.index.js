@@ -1,13 +1,13 @@
 /**
  * External dependencies
  */
-import lodash from "lodash";
+import lodash from 'lodash';
 
 /**
  * WordPress dependencies
  */
-import { __ } from "@wordpress/i18n";
-import domReady from "@wordpress/dom-ready";
+import { __ } from '@wordpress/i18n';
+import domReady from '@wordpress/dom-ready';
 import {
   getBlockTypes,
   unregisterBlockType,
@@ -15,19 +15,19 @@ import {
   unregisterBlockVariation,
   getCategories,
   setCategories,
-} from "@wordpress/blocks";
+} from '@wordpress/blocks';
 
 /**
  * This dependency is not used, but is included to force wp-scripts to
  * add wp-edit-post to the dependencies in index.assets.php. Without
  * this extra dependency, @wordpress/wp-dom does not work.
  */
-import { PluginSidebar } from "@wordpress/edit-post";
+import { PluginSidebar } from '@wordpress/edit-post';
 
 /**
  * Local dependencies
  */
-import "./block-categories-test-block";
+import './block-categories-test-block';
 
 /******************************************************************************
  *
@@ -39,9 +39,9 @@ import "./block-categories-test-block";
  * Define a custom category.
  */
 const customCategory = {
-  slug: "custom-category-js",
-  title: __("A custom block category registered with JS", "textDomain"),
-  icon: "lightbulb",
+  slug: 'custom-category-js',
+  title: __('A custom block category registered with JS', 'textDomain'),
+  icon: 'lightbulb',
 };
 
 /**
@@ -53,15 +53,15 @@ const customCategory = {
  * custom-category-php is registered in the PHP file.
  */
 const orderArray = [
-  "custom-category-php",
-  "media",
-  "custom-category-js",
-  "text",
-  "design",
-  "widgets",
-  "embed",
-  "reusable",
-  "theme",
+  'custom-category-php',
+  'media',
+  'custom-category-js',
+  'text',
+  'design',
+  'widgets',
+  'embed',
+  'reusable',
+  'theme',
 ];
 
 /**
@@ -69,16 +69,13 @@ const orderArray = [
  * custom-category-php is in the array returned by getCategories,
  * with the core categories.
  */
-const newCategories = [...getCategories(), customCategory].reduce(
-  (acc, category) => {
-    let newKey = orderArray.findIndex((el) => el === category.slug);
-    if (newKey !== -1) {
-      acc[newKey] = category;
-    }
-    return acc;
-  },
-  []
-);
+const newCategories = [...getCategories(), customCategory].reduce((acc, category) => {
+  let newKey = orderArray.findIndex((el) => el === category.slug);
+  if (newKey !== -1) {
+    acc[newKey] = category;
+  }
+  return acc;
+}, []);
 
 // Apply the changes
 setCategories([...newCategories]);
@@ -94,24 +91,24 @@ setCategories([...newCategories]);
  * which is registered in the PHP file.
  */
 function myprefixFilterSpacerCategory(settings, name) {
-  if (name === "core/spacer") {
+  if (name === 'core/spacer') {
     // Object.assign can also be used instead of lodash.assign
     return lodash.assign({}, settings, {
-      category: "custom-category-php",
+      category: 'custom-category-php',
     });
   }
   return settings;
 }
 
 wp.hooks.addFilter(
-  "blocks.registerBlockType",
-  "myprefix/filter-spacer-category",
+  'blocks.registerBlockType',
+  'myprefix/filter-spacer-category',
   myprefixFilterSpacerCategory
 );
 
 /******************************************************************************
  *
- * Remove all blocks from a category.
+ * Remove all blocks from the `theme` category.
  * The empty category will be removed from the inserter.
  *
  *****************************************************************************/
@@ -122,7 +119,7 @@ wp.hooks.addFilter(
 domReady(() => {
   // Remove all blocks from the 'theme' category.
   getBlockTypes().forEach((block) => {
-    if (block.category === "theme") {
+    if (block.category === 'theme') {
       unregisterBlockType(block.name);
     }
   });
@@ -131,7 +128,7 @@ domReady(() => {
    * Remove all variations of core/embed, these appear under embeds in the inserter.
    * Note: core/embed itself, will remain.
    */
-  getBlockVariations("core/embed").forEach((variation) =>
-    unregisterBlockVariation("core/embed", variation.name)
+  getBlockVariations('core/embed').forEach((variation) =>
+    unregisterBlockVariation('core/embed', variation.name)
   );
 });

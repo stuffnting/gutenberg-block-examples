@@ -1,4 +1,4 @@
-# Block Categories
+# block-categories
 
 ## Description
 
@@ -28,9 +28,9 @@ A test block, `myprefix/change-inserter-test-block`, is also added to the insert
 
 - Unregisters the block variations of core/embed, but leave core/embed itself.
 
-**`block-categories.test-block.js`**
+**`block-categories-test-block.js`**
 
-- Registers a new block to test the `custom-category-js` (empty categories are not shown in the inserter).
+- Registers a new block `myprefix/block-categories-test-block` to test the `custom-category-js` (empty categories are not shown in the inserter).
 
 ## Notes
 
@@ -52,7 +52,7 @@ A test block, `myprefix/change-inserter-test-block`, is also added to the insert
 
 (Last checked WP 6.2.)
 
-The only block in embed is core/embed. The other blocks under "embeds" in the inserter are block variations of core/embed.
+The only block in `embed` is core/embed. The other blocks under "embeds" in the inserter are block variations of core/embed.
 
 Confusingly, all the category names are the same as their titles in the inserter, apart from `embed`, which appears as "EMBEDS".
 
@@ -70,7 +70,29 @@ import { PluginSidebar } from "@wordpress/edit-post";
 
 [`wp.blocks.getCategories()`](https://developer.wordpress.org/block-editor/reference-guides/data/data-core-blocks/#getcategories) fetches a list of core categories and any custom categories registered server-side with PHP.
 
+## Also see
+
+The `block-collection` example.
+
 ## Uses
+
+**PHP WP functions**
+
+- [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
+
+- [`wp_list_pluck`](https://developer.wordpress.org/reference/functions/wp_list_pluck/)
+
+- [`WP_Block_Type_Registry::get_all_registered`](https://developer.wordpress.org/reference/classes/wp_block_type_registry/get_all_registered/)
+
+**PHP WP actions**
+
+- [`init`](https://developer.wordpress.org/reference/hooks/init/)
+
+**PHP WP filters**
+
+- [`block_categories_all`](https://developer.wordpress.org/reference/hooks/block_categories_all/)
+
+- [`allowed_block_types_all`](https://developer.wordpress.org/reference/hooks/allowed_block_types_all/)
 
 **JS WP dependencies**
 
@@ -103,19 +125,3 @@ import { PluginSidebar } from "@wordpress/edit-post";
 **JS WP filters**
 
 - [`blocks.registerBlockType`](https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/#blocks-registerblocktype)
-
-**PHP WP functions**
-
-- [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
-- [`wp_list_pluck`](https://developer.wordpress.org/reference/functions/wp_list_pluck/)
-- [`WP_Block_Type_Registry::get_all_registered`](https://developer.wordpress.org/reference/classes/wp_block_type_registry/get_all_registered/)
-
-**PHP WP actions**
-
-- [`init`](https://developer.wordpress.org/reference/hooks/init/)
-
-**PHP WP filters**
-
-- [`block_categories_all`](https://developer.wordpress.org/reference/hooks/block_categories_all/)
-
-- [`allowed_block_types_all`](https://developer.wordpress.org/reference/hooks/allowed_block_types_all/)

@@ -3,7 +3,7 @@
   "block-categories": {
     "name": "block-categories",
     "cat": ["categories"],
-    "include": false
+    "include": true
   },
   "block-collection": {
     "cat": ["collections", "categories"],
