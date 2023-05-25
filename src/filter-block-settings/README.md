@@ -12,13 +12,13 @@ This example is taken form [here](https://make.wordpress.org/core/2023/02/28/cus
 
 **`filter-block-settings.php`**
 
--   Registers the script file.
+- Registers the script file.
 
 **`filter-block-settings.index.js`**
 
--   Adds the `myprefix/filter-column-space-units` filter.
+- Adds the `myprefix/filter-column-space-units` filter.
 
--   Adds the `myprefix/filter-heading-text-colour` filter.
+- Adds the `myprefix/filter-heading-text-colour` filter.
 
 ## Notes
 
@@ -48,36 +48,38 @@ The second filter example uses `core/block-editor`, which deals with data relati
 
 `select` from `@wordpress/data` is used to access `core/block-editor`. It then uses `getBlockParents`, which is a method from the object returned my `select`, to find a block's parents, given the block's ID (that's the ID of the block in the editor).
 
-## Uses
-
-**JS WP dependencies**
-
--   [`@wordpress/hooks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-hooks/)
-
-    -   `addFilter`
-
--   [`@wordpress/data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-data/)
-
--   `select`
-
--   Store [`core/block-edit`](https://developer.wordpress.org/block-editor/reference-guides/data/data-core-block-editor/)
-
-    -   `getBlockParents`
-
-    -   `getBlockName`
-
-**JS WP filters**
-
--   [`blockEditor.useSetting.before`](https://make.wordpress.org/core/2023/02/28/custom-settings-wordpress-6-2/)
-
-**PHP WP functions**
-
--   [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
-
-**PHP WP actions**
-
--   [`init`](https://developer.wordpress.org/reference/hooks/init/)
-
 ## Also see
 
 Keep and eye on [here](https://docs.google.com/document/d/1ktyuo4BHOeN3YzIpgoR83tmFGFTZIviKpC-NG2oabpA/edit#) and [here](https://github.com/WordPress/developer-blog-content/issues/85)
+
+Also, look at the other filter examples.
+
+## Uses
+
+**PHP WP functions**
+
+- [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
+
+**PHP WP actions**
+
+- [`init`](https://developer.wordpress.org/reference/hooks/init/)
+
+**JS WP dependencies**
+
+- [`@wordpress/hooks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-hooks/)
+
+  - `addFilter`
+
+- [`@wordpress/data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-data/)
+
+- `select`
+
+- Store [`core/block-edit`](https://developer.wordpress.org/block-editor/reference-guides/data/data-core-block-editor/)
+
+  - `getBlockParents`
+
+  - `getBlockName`
+
+**JS WP filters**
+
+- [`blockEditor.useSetting.before`](https://make.wordpress.org/core/2023/02/28/custom-settings-wordpress-6-2/)

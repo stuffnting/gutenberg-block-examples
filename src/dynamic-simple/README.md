@@ -1,4 +1,4 @@
-# Dynamic Simple
+# dynamic-simple
 
 ## Description
 
