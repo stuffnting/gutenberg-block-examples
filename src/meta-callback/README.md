@@ -1,4 +1,4 @@
-# Dynamic Meta Block
+# meta-callback
 
 ## Description
 
@@ -73,33 +73,13 @@ Meta data field names that begin with an underscore are private. Private fields 
 
 To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences -> Panels -> Additional -> Custom Fields.
 
+## Also see
+
+The Gutenberg Handbook's section on [Meta Boxes](https://developer.wordpress.org/block-editor/how-to-guides/metabox/)
+
+The dynamic block examples contain other blocks that use callbacks.
+
 ## Uses
-
-**JS WP dependencies**
-
-- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
-
-  - `useBlockProps`
-
-  - `InspectorControls`
-
-- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
-
-  - `registerBlockType`
-
-- [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
-
-  - [`PanelBody`](https://developer.wordpress.org/block-editor/reference-guides/components/panel/)
-
-  - [`TextControl`](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/)
-
-- [`@wordpress/data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-data/)
-
-  - `useSelect`
-
-- [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
-
-  - `useEntityProp`
 
 **PHP WP functions**
 
@@ -117,6 +97,28 @@ To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences ->
 
 - [`init`](https://developer.wordpress.org/reference/hooks/init/)
 
-## Also see
+**JS WP dependencies**
 
-The Gutenberg Handbook's section on [Meta Boxes](https://developer.wordpress.org/block-editor/how-to-guides/metabox/)
+- [`@wordpress/data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-data/)
+
+  - `useSelect`
+
+- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
+  - `registerBlockType`
+
+- [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
+
+  - [`PanelBody`](https://developer.wordpress.org/block-editor/reference-guides/components/panel/)
+
+  - [`TextControl`](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/)
+
+- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
+  - `useBlockProps`
+
+  - `InspectorControls`
+
+- [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
+
+  - `useEntityProp`
