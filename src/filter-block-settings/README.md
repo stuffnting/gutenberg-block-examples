@@ -74,7 +74,9 @@ Also, look at the other filter examples.
 
 - `select`
 
-- Store [`core/block-edit`](https://developer.wordpress.org/block-editor/reference-guides/data/data-core-block-editor/)
+**JS WP data module**
+
+- [`core/block-edit`](https://developer.wordpress.org/block-editor/reference-guides/data/data-core-block-editor/)
 
   - `getBlockParents`
 
