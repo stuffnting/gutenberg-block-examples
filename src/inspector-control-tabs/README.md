@@ -1,4 +1,4 @@
-# Inspector Control Tabs
+# inspector-control-tabs
 
 ## Description
 
@@ -55,45 +55,17 @@ The `GetPosts` component uses [`React.memo`](https://legacy.reactjs.org/docs/rea
 
 In this example `perPage` does not actually. For an example where `perPage` can be changed from the Block Inspector, see the `dynamic-inspector-query-terms` example.
 
+## Also see
+
+There are more examples of Block Inspector controls in:
+
+- `dynamic-inspector-controls`,
+
+- `dynamic-inspector-query-terms`,
+
+- `meta-inner-blocks-inspector`,
+
 ## Uses
-
-**JS WP dependencies**
-
-- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
-
-  - `useBlockProps`
-
-  - `InspectorControls`
-
-- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
-
-  - `registerBlockType`
-
-- [`@wordpress/element`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-element/)
-
-  - `memo`
-
-- [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
-
-  - [`PanelBody`](https://developer.wordpress.org/block-editor/reference-guides/components/panel/)
-
-  - [`PanelRow`](https://developer.wordpress.org/block-editor/reference-guides/components/panel/)
-
-  - [`TextControl`](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/)
-
-  - [`ToggleControl`](https://developer.wordpress.org/block-editor/reference-guides/components/toggle-control/)
-
-  - [`SelectControl`](https://developer.wordpress.org/block-editor/reference-guides/components/select-control/)
-
-  - [`CheckboxControl`](https://developer.wordpress.org/block-editor/reference-guides/components/checkbox-control/)
-
-- [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
-
-  - `useEntityRecords`
-
-- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
-
-  - `__`
 
 **PHP WP functions**
 
@@ -111,10 +83,40 @@ In this example `perPage` does not actually. For an example where `perPage` can 
 
 - [`block_editor_settings_all`](https://developer.wordpress.org/reference/hooks/block_editor_settings_all/)
 
-## Also see
+**JS WP dependencies**
 
-There are more examples of Block Inspector controls in:
+- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
 
-- `dynamic-inspector-controls`,
-- `dynamic-inspector-query-terms`,
-- `meta-inner-blocks-inspector`,
+  - `__`
+
+- [`@wordpress/element`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-element/)
+
+  - `memo`
+
+- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
+  - `registerBlockType`
+
+- [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
+
+  - [`PanelBody`](https://developer.wordpress.org/block-editor/reference-guides/components/panel/)
+
+  - [`PanelRow`](https://developer.wordpress.org/block-editor/reference-guides/components/panel/)
+
+  - [`TextControl`](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/)
+
+  - [`ToggleControl`](https://developer.wordpress.org/block-editor/reference-guides/components/toggle-control/)
+
+  - [`SelectControl`](https://developer.wordpress.org/block-editor/reference-guides/components/select-control/)
+
+  - [`CheckboxControl`](https://developer.wordpress.org/block-editor/reference-guides/components/checkbox-control/)
+
+- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
+  - `useBlockProps`
+
+  - `InspectorControls`
+
+- [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
+
+  - `useEntityRecords`
