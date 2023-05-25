@@ -32,7 +32,7 @@ function myprefix_block_json() {
  * 
  * This filter is applied before the JSON block metadata has been parsed into PHP.
  * 
- * @param array   $metadata Metadata for registering a block type.
+ * @param array $metadata Metadata for registering a block type.
  */
 
  add_filter( 'block_type_metadata', 'myprefix_filter_metadata' );

@@ -1,13 +1,13 @@
 /**
  * WordPress dependencies
  */
-import { useBlockProps } from "@wordpress/block-editor";
-import { registerBlockType } from "@wordpress/blocks";
+import { useBlockProps } from '@wordpress/block-editor';
+import { registerBlockType } from '@wordpress/blocks';
 
 /**
  * Local dependencies
  */
-import metadata from "./another-block-json.block.json";
+import metadata from './another-block-json.block.json';
 
 /**
  * Register the extra block: myprefix/another-block-json.

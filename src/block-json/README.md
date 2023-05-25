@@ -1,6 +1,6 @@
 # Block JSON
 
-**_NOTE:_** **This code needs PHP 7+.**
+**_NOTE: This code needs PHP 7+._**
 
 ## Description
 
@@ -20,9 +20,23 @@ When registering the second block, the file path to its JSON file needs to be us
 
 **`block-json.index.js`**
 
-- Registers the two blocks&mdash; `myprefix/block-json` and `myprefix/another-block-json`&mdash;with via `import`.
+- Registers the `myprefix/block-json`, and imports its `edit` and `save` functions.
+
+- Imports `another-block-json.index.js`.
 
 - Imports the SCSS file.
+
+**`another-block-json.index.js`**
+
+- Registers `myprefix/another-block-json`.
+
+**`block-json.block.json`**
+
+- Contains the settings for `myprefix/block-json`.
+
+**`block-json.block.json`**
+
+- Contains the settings for `myprefix/another-block-json`.
 
 ## Notes
 
@@ -34,39 +48,17 @@ The PHP file uses the transpiled names, whereas the `src` JS files uses the file
 
 For example the `src/block-name/block-name.index.js` file would use:
 
-    import metadata from "./block-name.block.json";
-
-### The double enqueue problem @@@@CHECK THIS@@@@
-
-In this example, the two blocks are registered from a single PHP file and a single index.js file, but each block has its own JSON file. When transpiled, one of the JSON files has the normal name of `block.json`, while the other has the name `another-block-json.block.json`.
-
-Because two blocks are registered, WordPress enqueues a JS file for each one. However, because both blocks are contained within the same JS file, that file gets enqueued twice, which leads to an error in the console: Block `myprefix/block-name` is already registered.
-
-There are two ways around this: use `wp_dequeue_script()` to dequeue the extra script file; or, omit the `editorScript` from the JSON file of the second block. This example block uses the former method.
+`import metadata from "./block-name.block.json";`
 
 ### PHP 7+
 
 The function `myprefix_print_metadata_to_console()` contains a neat bit of code to print the filters' parameters to the browser console. In order to pass the an extra parameter to the action callback, it uses an anonymous function stored in a variable in, which requires PHP 7+.
 
+## Also see
+
+For an example of how to register blocks to old way, without using a `block.json` file, see `meta-attribute`.
+
 ## Uses
-
-**JS WP dependencies**
-
-- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
-
-  - `useBlockProps`
-
-  - `RichText`
-
-- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
-
-  - `registerBlockType`
-
-  - `createBlock`
-
-- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
-
-  - `__`
 
 **PHP WP functions**
 
@@ -75,7 +67,9 @@ The function `myprefix_print_metadata_to_console()` contains a neat bit of code 
 **PHP WP actions**
 
 - [`init`](https://developer.wordpress.org/reference/hooks/init/)
+
 - [`wp_print_footer_scripts`](https://developer.wordpress.org/reference/functions/wp_print_footer_scripts/)
+
 - [`admin_footer`](https://developer.wordpress.org/reference/hooks/admin_footer/)
 
 **PHP WP Filters**
@@ -84,6 +78,20 @@ The function `myprefix_print_metadata_to_console()` contains a neat bit of code 
 
 - [`block_type_metadata_settings`](https://developer.wordpress.org/reference/hooks/block_type_metadata_settings/)
 
-## Also see
+**JS WP dependencies**
 
-For an example of how to register blocks to old way, without using a `block.json` file, see `meta-attribute`.
+- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
+  - `__`
+
+- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
+  - `registerBlockType`
+
+  - `createBlock`
+
+- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
+  - `useBlockProps`
+
+  - `RichText`

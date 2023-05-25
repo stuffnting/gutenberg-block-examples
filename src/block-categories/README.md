@@ -96,6 +96,14 @@ The `block-collection` example.
 
 **JS WP dependencies**
 
+- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
+  - `__`
+
+- [`@wordpress/dom-ready` ](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-dom-ready/)
+
+  - `domReady`
+
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
 
   - `getBlockTypes`
@@ -110,17 +118,9 @@ The `block-collection` example.
 
   - `setCategories`
 
-- [`@wordpress/dom-ready` ](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-dom-ready/)
-
-  - `domReady`
-
 - [`@wordpress/edit-post`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-edit-post/)
 
   - `PluginSidebar`
-
-- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
-
-  - `__`
 
 **JS WP filters**
 

@@ -3,7 +3,7 @@
   "block-categories": {
     "name": "block-categories",
     "cat": ["categories"],
-    "include": true
+    "include": false
   },
   "block-collection": {
     "cat": ["collections", "categories"],
@@ -13,7 +13,7 @@
   "block-json": {
     "name": "block-json",
     "cat": ["richtext"],
-    "include": false
+    "include": true
   },
   "block-lock": {
     "name": "block-lock",
