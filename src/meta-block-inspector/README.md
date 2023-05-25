@@ -34,21 +34,9 @@ The meta key is not set in `meta-document-settings-simple.block.json`, because `
 
 It is also possible to set the meta name in the PHP file, and make it available to the JS script using `wp_localize_script()`, or `wp_add_inline_script()`. These methods are demonstrated in `meta-callback` and `meta-attribute` respectively.
 
-### `useEntityProp` vs `source: meta`
+### `useEntityProp`
 
-The old method for dealing with metadata in blocks was to use an attribute with `source` set to meta. For example:
-
-    attributes: {
-      content: {
-        type: "string",
-        source: "meta",
-        meta: MYPREFIX_META_KEY,
-      },
-    }
-
-The `meta-attribute` block contains an example of this method.
-
-Since WordPress 5.4, the recommended method is to use the `useEntityProp` hook. This returns the meta fields for the post and a function for changing them.
+`useEntityProp`is a custom React hook and is defined [here](https://github.com/WordPress/gutenberg/blob/trunk/packages/core-data/src/entity-provider.js#L85). It has four parameters, three of which are used in this example: `entityKind` (e.g. postType), `entityType` (e.g. post), `propertyName` (e.g. meta). It returns and array: [ value, setValue, fullValue ], the value, setter function and the full value of the meta field (object from REST API containing more information like raw, rendered and protected props).
 
 ### Meta values and the `save` function
 
@@ -74,7 +62,7 @@ To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences ->
 - [`@wordpress/data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-data/)
   - `useSelect`
 - [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
-  - `useEntityProp`
+  - [`useEntityProp`](https://github.com/WordPress/gutenberg/blob/trunk/packages/core-data/src/entity-provider.js#L85)
 - [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
   - `__`
 

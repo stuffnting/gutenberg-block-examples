@@ -37,7 +37,7 @@ It is also possible to set the meta name in the PHP file, and make it available 
 
 ### `useEntityProp`
 
-The meta values are managed using the `useEntityProp` React hook.
+`useEntityProp`is a custom React hook and is defined [here](https://github.com/WordPress/gutenberg/blob/trunk/packages/core-data/src/entity-provider.js#L85). It has four parameters, three of which are used in this example: `entityKind` (e.g. postType), `entityType` (e.g. post), `propertyName` (e.g. meta). It returns and array: [ value, setValue, fullValue ], the value, setter function and the full value of the meta field (object from REST API containing more information like raw, rendered and protected props).
 
 ### Meta field keys starting with an underscore
 

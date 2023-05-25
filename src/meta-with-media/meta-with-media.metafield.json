@@ -1,5 +1,5 @@
 {
-  "_comment": "No block is registered, a metabox is placed in the plugin sidebar.",
+  "_comment": "No block is registered, a meta box is placed in the plugin sidebar.",
   "description": "A meta sidebar plugin with a media loader.",
-  "metaField": "_myprefix_metabox_with_media_meta"
+  "metaField": "_myprefix_meta_with_media_meta"
 }

@@ -134,12 +134,12 @@
   "meta-with-media": {
     "name": "meta-with-media",
     "cat": ["meta", "media", "plugin sidebar"],
-    "include": false
+    "include": true
   },
   "meta-with-select-doc-settings": {
     "name": "meta-with-select-doc-settings",
     "cat": ["meta", "plugin sidebar"],
-    "include": true
+    "include": false
   },
   "render-php-template": {
     "name": "render-php-template",

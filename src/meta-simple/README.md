@@ -47,6 +47,10 @@ Meta data field names that begin with an underscore are private. Private fields 
 
 To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences -> Panels -> Additional -> Custom Fields.
 
+### `useEntityProp`
+
+`useEntityProp`is a custom React hook and is defined [here](https://github.com/WordPress/gutenberg/blob/trunk/packages/core-data/src/entity-provider.js#L85). It has four parameters, three of which are used in this example: `entityKind` (e.g. postType), `entityType` (e.g. post), `propertyName` (e.g. meta). It returns and array: [ value, setValue, fullValue ], the value, setter function and the full value of the meta field (object from REST API containing more information like raw, rendered and protected props).
+
 ### `useEntityProp` vs `source: meta`
 
 The old method for dealing with metadata in blocks was to use an attribute with `source` set to meta. For example:

@@ -26,6 +26,10 @@ This example adds a [meta box](https://developer.wordpress.org/plugins/metadata/
 
 - Turns `DocPanelMetaFields` into an HOC, using `withSelect` and `withDispatch`.
 
+**`meta-with-select-doc-settings.metafield.json`**
+
+- Contains the meta field key.
+
 ## Notes
 
 ### `withSelect` and `withDispatch`

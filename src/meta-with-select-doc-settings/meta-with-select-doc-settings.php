@@ -33,6 +33,7 @@ define( 'MYPREFIX_META_WITH_SELECT_DOC_SETTINGS_FIELD', $meta_field );
  * Register the meta field.
  */
 add_action( 'init', 'myprefix_meta_with_select_doc_settings_field' );
+
 function myprefix_meta_with_select_doc_settings_field() {
   register_meta( 
     'post', 

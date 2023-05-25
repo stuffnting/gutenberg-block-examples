@@ -32,6 +32,10 @@ For more about metadata see [here]().
 
 ## Notes
 
+### `useEntityProp`
+
+`useEntityProp`is a custom React hook and is defined [here](https://github.com/WordPress/gutenberg/blob/trunk/packages/core-data/src/entity-provider.js#L85). It has four parameters, three of which are used in this example: `entityKind` (e.g. postType), `entityType` (e.g. post), `propertyName` (e.g. meta). It returns and array: [ value, setValue, fullValue ], the value, setter function and the full value of the meta field (object from REST API containing more information like raw, rendered and protected props).
+
 ### Metadata object
 
 In this example there are two meta fields, which are stored in a single metadata object.
@@ -55,22 +59,6 @@ The code is:
 where, `myprefix-meta-callback-editor-script-js` is the handle assigned, by WordPress, to the block's `index.js` file.
 
 It is possible to name the meta key in the JSON file. For examples of how to do this, see the other meta block examples.
-
-### `useEntityProp` vs `source: meta`
-
-The old method for dealing with metadata in blocks was to use an attribute with `source` set to meta. For example:
-
-    attributes: {
-      content: {
-        type: "string",
-        source: "meta",
-        meta: MYPREFIX_META_KEY,
-      },
-    }
-
-The `meta-attribute` block contains an example of this method.
-
-Since WordPress 5.4, the recommended method is to use the `useEntityProp` hook. This returns the meta fields for the post and a function for changing them.
 
 ### Meta values and the `save` function
 

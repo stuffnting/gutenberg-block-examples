@@ -1,32 +1,30 @@
-# Meta Document Settings
+# meta-with-media
 
 ## Description
 
-This example adds a [meta box](https://developer.wordpress.org/plugins/metadata/custom-meta-boxes/) to the Document Settings sidebar. The metadata is then used on the front-end, using the `the_content` filter.
-
-This is the newer method, that uses the `useEntityProp` hook. For the older method, using Higher Order Components (HOC), together with `withSelect`, and `withDispatch`, see the `meta-with-select-doc-settings` example.
+This example adds a [meta box](https://developer.wordpress.org/plugins/metadata/custom-meta-boxes/) containing a media uploader to the Document Settings sidebar.
 
 ## In this code
 
-**`meta-document-settings.php`**
+**`meta-with-media.php`**
 
 - Enqueues the script file. Note, there is no block to register for this example.
 
-- Fetches the meta key from `meta-simple.metafield.json`.
+- Fetches the meta key from `meta-with-select-doc-settings.metafield.json`.
 
 - Registers the meta field.
 
 - Adds a `the_content` filter to use the meta on the front-end.
 
-**`meta-document-settings.index.js`**
+**`meta-with-media.php.index.js`**
 
-- Registers a plugin to add the meta box.
+- Registers the plugin.
 
-- Adds the `DocPanelMetaFields` component that deals with the post meta.
+- Defines the `MetaImagePanel` component, that adds the media uploader.
 
-**`meta-document-settings.metafield.json`**
+**`meta-with-media.metafield.json`**
 
-- Contains the key for the meta field.
+- Contains the meta field key.
 
 ## Notes
 
@@ -52,11 +50,17 @@ To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences ->
 
 **JS WP dependencies**
 
+- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
+  - [`MediaUpload`](https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/media-upload/README.md)
+
+  - [`MediaUploadCheck`](https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/media-upload/README.md)
+
 - [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
 
-  - [`PanelBody`](https://developer.wordpress.org/block-editor/reference-guides/components/panel/)
+  - [`Button`](https://developer.wordpress.org/block-editor/reference-guides/components/button/)
 
-  - [`TextControl`](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/)
+  - [`ResponsiveWrapper`](https://developer.wordpress.org/block-editor/reference-guides/components/responsive-wrapper/)
 
 - [`@wordpress/data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-data/)
 
@@ -98,4 +102,6 @@ To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences ->
 
 ## Also see
 
-The Gutenberg Handbook's section on [Meta Boxes](https://developer.wordpress.org/block-editor/how-to-guides/metabox/)
+The documentation for [`MediaUpload`](https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/media-upload/README.md) and [`MediaUploadCheck`](https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/media-upload/README.md) on GitHub.
+
+The `meta-document-settings` example gives a more basic run through of adding meta boxes to the Document Settings sidebar.
