@@ -136,6 +136,11 @@
     "cat": ["meta", "media", "plugin sidebar"],
     "include": false
   },
+  "meta-with-select-doc-settings": {
+    "name": "meta-with-select-doc-settings",
+    "cat": ["meta", "plugin sidebar"],
+    "include": true
+  },
   "render-php-template": {
     "name": "render-php-template",
     "cat": ["dynamic", "php-render"],
@@ -154,7 +159,7 @@
   "richtext-components": {
     "name": "richtext-multi-components",
     "cat": ["richtext"],
-    "include": true
+    "include": false
   },
   "richtext-multiline": {
     "name": "richtext-multiline",
@@ -179,7 +184,7 @@
   "richtext-toolbar-buttons": {
     "name": "richtext-toolbar-buttons",
     "cat": ["richtext"],
-    "include": true
+    "include": false
   },
   "richtext-transforms-multiblock": {
     "name": "richtext-transforms-multiblock",

@@ -1,15 +1,13 @@
 <?php
+
+/******************************************************************************
+ * 
+ * Deal with the meta field
+ * 
+ *****************************************************************************/
+
 /**
- * Register the meta field.
- * 
- * The meta field name is set in the JSON file.
- * It is also possible to set the meta name in the PHP file,
- * and make it available to the JS script using wp_localize_script().
- * For examples of how to do this, see the dynamic-meta-block example.
- * 
- * *** NOTE *** Because metaField is not in the schema for block.json file,
- * its presence will be flagged as an error when using 
- * "$schema": "https://schemas.wp.org/trunk/block.json"
+ * Get the meta field from the JSON file
  */
 if ( file_exists( __DIR__ . '/meta-with-select-doc-settings.metafield.json' ) ) {
   
@@ -27,9 +25,13 @@ if ( file_exists( __DIR__ . '/meta-with-select-doc-settings.metafield.json' ) ) 
   error_log( "ERROR: meta-with-select-doc-settings.metafield.json file not found. Logged from line" . __LINE__ . " in " . __FILE__ );
 }
 
+
 // Define a constant to make it easily available across functions
 define( 'MYPREFIX_META_WITH_SELECT_DOC_SETTINGS_FIELD', $meta_field );
 
+/**
+ * Register the meta field.
+ */
 add_action( 'init', 'myprefix_meta_with_select_doc_settings_field' );
 function myprefix_meta_with_select_doc_settings_field() {
   register_meta( 
@@ -47,6 +49,12 @@ function myprefix_meta_with_select_doc_settings_field() {
     )
   );
 }
+
+/******************************************************************************
+ * 
+ * Enqueue the script file.
+ * 
+ *****************************************************************************/
 
 add_action( 'enqueue_block_editor_assets', 'myprefix_meta_with_select_doc_settings' );
 
@@ -71,10 +79,12 @@ function myprefix_meta_with_select_doc_settings() {
   ); 
 }
 
+/******************************************************************************
+ * 
+ * Use the post meta in on the front-end
+ * 
+ *****************************************************************************/
 
-/**
- * Use the meta value in a post
- */
 add_filter( 'the_content', 'myprefix_meta_with_select_doc_settings_content_filter' );
 
 function myprefix_meta_with_select_doc_settings_content_filter( $content ) {
