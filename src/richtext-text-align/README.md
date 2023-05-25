@@ -13,8 +13,11 @@ By default [`RichText`](https://github.com/WordPress/gutenberg/blob/trunk/packag
 **`richtext-text-align.index.js`**
 
 - Imports richtext-text-align.block.json.
+
 - Imports the `edit` function from `richtext-text-align.edit.js`.
+
 - Imports `save` from `richtext-text-align.save.js`.
+
 - Registers the `richtext-text-align` block.
 
 **`richtext-text-align.save.js`**
@@ -67,13 +70,21 @@ Find out more [here](https://www.npmjs.com/package/classnames).
 **JS WP dependencies**
 
 - [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
   - `useBlockProps`
+
   - `RichText`
+
   - `BlockControls`
+
   - `AlignmentToolbar`
+
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
   - `registerBlockType`
+
 - [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
   - `__`
 
 **JS external dependencies**

@@ -13,8 +13,11 @@ For more about metadata see [here]().
 **`meta-callback.php`**
 
 - Registers the `myprefix/meta-callback` block.
+
 - Adds a callback function to render the block on the front-end, which utilizes the block's attribute values.
+
 - Registers the meta key `MYPREFIX_META_CB_OBJECT`.
+
 - Makes the meta key available to JS.
 
 **`meta-callback.index.js`**
@@ -75,24 +78,39 @@ To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences ->
 **JS WP dependencies**
 
 - [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
   - `useBlockProps`
+
   - `InspectorControls`
+
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
   - `registerBlockType`
+
 - [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
+
   - [`PanelBody`](https://developer.wordpress.org/block-editor/reference-guides/components/panel/)
+
   - [`TextControl`](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/)
+
 - [`@wordpress/data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-data/)
+
   - `useSelect`
+
 - [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
+
   - `useEntityProp`
 
 **PHP WP functions**
 
 - [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
+
 - [`wp_localize_script`](https://developer.wordpress.org/reference/functions/wp_localize_script/)
+
 - [`register_post_meta`](https://developer.wordpress.org/reference/functions/register_post_meta/)
+
 - [`get_post_meta`](https://developer.wordpress.org/reference/functions/get_post_meta/)
+
 - [`get_block_wrapper_attributes`](https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/)
 
 **PHP WP actions**

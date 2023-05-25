@@ -69,16 +69,23 @@ See [here](https://fullsiteediting.com/how-to-lock-blocks-and-templates/) for mo
 **JS WP dependencies**
 
 - [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
   - `useBlockProps`
+
   - `innerBlocksProps`
+
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
   - `registerBlockType`
+
 - [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
+
   - [`TextControl`](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/)
 
 **PHP WP functions**
 
 - [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
+
 - [`get_block_wrapper_attributes`](https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/)
 
 **PHP WP actions**

@@ -9,12 +9,15 @@ This code creates a dynamic block that lists the most recent posts. The number o
 **`dynamic-inspector-query-terms.php`**
 
 - Registers the `myprefix/dynamic-inspector-query-terms` block.
+
 - Adds a callback function to render the block on the front-end, which utilizes the block's attribute values.
 
 **`dynamic-inspector-query-terms.index.js`**
 
 - Registers the `myprefix/dynamic-inspector-query-terms` block.
+
 - Imports the `GetPosts` component form `get-posts.js`.
+
 - imports the `TheInspectorControls` from `the-inspector-controls.index.js`\*\*
 
 **`get-posts.js`**
@@ -41,14 +44,19 @@ The `GetPosts` component uses [`React.memo`](https://legacy.reactjs.org/docs/rea
 The `GetPosts` component uses the `useEntityRecords` [hook](https://legacy.reactjs.org/docs/hooks-intro.html). It has 4 parameters:
 
 - The kind of entity. In `GetPosts` the entity is a `postType`.
+
 - The name of the entity. In `GetPosts` the `postType` is `posts`.
+
 - Query arguments to use when getting the records. The only query arg used here is `perPage`.
+
 - Hook options. Not used in this case.
 
 The hook returns an object with three items, which are destructured to:
 
 - `isResolving`: a boolean.
+
 - `hasResolved`: a boolean.
+
 - `records`: an array of the fetched posts.
 
 ### The `save` function
@@ -64,25 +72,41 @@ The callback function uses [`get_block_wrapper_attributes()`](https://developer.
 **JS WP dependencies**
 
 - [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
   - `useBlockProps`
+
   - `InspectorControls`
+
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
   - `registerBlockType`
+
 - [`@wordpress/element`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-element/)
+
   - `memo`
+
 - [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
+
   - [`PanelBody`](https://developer.wordpress.org/block-editor/reference-guides/components/panel/)
+
   - [`PanelRow`](https://developer.wordpress.org/block-editor/reference-guides/components/panel/)
+
   - [`__experimentalNumberControl`](https://developer.wordpress.org/block-editor/reference-guides/components/number-control/) as `NumberControl`
+
 - [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
+
   - `useEntityRecords`
+
 - [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
   - `__`
 
 **PHP WP functions**
 
 - [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
+
 - [`wp_get_recent_posts`](https://developer.wordpress.org/reference/functions/wp_get_recent_posts/)
+
 - [`get_block_wrapper_attributes`](https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/)
 
 **PHP WP actions**

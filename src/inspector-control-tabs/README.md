@@ -13,7 +13,9 @@ Two filters are added in the PHP file, that can change the default behaviour.
 **`inspector-control-tabs.php`**
 
 - Registers the block.
+
 - Adds a `block_editor_settings_all` filter, which can disable the tabs for all blocks.
+
 - `block_editor_settings_all` filter, which can disable the tabs for specific blocks.
 
 **`inspector-control-tabs.index.js`**
@@ -24,9 +26,13 @@ Two filters are added in the PHP file, that can change the default behaviour.
 **`inspector-control.js`**
 
 - Adds the controls to the Block Inspector tabs groups.
+
   - A text control to set the title text is added to the `advanced` group under the `settings` tab.
+
   - A toggle switch to show/hide the title gets added to the `styles` group of the `appearance` tab.
+
   - A select control to choose the font style of the title gets added to the `styles` group of the `appearance` tab.
+
   - A checkbox to underline the title gets added to the `styles` group of the `appearance` tab.
 
 **`get-posts.js`**
@@ -54,28 +60,47 @@ In this example `perPage` does not actually. For an example where `perPage` can 
 **JS WP dependencies**
 
 - [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
   - `useBlockProps`
+
   - `InspectorControls`
+
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
   - `registerBlockType`
+
 - [`@wordpress/element`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-element/)
+
   - `memo`
+
 - [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
+
   - [`PanelBody`](https://developer.wordpress.org/block-editor/reference-guides/components/panel/)
+
   - [`PanelRow`](https://developer.wordpress.org/block-editor/reference-guides/components/panel/)
+
   - [`TextControl`](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/)
+
   - [`ToggleControl`](https://developer.wordpress.org/block-editor/reference-guides/components/toggle-control/)
+
   - [`SelectControl`](https://developer.wordpress.org/block-editor/reference-guides/components/select-control/)
+
   - [`CheckboxControl`](https://developer.wordpress.org/block-editor/reference-guides/components/checkbox-control/)
+
 - [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
+
   - `useEntityRecords`
+
 - [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
   - `__`
 
 **PHP WP functions**
 
 - [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
+
 - [`wp_get_recent_posts`](https://developer.wordpress.org/reference/functions/wp_get_recent_posts/)
+
 - [`get_block_wrapper_attributes`](https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/)
 
 **PHP WP actions**

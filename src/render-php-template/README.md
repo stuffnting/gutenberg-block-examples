@@ -24,9 +24,13 @@ The block is a simple RichText blocks, although dynamic blocks can be rendered i
 **`render-php-template.block.json`**
 
 - Adds `supports`:
+
   - `color`
+
   - `typography`
+
   - `spacing`
+
 - Specifies the render template file, as `"render": "file:./render.php"`
 
 ## Notes
@@ -38,7 +42,9 @@ In the dynamic block examples, the blocks are rendered on the front-end by a cal
 The callback function has three parameters:
 
 - `$attributes` (array).
+
 - `$content` (string).
+
 - `$block` (WP_Block).
 
 These are also available as variables within the template file.
@@ -58,17 +64,25 @@ The callback function uses [`get_block_wrapper_attributes()`](https://developer.
 **JS WP dependencies**
 
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
   - `registerBlockType`
+
 - [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
   - `useBlockProps`
+
   - `RichText`
+
 - [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
   - `__`
 
 **PHP WP functions**
 
 - [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
+
 - [`wp_get_recent_posts`](https://developer.wordpress.org/reference/functions/wp_get_recent_posts/)
+
 - [`get_block_wrapper_attributes`](https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/)
 
 **PHP WP actions**

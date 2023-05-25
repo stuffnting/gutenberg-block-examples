@@ -10,9 +10,13 @@ Note, this code also uses the old way of registering blocks, using the `enqueue_
 
 **`meta-attribute.php`**
 
-- Registers the block without using a `block.json` file and the `init` action hook, instead using the `enqueue_block_editor_assets` action hook.
+- Registers the block without using a `block.json` file and the `init` action hook, instead using the
+  `enqueue_block_editor_assets` action hook.
+
 - Registers the met field.
+
 - Makes the meta field key available to JS code using `wp_add_inline_script()`.
+
 - Displays the meta field on the front-end using the `the_content` filter.
 
 **`meta-attribute.index.js`**
@@ -57,18 +61,27 @@ To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences ->
 **JS WP dependencies**
 
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
   - `registerBlockType`
+
 - [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
+
   - [`TextControl`](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/)
+
 - [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
   - `__`
 
 **PHP WP functions**
 
 - [`wp_enqueue_script`](https://developer.wordpress.org/reference/functions/wp_enqueue_script/)
+
 - [`wp_add_inline_script`](https://developer.wordpress.org/reference/functions/wp_add_inline_script/)
+
 - [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
+
 - [`register_post_meta`](https://developer.wordpress.org/reference/functions/register_post_meta/)
+
 - [`get_post_meta`](https://developer.wordpress.org/reference/functions/get_post_meta/)
 
 **PHP WP actions**

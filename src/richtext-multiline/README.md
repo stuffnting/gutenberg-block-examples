@@ -17,8 +17,11 @@ Note, sine WP 6.1, this method of adding multiple paragraphs to a `RichText` blo
 **`richtext-multiline.index.js`**
 
 - Imports the block metadata from `richtext-multiline.block.json`
+
 - Imports the `edit` function from `richtext-multiline.edit.js`
+
 - Imports the `save` function from `richtext-multiline.save.js`
+
 - Registers the `myprefix/richtext-multiline` block.
 
 **`richtext-multiline.edit.js`**
@@ -102,11 +105,17 @@ Note, here the `type` is set to `string`, so that the multiple paragraphs will b
 **JS WP dependencies**
 
 - [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
   - `useBlockProps`
+
   - `RichText`
+
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
   - `registerBlockType`
+
 - [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
   - `__`
 
 **PHP WP functions**

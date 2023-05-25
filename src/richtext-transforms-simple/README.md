@@ -15,8 +15,11 @@ The transformations are accessed by clicking on the block's icon, at the right-h
 **`richtext-transforms-simple.index.js`**
 
 - Imports the `edit` function from `richtext-transforms-simple.edit.js`.
+
 - Imports the `save` function from `richtext-transforms-simple.save.js`.
+
 - Imports the `transforms` object from `richtext-transforms-simple.transforms.js`.
+
 - Registers the `myprefix/richtext-transforms-simple` block.
 
 **`richtext-transforms-simple.transforms.js`**
@@ -34,12 +37,19 @@ In this example the transformation are simple. The `transform` method creates a 
 ## Uses
 
 - [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
   - `useBlockProps`
+
   - `RichText`
+
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
-  - `registerBlockType`,
+
+  - `registerBlockType`
+
   - `createBlock`
+
 - [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
   - `__`
 
 **PHP WP functions**

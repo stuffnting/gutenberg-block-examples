@@ -11,6 +11,7 @@ For more details of which supports are available, see the [Gutenberg Handbook](h
 **`richtext-supports.php`**
 
 - Registers the `myprefix/richtext-supports` block.
+
 - Adds an action that will add theme support for UI controls that are opt-in.
 
 **`richtext-supports.index.js`**
@@ -38,9 +39,13 @@ If the theme does not opt in, the PHP file adds an action that will take care of
 **JS WP dependencies**
 
 - [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
   - `useBlockProps`
+
   - `RichText`
+
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
   - `registerBlockType`
 
 **PHP WP functions**
@@ -50,6 +55,7 @@ If the theme does not opt in, the PHP file adds an action that will take care of
 **PHP WP actions**
 
 - [`init`](https://developer.wordpress.org/reference/hooks/init/)
+
 - [`after_setup_theme`](https://developer.wordpress.org/reference/hooks/after_setup_theme/)
 
 ## Also see

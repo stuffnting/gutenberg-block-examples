@@ -138,9 +138,9 @@ Note, these two buttons are unaffected by their absence from the `allowedFormats
 
 - [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
 
-- [`ToolbarButton`](https://developer.wordpress.org/block-editor/reference-guides/components/toolbar-button/)
+  - [`ToolbarButton`](https://developer.wordpress.org/block-editor/reference-guides/components/toolbar-button/)
 
-- [`ToolbarDropdownMenu`](https://developer.wordpress.org/block-editor/reference-guides/components/toolbar-dropdown-menu/)
+  - [`ToolbarDropdownMenu`](https://developer.wordpress.org/block-editor/reference-guides/components/toolbar-dropdown-menu/)
 
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
 

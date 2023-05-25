@@ -13,6 +13,7 @@ Tis example adds a block which allows `core/paragraph`, `core/heading`, and `cor
 **`inner-blocks.index.js`**
 
 - Registers the `myprefix/dynamic-inner-blocks` block.
+
 - Specifies which blocks can be used as inner blocks.
 
 ## Notes
@@ -62,9 +63,13 @@ And the `save` function:
 **JS WP dependencies**
 
 - [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
   - `useBlockProps`
+
   - `InnerBlocks`
+
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
   - `registerBlockType`
 
 **PHP WP functions**

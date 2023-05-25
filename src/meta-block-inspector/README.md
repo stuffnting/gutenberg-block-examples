@@ -53,24 +53,39 @@ To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences ->
 **JS WP dependencies**
 
 - [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
   - `useBlockProps`
+
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
   - `registerBlockType`
+
 - [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
+
   - [`DateTimePicker`](https://developer.wordpress.org/block-editor/reference-guides/components/date-time/)
+
   - [`PanelBody`](https://developer.wordpress.org/block-editor/reference-guides/components/panel/)
+
 - [`@wordpress/data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-data/)
+
   - `useSelect`
+
 - [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
+
   - [`useEntityProp`](https://github.com/WordPress/gutenberg/blob/trunk/packages/core-data/src/entity-provider.js#L85)
+
 - [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
   - `__`
 
 **PHP WP functions**
 
 - [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
+
 - [`get_block_wrapper_attributes`](https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/)
+
 - [`register_post_meta`](https://developer.wordpress.org/reference/functions/register_post_meta/)
+
 - [`get_post_meta`](https://developer.wordpress.org/reference/functions/get_post_meta/)
 
 **PHP WP actions**

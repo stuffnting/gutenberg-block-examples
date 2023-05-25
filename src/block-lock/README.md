@@ -11,6 +11,7 @@ The block that is registered is initial locked for move and remove in posts, but
 **`block-lock.php`**
 
 - Registers the `myprefix/block-lock` block type.
+
 - Uses the `block_editor_settings_all` filter to conditionally remove the ability to lock blocks by: user role, user and post-type.
 
 **`block-lock.js`**
@@ -20,6 +21,7 @@ The block that is registered is initial locked for move and remove in posts, but
 **`block-lock.block.json`**
 
 - Adds support for `lock`. For demonstration purposes it is set to `true`, even though that is the default, and does not need to be stated.
+
 - Sets-up an attribute that contains the lock condition. The values set in this file are the initial condition for `lock.move` and `lock.remove`.
 
 ## Notes
@@ -53,11 +55,17 @@ Because blocks have locking enabled by default, the attribute will automatically
 **JS WP dependencies**
 
 - [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
   - `useBlockProps`
+
   - `RichText`
+
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
   - `registerBlockType`
+
 - [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
   - `__`
 
 **PHP WP functions**

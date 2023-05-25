@@ -13,8 +13,11 @@ This example adds a block containing a very simple [`RichText`](https://github.c
 **`richtext-basic.index.js`**
 
 - Imports the block metadata from `richtext-basic.block.json`
+
 - Imports the `edit` function from `richtext-basic.edit.js`
+
 - Imports the `save` function from `richtext-basic.save.js`
+
 - Registers the `myprefix/richtext-basic` block.
 
 **`richtext-basic.edit.js`**
@@ -67,11 +70,17 @@ So, when the post is reloaded in the editor, the value to place in the `content`
 **JS WP dependencies**
 
 - [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
   - `useBlockProps`
+
   - `RichText`
+
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
   - `registerBlockType`
+
 - [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
   - `__`
 
 **PHP WP functions**

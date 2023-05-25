@@ -17,7 +17,9 @@ This example adds a parent block, `myprefix/inner-blocks-template-parent`, which
 **`inner-blocks-template-parent.index.js`**
 
 - Registers `myprefix/inner-blocks-template-parent`.
+
 - Defines the template used to add initial blocks to the parent block.
+
 - Defined which extra blocks may be added to the parent.
 
 **`inner-blocks-template-child.index.js`**
@@ -57,9 +59,13 @@ See here for more details about [`useInnerBlockProps`](https://make.wordpress.or
 **JS WP dependencies**
 
 - [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
   - `useBlockProps`
+
   - `InnerBlocks`
+
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
   - `registerBlockType`
 
 **PHP WP functions**

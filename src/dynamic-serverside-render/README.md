@@ -9,18 +9,23 @@ This example adds a dynamic block that lists the three most recent posts. The bl
 **`dynamic-serverside-render.php`**
 
 - Registers the `myprefix/dynamic-serverside-render` block.
+
 - Defines a callback function, which renders the block, both on the front- and back-end.
 
 **`dynamic-serverside-render.index.js`**
 
 - Registers the `myprefix/dynamic-serverside-render` block. Note, since the block is dynamic, and is rendered by a callback function on the front-end, the `save` function returns `null`.
+
 - Uses the `ServerSideRender` component to render the block in the editor.
 
 **`dynamic-serverside-render.block.json`**
 
 - Adds `supports`:
+
   - `color`
+
   - `typography`
+
   - `spacing`
 
 ## Notes
@@ -38,16 +43,23 @@ The callback function uses [`get_block_wrapper_attributes()`](https://developer.
 ## Uses
 
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
   - `registerBlockType`
+
 - [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
   - `useBlockProps`
+
 - [`@wordpress/server-side-render`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-server-side-render/)
+
   - `ServerSideRender`
 
 **PHP WP functions**
 
 - [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
+
 - [`wp_get_recent_posts`](https://developer.wordpress.org/reference/functions/wp_get_recent_posts/)
+
 - [`get_block_wrapper_attributes`](https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/)
 
 **PHP WP actions**

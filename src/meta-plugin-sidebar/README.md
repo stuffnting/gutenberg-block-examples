@@ -11,14 +11,19 @@ Two meta [meta boxes](https://developer.wordpress.org/plugins/metadata/custom-me
 **`meta-plugin-sidebar.php`**
 
 - Enqueues the script file. Note, there is no block to register for this example.
+
 - Fetches the meta key from `meta-document-sidebar.metafield.json`.
+
 - Registers the meta filed.
+
 - Adds a `the_content` filter to use the meta on the front-end.
 
 **`meta-plugin-sidebar.index.js`**
 
 - Registers a plugin to add the meta box.
+
 - Adds the `PluginSidebarMoreMenuItem` component that deals with the post meta.
+
 - `PluginSidebar` creates the sidebar and puts a button in the toolbar.
 
 **`meta-plugin-sidebar.metafield.json`**
@@ -50,30 +55,47 @@ To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences ->
 **JS WP dependencies**
 
 - [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
+
   - [`PanelBody`](https://developer.wordpress.org/block-editor/reference-guides/components/panel/)
+
   - [`DateTimePicker`](https://developer.wordpress.org/block-editor/reference-guides/components/date-time/)
+
   - [`ColorPicker`](https://developer.wordpress.org/block-editor/reference-guides/components/color-picker/)
+
 - [`@wordpress/data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-data/)
+
   - `useSelect`
+
 - [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
+
   - `useEntityProp`
+
 - [`@wordpress/plugins`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-plugins/)
+
   - `registerPlugin`
+
 - [`@wordpress/edit-post`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-edit-post/)
+
   - `PluginSidebar`
+
   - `PluginSidebarMoreMenuItem`
+
 - [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
   - `__`
 
 **PHP WP functions**
 
 - [`register_post_meta`](https://developer.wordpress.org/reference/functions/register_post_meta/)
+
 - [`get_post_meta`](https://developer.wordpress.org/reference/functions/get_post_meta/)
+
 - [`wp_enqueue_script`](https://developer.wordpress.org/reference/functions/wp_enqueue_script/)
 
 **PHP WP actions**
 
 - [`init`](https://developer.wordpress.org/reference/hooks/init/)
+
 - [`enqueue_block_editor_assets`](https://developer.wordpress.org/reference/hooks/enqueue_block_editor_assets/)
 
 **PHP WP filters**

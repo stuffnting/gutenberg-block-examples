@@ -9,13 +9,17 @@ This code demonstrates adding and removing block styles vis PHP and JS.
 **`block-styles.php`**
 
 - Enqueues the script file.
+
 - Registers 4 new styles for the `core/paragraph` block. Then, unregisters one of them. Another of the new styles is unregistered in the JS file.
 
 **`block-styles.index.js`**
 
 - Import the SCSS file, so that webpack will process it.
+
 - Registers a new style.
+
 - Unregisters one of the new styles added in the PHP file.
+
 - Unregisters two core styles used by the `core/image` block type.
 
 ## Notes
@@ -38,7 +42,9 @@ Here, `unregister_block_style` and is called from the `wp_loaded` action hook to
 
 All styles, even those registered server-side with PHP, can be unregistered with JS.
 
-~~To make sure all styles are loaded in the editor before `wp.blocks.unregister.BlockStyle()` is called, use `wp.domReady()`.~~ - This is the Block Editor Handbook recommended method, but it currently doesn't work (WP 6.2).
+> To make sure all styles are loaded in the editor before `wp.blocks.unregister.BlockStyle()` is called, use `wp.domReady()`.
+
+This is the Block Editor Handbook recommended method, but it currently doesn't work (WP 6.2).
 
 See this [issue](https://github.com/WordPress/gutenberg/issues/25330) for more details.
 
@@ -51,13 +57,21 @@ The work around, used in `block-styles.index.js` is to use the blocks.`registerB
 **JS WP dependencies**
 
 - [`@wordpress/hooks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-hooks/)
-  - addFilter
+
+  - `addFilter`
+
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
-  - registerBlockStyle
-  - unregisterBlockStyle
+
+  - `registerBlockStyle`
+
+  - `unregisterBlockStyle`
+
 - [`@wordpress/dom-ready`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-dom-ready/)
-  - domReady
+
+  - `domReady`
+
 - [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
   - `__`
 
 **JS WP filters**

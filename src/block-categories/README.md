@@ -11,15 +11,21 @@ A test block, `myprefix/change-inserter-test-block`, is also added to the insert
 **`block-categories.php`**
 
 - Registers a test block: `myprefix/change-inserter-test-block`.
+
 - Adds a new block category `custom-category-php` using the `block_categories_all` filter.
+
 - Filters which blocks are allowed in the `widget` category. The other widgets are remove from the editor completely.
 
 **`block-categories.index.js`**
 
 - Adds a new block category `custom-category-js`.
+
 - Reorders the categories in the inserter.
+
 - Moves core/spacer to the `custom-category-php` category.
-- Unregisters the blocks the `theme` category. `theme` is then removed from the inserter, because empty categories are omitted;
+
+- Unregisters the blocks the `theme` category. `theme` is then removed from the inserter, because empty categories are omitted.
+
 - Unregisters the block variations of core/embed, but leave core/embed itself.
 
 **`block-categories.test-block.js`**
@@ -31,11 +37,17 @@ A test block, `myprefix/change-inserter-test-block`, is also added to the insert
 ### Core categories
 
 - `text`
+
 - `media`
+
 - `design`
+
 - `widgets`
+
 - `theme`
+
 - `embed`
+
 - `reusable`
 
 (Last checked WP 6.2.)
@@ -63,17 +75,29 @@ import { PluginSidebar } from "@wordpress/edit-post";
 **JS WP dependencies**
 
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
   - `getBlockTypes`
+
   - `unregisterBlockType`
+
   - `getBlockVariations`
+
   - `unregisterBlockVariation`
+
   - `getCategories`
+
   - `setCategories`
+
 - [`@wordpress/dom-ready` ](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-dom-ready/)
+
   - `domReady`
+
 - [`@wordpress/edit-post`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-edit-post/)
+
   - `PluginSidebar`
+
 - [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
   - `__`
 
 **JS WP filters**

@@ -25,6 +25,7 @@ A 'block collection' is a set of block that all have the same namespace (block t
 **JS WP dependencies**
 
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
   - `registerBlockCollection`
 
 **PHP WP actions**

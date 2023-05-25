@@ -1,6 +1,6 @@
 # Block Patterns
 
-**_NOTE:_** **This code needs PHP 7+.**
+**_NOTE: This code needs PHP 7+._**
 
 ## Description
 
@@ -11,9 +11,13 @@ This code demonstrates how to register block patterns.
 **`block-patterns.php`**
 
 - Enables/disables the core block patterns.
+
 - Unregisters some core patterns and pattern categories
+
 - Register custom patterns and pattern categories
+
 - Adds the ability to disable the Page Construction Pattern modal by removing `core/post-content` from all patterns registered by the theme and plugins. There are no core patterns that use `core/post-content`.
+
 - Logs a list of registered patters and pattern categories to the console.
 
 ## Notes
@@ -57,19 +61,29 @@ The function `myprefix_print_list_to_console()` contains a neat bit of code to p
 **PHP WP function**
 
 - [`add_theme_support`](https://developer.wordpress.org/reference/functions/add_theme_support/)
+
 - [`register_block_pattern`](https://developer.wordpress.org/reference/functions/register_block_pattern/)
+
 - [`unregister_block_pattern`](https://developer.wordpress.org/reference/functions/unregister_block_pattern/)
+
 - [`register_block_pattern_category`](https://developer.wordpress.org/reference/functions/register_block_pattern_category/)
+
 - [`unregister_block_pattern_category`](https://developer.wordpress.org/reference/functions/unregister_block_pattern_category/)
+
 - [`WP_Block_Patterns_Registry::get_all_registered`](https://developer.wordpress.org/reference/classes/wp_block_patterns_registry/get_all_registered/)
+
 - [`WP_Block_Pattern_Categories_Registry::get_all_registered`](https://developer.wordpress.org/reference/classes/wp_block_pattern_categories_registry/get_all_registered/)
 
 **PHP WP actions**
 
 - [`init`](https://developer.wordpress.org/reference/hooks/init/)
+
 - [`wp_loaded`](https://developer.wordpress.org/reference/hooks/wp_loaded/)
+
 - [`after_setup_theme`](https://developer.wordpress.org/reference/hooks/after_setup_theme/)
+
 - [`wp_print_footer_scripts`](https://developer.wordpress.org/reference/functions/wp_print_footer_scripts/)
+
 - [`admin_footer`](https://developer.wordpress.org/reference/hooks/admin_footer/)
 
 ## Also see

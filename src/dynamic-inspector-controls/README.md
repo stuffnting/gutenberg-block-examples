@@ -11,13 +11,17 @@ Note, this block does not control the dynamic aspect of the block, i.e. how many
 **`dynamic-inner-blocks.php`**
 
 - Registers the `myprefix/dynamic-inspector-controls` block.
+
 - Adds a callback function to render the block on the front-end, which utilizes the block's attribute values.
 
 **`dynamic-inspector-controls.index.js`**
 
 - Registers the `myprefix/dynamic-inspector-controls` block.
+
 - Imports the `GetPosts` component form `get-posts.js`.
+
 - Imports the `PostListTitle` component from `post-list-title.js`.
+
 - imports the `TheInspectorControls` from `the-inspector-controls.js`.
 
 **`get-posts.js`**
@@ -36,9 +40,13 @@ Note, this block does not control the dynamic aspect of the block, i.e. how many
 **`dynamic-inspector-controls.block.js`**
 
 - Adds the block's four attributes:
+
   - `attribute.showTitle`&mdash;whether the block title is displayed.
+
   - `attribute.title`&mdash;the title shown in the block.
+
   - `attribute.font`&mdash;which style of font to use for the title.
+
   - `attribute.underline`&mdash;whether to underline the title.
 
 ## Notes
@@ -54,14 +62,19 @@ In this example `perPage` does not actually. For an example where `perPage` can 
 The `GetPosts` component uses the `useEntityRecords` [hook](https://legacy.reactjs.org/docs/hooks-intro.html). It has 4 parameters:
 
 - The kind of entity. In `GetPosts` the entity is a `postType`.
+
 - The name of the entity. In `GetPosts` the `postType` is `posts`.
+
 - Query arguments to use when getting the records. The only query arg used here is `perPage`.
+
 - Hook options. Not used in this case.
 
 The hook returns an object with three items, which are destructured to:
 
 - `isResolving`: a boolean.
+
 - `hasResolved`: a boolean.
+
 - `records`: an array of the fetched posts.
 
 ### Front-end block wrapper
@@ -73,28 +86,47 @@ The callback function uses [`get_block_wrapper_attributes()`](https://developer.
 **JS WP dependencies**
 
 - [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
   - `useBlockProps`
+
   - `InspectorControls`
+
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
   - `registerBlockType`
+
 - [`@wordpress/element`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-element/)
+
   - `memo`
+
 - [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
+
   - [`PanelBody`](https://developer.wordpress.org/block-editor/reference-guides/components/panel/)
+
   - [`PanelRow`](https://developer.wordpress.org/block-editor/reference-guides/components/panel/)
+
   - [`TextControl`](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/)
+
   - [`ToggleControl`](https://developer.wordpress.org/block-editor/reference-guides/components/toggle-control/)
+
   - [`SelectControl`](https://developer.wordpress.org/block-editor/reference-guides/components/select-control/)
+
   - [`CheckboxControl`](https://developer.wordpress.org/block-editor/reference-guides/components/checkbox-control/)
+
 - [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
+
   - `useEntityRecords`
+
 - [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
   - `__`
 
 **PHP WP functions**
 
 - [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
+
 - [`wp_get_recent_posts`](https://developer.wordpress.org/reference/functions/wp_get_recent_posts/)
+
 - [`get_block_wrapper_attributes`](https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/)
 
 **PHP WP actions**

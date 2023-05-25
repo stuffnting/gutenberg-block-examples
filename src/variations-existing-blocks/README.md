@@ -65,18 +65,23 @@ This problem of a classname being carried over between transformations, also hap
 **JS WP dependencies**
 
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
   - `registerBlockVariation`
+
 - [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
   - `__`
 
 **PHP WP functions**
 
 - [`wp_enqueue_script`](https://developer.wordpress.org/reference/functions/wp_enqueue_script/)
+
 - [`wp_enqueue_style`](https://developer.wordpress.org/reference/functions/wp_enqueue_style/)
 
 **PHP WP actions**
 
 - [`enqueue_block_editor_assets`](https://developer.wordpress.org/reference/hooks/enqueue_block_editor_assets/)
+
 - [`enqueue_block_assets`](https://developer.wordpress.org/reference/hooks/enqueue_block_assets/)
 
 ## Also see

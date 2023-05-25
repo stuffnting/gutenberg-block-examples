@@ -13,6 +13,7 @@ The code also shows how to register two block contained within the same `index.j
 **`block-json.php`**
 
 - Registers two blocks, one with the default `block.json` file, and the other with `another-block-json.block.json`.
+
 - Demonstrates the filters `block_type_metadata` and `block_type_metadata_settings filter`, with a function that sends their output to the browser console.
 
 When registering the second block, the file path to its JSON file needs to be used in `register_block_type()`.
@@ -20,6 +21,7 @@ When registering the second block, the file path to its JSON file needs to be us
 **`block-json.index.js`**
 
 - Registers the two blocks&mdash; `myprefix/block-json` and `myprefix/another-block-json`&mdash;with via `import`.
+
 - Imports the SCSS file.
 
 ## Notes
@@ -51,12 +53,19 @@ The function `myprefix_print_metadata_to_console()` contains a neat bit of code 
 **JS WP dependencies**
 
 - [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
   - `useBlockProps`
+
   - `RichText`
+
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
   - `registerBlockType`
+
   - `createBlock`
+
 - [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
   - `__`
 
 **PHP WP functions**
@@ -72,6 +81,7 @@ The function `myprefix_print_metadata_to_console()` contains a neat bit of code 
 **PHP WP Filters**
 
 - [`block_type_metadata`](https://developer.wordpress.org/reference/hooks/block_type_metadata/)
+
 - [`block_type_metadata_settings`](https://developer.wordpress.org/reference/hooks/block_type_metadata_settings/)
 
 ## Also see

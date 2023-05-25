@@ -13,8 +13,11 @@ This example is similar to `richtext-transforms-simple`, but the transformations
 **`richtext-transforms-multiblock.index.js`**
 
 - Imports the `edit` function from `richtext-transforms-multiblock.edit.js`.
+
 - Imports the `save` function from `richtext-transforms-multiblock.save.js`.
+
 - Imports the `transforms` object from `richtext-transforms-multiblock.transforms.js`.
+
 - Registers the `myprefix/richtext-transforms-multiblock` block.
 
 **`richtext-transforms-multiblock.transforms.js`**
@@ -32,12 +35,19 @@ In this example `isMultiBlock` is set to `true`, and whereas, `richtext-transfor
 ## Uses
 
 - [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
   - `useBlockProps`
+
   - `RichText`
+
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
-  - `registerBlockType`,
+
+  - `registerBlockType`
+
   - `createBlock`
+
 - [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
   - `__`
 
 **PHP WP functions**

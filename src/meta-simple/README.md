@@ -9,14 +9,19 @@ This example adds a block that contains a `TextControl` component, which is used
 **`meta-simple.php`**
 
 - Registers the block.
+
 - Fetches the meta key from `meta-simple.metafield.json`.
+
 - Registers the meta filed.
+
 - Adds a `the_content` filter to use the meta on the front-end.
 
 **`meta-simple.index.js`**
 
 - Registers the block.
+
 - Fetches the meta key from `meta-simple.metafield.json`.
+
 - Processes the metadata using `useEntityProp`.
 
 **`meta-simple.block.json`**
@@ -76,22 +81,35 @@ The meta data is not available to the `save` function, and can not be used there
 **JS WP dependencies**
 
 - [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
   - `useBlockProps`
+
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
   - `registerBlockType`
+
 - [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
+
   - [`TextControl`](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/)
+
 - [`@wordpress/data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-data/)
+
   - `useSelect`
+
 - [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
+
   - `useEntityProp`
+
 - [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
   - `__`
 
 **PHP WP functions**
 
 - [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
+
 - [`register_post_meta`](https://developer.wordpress.org/reference/functions/register_post_meta/)
+
 - [`get_post_meta`](https://developer.wordpress.org/reference/functions/get_post_meta/)
 
 **PHP WP actions**

@@ -11,18 +11,23 @@ The chosen date-time is saved as post meta, and displayed on the front-end using
 **`meta-notices-save-lock.php`**
 
 - Registers the `myprefix/meta-notices-save-lock` block.
+
 - Adds a callback function to render the block on the front-end.
+
 - Fetches the meta field key from the `meta-notices-save-lock.metafield.js`.
+
 - Registers the meta field.
 
 **`meta-notices-save-lock.index.js`**
 
 - Registered the block.
+
 - Contains the block's `save` function that returns `null`.
 
 **`meta-notices-save-lock.edit.js`**
 
 - Adds the Block Inspector controls that contains the date-picker.
+
 - Handles the meta field using `useEntityProp`.
 
 **`notices.js`**
@@ -62,30 +67,50 @@ To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences ->
 **JS WP dependencies**
 
 - [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
   - `useBlockProps`
+
   - `InspectorControls`
+
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
   - `registerBlockType`
+
 - [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
+
   - [`PanelBody`](https://developer.wordpress.org/block-editor/reference-guides/components/panel/)
+
   - [`DateTimePicker`](https://developer.wordpress.org/block-editor/reference-guides/components/date-time/)
+
 - [`@wordpress/data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-data/)
+
   - `useSelect`
+
   - `useSelect`
+
   - `select`
+
   - `dispatch`
+
 - [`@wordpress/element`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-element/)
+
   - `useEffect`
+
 - [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
+
   - `useEntityProp`
+
 - [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
   - `__`
 
 **PHP WP functions**
 
 - [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
+
 - [`register_post_meta`](https://developer.wordpress.org/reference/functions/register_post_meta/)
+
 - [`get_post_meta`](https://developer.wordpress.org/reference/functions/get_post_meta/)
+
 - [`get_block_wrapper_attributes`](https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/)
 
 **PHP WP actions**

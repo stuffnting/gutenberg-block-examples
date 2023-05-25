@@ -134,7 +134,7 @@
   "meta-with-media": {
     "name": "meta-with-media",
     "cat": ["meta", "media", "plugin sidebar"],
-    "include": true
+    "include": false
   },
   "meta-with-select-doc-settings": {
     "name": "meta-with-select-doc-settings",

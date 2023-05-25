@@ -9,11 +9,13 @@ This example adds a dynamic block that lists the last three posts.
 **`dynamic-simple.php`**
 
 - Registers the `myprefix/dynamic-simple` block.
+
 - Defines a callback function, which is used to render the block on the front-end.
 
 **`dynamic-simple.index.js`**
 
 - Registers the `myprefix/dynamic-simple` block. Note, since the block is dynamic, and is rendered by a callback function on the front-end, the `save` function returns `null`.
+
 - Gets the most recent posts to render in the editor.
 
 ## Notes
@@ -35,7 +37,9 @@ It is worth noting that any block can be rendered on the front-end using a PHP c
 The callback function has three parameters:
 
 - `$attributes` (array).
+
 - `$content` (string).
+
 - `$block` (WP_Block).
 
 In a block with dynamic content, `$content` will refer to any allowed inner blocks. In this example there aren't any inner blocks, and `$content` will be empty.
@@ -55,15 +59,21 @@ This example uses the newer `useEntityRecords` hook method. Before WP 6.1 the re
 **JS WP dependencies**
 
 - [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
   - `useBlockProps`
+
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
   - `registerBlockType`
+
 - [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
+
   - `useEntityRecords`
 
 **PHP WP functions**
 
 - [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
+
 - [`get_block_wrapper_attributes`](https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/)
 
 **PHP WP actions**

@@ -15,8 +15,11 @@ This example demonstrates how to add `split` and `merge` to a `RichText` compone
 **`richtext-split-merge.index.js`**
 
 - Imports the block metadata from `richtext-split-merge.block.json`
+
 - Imports the `edit` function from `richtext-split-merge.edit.js`
+
 - Imports the `save` and `merge` functions from `richtext-split-merge.save.js`
+
 - Registers the `myprefix/richtext-split-merge` block.
 
 **`richtext-split-merge.edit.js`**
@@ -48,12 +51,19 @@ The function is used by `mergeBlock`, which is an action added to the block's `p
 **JS WP dependencies**
 
 - [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
   - `useBlockProps`
+
   - `RichText`
+
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
   - `registerBlockType`
+
   - `creteBlock`
+
 - [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
   - `__`
 
 **PHP WP functions**
