@@ -8,7 +8,7 @@
  * 
  *****************************************************************************/
 function myprefix_dynamic_attribute_cb( $attributes, $content, $block_object ) {
-  
+
   /**
    * The second parameter ($content) will not be used, because there are no 
    * inner-blocks, therefore, there is no content.

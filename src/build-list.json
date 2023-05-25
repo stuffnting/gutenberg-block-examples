@@ -28,12 +28,12 @@
   "block-styles": {
     "name": "block-styles",
     "cat": ["variations", "styles"],
-    "include": true
+    "include": false
   },
   "dynamic-attribute": {
     "name": "dynamic-attribute",
     "cat": ["dynamic", "php-render"],
-    "include": false
+    "include": true
   },
   "dynamic-inner-blocks": {
     "name": "dynamic-inner-blocks",

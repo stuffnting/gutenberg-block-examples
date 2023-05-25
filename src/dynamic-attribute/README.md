@@ -1,8 +1,8 @@
-# Dynamic Attribute
+# dynamic-attributes
 
 ## Description
 
-This example block adds a `TextControl` component to the editor, and the value entered is stored in an attribute.
+This example adds a block that has a `TextControl` component, the value entered is stored in an attribute. The block uses a callback function, demonstrating how attributes stored by a block can be accessed via PHP when the page is rendered.
 
 ## In this code
 
@@ -29,31 +29,29 @@ This example block adds a `TextControl` component to the editor, and the value e
 
 ## Notes
 
-### Attribute default value
+### Callback function
 
-Defining a default value of an empty string for the attribute prevents the React warning:
+The callback function has three parameters:
 
-> Warning: A component is changing an uncontrolled input to be controlled. This is likely caused by the value changing from undefined to a defined value, which should not happen.
+- `$attributes`, the attributes used by the block.
+
+- `$content`, the inner content of the block.
+
+- `$block_object`, the block object for the instance in the editor.
+
+In this example only `$attributes` is used, since the block has no content.
 
 ### Front-end block wrapper
 
 The callback function uses [`get_block_wrapper_attributes()`](https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/) to generate the HTML attributes for the block's wrapping tag.
 
+## Also see
+
+The `dynamic-meta-block` example similar to this one, however, it stores the value as using post metadata, rather than an block attribute.
+
+As well as rendering dynamic blocks using a callback function in the PHP file, it is also possible to use a PHP template file. For an example of how to do this, see the `render-PHP-template` example.
+
 ## Uses
-
-**JS WP dependencies**
-
-- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
-
-  - `useBlockProps`
-
-- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
-
-  - `registerBlockType`
-
-- [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
-
-  - [`TextControl`](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/)
 
 **PHP WP functions**
 
@@ -65,10 +63,16 @@ The callback function uses [`get_block_wrapper_attributes()`](https://developer.
 
 - [`init`](https://developer.wordpress.org/reference/hooks/init/)
 
-## Also see
+**JS WP dependencies**
 
-The `dynamic-meta-block` example similar to this one, however, it stores the value as using post metadata, rather than an block attribute.
+- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
 
-## Also see
+  - `registerBlockType`
 
-As well as rendering dynamic blocks using a callback function in the PHP file, it is also possible to use a PHP template file. For an example of how to do this, see the `render-PHP-template` example.
+- [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
+
+  - [`TextControl`](https://developer.wordpress.org/block-editor/reference-guides/components/text-control/)
+
+- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
+  - `useBlockProps`
