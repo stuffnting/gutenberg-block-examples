@@ -1,4 +1,4 @@
-# Inner Blocks Template
+# inner-blocks-template
 
 ## Description
 
@@ -54,28 +54,6 @@ In this example there is a single wrapper for the block itself and the inner blo
 
 See here for more details about [`useInnerBlockProps`](https://make.wordpress.org/core/2021/12/28/take-more-control-over-inner-block-areas-as-a-block-developer/)
 
-## Uses
-
-**JS WP dependencies**
-
-- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
-
-  - `useBlockProps`
-
-  - `InnerBlocks`
-
-- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
-
-  - `registerBlockType`
-
-**PHP WP functions**
-
-- [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
-
-**PHP WP actions**
-
-- [`init`](https://developer.wordpress.org/reference/hooks/init/)
-
 ## Also see
 
 The `templates` example.
@@ -87,3 +65,25 @@ For a simple example of inner blocks without using a template see `inner-blocks`
 For an example that uses block `context` to pass values from a parent block to a child block see `inner-blocks-context`.
 
 The `dynamic-inner-blocks` example demonstrates using inner blocks with other content.
+
+## Uses
+
+**PHP WP functions**
+
+- [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
+
+**PHP WP actions**
+
+- [`init`](https://developer.wordpress.org/reference/hooks/init/)
+
+**JS WP dependencies**
+
+- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
+  - `registerBlockType`
+
+- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
+  - `useBlockProps`
+
+  - `InnerBlocks`

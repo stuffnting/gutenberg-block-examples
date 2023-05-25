@@ -1,4 +1,4 @@
-# Inner Blocks Context
+# inner-blocks-context
 
 ## Description
 
