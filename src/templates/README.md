@@ -1,4 +1,4 @@
-# Template
+# templates
 
 ## Description
 
@@ -111,16 +111,6 @@ Then each block within $inner_block_array follows the same pattern.
 array( $block_name, $block_atts_array, $inner_blocks_array )
 ```
 
-## Uses
-
-**PHP WP functions**
-
-- [`get_post_type_object`](https://developer.wordpress.org/reference/functions/get_post_type_object/)
-
-**PHP WP actions**
-
-- [`init`](https://developer.wordpress.org/reference/hooks/init/)
-
 ## Also see
 
 The Gutenberg Handbook's section on [templates and locks](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-templates/).
@@ -130,3 +120,13 @@ fullsiteediting.com page on [templates and locking](https://fullsiteediting.com/
 The `block-lock` example.
 
 The `inner-blocks-template` example.
+
+## Uses
+
+**PHP WP functions**
+
+- [`get_post_type_object`](https://developer.wordpress.org/reference/functions/get_post_type_object/)
+
+**PHP WP actions**
+
+- [`init`](https://developer.wordpress.org/reference/hooks/init/)
