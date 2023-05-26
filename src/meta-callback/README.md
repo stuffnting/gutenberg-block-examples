@@ -2,11 +2,11 @@
 
 ## Description
 
-This example adds a block that has two metadata fields. The metadata is entered via the Block Inspector, and stored using a meta key registered in the PHP file.
+This example adds a block that has two meta fields. The metadata is entered via the Block Inspector, and stored using a meta key registered in the PHP file.
 
 The metadata is displayed on the front end via a callback function in the PHP file. The metadata thus appears at the point in the post where the block as inserted.
 
-For more about metadata see [here]().
+For more about metadata see [here](https://developer.wordpress.org/plugins/metadata/managing-post-metadata/).
 
 ## In this code
 
