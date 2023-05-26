@@ -52,7 +52,37 @@ Meta data field names that begin with an underscore are private. Private fields 
 
 To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences -> Panels -> Additional -> Custom Fields.
 
+## Also see
+
+The modern way of handling meta boxes, using the `useEntityProp` hook, is demonstrated in the `meta-document-settings` example.
+
+A White Pixel's [tutorial on meta boxes](https://awhitepixel.com/blog/how-to-add-post-meta-fields-to-gutenberg-document-sidebar/).
+
 ## Uses
+
+**PHP WP functions**
+
+- [`register_post_meta`](https://developer.wordpress.org/reference/functions/register_post_meta/)
+
+- [`get_post_meta`](https://developer.wordpress.org/reference/functions/get_post_meta/)
+
+- [`wp_enqueue_script`](https://developer.wordpress.org/reference/functions/wp_enqueue_script/)
+
+**PHP WP actions**
+
+- [`init`](https://developer.wordpress.org/reference/hooks/init/)
+
+- [`enqueue_block_editor_assets`](https://developer.wordpress.org/reference/hooks/enqueue_block_editor_assets/)
+
+**PHP WP filters**
+
+- [`the_content`](https://developer.wordpress.org/reference/functions/the_content/)
+
+**JS WP dependencies**
+
+- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
+  - `__`
 
 - [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
 
@@ -74,10 +104,6 @@ To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences ->
 
   - `PluginDocumentSettingPanel`
 
-- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
-
-  - `__`
-
 **JS WP data module**
 
 - [`core/editor`](https://developer.wordpress.org/block-editor/reference-guides/data/data-core-editor/)
@@ -85,27 +111,3 @@ To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences ->
   - `editPost`
 
   - `getEditedPostAttribute`
-
-**PHP WP functions**
-
-- [`register_post_meta`](https://developer.wordpress.org/reference/functions/register_post_meta/)
-
-- [`get_post_meta`](https://developer.wordpress.org/reference/functions/get_post_meta/)
-
-- [`wp_enqueue_script`](https://developer.wordpress.org/reference/functions/wp_enqueue_script/)
-
-**PHP WP actions**
-
-- [`init`](https://developer.wordpress.org/reference/hooks/init/)
-
-- [`enqueue_block_editor_assets`](https://developer.wordpress.org/reference/hooks/enqueue_block_editor_assets/)
-
-**PHP WP filters**
-
-- [`the_content`](https://developer.wordpress.org/reference/functions/the_content/)
-
-## Also see
-
-The modern way of handling meta boxes, using the `useEntityProp` hook, is demonstrated in the `meta-document-settings` example.
-
-A White Pixel's [tutorial on meta boxes](https://awhitepixel.com/blog/how-to-add-post-meta-fields-to-gutenberg-document-sidebar/).
