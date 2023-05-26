@@ -22,13 +22,13 @@ The registered block also limits the inline formatting buttons available for its
 
 - Adds the `RichText` component, and specifies `allowedFormats`.
 
-**`richtext-extra-toolbar-buttons.js`**
+**`extra-toolbar-buttons.js`**
 
 - Adds Button 1, a dropdown button, to the `block` group of the registered block's toolbar.
 
 - Adds Button 2, a single button, to the `other` group of the registered block's toolbar.
 
-**`richtext-inline-format-buttons.js`**
+**`extra-inline-format-buttons.js`**
 
 - Registers Button 3, which adds `<small>` tags around the selected text, for core paragraph, heading, quote and list blocks, as well as the registered block.
 
@@ -124,7 +124,37 @@ Note, these two buttons are unaffected by their absence from the `allowedFormats
 
 ## Uses
 
+## Also see
+
+The Gutenberg Handbook's [Formatting Toolbar API](https://developer.wordpress.org/block-editor/how-to-guides/format-api/) section.
+
+The `richtext-text-align` example demonstrates how to add text-align controls to the toolbar of a custom block.
+
 **JS WP dependencies**
+
+- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
+  - `__`
+
+- [`@wordpress/data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-data/)
+
+  - `useSelect`
+
+- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
+  - `registerBlockType`
+
+- [`@wordpress/rich-text`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-rich-text/)
+
+  - `registerFormatType`
+
+  - `toggleFormat`
+
+- [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
+
+  - [`ToolbarButton`](https://developer.wordpress.org/block-editor/reference-guides/components/toolbar-button/)
+
+  - [`ToolbarDropdownMenu`](https://developer.wordpress.org/block-editor/reference-guides/components/toolbar-dropdown-menu/)
 
 - [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
 
@@ -136,30 +166,6 @@ Note, these two buttons are unaffected by their absence from the `allowedFormats
 
   - `RichTextToolbarButton`
 
-- [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
-
-  - [`ToolbarButton`](https://developer.wordpress.org/block-editor/reference-guides/components/toolbar-button/)
-
-  - [`ToolbarDropdownMenu`](https://developer.wordpress.org/block-editor/reference-guides/components/toolbar-dropdown-menu/)
-
-- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
-
-  - `registerBlockType`
-
-- [`@wordpress/data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-data/)
-
-  - `useSelect`
-
-- [`@wordpress/rich-text`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-rich-text/)
-
-  - `registerFormatType`
-
-  - `toggleFormat`
-
-- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
-
-  - `__`
-
 **PHP WP functions**
 
 - [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
@@ -167,9 +173,3 @@ Note, these two buttons are unaffected by their absence from the `allowedFormats
 **PHP WP actions**
 
 - [`init`](https://developer.wordpress.org/reference/hooks/init/)
-
-## Also see
-
-The Gutenberg Handbook's [Formatting Toolbar API](https://developer.wordpress.org/block-editor/how-to-guides/format-api/) section.
-
-The `richtext-text-align` example demonstrates how to add text-align controls to the toolbar of a custom block.
