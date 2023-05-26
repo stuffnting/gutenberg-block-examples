@@ -1,8 +1,10 @@
-# RichText Text Align
+# richtext-align-text
 
 ## Description
 
-By default [`RichText`](https://github.com/WordPress/gutenberg/blob/trunk/packages/block-editor/src/components/rich-text/README.md) components don't get alignment controls. This example adds a `RichText` block, which has text [alignment controls](https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/block-controls-toolbar-and-sidebar/) added to its toolbar. The current text alignment is stired in a block attribute.
+By default [`RichText`](https://github.com/WordPress/gutenberg/blob/trunk/packages/block-editor/src/components/rich-text/README.md) components don't get alignment controls. This example adds a `RichText` block, which has text [alignment controls](https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/block-controls-toolbar-and-sidebar/) added to its toolbar. The current text alignment is stored in a block attribute.
+
+Note, "text alignment" is the alignment of text within the block. Alignment of the block within the editor, is dealt with in the `richtext-supports` example.
 
 ## In this code
 
@@ -65,9 +67,31 @@ When an instance of the block is placed in a post, it is in the database as:
 
 Find out more [here](https://www.npmjs.com/package/classnames).
 
+## Also see
+
+For an example of how to deal with other toolbar buttons, see`richtext-toolbar-buttons`.
+
+For an example of block alignment, as opposed to text alignment, see the `richtext-supports`.
+
 ## Uses
 
+**PHP WP functions**
+
+- [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
+
+**PHP WP actions**
+
+- [`init`](https://developer.wordpress.org/reference/hooks/init/)
+
 **JS WP dependencies**
+
+- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
+  - `__`
+
+- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
+  - `registerBlockType`
 
 - [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
 
@@ -79,24 +103,6 @@ Find out more [here](https://www.npmjs.com/package/classnames).
 
   - `AlignmentToolbar`
 
-- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
-
-  - `registerBlockType`
-
-- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
-
-  - `__`
-
 **JS external dependencies**
 
 - [`classnames`](https://www.npmjs.com/package/classnames)
-
-**PHP WP functions**
-
-- [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
-
-**PHP WP actions**
-
-- [`init`](https://developer.wordpress.org/reference/hooks/init/)
-
-## Also see
