@@ -1,10 +1,10 @@
-# Render PHP Template
+# render-php-template
 
 ## Description
 
 This example demonstrates the use of a PHP template file to render the block on the front-end.
 
-The block is a simple RichText blocks, although dynamic blocks can be rendered in this way too.
+The block is a simple `RichText` block, although dynamic blocks can be rendered in this way too.
 
 ## In this code
 
@@ -61,21 +61,9 @@ The callback function uses [`get_block_wrapper_attributes()`](https://developer.
 
 ## Uses
 
-**JS WP dependencies**
+## Also see
 
-- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
-
-  - `registerBlockType`
-
-- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
-
-  - `useBlockProps`
-
-  - `RichText`
-
-- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
-
-  - `__`
+The dynamic block examples, which all use a callback function, rather than a template file.
 
 **PHP WP functions**
 
@@ -89,6 +77,18 @@ The callback function uses [`get_block_wrapper_attributes()`](https://developer.
 
 - [`init`](https://developer.wordpress.org/reference/hooks/init/)
 
-## Also see
+**JS WP dependencies**
 
-The dynamic block examples, which all use a callback function, rather than a template file.
+- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
+  - `__`
+
+- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
+  - `registerBlockType`
+
+- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
+  - `useBlockProps`
+
+  - `RichText`
