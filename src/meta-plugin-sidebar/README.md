@@ -1,8 +1,8 @@
-# Meta Plugin Sidebar
+# meta-plugin-sidebar
 
 ## Description
 
-This example adds a plugin sidebar, which can be opened from the lightbulb icon at the top-left of the editor.
+This example adds a meta box to the [`PluginSidebar` SlotFill](https://developer.wordpress.org/block-editor/reference-guides/slotfills/plugin-sidebar/), which can be opened from the lightbulb icon at the top-right of the editor.
 
 Two meta [meta boxes](https://developer.wordpress.org/plugins/metadata/custom-meta-boxes/) to the sidebar. The metadata is then used on the front-end, using the `the_content` filter.
 
@@ -50,45 +50,13 @@ Meta data field names that begin with an underscore are private. Private fields 
 
 To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences -> Panels -> Additional -> Custom Fields.
 
+## Also see
+
+The [`SlotFills`](https://developer.wordpress.org/block-editor/packages/packages-plugins/) documentation in the Gutenberg Handbook.
+
+The [`Plugins API`](https://developer.wordpress.org/block-editor/packages/packages-plugins/) documentation in the Gutenberg Handbook.
+
 ## Uses
-
-**JS WP dependencies**
-
-- [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
-
-  - [`PanelBody`](https://developer.wordpress.org/block-editor/reference-guides/components/panel/)
-
-  - [`DateTimePicker`](https://developer.wordpress.org/block-editor/reference-guides/components/date-time/)
-
-  - [`ColorPicker`](https://developer.wordpress.org/block-editor/reference-guides/components/color-picker/)
-
-- [`@wordpress/data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-data/)
-
-  - `useSelect`
-
-- [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
-
-  - `useEntityProp`
-
-- [`@wordpress/plugins`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-plugins/)
-
-  - `registerPlugin`
-
-- [`@wordpress/edit-post`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-edit-post/)
-
-  - `PluginSidebar`
-
-  - `PluginSidebarMoreMenuItem`
-
-- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
-
-  - `__`
-
-**JS WP data module**
-
-- [`core/editor`](https://developer.wordpress.org/block-editor/reference-guides/data/data-core-editor/)
-
-  - `getCurrentPostType`
 
 **PHP WP functions**
 
@@ -108,13 +76,43 @@ To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences ->
 
 - [`the_content`](https://developer.wordpress.org/reference/functions/the_content/)
 
-## Also see
+**JS WP dependencies**
 
-The [`SlotFills`](https://developer.wordpress.org/block-editor/packages/packages-plugins/) documentation in the Gutenberg Handbook.
+- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
 
-The [`Plugins API`](https://developer.wordpress.org/block-editor/packages/packages-plugins/) documentation in the Gutenberg Handbook.
+  - `__`
+
+- [`@wordpress/data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-data/)
+
+  - `useSelect`
+
+- [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
+
+  - [`PanelBody`](https://developer.wordpress.org/block-editor/reference-guides/components/panel/)
+
+  - [`DateTimePicker`](https://developer.wordpress.org/block-editor/reference-guides/components/date-time/)
+
+  - [`ColorPicker`](https://developer.wordpress.org/block-editor/reference-guides/components/color-picker/)
+
+- [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
+
+  - `useEntityProp`
+
+- [`@wordpress/plugins`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-plugins/)
+
+  - `registerPlugin`
+
+- [`@wordpress/edit-post`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-edit-post/)
+
+  - `PluginSidebar`
+
+  - `PluginSidebarMoreMenuItem`
 
 **JS WP data module**
+
+- [`core/editor`](https://developer.wordpress.org/block-editor/reference-guides/data/data-core-editor/)
+
+  - `getCurrentPostType`
 
 - [`core/editor`](https://developer.wordpress.org/block-editor/reference-guides/data/data-core-editor/)
 
