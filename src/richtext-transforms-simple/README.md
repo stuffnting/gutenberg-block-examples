@@ -1,4 +1,4 @@
-# RichText Transforms Simple
+# richtext-transforms-simple
 
 ## Description
 
@@ -34,23 +34,13 @@ The details of the transformation object can be found in the [Gutenberg Handbook
 
 In this example the transformation are simple. The `transform` method creates a new block of the specified type, copies across the content and className, and adds a new classname containing a description of the transformation.
 
+## Also see
+
+The Gutenberg Handbook's [documentation](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-transforms/#block)
+
+The `richtext-transforms-multiblock` example.
+
 ## Uses
-
-- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
-
-  - `useBlockProps`
-
-  - `RichText`
-
-- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
-
-  - `registerBlockType`
-
-  - `createBlock`
-
-- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
-
-  - `__`
 
 **PHP WP functions**
 
@@ -60,6 +50,20 @@ In this example the transformation are simple. The `transform` method creates a 
 
 - [`init`](https://developer.wordpress.org/reference/hooks/init/)
 
-## Also see
+**JS WP dependencies**
 
-The Gutenberg Handbook's [documentation](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-transforms/#block)
+- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
+  - `__`
+
+- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
+  - `registerBlockType`
+
+  - `createBlock`
+
+- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
+  - `useBlockProps`
+
+  - `RichText`
