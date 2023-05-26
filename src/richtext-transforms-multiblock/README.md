@@ -1,4 +1,4 @@
-# RichText Transforms Multiblock
+# richtext-transforms-multiblock
 
 ## Description
 
@@ -32,23 +32,11 @@ The details of the transformation object can be found in the [Gutenberg Handbook
 
 In this example `isMultiBlock` is set to `true`, and whereas, `richtext-transforms-simple` deals with a single block's `attributes`, this block deals with an array of `attributes` from multiple blocks.
 
+## Also see
+
+The Gutenberg Handbook's [documentation](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-transforms/#block)
+
 ## Uses
-
-- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
-
-  - `useBlockProps`
-
-  - `RichText`
-
-- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
-
-  - `registerBlockType`
-
-  - `createBlock`
-
-- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
-
-  - `__`
 
 **PHP WP functions**
 
@@ -58,6 +46,18 @@ In this example `isMultiBlock` is set to `true`, and whereas, `richtext-transfor
 
 - [`init`](https://developer.wordpress.org/reference/hooks/init/)
 
-## Also see
+- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
 
-The Gutenberg Handbook's [documentation](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-transforms/#block)
+  - `__`
+
+- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
+  - `registerBlockType`
+
+  - `createBlock`
+
+- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
+  - `useBlockProps`
+
+  - `RichText`
