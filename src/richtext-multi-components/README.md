@@ -36,23 +36,11 @@ This example demonstrates how several attributes can use difference selectors wi
 
 Find out more about attributes in the Gutenberg [Handbook](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-attributes/).
 
+## Also see
+
+The Attributes section in the Gutenberg [Handbook](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-attributes/).
+
 ## Uses
-
-**JS WP dependencies**
-
-- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
-
-  - `useBlockProps`
-
-  - `RichText`
-
-- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
-
-  - `registerBlockType`
-
-- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
-
-  - `__`
 
 **PHP WP functions**
 
@@ -62,6 +50,18 @@ Find out more about attributes in the Gutenberg [Handbook](https://developer.wor
 
 - [`init`](https://developer.wordpress.org/reference/hooks/init/)
 
-## Also see
+**JS WP dependencies**
 
-The Attributes section in the Gutenberg [Handbook](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-attributes/).
+- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
+  - `__`
+
+- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
+  - `registerBlockType`
+
+- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
+  - `useBlockProps`
+
+  - `RichText`
