@@ -1,4 +1,4 @@
-# RichText Supports
+# richtext-supports
 
 ## Description
 
@@ -34,19 +34,15 @@ Some UI controls used by several `supports` features need the theme to opt in. T
 
 If the theme does not opt in, the PHP file adds an action that will take care of it.
 
+## Also see
+
+The Gutenberg Handbook's documentation on [attributes](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-attributes/).
+
+The `filter-core-block-support-example` example.
+
 ## Uses
 
 **JS WP dependencies**
-
-- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
-
-  - `useBlockProps`
-
-  - `RichText`
-
-- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
-
-  - `registerBlockType`
 
 **PHP WP functions**
 
@@ -58,8 +54,12 @@ If the theme does not opt in, the PHP file adds an action that will take care of
 
 - [`after_setup_theme`](https://developer.wordpress.org/reference/hooks/after_setup_theme/)
 
-## Also see
+- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
 
-The Gutenberg Handbook's documentation on [attributes](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-attributes/).
+  - `registerBlockType`
 
-The `filter-core-block-support-example` example.
+- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
+  - `useBlockProps`
+
+  - `RichText`
