@@ -1,4 +1,6 @@
-## Variations Existing Block
+# variations-existing-blocks
+
+## Description
 
 This example registers several block variations for core blocks:
 
@@ -60,17 +62,13 @@ There is a problem when setting `className` for variations that can be transform
 
 This problem of a classname being carried over between transformations, also happens in some block transformations. For example, with this example active: inset a heading block; transform it to the "A pink heading" variation, then transform the block to a paragraph. You will notice that the text stays pink, because the classname `is-variation-pink` has been carried across to the paragraph block. Whether this happens or not, depends on how the block transformations are defined.
 
+## Also see
+
+[fullsiteediting.com article](`https://fullsiteediting.com/lessons/block-variations/`).
+
+Gutenberg Handbook's [documentation](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-variations/).
+
 ## Uses
-
-**JS WP dependencies**
-
-- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
-
-  - `registerBlockVariation`
-
-- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
-
-  - `__`
 
 **PHP WP functions**
 
@@ -84,8 +82,12 @@ This problem of a classname being carried over between transformations, also hap
 
 - [`enqueue_block_assets`](https://developer.wordpress.org/reference/hooks/enqueue_block_assets/)
 
-## Also see
+**JS WP dependencies**
 
-[fullsiteediting.com article](`https://fullsiteediting.com/lessons/block-variations/`).
+- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
 
-Gutenberg Handbook's [documentation](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-variations/).
+  - `__`
+
+- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
+  - `registerBlockVariation`
