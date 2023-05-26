@@ -46,47 +46,13 @@ Meta data field names that begin with an underscore are private. Private fields 
 
 To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences -> Panels -> Additional -> Custom Fields.
 
+## Also see
+
+The documentation for [`MediaUpload`](https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/media-upload/README.md) and [`MediaUploadCheck`](https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/media-upload/README.md) on GitHub.
+
+The `meta-document-settings` example gives a more basic run through of adding meta boxes to the Document Settings sidebar.
+
 ## Uses
-
-**JS WP dependencies**
-
-- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
-
-  - [`MediaUpload`](https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/media-upload/README.md)
-
-  - [`MediaUploadCheck`](https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/media-upload/README.md)
-
-- [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
-
-  - [`Button`](https://developer.wordpress.org/block-editor/reference-guides/components/button/)
-
-  - [`ResponsiveWrapper`](https://developer.wordpress.org/block-editor/reference-guides/components/responsive-wrapper/)
-
-- [`@wordpress/data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-data/)
-
-  - `useSelect`
-
-- [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
-
-  - `useEntityProp`
-
-- [`@wordpress/plugins`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-plugins/)
-
-  - `registerPlugin`
-
-- [`@wordpress/edit-post`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-edit-post/)
-
-  - `PluginDocumentSettingPanel`
-
-- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
-
-  - `__`
-
-**JS WP data module**
-
-- [`core/editor`](https://developer.wordpress.org/block-editor/reference-guides/data/data-core-editor/)
-
-  - `getCurrentPostType`
 
 **PHP WP functions**
 
@@ -106,8 +72,42 @@ To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences ->
 
 - [`the_content`](https://developer.wordpress.org/reference/functions/the_content/)
 
-## Also see
+**JS WP dependencies**
 
-The documentation for [`MediaUpload`](https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/media-upload/README.md) and [`MediaUploadCheck`](https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/media-upload/README.md) on GitHub.
+- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
 
-The `meta-document-settings` example gives a more basic run through of adding meta boxes to the Document Settings sidebar.
+  - `__`
+
+- [`@wordpress/data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-data/)
+
+  - `useSelect`
+
+- [`@wordpress/components`](https://developer.wordpress.org/block-editor/reference-guides/components/)
+
+  - [`Button`](https://developer.wordpress.org/block-editor/reference-guides/components/button/)
+
+  - [`ResponsiveWrapper`](https://developer.wordpress.org/block-editor/reference-guides/components/responsive-wrapper/)
+
+- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
+  - [`MediaUpload`](https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/media-upload/README.md)
+
+  - [`MediaUploadCheck`](https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/media-upload/README.md)
+
+- [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
+
+  - `useEntityProp`
+
+- [`@wordpress/plugins`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-plugins/)
+
+  - `registerPlugin`
+
+- [`@wordpress/edit-post`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-edit-post/)
+
+  - `PluginDocumentSettingPanel`
+
+**JS WP data module**
+
+- [`core/editor`](https://developer.wordpress.org/block-editor/reference-guides/data/data-core-editor/)
+
+  - `getCurrentPostType`
