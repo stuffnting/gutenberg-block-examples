@@ -38,11 +38,11 @@ If the theme does not opt in, the PHP file adds an action that will take care of
 
 The Gutenberg Handbook's documentation on [attributes](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-attributes/).
 
-The `filter-core-block-support-example` example.
+For details of adding text alignment buttons to `RichText` components, see the `richtext-text-align` example.
+
+The `filter-core-block-supports` example.
 
 ## Uses
-
-**JS WP dependencies**
 
 **PHP WP functions**
 
@@ -53,6 +53,8 @@ The `filter-core-block-support-example` example.
 - [`init`](https://developer.wordpress.org/reference/hooks/init/)
 
 - [`after_setup_theme`](https://developer.wordpress.org/reference/hooks/after_setup_theme/)
+
+**JS WP dependencies**
 
 - [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
 
