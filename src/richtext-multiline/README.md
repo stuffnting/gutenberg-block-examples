@@ -100,32 +100,6 @@ The `richtext-multiline.block.json` defines the `content attribute with:
 
 Note, here the `type` is set to `string`, so that the multiple paragraphs will be stored as a single string, which includes the `p` tags. `type` could be set to `array`, to store each paragraph as an array element. The `selector` used is the `section` tag, which is the outer-wrapper used in the `save` function (not the `div` tag used in the `edit` function). `multiline` defines which tag will be used for the multiple lines within the block, this should match the `multiline` attribute inside the `RichText` component in the `edit` function.
 
-## Uses
-
-**JS WP dependencies**
-
-- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
-
-  - `useBlockProps`
-
-  - `RichText`
-
-- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
-
-  - `registerBlockType`
-
-- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
-
-  - `__`
-
-**PHP WP functions**
-
-- [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
-
-**PHP WP actions**
-
-- [`init`](https://developer.wordpress.org/reference/hooks/init/)
-
 ## Also see
 
 When enter is hit in the middle of the text in a `RichText` block, the block can be made to split into two of the same type of block. Similarly, two adjacent instances of the same block can be made to merge into a single block using the delete, or backspace keys. For an example of split and merge behaviour, see `richtext-split-merge`.
@@ -135,3 +109,29 @@ For a basic example of how to use block attributes, see `richtext-basic`.
 For the basic use of `RichText` see [documentation on GitHub](https://github.com/WordPress/gutenberg/blob/trunk/packages/block-editor/src/components/rich-text/README.md)
 
 For the `multiline` depreciation notice, see the `RichText` code on [GitHub](https://github.com/WordPress/gutenberg/blob/wp/6.1/packages/block-editor/src/components/rich-text/index.js#L119).
+
+## Uses
+
+**PHP WP functions**
+
+- [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
+
+**PHP WP actions**
+
+- [`init`](https://developer.wordpress.org/reference/hooks/init/)
+
+**JS WP dependencies**
+
+- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
+
+  - `__`
+
+- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
+- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
+  - `registerBlockType`
+
+  - `useBlockProps`
+
+  - `RichText`

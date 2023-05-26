@@ -46,25 +46,15 @@ In this example, `merge` combines the `content` attributes of the two blocks, an
 
 The function is used by `mergeBlock`, which is an action added to the block's `props`. The source code is [here](https://github.com/WordPress/gutenberg/blob/trunk/packages/block-editor/src/store/actions.js#L1020), although there seems to be little documentation.
 
+## Also see
+
+For a basic example of how to use block attributes, see `richtext-basic`.
+
+For the basic use of `RichText` see [documentation on GitHub](https://github.com/WordPress/gutenberg/blob/trunk/packages/block-editor/src/components/rich-text/README.md)
+
+For the source code for `mergeBlocks`, see [GitHUb](https://github.com/WordPress/gutenberg/blob/trunk/packages/block-editor/src/store/actions.js#L1020).
+
 ## Uses
-
-**JS WP dependencies**
-
-- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
-
-  - `useBlockProps`
-
-  - `RichText`
-
-- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
-
-  - `registerBlockType`
-
-  - `creteBlock`
-
-- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
-
-  - `__`
 
 **PHP WP functions**
 
@@ -74,10 +64,20 @@ The function is used by `mergeBlock`, which is an action added to the block's `p
 
 - [`init`](https://developer.wordpress.org/reference/hooks/init/)
 
-## Also see
+**JS WP dependencies**
 
-For a basic example of how to use block attributes, see `richtext-basic`.
+- [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
 
-For the basic use of `RichText` see [documentation on GitHub](https://github.com/WordPress/gutenberg/blob/trunk/packages/block-editor/src/components/rich-text/README.md)
+  - `__`
 
-For the source code for `mergeBlocks`, see [GitHUb](https://github.com/WordPress/gutenberg/blob/trunk/packages/block-editor/src/store/actions.js#L1020).
+- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
+  - `registerBlockType`
+
+  - `creteBlock`
+
+- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
+  - `useBlockProps`
+
+  - `RichText`
