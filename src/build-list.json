@@ -13,7 +13,7 @@
   "block-json": {
     "name": "block-json",
     "cat": ["richtext"],
-    "include": false
+    "include": true
   },
   "block-lock": {
     "name": "block-lock",
