@@ -2,7 +2,7 @@
 
 This repository contains a series of examples to demonstrate various aspects of coding Gutenberg blocks.
 
-There is an alphabetical list of the examples [below](#alphabetical-index-of-examples), as well as a .
+There is an alphabetical list of the examples [below](#alphabetical-index-of-examples), as well as a [suggested order](#suggested-order).
 
 ## Using these examples
 
@@ -112,6 +112,92 @@ The build process also adds the following files to root folder of each example:
 
 *The `start` folder, after two examples have been built to it.*
 
+## Suggested order
+
+[`block-json`](./src/block-json)
+
+[`richtext-basic`](./src/richtext-basic)
+
+[`richtext-supports`](./src/richtext-supports)
+
+[`richtext-multi-components`](./src/richtext-multi-components)
+
+[`richtext-multiline`](./src/richtext-multiline)
+
+[`richtext-toolbar-buttons`](./src/richtext-toolbar-buttons)
+
+[`richtext-text-align`](./src/richtext-text-align)
+
+[`richtext-split-merge`](./src/richtext-split-merge)
+
+[`richtext-transforms-simple`](./src/richtext-transforms-simple)
+
+[`richtext-transforms-multiblock`](./src/richtext-transforms-multiblock)
+
+[`filter-block-settings`](./src/filter-block-settings)
+
+[`filter-core-block-controls`](./src/filter-core-block-controls)
+
+[`filter-core-block-supports`](./src/filter-core-block-supports)
+
+[`block-categories`](./src/block-categories)
+
+[`block-collection`](./src/block-collection)
+
+[`block-patterns`](./src/block-patterns)
+
+[`block-styles`](./src/block-styles)
+
+[`inner-blocks`](./src/inner-blocks)
+
+[`inner-blocks-context`](./src/inner-blocks-context)
+
+[`block-lock`](./src/block-lock)
+
+[`templates`](./src/templates)
+
+[`inner-blocks-template`](./src/inner-blocks-template)
+
+[`variations-existing-blocks`](./src/variations-existing-blocks)
+
+[`variations-query-block`](./src/variations-query-block)
+
+[`variations-register-block`](./src/variations-register-block)
+
+[`inspector-control-tabs`](./src/inspector-control-tabs)
+
+[`dynamic-simple`](./src/dynamic-simple)
+
+[`dynamic-inner-blocks`](./src/dynamic-inner-blocks)
+
+[`dynamic-attribute`](./src/dynamic-attribute)
+
+[`dynamic-serverside-render`](./src/dynamic-serverside-render)
+
+[`dynamic-inspector-controls`](./src/dynamic-inspector-controls)
+
+[`dynamic-inspector-query-terms`](./src/dynamic-inspector-query-terms)
+
+[`render-php-template`](./src/render-php-template)
+
+[`meta-simple`](./src/meta-simple)
+
+[`meta-document-settings`](./src/meta-document-settings)
+
+[`meta-plugin-sidebar`](./src/meta-plugin-sidebar)
+
+[`meta-block-inspector`](./src/meta-block-inspector)
+
+[`meta-callback`](./src/meta-callback)
+
+[`meta-with-media`](./src/meta-with-media)
+
+[`meta-notices-save-lock`](./src/meta-notices-save-lock)
+
+[`meta-attribute`](./src/meta-attribute)
+
+[`meta-with-select-doc-settings`](./src/meta-with-select-doc-settings)
+
 ## Alphabetical index of examples
 
 [`block-categories`](./src/block-categories)
@@ -174,8 +260,6 @@ The build process also adds the following files to root folder of each example:
 
 [`richtext-basic`](./src/richtext-basic)
 
-[`richtext-formatting-options`](./src/richtext-formatting-options)
-
 [`richtext-multi-components`](./src/richtext-multi-components)
 
 [`richtext-multiline`](./src/richtext-multiline)
@@ -199,6 +283,3 @@ The build process also adds the following files to root folder of each example:
 [`variations-query-block`](./src/variations-query-block)
 
 [`variations-register-block`](./src/variations-register-block)
-
-## Suggested order
-
