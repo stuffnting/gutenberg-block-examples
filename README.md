@@ -4,8 +4,6 @@ This repository contains a series of examples to demonstrate various aspects of 
 
 There is an alphabetical list of the examples in [`src/build-list.json`](./src/build-list.json).
 
-[internal link](#development-environment-wordpress-recommended-way)
-
 ## Using these examples
 
 The example files, which are written in [JSX/](https://react.dev/learn/writing-markup-with-jsx), are in the `src` folder. When using the examples, they are transpiled into a WordPress plugin, located in the `start/`.
