@@ -149,7 +149,7 @@
   "richtext-basic": {
     "name": "richtext-basic",
     "cat": ["richtext"],
-    "include": false
+    "include": true
   },
   "richtext-formatting-options": {
     "name": "richtext-formatting-options",
