@@ -48,7 +48,7 @@
   "dynamic-inspector-query-terms": {
     "name": "dynamic-inspector-query-terms",
     "cat": ["dynamic", "inspector-controls", "php-render"],
-    "include": true
+    "include": false
   },
   "dynamic-serverside-render": {
     "name": "dynamic-serverside-render",
