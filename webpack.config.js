@@ -10,6 +10,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // Get the build list from the JSON file. `require` converts JSON to an object.
 const BUILD_LIST_DATA = require('./src/build-list.json');
 
+// Log all block names for README.md
+Object.values(BUILD_LIST_DATA).forEach((el) => console.log(`[\`${el.name}\`](./src/${el.name})`));
+
 /**
  * Make an array of the block names that need building.
  *
