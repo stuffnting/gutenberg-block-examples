@@ -151,12 +151,7 @@
     "cat": ["richtext"],
     "include": true
   },
-  "richtext-formatting-options": {
-    "name": "richtext-formatting-options",
-    "cat": ["richtext"],
-    "include": false
-  },
-  "richtext-components": {
+  "richtext-multi-components": {
     "name": "richtext-multi-components",
     "cat": ["richtext"],
     "include": false

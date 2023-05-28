@@ -108,8 +108,6 @@ The build process also adds the following files to root folder of each example:
 - `index.js.map`--allows Devtools to quote filenames and line numbers in the source JS code, rather than the transpiled code.
 
 ††† Note, normally Webpack will include the code for the dependencies into the transpiled file. However, Webpack can be instructed that certain packages will be available in the JS environment (in this case the Gutenberg editor, in a WordPress website), and don't need to be included. These packages are called "externals". `@wordpress/scripts` includes all `@wordpress` packages, and several other 3rd party packages as externals. See the documentation on [GitHub](https://github.com/WordPress/gutenberg/blob/trunk/packages/dependency-extraction-webpack-plugin/README.md#webpack) for more details.
-
-
 ![An example of the built file structure](img/basic_folder-structure.png)
 
 *The `start` folder, after two examples have been built to it.*
@@ -117,47 +115,89 @@ The build process also adds the following files to root folder of each example:
 ## Alphabetical index of examples
 
 [`block-categories`](./src/block-categories)
+
 [`block-collection`](./src/block-collection)
+
 [`block-json`](./src/block-json)
+
 [`block-lock`](./src/block-lock)
+
 [`block-patterns`](./src/block-patterns)
+
 [`block-styles`](./src/block-styles)
+
 [`dynamic-attribute`](./src/dynamic-attribute)
+
 [`dynamic-inner-blocks`](./src/dynamic-inner-blocks)
+
 [`dynamic-inspector-controls`](./src/dynamic-inspector-controls)
+
 [`dynamic-inspector-query-terms`](./src/dynamic-inspector-query-terms)
+
 [`dynamic-serverside-render`](./src/dynamic-serverside-render)
+
 [`dynamic-simple`](./src/dynamic-simple)
+
 [`filter-block-settings`](./src/filter-block-settings)
+
 [`filter-core-block-controls`](./src/filter-core-block-controls)
+
 [`filter-core-block-supports`](./src/filter-core-block-supports)
+
 [`inner-blocks`](./src/inner-blocks)
+
 [`inner-blocks-context`](./src/inner-blocks-context)
+
 [`inner-blocks-template`](./src/inner-blocks-template)
+
 [`inspector-control-tabs`](./src/inspector-control-tabs)
+
 [`meta-attribute`](./src/meta-attribute)
+
 [`meta-callback`](./src/meta-callback)
+
 [`meta-document-settings`](./src/meta-document-settings)
+
 [`meta-block-inspector`](./src/meta-block-inspector)
+
 [`meta-notices-save-lock`](./src/meta-notices-save-lock)
+
 [`meta-plugin-sidebar`](./src/meta-plugin-sidebar)
+
 [`meta-simple`](./src/meta-simple)
+
 [`meta-with-media`](./src/meta-with-media)
+
 [`meta-with-select-doc-settings`](./src/meta-with-select-doc-settings)
+
 [`render-php-template`](./src/render-php-template)
+
 [`richtext-basic`](./src/richtext-basic)
+
 [`richtext-formatting-options`](./src/richtext-formatting-options)
+
 [`richtext-multi-components`](./src/richtext-multi-components)
+
 [`richtext-multiline`](./src/richtext-multiline)
+
 [`richtext-split-merge`](./src/richtext-split-merge)
+
 [`richtext-supports`](./src/richtext-supports)
+
 [`richtext-text-align`](./src/richtext-text-align)
+
 [`richtext-toolbar-buttons`](./src/richtext-toolbar-buttons)
+
 [`richtext-transforms-multiblock`](./src/richtext-transforms-multiblock)
+
 [`richtext-transforms-simple`](./src/richtext-transforms-simple)
+
 [`templates`](./src/templates)
+
 [`variations-existing-blocks`](./src/variations-existing-blocks)
+
 [`variations-query-block`](./src/variations-query-block)
+
 [`variations-register-block`](./src/variations-register-block)
 
 ## Suggested order
