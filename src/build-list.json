@@ -2,6 +2,7 @@
   "_NOTE": "This file is needed by plugin.php and needs to be on the server.",
   "block-categories": {
     "name": "block-categories",
+    "blocks": ["myprefix/change-inserter-test-block"],
     "cat": ["categories"],
     "include": false
   },

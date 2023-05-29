@@ -56,6 +56,10 @@ The only block in `embed` is core/embed. The other blocks under "embeds" in the 
 
 Confusingly, all the category names are the same as their titles in the inserter, apart from `embed`, which appears as "EMBEDS".
 
+### Enqueue JS
+
+The test block JS, and category related JS all end up in the `index.js` file. The test block is registered using `block.json`, which takes care of enqueueing the JS file containing the block; therefore, the category related JS does not need to be enqueued separately.
+
 ### The `dom-ready` dependency problem
 
 If the JS file imports `@wordpress/dom-ready`, `wp-edit-post` is needed as a dependency in the `index.asset.php` file. However, `wp-scripts` does not add it, therefore, the addition needs to be forced.
@@ -72,7 +76,7 @@ import { PluginSidebar } from "@wordpress/edit-post";
 
 ## Also see
 
-The `block-collection` example.
+The [`block-collection`](../block-collection/) example.
 
 ## Uses
 

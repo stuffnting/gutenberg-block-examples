@@ -108,15 +108,16 @@ The build process also adds the following files to root folder of each example:
 - `index.js.map`--allows Devtools to quote filenames and line numbers in the source JS code, rather than the transpiled code.
 
 ††† Note, normally Webpack will include the code for the dependencies into the transpiled file. However, Webpack can be instructed that certain packages will be available in the JS environment (in this case the Gutenberg editor, in a WordPress website), and don't need to be included. These packages are called "externals". `@wordpress/scripts` includes all `@wordpress` packages, and several other 3rd party packages as externals. See the documentation on [GitHub](https://github.com/WordPress/gutenberg/blob/trunk/packages/dependency-extraction-webpack-plugin/README.md#webpack) for more details.
+
 ![An example of the built file structure](img/basic_folder-structure.png)
 
 *The `start` folder, after two examples have been built to it.*
 
 ## Suggested order
 
-[`block-json`](./src/block-json)
-
 [`richtext-basic`](./src/richtext-basic)
+
+[`block-json`](./src/block-json)
 
 [`richtext-supports`](./src/richtext-supports)
 

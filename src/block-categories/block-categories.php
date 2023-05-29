@@ -4,7 +4,7 @@
  * 
  * Enqueue the script file and the test block.
  *  
- * Note, the block JS and category related JS all end up in index.js. This file is 
+ * Note, the block JS, and category related JS all end up in index.js. This file is 
  * enqueued by block.json, and so the category related JS does not need to be
  * enqueued separately.
  * 
