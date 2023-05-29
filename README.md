@@ -113,6 +113,10 @@ The build process also adds the following files to root folder of each example:
 
 *The `start` folder, after two examples have been built to it.*
 
+**Links to files**
+
+The PHP file uses the transpiled names, whereas, the `src` JS files uses the file names as they are before transpiling. This is because the PHP files are only used once the plugin is built, while the `src` JS files are transpiled to `index.js` by Webpack during the build process.
+
 ## Suggested order
 
 [`richtext-basic`](./src/richtext-basic)

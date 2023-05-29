@@ -4,6 +4,8 @@
 
 Creates a block collection for the namespace `myprefix`. When active, any of the blocks in these examples will be placed in this collection.
 
+**Note, no blocks are registered by this example.**
+
 ## In this code
 
 **`block-collection.php`**
@@ -22,7 +24,7 @@ A 'block collection' is a set of block that all have the same namespace (block t
 
 ## ALso see
 
-The `block-categories` example.
+The [`block-categories`](../block-categories/) example.
 
 ## Uses
 

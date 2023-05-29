@@ -32,7 +32,7 @@ This block has a dynamic section, which lists the latest posts, and also allows 
 
 The `GetPosts` component uses [`React.memo`](https://legacy.reactjs.org/docs/react-api.html#reactmemo) to prevent the list of recent posts re-rendering when `perPage` has not changed.
 
-In this example `perPage` does not actually. For an example where `perPage` can be changed from the Block Inspector, see the `dynamic-inspector-query-terms` example.
+In this example `perPage` does not actually. For an example where `perPage` can be changed from the Block Inspector, see the [`dynamic-inspector-query-terms`](../dynamic-inspector-query-terms/) example.
 
 ### `useEntityRecords`
 
@@ -72,9 +72,9 @@ The callback function uses [`get_block_wrapper_attributes()`](https://developer.
 
 For more ways to use `useInnerBlockProps`, including using it with a wrapper tag, see the other inner block examples.
 
-For an example where `perPage` can be changed from the Block Inspector, see the `dynamic-inspector-query-terms` example.
+For an example where `perPage` can be changed from the Block Inspector, see the [`dynamic-inspector-query-terms`](../dynamic-inspector-query-terms/) example.
 
-As well as rendering dynamic blocks using a callback function in the PHP file, it is also possible to use a PHP template file. For an example of how to do this, see the `render-PHP-template` example.
+As well as rendering dynamic blocks using a callback function in the PHP file, it is also possible to use a PHP template file. For an example of how to do this, see the [`render-PHP-template`](../render-php-template/) example.
 
 ## Uses
 

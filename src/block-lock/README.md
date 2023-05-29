@@ -52,7 +52,9 @@ Because blocks have locking enabled by default, the attribute will automatically
 
 ## Also see
 
-The `templates` example.
+The [`templates`](../templates/) example.
+
+The [`supports`](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-supports/) section in the Gutenberg Handbook.
 
 ## Uses
 

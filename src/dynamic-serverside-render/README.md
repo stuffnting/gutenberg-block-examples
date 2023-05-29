@@ -2,7 +2,7 @@
 
 ## Description
 
-This example adds a dynamic block that lists the three most recent posts. The block is rendered, both on the front- and back-ends, by the serverside callback function in the PHP file. This is essentially the same as `dynamic-simple`, however, PHP is used to render both in the editor, and on the front-end.
+This example adds a dynamic block that lists the three most recent posts. The block is rendered, both on the front- and back-ends, by the serverside callback function in the PHP file. This is essentially the same as [`dynamic-simple`](../dynamic-simple/), however, PHP is used to render both in the editor, and on the front-end.
 
 ## In this code
 
@@ -42,21 +42,11 @@ The callback function uses [`get_block_wrapper_attributes()`](https://developer.
 
 ## Also see
 
-As well as rendering dynamic blocks using a callback function in the PHP file, it is also possible to use a PHP template file. For an example of how to do this, see the `render-PHP-template` example.
+The Gutenberg Handbook's section on [`@wordpress/server-side-render`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-server-side-render/).
+
+As well as rendering dynamic blocks using a callback function in the PHP file, it is also possible to use a PHP template file. For an example of how to do this, see the [`render-PHP-template`](../render-php-template/) example.
 
 ## Uses
-
-- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
-
-  - `registerBlockType`
-
-- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
-
-  - `useBlockProps`
-
-- [`@wordpress/server-side-render`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-server-side-render/)
-
-  - `ServerSideRender`
 
 **PHP WP functions**
 
@@ -69,3 +59,15 @@ As well as rendering dynamic blocks using a callback function in the PHP file, i
 **PHP WP actions**
 
 - [`init`](https://developer.wordpress.org/reference/hooks/init/)
+
+- [`@wordpress/blocks`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/)
+
+  - `registerBlockType`
+
+- [`@wordpress/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/)
+
+  - `useBlockProps`
+
+- [`@wordpress/server-side-render`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-server-side-render/)
+
+  - `ServerSideRender`

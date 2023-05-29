@@ -47,9 +47,9 @@ The callback function uses [`get_block_wrapper_attributes()`](https://developer.
 
 ## Also see
 
-The `dynamic-meta-block` example similar to this one, however, it stores the value as using post metadata, rather than an block attribute.
+The [`meta-callback`](../meta-callback/) example similar to this one, however, it stores the value as using post metadata, rather than an block attribute.
 
-As well as rendering dynamic blocks using a callback function in the PHP file, it is also possible to use a PHP template file. For an example of how to do this, see the `render-PHP-template` example.
+As well as rendering dynamic blocks using a callback function in the PHP file, it is also possible to use a PHP template file. For an example of how to do this, see the [`render-PHP-template`](../render-php-template/) example.
 
 ## Uses
 

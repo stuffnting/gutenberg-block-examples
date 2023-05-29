@@ -2,62 +2,76 @@
   "_NOTE": "This file is needed by plugin.php and needs to be on the server.",
   "block-categories": {
     "name": "block-categories",
-    "blocks": ["myprefix/change-inserter-test-block"],
+    "blocks": { "myprefix/change-inserter-test-block": "Test Categories" },
     "cat": ["categories"],
     "include": false
   },
   "block-collection": {
     "cat": ["collections", "categories"],
+    "blocks": {},
     "name": "block-collection",
     "include": false
   },
   "block-json": {
+    "blocks": {
+      "myprefix/block-json": "Test Block JSON",
+      "myprefix/another-block-json": "Another Block JSON"
+    },
     "name": "block-json",
     "cat": ["richtext"],
     "include": true
   },
   "block-lock": {
     "name": "block-lock",
+    "blocks": { "myprefix/block-lock": "Block Lock" },
     "cat": ["templates", "patterns"],
     "include": false
   },
   "block-patterns": {
     "name": "block-patterns",
+    "blocks": {},
     "cat": ["templates", "styles"],
     "include": false
   },
   "block-styles": {
     "name": "block-styles",
+    "blocks": {},
     "cat": ["variations", "styles"],
     "include": false
   },
   "dynamic-attribute": {
     "name": "dynamic-attribute",
+    "block": { "myprefix/dynamic-attribute": "Dynamic Attribute" },
     "cat": ["dynamic", "php-render"],
     "include": false
   },
   "dynamic-inner-blocks": {
     "name": "dynamic-inner-blocks",
+    "blocks": { "myprefix/dynamic-inner-blocks": "Dynamic Inner Blocks" },
     "cat": ["dynamic", "inner-blocks", "php-render"],
     "include": false
   },
   "dynamic-inspector-controls": {
     "name": "dynamic-inspector-controls",
+    "blocks": { "myprefix/dynamic-inspector-controls": "Dynamic Inspector Controls" },
     "cat": ["dynamic", "inspector-controls", "php-render"],
     "include": false
   },
   "dynamic-inspector-query-terms": {
     "name": "dynamic-inspector-query-terms",
+    "blocks": { "prefix/dynamic-inserter-query-terms": "Dynamic Inspector Query Terms" },
     "cat": ["dynamic", "inspector-controls", "php-render"],
     "include": false
   },
   "dynamic-serverside-render": {
     "name": "dynamic-serverside-render",
+    "blocks": { "myprefix/dynamic-serverside-render": "Dynamic Serverside Render" },
     "cat": ["dynamic", "php-render"],
     "include": false
   },
   "dynamic-simple": {
     "name": "dynamic-simple",
+    "blocks": { "myprefix/dynamic-simple": "Dynamic Block Simple" },
     "cat": ["dynamic", "php-render"],
     "include": false
   },

@@ -1,10 +1,12 @@
 # block-patterns
 
-**_NOTE: This code needs PHP 7+._**
-
 ## Description
 
 This code demonstrates how to register/unregister block patterns and pattern categories.
+
+**Note, this example does not register any blocks.**
+
+***NOTE: This code needs PHP 7+.***
 
 ## In this code
 

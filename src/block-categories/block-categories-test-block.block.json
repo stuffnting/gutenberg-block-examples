@@ -2,7 +2,8 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 2,
   "name": "myprefix/block-categories-test-block",
-  "title": "A block to test categories in the inserter",
+  "title": "Test Categories",
+  "description": "A block to test categories in the inserter",
   "category": "custom-category-js",
   "icon": "lightbulb",
   "editorScript": "file:./index.js"

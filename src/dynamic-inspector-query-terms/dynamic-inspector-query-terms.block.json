@@ -1,6 +1,6 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
-  "title": "Dynamic block inspector query terms",
+  "title": "Dynamic Inspector Query Terms",
   "name": "prefix/dynamic-inserter-query-terms",
   "icon": "lightbulb",
   "category": "widgets",

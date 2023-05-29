@@ -2,7 +2,7 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 2,
   "name": "myprefix/dynamic-simple",
-  "title": "Dynamic Block simple",
+  "title": "Dynamic Block Simple",
   "icon": "lightbulb",
   "category": "widgets",
   "description": "Simple dynamic block that returns a list of recent posts. Editor render is JS, front-end is PHP cb.",

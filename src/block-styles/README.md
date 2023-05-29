@@ -2,7 +2,9 @@
 
 ## Description
 
-This code demonstrates adding and removing block styles vis PHP and JS.
+This code demonstrates adding and removing [block styles](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-styles/) vis PHP and JS.
+
+**Note, this example does not register any blocks.**
 
 ## In this code
 
@@ -28,7 +30,7 @@ This code demonstrates adding and removing block styles vis PHP and JS.
 
 Block styles provide a fancy way to add custom classes to a block, so that the appearance of the blocks can be changed. Block variations can do this too, as well as applying initial values to attributes and specify inner blocks. See the variation block examples.
 
-Note, block styles are sometime called style variations, but should not be confused with block variations. For examples of block variations, see the `variations-existing-blocks` and `variations-register-block` examples.
+Note, block styles are sometime called style variations, but should not be confused with block variations. For examples of block variations, see the [`variations-existing-blocks`](../variations-existing-blocks/) and [`variations-register-block`](../variations-existing-blocks/) examples.
 
 ### Registering via PHP
 
@@ -69,6 +71,8 @@ import { PluginSidebar } from "@wordpress/edit-post";
 [Block Editor Handbook - Styles](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-styles/)
 
 [Full Site Editing with WordPress - Custom Block Styles](https://fullsiteediting.com/lessons/custom-block-styles/)
+
+To compare "block style" to "block variations" see the variation examples: [`variations-existing-blocks`](../variations-existing-blocks/) and [`variations-register-block`](../variations-existing-blocks/).
 
 ## Uses
 

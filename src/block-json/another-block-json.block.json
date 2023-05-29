@@ -2,7 +2,7 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 2,
   "name": "myprefix/another-block-json",
-  "title": "Test another block JSON",
+  "title": "Another Block JSON",
   "description": "A block to test using JSON files that are not named block.json",
   "category": "text",
   "icon": "lightbulb",

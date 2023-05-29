@@ -4,7 +4,7 @@
 
 This example creates a dynamic block that lists the most recent posts. A panel is added to the Block Inspector, which controls the appearance of the block's title.
 
-Note, this block does not control the dynamic aspect of the block, i.e. how many recent posts are displayed. For an example of controlling a dynamic block's query, see the `dynamic-inspector-query-terms` example.
+Note, this block does not control the dynamic aspect of the block, i.e. how many recent posts are displayed. For an example of controlling a dynamic block's query, see the [`dynamic-inspector-query-terms`](../dynamic-inspector-query-terms/) example.
 
 ## In this code
 
@@ -76,7 +76,7 @@ Note, this block does not control the dynamic aspect of the block, i.e. how many
 
 The `GetPosts` component uses [`React.memo`](https://legacy.reactjs.org/docs/react-api.html#reactmemo) to prevent the list of recent posts re-rendering when `perPage` has not changed.
 
-In this example `perPage` does not actually. For an example where `perPage` can be changed from the Block Inspector, see the `dynamic-inspector-query-terms` example.
+In this example `perPage` does not actually. For an example where `perPage` can be changed from the Block Inspector, see the [`dynamic-inspector-query-terms`](../dynamic-inspector-query-terms/) example.
 
 ### `useEntityRecords`
 
@@ -104,17 +104,29 @@ The callback function uses [`get_block_wrapper_attributes()`](https://developer.
 
 ## Also see
 
-For an example of controlling a dynamic block's query, see the `dynamic-inspector-query-terms` example.
+For an example of controlling a dynamic block's query, see the [`dynamic-inspector-query-terms`](../dynamic-inspector-query-terms/) example.
 
 The `inspector-control-tabs` demonstrates how to place the Inspector controls in specific tabs. The tabs were introduced in WP 6.2.
 
-For an example of how to include inner blocks within the dynamic block, see the `dynamic-inner-blocks` example.
+For an example of how to include inner blocks within the dynamic block, see the [`dynamic-inner-blocks`](../dynamic-inner-blocks/) example.
 
-As well as rendering dynamic blocks using a callback function in the PHP file, it is also possible to use a PHP template file. For an example of how to do this, see the `render-PHP-template` example.
+As well as rendering dynamic blocks using a callback function in the PHP file, it is also possible to use a PHP template file. For an example of how to do this, see the [`render-PHP-template`](../render-php-template/) example.
 
 ## Uses
 
 **JS WP dependencies**
+
+**PHP WP functions**
+
+- [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
+
+- [`wp_get_recent_posts`](https://developer.wordpress.org/reference/functions/wp_get_recent_posts/)
+
+- [`get_block_wrapper_attributes`](https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/)
+
+**PHP WP actions**
+
+- [`init`](https://developer.wordpress.org/reference/hooks/init/)
 
 - [`@wordpress/i18n`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/)
 
@@ -151,15 +163,3 @@ As well as rendering dynamic blocks using a callback function in the PHP file, i
 - [`@wordpress/core-data`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-core-data/)
 
   - `useEntityRecords`
-
-**PHP WP functions**
-
-- [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
-
-- [`wp_get_recent_posts`](https://developer.wordpress.org/reference/functions/wp_get_recent_posts/)
-
-- [`get_block_wrapper_attributes`](https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/)
-
-**PHP WP actions**
-
-- [`init`](https://developer.wordpress.org/reference/hooks/init/)

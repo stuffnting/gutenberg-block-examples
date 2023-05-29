@@ -1,12 +1,12 @@
 # block-json
 
-**_NOTE: This code needs PHP 7+._**
-
 ## Description
 
 This code demonstrates how to register blocks using a block metadata JSON file; both ith the default filename of `block.json`, and a custom JSON filename.
 
-The code also shows how to register two block contained within the same `index.js` file.
+The code also shows how to register two block contained within the same `index.js` file, and the PHP filters that can be used to alter the block's metadata.
+
+***NOTE: This code needs PHP 7+.***
 
 ## In this code
 
@@ -40,11 +40,11 @@ When registering the second block, the file path to its JSON file needs to be us
 
 ## Notes
 
-### Transpiled file names
+### Transpiled file names in the plugin
 
 The `src` JSON file names are `block-json.block.json` and `another-block-json.block.json`. These are transpiled to `block.json` and `another-block-json.block.json` respectively.
 
-The PHP file uses the transpiled names, whereas the `src` JS files uses the file names as they are before transpiling.
+The PHP file uses the transpiled names, whereas, the `src` JS files uses the file names as they are before transpiling.
 
 For example the `src/block-name/block-name.index.js` file would use:
 
@@ -56,7 +56,7 @@ The function `myprefix_print_metadata_to_console()` contains a neat bit of code 
 
 ## Also see
 
-For an example of how to register blocks to old way, without using a `block.json` file, see `meta-attribute`.
+For an example of how to register blocks to old way, without using a `block.json` file, see [`meta-attribute`](../meta-attribute/).
 
 ## Uses
 
