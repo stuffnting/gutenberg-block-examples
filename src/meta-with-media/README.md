@@ -4,6 +4,8 @@
 
 This example adds a [meta box](https://developer.wordpress.org/plugins/metadata/custom-meta-boxes/) containing a media uploader to the Document Settings sidebar.
 
+**Note, this example does not register a block.**
+
 ## In this code
 
 **`meta-with-media.php`**
@@ -50,7 +52,7 @@ To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences ->
 
 The documentation for [`MediaUpload`](https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/media-upload/README.md) and [`MediaUploadCheck`](https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/media-upload/README.md) on GitHub.
 
-The `meta-document-settings` example gives a more basic run through of adding meta boxes to the Document Settings sidebar.
+The [`meta-document-settings`](../meta-document-settings/) example gives a more basic run through of adding meta boxes to the Document Settings sidebar.
 
 ## Uses
 

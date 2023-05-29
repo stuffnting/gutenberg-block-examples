@@ -6,6 +6,8 @@ This example adds a meta box to the [`PluginSidebar` SlotFill](https://developer
 
 Two meta [meta boxes](https://developer.wordpress.org/plugins/metadata/custom-meta-boxes/) to the sidebar. The metadata is then used on the front-end, using the `the_content` filter.
 
+**Note, this example does not register a block.**
+
 ## In this code
 
 **`meta-plugin-sidebar.php`**

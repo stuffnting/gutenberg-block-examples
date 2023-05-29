@@ -2,7 +2,7 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 2,
   "name": "myprefix/inner-blocks-context-parent",
-  "title": "Inner Blocks Context parent",
+  "title": "Inner Blocks Context Parent",
   "icon": "lightbulb",
   "description": "The parent fot the inner blocks context example.",
   "category": "text",

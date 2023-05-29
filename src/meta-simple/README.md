@@ -68,7 +68,7 @@ The old method for dealing with metadata in blocks was to use an attribute with 
       },
     }
 
-The `meta-attribute` block contains an example of this method.
+The [`meta-attribute`](../meta-attribute/) block contains an example of this method.
 
 Since WordPress 5.4, the recommended method is to use the `useEntityProp` hook. This returns the meta fields for the post and a function for changing them.
 
@@ -78,7 +78,27 @@ The meta data is not available to the `save` function, and can not be used there
 
 ## Also see
 
-The Gutenberg Handbook's section on [Meta Boxes](https://developer.wordpress.org/block-editor/how-to-guides/metabox/)
+The Gutenberg Handbook's section on [Meta Boxes](https://developer.wordpress.org/block-editor/how-to-guides/metabox/).
+
+The other meta examples:
+
+- [`meta-attribute`](./src/meta-attribute)
+
+- [`meta-block-inspector`](./src/meta-block-inspector)
+
+- [`meta-callback`](./src/meta-callback)
+
+- [`meta-document-settings`](./src/meta-document-settings)
+
+- [`meta-notices-save-lock`](./src/meta-notices-save-lock)
+
+- [`meta-plugin-sidebar`](./src/meta-plugin-sidebar)
+
+- [`meta-simple`](./src/meta-simple)
+
+- [`meta-with-media`](./src/meta-with-media)
+
+- [`meta-with-select-doc-settings`](./src/meta-with-select-doc-settings)
 
 ## Uses
 

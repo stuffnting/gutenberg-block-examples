@@ -51,7 +51,7 @@ It is also possible to register two meta keys, one for each field.
 
 In this example the meta key is registered in the PHP file, using `register_post_meta()`. The key's name is then made available to the JS code via [`wp_localize_script()`](https://developer.wordpress.org/reference/functions/wp_localize_script/). The WordPress documentation says that [`wp_add_inline_script()`](https://developer.wordpress.org/reference/functions/wp_add_inline_script/), but the `wp_localize_script()` method seems neater.
 
-It is also possible to set the meta key using [`wp_add_inline_script()`](https://developer.wordpress.org/reference/functions/wp_add_inline_script/), or a JSON file. These methods are demonstrated in `meta-attribute` and `meta-simple` respectively.
+It is also possible to set the meta key using [`wp_add_inline_script()`](https://developer.wordpress.org/reference/functions/wp_add_inline_script/), or a JSON file. These methods are demonstrated in [`meta-attribute`](../meta-attribute/) and [`meta-simple`](../meta-simple/) respectively.
 
 The code is:
 

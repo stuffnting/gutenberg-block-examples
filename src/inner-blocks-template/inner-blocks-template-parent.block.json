@@ -2,7 +2,7 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 2,
   "name": "myprefix/inner-bocks-template-parent",
-  "title": "Inner Blocks with a template",
+  "title": "Inner Blocks Template Parent",
   "icon": "lightbulb",
   "description": "Uses a template to populate parent with child blocks",
   "category": "design",

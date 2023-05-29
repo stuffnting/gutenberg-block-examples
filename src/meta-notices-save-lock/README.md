@@ -66,7 +66,7 @@ To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences ->
 
 The other meta examples.
 
-The `filter-block-settings` example.
+The [`filter-block-settings`](../filter-block-settings/) example.
 
 ## Uses
 

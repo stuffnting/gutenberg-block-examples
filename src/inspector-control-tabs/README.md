@@ -21,6 +21,7 @@ Two filters are added in the PHP file, that can change the default behaviour.
 **`inspector-control-tabs.index.js`**
 
 - Registers the block.
+
 - Imports the `InspectorControls`, `GetPosts`, and `PostListTitle` components.
 
 **`inspector-control.js`**
@@ -53,17 +54,17 @@ For more about tabs and groups see [`here`]{https://make.wordpress.org/core/2023
 
 The `GetPosts` component uses [`React.memo`](https://legacy.reactjs.org/docs/react-api.html#reactmemo) to prevent the list of recent posts re-rendering when `perPage` has not changed.
 
-In this example `perPage` does not actually. For an example where `perPage` can be changed from the Block Inspector, see the `dynamic-inspector-query-terms` example.
+In this example `perPage` does not actually. For an example where `perPage` can be changed from the Block Inspector, see the [`dynamic-inspector-query-terms`](../dynamic-inspector-query-terms/) example.
 
 ## Also see
 
 There are more examples of Block Inspector controls in:
 
-- `dynamic-inspector-controls`,
+- [`dynamic-inspector-controls`](../dynamic-inspector-controls/),
 
-- `dynamic-inspector-query-terms`,
+- [`dynamic-inspector-query-terms`](../dynamic-inspector-query-terms/),
 
-- `meta-inner-blocks-inspector`,
+- [`meta-block-inspector`](../meta-block-inspector/),
 
 ## Uses
 

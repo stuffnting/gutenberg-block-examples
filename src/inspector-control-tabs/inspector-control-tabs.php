@@ -46,9 +46,11 @@ function myprefix_inspector_control_tabs_cb( $attributes, $content ) {
         );
 }
 
-/**
+/*****************************************************************************
+ * 
  * Register the block
- */
+ * 
+ *****************************************************************************/
 
 add_action( 'init', 'myprefix_inspector_control_tabs' );
 
@@ -63,7 +65,6 @@ function myprefix_inspector_control_tabs() {
     'render_callback' => 'myprefix_inspector_control_tabs_cb',  
   ) );
 }
-
 
 /******************************************************************************
  * 

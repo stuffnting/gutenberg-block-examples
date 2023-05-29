@@ -22,7 +22,7 @@ Tis example adds a block which allows `core/paragraph`, `core/heading`, and `cor
 
 Both `useBlockProps` and `useInnerBlockProps` are React hooks. They generate the information needed by the outermost wrapper tags of the block, and in the case of `useInnerBlockProps`, generates the inner `children` blocks.
 
-In this example there is a single wrapper for the block itself and the inner blocks it contains. This is because the block itself only contains the inner blocks. Sometimes, the block will contain inner blocks and other content, for an example see the `dynamic-inner-blocks` example. In these cases, there are several other ways in which `useInnerBlockProps` can be used.
+In this example there is a single wrapper for the block itself and the inner blocks it contains. This is because the block itself only contains the inner blocks. Sometimes, the block will contain inner blocks and other content, for an example see the [`dynamic-inner-blocks`](../dynamic-inner-blocks/) example. In these cases, there are several other ways in which `useInnerBlockProps` can be used.
 
 If there is other content in within the block, apart from the inner blocks, the `save` function will look like:
 
@@ -60,11 +60,11 @@ And the `save` function:
 
 ## Also see
 
-For an example that uses a block template for the inner blocks see `inner-blocks-template`
+For an example that uses a block template for the inner blocks see [`inner-blocks-template`](../inner-blocks-template/).
 
-For an example that uses block `context` to pass values from a parent block to a child block see `inner-blocks-context`.
+For an example that uses block `context` to pass values from a parent block to a child block see [`inner-blocks-context`](../inner-blocks-context/).
 
-The `dynamic-inner-blocks` example demonstrates using inner blocks with other content.
+The `[dynamic-inner-blocks`](../dynamic-inner-blocks/) example demonstrates using inner blocks with other content.
 
 ## Uses
 

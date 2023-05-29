@@ -2,7 +2,7 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "name": "myprefix/meta-inner-blocks-inspector",
   "apiVersion": 2,
-  "title": "Meta Inner-blocks Inspector",
+  "title": "Meta Inner Blocks Inspector",
   "icon": "lightbulb",
   "description": "A block with a meta field in the Inspector and inner-blocks",
   "category": "widgets",

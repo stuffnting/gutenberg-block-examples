@@ -44,27 +44,27 @@ If `templateLock` is set to `contentOnly`, blocks can not be moved, removed, or 
 
 See [here](https://fullsiteediting.com/how-to-lock-blocks-and-templates/) for more on locking template.
 
-Also see, the `template` example.
+Also see, the [`templates`](../templates/) example.
 
 ### `useBlockProps` and `useInnerBlockProps`
 
 Both `useBlockProps` and `useInnerBlockProps` are React hooks. They generate the information needed by the outermost wrapper tags of the block, and in the case of `useInnerBlockProps`, generates the inner `children` blocks.
 
-In this example there is a single wrapper for the block itself and the inner blocks it contains. This is because the block itself only contains the inner blocks. Sometimes, the block will contain inner blocks and other content, for an example see the `dynamic-inner-blocks` example.
+In this example there is a single wrapper for the block itself and the inner blocks it contains. This is because the block itself only contains the inner blocks. Sometimes, the block will contain inner blocks and other content, for an example see the [`dynamic-inner-blocks`](../dynamic-inner-blocks/) example.
 
 See here for more details about [`useInnerBlockProps`](https://make.wordpress.org/core/2021/12/28/take-more-control-over-inner-block-areas-as-a-block-developer/)
 
 ## Also see
 
-The `templates` example.
+The [`templates`](../templates/) example.
 
-The `block-lock` example.
+The [`block-lock`](../block-lock/) example.
 
-For a simple example of inner blocks without using a template see `inner-blocks`.
+For a simple example of inner blocks without using a template see [`inner-blocks`](../inner-blocks/).
 
-For an example that uses block `context` to pass values from a parent block to a child block see `inner-blocks-context`.
+For an example that uses block [`context`](../inner-blocks-context/) to pass values from a parent block to a child block see `inner-blocks-context`.
 
-The `dynamic-inner-blocks` example demonstrates using inner blocks with other content.
+The [`dynamic-inner-blocks`](../dynamic-inner-blocks/) example demonstrates using inner blocks with other content.
 
 ## Uses
 

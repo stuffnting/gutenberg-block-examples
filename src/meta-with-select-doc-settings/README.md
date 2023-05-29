@@ -4,7 +4,9 @@
 
 This example adds a [meta box](https://developer.wordpress.org/plugins/metadata/custom-meta-boxes/) to the Document Settings sidebar. The metadata is then used on the front-end, using the `the_content` filter.
 
-**Note, this is the older method using [Higher Order Components (HOC)](https://legacy.reactjs.org/docs/higher-order-components.html), together with `withSelect`, and `withDispatch`. For the newer method, that uses the `useEntityProp` hook, see the `meta-document-settings` example.**
+**Note, this is the older method using [Higher Order Components (HOC)](https://legacy.reactjs.org/docs/higher-order-components.html), together with `withSelect`, and `withDispatch`. For the newer method, that uses the `useEntityProp` hook, see the [`meta-document-settings`](../meta-document-settings/) example.**
+
+**Note, this example does not register a block.**
 
 ## In this code
 
@@ -54,7 +56,7 @@ To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences ->
 
 ## Also see
 
-The modern way of handling meta boxes, using the `useEntityProp` hook, is demonstrated in the `meta-document-settings` example.
+The modern way of handling meta boxes, using the `useEntityProp` hook, is demonstrated in the [`meta-document-settings`](../meta-document-settings/) example.
 
 A White Pixel's [tutorial on meta boxes](https://awhitepixel.com/blog/how-to-add-post-meta-fields-to-gutenberg-document-sidebar/).
 

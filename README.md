@@ -205,6 +205,7 @@ The PHP file uses the transpiled names, whereas, the `src` JS files uses the fil
 
 ## Alphabetical index of examples
 
+
 [`block-categories`](./src/block-categories)
 
 [`block-collection`](./src/block-collection)
@@ -245,11 +246,11 @@ The PHP file uses the transpiled names, whereas, the `src` JS files uses the fil
 
 [`meta-attribute`](./src/meta-attribute)
 
+[`meta-block-inspector`](./src/meta-block-inspector)
+
 [`meta-callback`](./src/meta-callback)
 
 [`meta-document-settings`](./src/meta-document-settings)
-
-[`meta-block-inspector`](./src/meta-block-inspector)
 
 [`meta-notices-save-lock`](./src/meta-notices-save-lock)
 

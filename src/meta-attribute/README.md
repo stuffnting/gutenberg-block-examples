@@ -58,7 +58,7 @@ To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences ->
 
 ## Also see
 
-Compare with the `meta-simple` example, which uses the newer `useEntityProp` method.
+Compare with the [`meta-simple`](../meta-simple/) example, which uses the newer `useEntityProp` method.
 
 ## Uses
 

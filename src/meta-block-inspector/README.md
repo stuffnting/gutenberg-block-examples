@@ -50,9 +50,9 @@ To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences ->
 
 ## Also see
 
-The `block-inspector-tabs` example which demonstrates how to use the settings and style tabs.
+The [`inspector-control-tabs`](../inspector-control-tabs/) example which demonstrates how to use the settings and style tabs.
 
-The `dynamic-inspector-controls` and `dynamic-inspector-query-terms`.
+The [`dynamic-inspector-controls`](../dynamic-inspector-controls/) and [`dynamic-inspector-query-terms`](../dynamic-inspector-query-terms/).
 
 ## Uses
 

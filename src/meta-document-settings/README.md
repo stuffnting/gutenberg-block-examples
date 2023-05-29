@@ -4,7 +4,9 @@
 
 This example adds a [meta box](https://developer.wordpress.org/plugins/metadata/custom-meta-boxes/) to the Document Settings sidebar. The metadata is then used on the front-end, using the `the_content` filter.
 
-This is the newer method, that uses the `useEntityProp` hook. For the older method, using Higher Order Components (HOC), together with `withSelect`, and `withDispatch`, see the `meta-with-select-doc-settings` example.
+This is the newer method, that uses the `useEntityProp` hook. For the older method, using Higher Order Components (HOC), together with `withSelect`, and `withDispatch`, see the [`meta-with-select-doc-settings`](../meta-document-settings/) example.
+
+**Note, this example does not register a block.**
 
 ## In this code
 
@@ -52,7 +54,9 @@ To see the Custom Fields in the editor, 3-dot menu (top-right) -> Preferences ->
 
 The Gutenberg Handbook's section on [Meta Boxes](https://developer.wordpress.org/block-editor/how-to-guides/metabox/)
 
-The `meta-with-media` example also uses a meta box in the document settings sidebar.
+The [`meta-with-media`](../meta-with-media/) example also has a meta box in the document settings sidebar.
+
+The [`meta-plugin-sidebar`](../meta-plugin-sidebar/)  example has a meta box in the block inspector.has a meta box in a [plugin sidebar](https://developer.wordpress.org/block-editor/reference-guides/slotfills/plugin-sidebar/), and the [`meta-block-inspector`](../meta-block-inspector/) example has a meta box in the block inspector.
 
 ## Uses
 

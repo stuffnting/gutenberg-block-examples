@@ -95,67 +95,99 @@
   },
   "inner-blocks": {
     "name": "inner-blocks",
-    "cat": ["inner-blocks", "context"],
+    "blocks": {
+      "myprefix/inner-blocks": "Inner Blocks"
+    },
+    "cat": ["inner-blocks"],
     "include": false
   },
   "inner-blocks-context": {
     "name": "inner-blocks-context",
-    "cat": ["dynamic", "inner-blocks"],
+    "blocks": {
+      "myprefix/inner-blocks-context-parent": "Inner Blocks Context Parent",
+      "myprefix/inner-blocks-context-child": "Inner Blocks Context Child"
+    },
+    "cat": ["dynamic", "inner-blocks", "context"],
     "include": false
   },
   "inner-blocks-template": {
     "name": "inner-blocks-template",
-    "cat": ["inner-blocks", "context"],
+    "blocks": {
+      "myprefix/inner-bocks-template-parent": "Inner Blocks Template Parent",
+      "myprefix/inner-blocks-template-child": "Inner Blocks Template Child"
+    },
+    "cat": ["inner-blocks"],
     "include": false
   },
   "inspector-control-tabs": {
     "name": "inspector-control-tabs",
-    "cat": ["inspector-controls", "context", "php-render"],
+    "blocks": {
+      "myprefix/inspector-control-tabs": "Inspector Control Tabs"
+    },
+    "cat": ["inspector-controls", "php-render"],
     "include": false
   },
   "meta-attribute": {
     "name": "meta-attribute",
-    "cat": ["meta"],
-    "note": "This is the old method with attribute.source.meta, rather than useSelect.",
-    "include": false
-  },
-  "meta-callback": {
-    "name": "meta-callback",
-    "cat": ["meta", "php-render"],
-    "include": false
-  },
-  "meta-document-settings": {
-    "name": "meta-document-settings",
+    "blocks": {
+      "myprefix/meta-attribute": "Meta Box Attribute"
+    },
     "cat": ["meta"],
     "include": false
   },
   "meta-block-inspector": {
     "name": "meta-block-inspector",
+    "blocks": {
+      "myprefix/meta-inner-blocks-inspector": "Meta Inner Blocks Inspector"
+    },
     "cat": ["meta", "php-render"],
+    "include": false
+  },
+  "meta-callback": {
+    "name": "meta-callback",
+    "blocks": {
+      "myprefix/meta-callback": "Meta Callback"
+    },
+    "cat": ["meta", "php-render"],
+    "include": false
+  },
+  "meta-document-settings": {
+    "name": "meta-document-settings",
+    "blocks": {},
+    "cat": ["meta"],
     "include": false
   },
   "meta-notices-save-lock": {
     "name": "meta-notices-save-lock",
+    "blocks": {
+      "myprefix/meta-notices-save-lock": "Meta Notices and Save-Lock"
+    },
     "cat": ["meta", "notices", "php-render"],
     "include": false
   },
   "meta-plugin-sidebar": {
     "name": "meta-plugin-sidebar",
+    "blocks": {},
     "cat": ["meta", "plugin sidebar"],
     "include": false
   },
   "meta-simple": {
     "name": "meta-simple",
+    "blocks": {
+      "myprefix/meta-simple": "Meta Simple"
+    },
     "cat": ["meta"],
     "include": false
   },
   "meta-with-media": {
     "name": "meta-with-media",
+    "blocks": {},
     "cat": ["meta", "media", "plugin sidebar"],
     "include": false
   },
   "meta-with-select-doc-settings": {
     "name": "meta-with-select-doc-settings",
+    "blocks": {},
     "cat": ["meta", "plugin sidebar"],
     "include": false
   },
