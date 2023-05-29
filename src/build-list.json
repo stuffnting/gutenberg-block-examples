@@ -3,7 +3,7 @@
   "block-categories": {
     "name": "block-categories",
     "blocks": { "myprefix/change-inserter-test-block": "Test Categories" },
-    "cat": ["categories"],
+    "cat": ["categories", "filter"],
     "include": false
   },
   "block-collection": {
@@ -36,7 +36,7 @@
   "block-styles": {
     "name": "block-styles",
     "blocks": {},
-    "cat": ["variations", "styles"],
+    "cat": ["styles", "filter"],
     "include": false
   },
   "dynamic-attribute": {
@@ -77,16 +77,19 @@
   },
   "filter-block-settings": {
     "name": "filter-block-settings",
+    "blocks": {},
     "cat": "filter",
     "include": false
   },
   "filter-core-block-controls": {
     "name": "filter-core-block-controls",
+    "blocks": {},
     "cat": "filter",
     "include": false
   },
   "filter-core-block-supports": {
     "name": "filter-core-block-supports",
+    "blocks": {},
     "cat": ["filter"],
     "include": false
   },
@@ -213,7 +216,7 @@
   },
   "variations-existing-blocks": {
     "name": "variations-existing-blocks",
-    "cat": "variations and styles",
+    "cat": "variations",
     "include": false
   },
   "variations-query-block": {
@@ -223,7 +226,7 @@
   },
   "variations-register-block": {
     "name": "variations-register-block",
-    "cat": ["variations", "styles"],
+    "cat": ["variations"],
     "include": false
   }
 }

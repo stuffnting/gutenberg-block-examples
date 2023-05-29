@@ -74,6 +74,16 @@ import { PluginSidebar } from "@wordpress/edit-post";
 
 To compare "block style" to "block variations" see the variation examples: [`variations-existing-blocks`](../variations-existing-blocks/) and [`variations-register-block`](../variations-existing-blocks/).
 
+Also, look at the other filter examples.
+
+- [`filter-block-settings`](../filter-block-settings/)
+
+- [`filter-core-block-controls`](../filter-core-block-controls/)
+
+- [`filter-core-block-supports`](../filter-core-block-supports/)
+
+- [`block-categories`](../block-categories/)
+
 ## Uses
 
 **PHP WP functions**

@@ -1,5 +1,7 @@
 # filter-block-settings
 
+## Description
+
 This example adds two filters using the `blockEditor.useSetting.before` filter, which:
 
 1.  limit the width units available to the `core/column` block to `px`;
@@ -7,6 +9,8 @@ This example adds two filters using the `blockEditor.useSetting.before` filter, 
 2.  remove the text colour control from `core/heading` blocks, but only when they are within the `core/media-text` block.
 
 This example is taken form [here](https://make.wordpress.org/core/2023/02/28/custom-settings-wordpress-6-2/).
+
+**Note, no blocks are registered in this example.**
 
 ## In this code
 
@@ -53,6 +57,14 @@ The second filter example uses `core/block-editor`, which deals with data relati
 Keep and eye on [here](https://docs.google.com/document/d/1ktyuo4BHOeN3YzIpgoR83tmFGFTZIviKpC-NG2oabpA/edit#) and [here](https://github.com/WordPress/developer-blog-content/issues/85)
 
 Also, look at the other filter examples.
+
+- [`filter-core-block-controls`](../filter-core-block-controls/)
+
+- [`filter-core-block-supports`](../filter-core-block-supports/)
+
+- [`block-categories`](../block-categories/)
+
+- [`block-styles`](../block-styles/)
 
 ## Uses
 

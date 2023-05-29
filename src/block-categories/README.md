@@ -78,6 +78,16 @@ import { PluginSidebar } from "@wordpress/edit-post";
 
 The [`block-collection`](../block-collection/) example.
 
+Also, look at the other filter examples.
+
+- [`filter-block-settings`](../filter-block-settings/)
+
+- [`filter-core-block-controls`](../filter-core-block-controls/)
+
+- [`filter-core-block-supports`](../filter-core-block-supports/)
+
+- [`block-styles`](../block-styles/)
+
 ## Uses
 
 **PHP WP functions**

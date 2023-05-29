@@ -10,6 +10,8 @@ This example adds three `blocks.registerBlockType` filters to alter the [`suppor
 
 3. Adds support for `color.background`, to the core/spacer block type.
 
+**Note, no blocks are registered in this example.**
+
 ## In this code
 
 **`filter-core-block-supports.php`**
@@ -32,7 +34,15 @@ Changing the default `supports` for core block types is a straight forward proce
 
 The `richtext-supports` example.
 
-The other filter examples.
+Also, look at the other filter examples.
+
+- [`filter-block-settings`](../filter-block-settings/)
+
+- [`filter-core-block-controls`](../filter-core-block-controls/)
+
+- [`block-categories`](../block-categories/)
+
+- [`block-styles`](../block-styles/)
 
 ## Uses
 

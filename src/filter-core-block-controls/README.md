@@ -6,6 +6,8 @@ This example adds new controls to the Block Inspector of the core/list block, so
 
 The `list-style-type` is also stored in `attributes.listType`, which is a new attributes added to the core/list block type. The attribute is then used to demonstrates how to add an extra class to a core block in the editor, and front-end.
 
+**Note, no blocks are registered in this example.**
+
 ## In this code
 
 **`list-style-type.php`**
@@ -44,7 +46,15 @@ The role of `attributes.listType` is to pass the select control's value on to `e
 
 The Gutenberg's Handbook [section on hooks](https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/).
 
-Also, see the other filter examples.
+Also, look at the other filter examples.
+
+- [`filter-block-settings`](../filter-block-settings/)
+
+- [`filter-core-block-supports`](../filter-core-block-supports/)
+
+- [`block-categories`](../block-categories/)
+
+- [`block-styles`](../block-styles/)
 
 ## Uses
 
