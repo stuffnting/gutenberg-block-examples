@@ -122,13 +122,13 @@ Buttons 1 & 2 are added to the `edit` function of the custom block `myprefix/ric
 
 Note, these two buttons are unaffected by their absence from the `allowedFormats` array of the `RichText` component.
 
-## Uses
-
 ## Also see
 
 The Gutenberg Handbook's [Formatting Toolbar API](https://developer.wordpress.org/block-editor/how-to-guides/format-api/) section.
 
-The `richtext-text-align` example demonstrates how to add text-align controls to the toolbar of a custom block.
+The [`richtext-text-align`](../richtext-text-align/) example demonstrates how to add text-align controls to the toolbar of a custom block.
+
+## Uses
 
 **JS WP dependencies**
 

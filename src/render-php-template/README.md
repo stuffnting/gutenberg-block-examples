@@ -19,6 +19,7 @@ The block is a simple `RichText` block, although dynamic blocks can be rendered 
 **`render-php-template.index.js`**
 
 - Registers the `myprefix/render-php-template` block. Note, since the block is dynamic, and is rendered by a callback function on the front-end, the `save` function returns `null`.
+
 - Uses the `ServerSideRender` component to render the block in the editor.
 
 **`render-php-template.block.json`**
@@ -63,7 +64,7 @@ The callback function uses [`get_block_wrapper_attributes()`](https://developer.
 
 ## Also see
 
-The dynamic block examples, which all use a callback function, rather than a template file.
+The dynamic block examples, which all use a callback function, rather than a template file; for example, [`dynamic-simple`](../dynamic-simple/).
 
 **PHP WP functions**
 

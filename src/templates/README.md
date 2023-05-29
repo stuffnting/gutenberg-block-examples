@@ -6,6 +6,8 @@ Templates offer the change to create a sequence of block, that have their attrib
 
 Note, these examples apply to new 'posts', and no new blocks are registered.
 
+**Note,this block soe not register any blocks.**
+
 ## In this code
 
 **`templates.php`**
@@ -117,9 +119,9 @@ The Gutenberg Handbook's section on [templates and locks](https://developer.word
 
 fullsiteediting.com page on [templates and locking](https://fullsiteediting.com/how-to-lock-blocks-and-templates/#h-how-to-lock-a-single-block-in-a-template-or-block-pattern).
 
-The `block-lock` example.
+The [`block-lock`](../block-lock/) example.
 
-The `inner-blocks-template` example.
+The [`inner-blocks-template`](../inner-blocks-template/) example.
 
 ## Uses
 

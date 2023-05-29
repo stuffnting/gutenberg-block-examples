@@ -10,6 +10,8 @@ This example registers several block variations for core blocks:
 
 - A variation of the `core/column` block. it appears in the modal with the column formats, when the column block is first inserted into the post.
 
+**Note, this example does not register any blocks.**
+
 ## In this code
 
 **variations-existing-blocks**
@@ -56,7 +58,7 @@ Styles can be added to variations by adding a classname to the attributes' `clas
 
 **Note however, that 'block styles' are a better method of creating different styles for blocks, and variations should be used where control over the initial values of attribute, other than `className` are desired. These examples only use styles to make the transition between variations obvious.**
 
-See the `block-styles` example.
+See the [`block-styles`](../block-styles/) example.
 
 There is a problem when setting `className` for variations that can be transformed. The attribute values defined in the variation, replace the blocks current attribute values when one variation is transformed to another. If the new variation does not contain `className`, the `className` from the original variation will remain (in Block Inspector -> Advanced -> "Additional CSS class(es)"),
 
@@ -67,6 +69,8 @@ This problem of a classname being carried over between transformations, also hap
 [fullsiteediting.com article](`https://fullsiteediting.com/lessons/block-variations/`).
 
 Gutenberg Handbook's [documentation](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-variations/).
+
+The [`variations-existing-blocks`](../variations-existing-blocks/).
 
 ## Uses
 

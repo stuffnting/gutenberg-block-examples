@@ -38,7 +38,7 @@ In this example the transformation are simple. The `transform` method creates a 
 
 The Gutenberg Handbook's [documentation](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-transforms/#block)
 
-The `richtext-transforms-multiblock` example.
+The [`richtext-transforms-multiblock`](../richtext-transforms-multiblock/) example.
 
 ## Uses
 

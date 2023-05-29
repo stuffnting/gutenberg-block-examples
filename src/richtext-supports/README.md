@@ -38,9 +38,9 @@ If the theme does not opt in, the PHP file adds an action that will take care of
 
 The Gutenberg Handbook's documentation on [attributes](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-attributes/).
 
-For details of adding text alignment buttons to `RichText` components, see the `richtext-text-align` example.
+For details of adding text alignment buttons to `RichText` components, see the [`richtext-text-align`](../richtext-text-align/) example.
 
-The `filter-core-block-supports` example.
+The [`filter-core-block-supports`](../filter-core-block-supports/) example.
 
 ## Uses
 

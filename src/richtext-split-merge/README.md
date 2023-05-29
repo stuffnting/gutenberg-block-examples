@@ -48,7 +48,7 @@ The function is used by `mergeBlock`, which is an action added to the block's `p
 
 ## Also see
 
-For a basic example of how to use block attributes, see `richtext-basic`.
+For a basic example of how to use block attributes, see [`richtext-basic`](../richtext-basic/).
 
 For the basic use of `RichText` see [documentation on GitHub](https://github.com/WordPress/gutenberg/blob/trunk/packages/block-editor/src/components/rich-text/README.md)
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-This example is similar to `richtext-transforms-simple`, but the transformations to apply to multiple blocks. Multiple `core/paragraph` blocks can be transformed into multiple `richtext-transforms-multiblock` blocks, and multiple `richtext-transforms-multiblock` blocks can be transformed into multiple paragraphs, or a list.
+This example is similar to [`richtext-transforms-simple`](../richtext-transforms-simple/), but the transformations to apply to multiple blocks. Multiple `core/paragraph` blocks can be transformed into multiple `richtext-transforms-multiblock` blocks, and multiple `richtext-transforms-multiblock` blocks can be transformed into multiple paragraphs, or a list.
 
 ## In this code
 
@@ -30,7 +30,7 @@ This example is similar to `richtext-transforms-simple`, but the transformations
 
 The details of the transformation object can be found in the [Gutenberg Handbook](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-transforms/#block)
 
-In this example `isMultiBlock` is set to `true`, and whereas, `richtext-transforms-simple` deals with a single block's `attributes`, this block deals with an array of `attributes` from multiple blocks.
+In this example `isMultiBlock` is set to `true`, and whereas, [`richtext-transforms-simple`](../richtext-transforms-simple/) deals with a single block's `attributes`, this block deals with an array of `attributes` from multiple blocks.
 
 ## Also see
 

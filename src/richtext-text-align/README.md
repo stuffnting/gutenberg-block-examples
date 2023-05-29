@@ -4,7 +4,7 @@
 
 By default [`RichText`](https://github.com/WordPress/gutenberg/blob/trunk/packages/block-editor/src/components/rich-text/README.md) components don't get alignment controls. This example adds a `RichText` block, which has text [alignment controls](https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/block-controls-toolbar-and-sidebar/) added to its toolbar. The current text alignment is stored in a block attribute.
 
-Note, "text alignment" is the alignment of text within the block. Alignment of the block within the editor, is dealt with in the `richtext-supports` example.
+Note, "text alignment" is the alignment of text within the block. Alignment of the block within the editor, is dealt with in the [`richtext-supports`](../richtext-supports/) example.
 
 ## In this code
 
@@ -38,7 +38,7 @@ Note, "text alignment" is the alignment of text within the block. Alignment of t
 
 Block's use [attributes](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-attributes/) to store data. This block uses the `content` attribute to store the text from the `RichText` component, and the `textAlign` attribute to store the block's text alignment (as `left`, `right`, `center`, or `none`).
 
-For more about the `content` attribute, see the `richtext-basic` example.
+For more about the `content` attribute, see the [`richtext-basic`](../richtext-basic/) example.
 
 `textAlign` is defined in the `richtext-text-align.block.json` file:
 
@@ -69,9 +69,9 @@ Find out more [here](https://www.npmjs.com/package/classnames).
 
 ## Also see
 
-For an example of how to deal with other toolbar buttons, see`richtext-toolbar-buttons`.
+For an example of how to deal with other toolbar buttons, see [`richtext-toolbar-buttons`](../richtext-toolbar-buttons/).
 
-For an example of block alignment, as opposed to text alignment, see the `richtext-supports`.
+For an example of block alignment, as opposed to text alignment, see the [`richtext-supports`](../richtext-supports/).
 
 ## Uses
 

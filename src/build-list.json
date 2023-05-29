@@ -193,71 +193,105 @@
   },
   "render-php-template": {
     "name": "render-php-template",
+    "blocks": {
+      "myprefix/render-php-template": "Render PHP Template"
+    },
     "cat": ["dynamic", "php-render"],
     "include": false
   },
   "richtext-basic": {
     "name": "richtext-basic",
+    "blocks": {
+      "myprefix/richtext-basic": "RichText Basic"
+    },
     "cat": ["richtext"],
     "include": true
   },
   "richtext-multi-components": {
     "name": "richtext-multi-components",
+    "blocks": { "myprefix/richtext-multi-components": "RichText Multiple Components" },
     "cat": ["richtext"],
     "include": false
   },
   "richtext-multiline": {
     "name": "richtext-multiline",
+    "blocks": {
+      "myprefix/richtext-multiline": "RichText Multiline"
+    },
     "cat": ["richtext"],
     "include": false
   },
   "richtext-split-merge": {
     "name": "richtext-split-merge",
+    "blocks": {
+      "myprefix/richtext-split-merge": "RichText Split Merge"
+    },
     "cat": ["richtext"],
     "include": false
   },
   "richtext-supports": {
     "name": "richtext-supports",
+    "blocks": {
+      "myprefix/richtext-supports": "RichText Supports"
+    },
     "cat": ["richtext"],
     "include": false
   },
   "richtext-text-align": {
     "name": "richtext-text-align",
+    "blocks": {
+      "myprefix/richtext-text-align": "RichText Text Align"
+    },
     "cat": ["richtext"],
     "include": false
   },
   "richtext-toolbar-buttons": {
     "name": "richtext-toolbar-buttons",
+    "blocks": {
+      "myprefix/richtext-toolbar-buttons": "RichText Toolbar Buttons"
+    },
     "cat": ["richtext"],
     "include": false
   },
   "richtext-transforms-multiblock": {
     "name": "richtext-transforms-multiblock",
+    "blocks": {
+      "myprefix/richtext-transforms-multiblock": "RichText Transforms Multiblock"
+    },
     "cat": ["richtext"],
     "include": false
   },
   "richtext-transforms-simple": {
     "name": "richtext-transforms-simple",
+    "blocks": {
+      "myprefix/richtext-transforms-simple": "RichText Transforms Simple"
+    },
     "cat": ["richtext"],
     "include": false
   },
   "templates": {
     "name": "templates",
+    "blocks": {},
     "cat": ["templates", "styles"],
     "include": false
   },
   "variations-existing-blocks": {
     "name": "variations-existing-blocks",
+    "blocks": {},
     "cat": "variations",
     "include": false
   },
   "variations-query-block": {
     "name": "variations-query-block",
+    "blocks": {},
     "cat": "variations",
     "include": false
   },
   "variations-register-block": {
     "name": "variations-register-block",
+    "blocks": {
+      "myprefix/variations-register-block": "Variations Register Block"
+    },
     "cat": ["variations"],
     "include": false
   }
