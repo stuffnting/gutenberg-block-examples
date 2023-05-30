@@ -1,17 +1,17 @@
 /**
  * External dependencies
  */
-import classnames from "classnames";
-import { assign, merge } from "lodash";
+import classnames from 'classnames';
+import { assign, merge } from 'lodash';
 
 /**
  * WordPRess dependencies
  */
-import { __ } from "@wordpress/i18n";
-import { addFilter } from "@wordpress/hooks";
-import { createHigherOrderComponent } from "@wordpress/compose";
-import { InspectorControls } from "@wordpress/block-editor";
-import { PanelBody, SelectControl } from "@wordpress/components";
+import { __ } from '@wordpress/i18n';
+import { addFilter } from '@wordpress/hooks';
+import { createHigherOrderComponent } from '@wordpress/compose';
+import { InspectorControls } from '@wordpress/block-editor';
+import { PanelBody, SelectControl } from '@wordpress/components';
 
 /******************************************************************************
  *
@@ -26,22 +26,22 @@ import { PanelBody, SelectControl } from "@wordpress/components";
  ******************************************************************************/
 
 function myprefixAddAttributes(settings, name) {
-  if (name === "core/list") {
+  if (name === 'core/list') {
     const newSet = assign({}, settings, {
       attributes: merge(settings.attributes, {
         listType: {
-          type: "string",
-          default: "disc",
+          type: 'string',
+          default: 'disc',
         },
       }),
     });
-    console.log(newSet);
+
     return newSet;
   }
   return settings;
 }
 
-addFilter("blocks.registerBlockType", "myprefix/list-block/add-attributes", myprefixAddAttributes);
+addFilter('blocks.registerBlockType', 'myprefix/list-block/add-attributes', myprefixAddAttributes);
 
 /******************************************************************************
  * Add list-style-type control to Button block.
@@ -59,7 +59,7 @@ const myprefixAddInspectorControl = createHigherOrderComponent((BlockEdit) => {
     } = props;
 
     // Check block is a list and unordered
-    if (name !== "core/list" || ordered === true) {
+    if (name !== 'core/list' || ordered === true) {
       return <BlockEdit {...props} />;
     }
 
@@ -67,14 +67,16 @@ const myprefixAddInspectorControl = createHigherOrderComponent((BlockEdit) => {
     const onChange = (newListType) => {
       // Take out any previous has-list-style-type- className, but keep other classNames
       const classNamesKeep = className
-        .split(" ")
-        .filter((el) => !el.includes("has-list-style-type"))
-        .join(" ");
+        ? className
+            .split(' ')
+            .filter((el) => !el.includes('has-list-style-type'))
+            .join(' ')
+        : '';
 
       // Add new className
       const NewClassName = classnames(
         classNamesKeep,
-        listType ? `has-list-style-type-${newListType}` : ""
+        listType ? `has-list-style-type-${newListType}` : ''
       );
 
       setAttributes({
@@ -87,22 +89,22 @@ const myprefixAddInspectorControl = createHigherOrderComponent((BlockEdit) => {
       <>
         <BlockEdit {...props} />
         <InspectorControls>
-          <PanelBody title={__("List Settings", "textDomain")} initialOpen={false}>
+          <PanelBody title={__('List Settings', 'textDomain')} initialOpen={false}>
             <SelectControl
-              label={__("List Style Type", "textDomain")}
+              label={__('List Style Type', 'textDomain')}
               value={listType}
               options={[
                 {
-                  label: __("Disc", "textDomain"),
-                  value: "disc",
+                  label: __('Disc', 'textDomain'),
+                  value: 'disc',
                 },
                 {
-                  label: __("Circle", "textDomain"),
-                  value: "circle",
+                  label: __('Circle', 'textDomain'),
+                  value: 'circle',
                 },
                 {
-                  label: __("Square", "textDomain"),
-                  value: "square",
+                  label: __('Square', 'textDomain'),
+                  value: 'square',
                 },
               ]}
               onChange={onChange}
@@ -112,11 +114,11 @@ const myprefixAddInspectorControl = createHigherOrderComponent((BlockEdit) => {
       </>
     );
   };
-}, "withInspectorControl");
+}, 'withAddInspectorControl');
 
 addFilter(
-  "editor.BlockEdit",
-  "myprefix/list-block/add-inspector-controls",
+  'editor.BlockEdit',
+  'myprefix/list-block/add-inspector-controls',
   myprefixAddInspectorControl
 );
 
@@ -136,16 +138,16 @@ const withAddListTypeClass = createHigherOrderComponent((BlockListBlock) => {
       name,
     } = props;
 
-    if (name !== "core/list" || ordered) {
+    if (name !== 'core/list' || ordered) {
       return <BlockListBlock {...props} />;
     }
     return (
       <BlockListBlock
         {...props}
-        className={classnames(className, listType ? `extra-class-for-editor-${listType}` : "")}
+        className={classnames(className, listType ? `extra-class-for-editor-${listType}` : '')}
       />
     );
   };
-}, "withAddListTypeClass");
+}, 'withAddListTypeClass');
 
-addFilter("editor.BlockListBlock", "myprefix/list-block/add-editor-class", withAddListTypeClass);
+addFilter('editor.BlockListBlock', 'myprefix/list-block/add-editor-class', withAddListTypeClass);

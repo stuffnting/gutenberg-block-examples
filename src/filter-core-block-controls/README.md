@@ -42,9 +42,19 @@ Note, `attributes.listType` stores the value from the select control, although, 
 
 The role of `attributes.listType` is to pass the select control's value on to `editor.BlockListBlock` and `render_block_core/list`, which apply extra classnames.
 
+### `editor.BlockEdit`
+
+The [`editor.BlockEdit`](https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/#editor-blockedit) filter receive the `edit` function of a block, and must returns a modified version. To put this in the terms of [React higher order components](https://legacy.reactjs.org/docs/higher-order-components.html) (HOC), `editor.BlockEdit` passes on a component, and must return a component. 'Modern' react uses function components, rather than class components, which means HOCs aren't really used any more.
+
+In this example, `BlockEdit` is the component returned by the `edit` function of the block-type being modified.
+
 ## Also see
 
 The Gutenberg's Handbook [section on hooks](https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/).
+
+An example on [awhitepixel.com](https://awhitepixel.com/blog/add-custom-settings-to-existing-wordpress-gutenberg-blocks/).
+
+An example on [wholesomecode.net](https://wholesomecode.net/add-controls-to-the-core-and-third-party-block-sidebar-with-filters-and-higher-order-components/)
 
 Also, look at the other filter examples.
 
