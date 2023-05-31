@@ -5,6 +5,8 @@ import { registerBlockType } from '@wordpress/blocks';
 import { TextControl } from '@wordpress/components';
 import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
 
+import { useSelect } from '@wordpress/data';
+
 /**
  * Local dependencies
  */
@@ -50,10 +52,9 @@ registerBlockType(metadataParent.name, {
   save: ({ attributes }) => {
     const blockProps = useBlockProps.save();
     const innerBlocksProps = useInnerBlocksProps.save();
-
     return (
       <div {...blockProps}>
-        <p>My Number Is (Rendered from parent): {attributes.myNumber}</p>
+        <p>My Number Is (Rendered from parent's save function): {attributes.myNumber}</p>
         {innerBlocksProps.children}
       </div>
     );
@@ -71,8 +72,8 @@ registerBlockType(metadataChild.name, {
     const { context } = props;
     return 'My Number IS: ' + context['myprefix/myNumber'];
   },
-  save(props) {
+  save: (props) => {
     // Rendered by the parent
-    return 'Content from child save function';
+    return "Content from child save's function";
   },
 });

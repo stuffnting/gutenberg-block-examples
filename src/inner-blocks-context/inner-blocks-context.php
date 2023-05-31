@@ -2,6 +2,26 @@
 
 /******************************************************************************
  * 
+ * Callback to render the child
+ * 
+ *****************************************************************************/
+
+function myprefix_inner_blocks_context_child( $attributes, $content, $block ) {
+  $my_number = array_key_exists( 'myprefix/myNumber', $block->context ) 
+    ?  $block->context['myprefix/myNumber'] 
+    : "No number";
+
+    $wrapper_attributes = get_block_wrapper_attributes();
+
+  return sprintf('<div %1$s><p>My Number Is (from child\'s render_callback): %2$s</p><p> %3$s</p></div>',
+    $wrapper_attributes,
+    $my_number,
+    $content
+   );
+}
+
+/******************************************************************************
+ * 
  * Register the parent and child blocks
  * 
  *****************************************************************************/
@@ -18,13 +38,7 @@ function myprefix_inner_blocks_context() {
   register_block_type( __DIR__ . '/inner-blocks-context-parent.block.json' );
 
   register_block_type( __DIR__ . '/inner-blocks-context-child.block.json', array(
-    'render_callback' => function( $attributes, $content, $block ) {
-      $my_number = array_key_exists( 'myprefix/myNumber', $block->context ) 
-        ?  $block->context['myprefix/myNumber'] 
-        : "No number";
-        $wrapper_attributes = get_block_wrapper_attributes();
-      return "<div $wrapper_attributes><p>My Number Is (from render_callback): $my_number</p><p> $content</p></div>";
-    },
+    'render_callback' => 'myprefix_inner_blocks_context_child',
   ));
 }
 

@@ -42,7 +42,9 @@ The method described in this example is no longer the preferred method, accordin
 
 ### Meta values and the `save` function
 
-The meta data is not available to the `save` function, and can not be used there. In this example, because the block is rendered by a callback function on the front-end, and because there are no inner blocks, there is nothing for the `save` function to process, therefore, `null` is returned.
+The meta data is not available to the `save` function, and can not be used there. In fact, no React hooks are useable in a `save` function. To find out more, see [here](https://github.com/WordPress/gutenberg/issues/36265#issuecomment-962684758).
+
+In this example, because the block is rendered by a callback function on the front-end, and because there are no inner blocks, there is nothing for the `save` function to process, therefore, `null` is returned.
 
 ### Sharing the meta key
 

@@ -39,9 +39,15 @@ Contains the settings that define the parent block, as well as the context to be
 
 ## Notes
 
+### `save` functions and hooks
+
+You might be thinking that it should be possible to access the context data in the child's save function, perhaps using the `useSelect` hook. However, hooks can only be used with function components, which are asynchronous code; whereas, the save function generates a string to store in the database, which is synchronous code.
+
+See [here](https://github.com/WordPress/gutenberg/issues/36265#issuecomment-962684758) for more.
+
 ### The child `save` function
 
-In this example, the child's `save` function returns some aleatory content to demonstrate how the callback will handle it. However, if there is no content needed from the chid, the `save` function can return `null`.
+In this example, the child's `save` function returns some arbitrary text to demonstrate how the child's render-callback works. However, if there is no content needed from the chid, the `save` function can return `null`.
 
 ### The parent `save` function
 
@@ -58,7 +64,7 @@ Even if there is no content returned by the child, child must be included by the
 <!-- /wp:myprefix/context-parent -->
 ```
 
-## Template and lock
+### Template and lock
 
 The constant `MY_TEMPLATE` contains the inner blocks that will initially populate the parent. In this case the only allowed block, is the child block.
 
