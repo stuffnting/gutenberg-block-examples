@@ -45,16 +45,18 @@ In this example, the child's `save` function returns some aleatory content to de
 
 ### The parent `save` function
 
-The parent's `save` function includes the content from the child block using `innerBlocksProps.children`. This is done to avoid adding an extra wrapping tag. The child's classname is added in the callback, to a wrapper that contains the context value and the content, `using get_block_wrapper_attributes()`.
+The parent's `save` function includes the content from the child block using `innerBlocksProps.children`. This is done to avoid adding an extra wrapping tag. The child's classname is added in the callback, using `get_block_wrapper_attributes()`, to a wrapper that contains the context value and the content.
 
-Even if there is no content returned by the child, the parent must include child must be included by the parent (as inner blocks), otherwise, the callback function to render it on the front-end is not triggered. At least, an empty block must be saved in the editor:
+Even if there is no content returned by the child, child must be included by the parent (as inner blocks), otherwise, the callback function used to render it on the front-end is not triggered; an empty block must be saved in the editor:
 
-    <!-- wp:myprefix/context-parent -->
-      <div class="wp-block-myprefix-context-parent">
-        <p>My Number Is (Rendered from parent): </p>
-        <!-- wp:myprefix/context-child /-->
-      </div>
-    <!-- /wp:myprefix/context-parent -->
+```
+<!-- wp:myprefix/context-parent -->
+  <div class="wp-block-myprefix-context-parent">
+    <p>My Number Is (Rendered from parent): </p>
+    <!-- wp:myprefix/context-child /-->
+  </div>
+<!-- /wp:myprefix/context-parent -->
+```
 
 ## Template and lock
 
@@ -66,7 +68,7 @@ See [here](https://fullsiteediting.com/how-to-lock-blocks-and-templates/) for mo
 
 ## Also see
 
-For another example of inner block templates, see `inner-blocks-template`.
+For another example of inner block templates, see [`inner-blocks-template`](../inner-blocks-template/).
 
 ## Uses
 

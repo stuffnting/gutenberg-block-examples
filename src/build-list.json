@@ -85,7 +85,7 @@
     "name": "filter-core-block-controls",
     "blocks": {},
     "cat": "filter",
-    "include": true
+    "include": false
   },
   "filter-core-block-supports": {
     "name": "filter-core-block-supports",
@@ -108,7 +108,7 @@
       "myprefix/inner-blocks-context-child": "Inner Blocks Context Child"
     },
     "cat": ["dynamic", "inner-blocks", "context"],
-    "include": false
+    "include": true
   },
   "inner-blocks-template": {
     "name": "inner-blocks-template",
@@ -205,7 +205,7 @@
       "myprefix/richtext-basic": "RichText Basic"
     },
     "cat": ["richtext"],
-    "include": true
+    "include": false
   },
   "richtext-multi-components": {
     "name": "richtext-multi-components",
@@ -285,7 +285,7 @@
     "name": "variations-query-block",
     "blocks": {},
     "cat": "variations",
-    "include": true
+    "include": false
   },
   "variations-register-block": {
     "name": "variations-register-block",
