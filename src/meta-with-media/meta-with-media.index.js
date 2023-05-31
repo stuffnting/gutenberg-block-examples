@@ -1,13 +1,13 @@
 /**
  * WordPress dependencies
  */
-import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
-import { PluginDocumentSettingPanel } from '@wordpress/edit-post';
-import { Button, ResponsiveWrapper } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 import { useSelect } from '@wordpress/data';
+import { Button, ResponsiveWrapper } from '@wordpress/components';
+import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 import { useEntityProp } from '@wordpress/core-data';
 import { registerPlugin } from '@wordpress/plugins';
-import { __ } from '@wordpress/i18n';
+import { PluginDocumentSettingPanel } from '@wordpress/edit-post';
 
 /**
  * Local dependencies

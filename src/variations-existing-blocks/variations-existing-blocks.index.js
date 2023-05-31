@@ -2,13 +2,13 @@
  * WordPress dependencies
  * */
 
-import { registerBlockVariation } from "@wordpress/blocks";
-import { __ } from "@wordpress/i18n";
+import { __ } from '@wordpress/i18n';
+import { registerBlockVariation } from '@wordpress/blocks';
 
 /**
  * Local dependencies
  */
-import scss from "./variations-existing-blocks.style.scss";
+import scss from './variations-existing-blocks.style.scss';
 
 /********************************************************************
  *
@@ -22,22 +22,22 @@ import scss from "./variations-existing-blocks.style.scss";
  *
  ********************************************************************/
 
-registerBlockVariation("core/preformatted", [
+registerBlockVariation('core/preformatted', [
   {
-    name: "myprefix-pink-preformatted",
-    title: __("Pink preformatted", "textDomain"),
+    name: 'myprefix-pink-preformatted',
+    title: __('Pink preformatted', 'textDomain'),
     description: __(
-      "A preformatted block that has a class added to make the text pink.",
-      "textDomain"
+      'A preformatted block that has a class added to make the text pink.',
+      'textDomain'
     ),
-    icon: "lightbulb",
+    icon: 'lightbulb',
     // Replace the core block with this variation in the inserter
     isDefault: true,
     attributes: {
       // Don't forget to add class CSS rule to editor stylesheet
-      className: "is-variation-pink",
+      className: 'is-variation-pink',
     },
-    scope: ["inserter"],
+    scope: ['inserter'],
   },
 ]);
 
@@ -51,58 +51,58 @@ registerBlockVariation("core/preformatted", [
  *
  *******************************************************************/
 
-registerBlockVariation("core/heading", [
+registerBlockVariation('core/heading', [
   {
-    name: "myprefix-default-heading",
-    title: __("Heading", "textDomain"),
-    description: __("Default heading settings.", "textDomain"),
-    icon: "lightbulb",
+    name: 'myprefix-default-heading',
+    title: __('Heading', 'textDomain'),
+    description: __('Default heading settings.', 'textDomain'),
+    icon: 'lightbulb',
     isDefault: true,
     attributes: {
-      placeholder: __("Add some text...", "textDomain"),
+      placeholder: __('Add some text...', 'textDomain'),
       level: 2,
-      textAlign: "left",
+      textAlign: 'left',
       align: undefined,
-      fontSize: "",
+      fontSize: '',
       lineHeight: 1.5,
       style: {},
-      className: "is-reset-variation",
+      className: 'is-reset-variation',
     },
-    scope: ["transform", "inserter"],
+    scope: ['transform', 'inserter'],
     isActive: (blockAttributes, variationAttributes) =>
       blockAttributes.level === variationAttributes.level &&
       blockAttributes.placeholder === variationAttributes.placeholder,
   },
   {
-    name: "myprefix-pink-heading",
-    title: __("A pink heading", "textDomain"),
-    description: __("An H2 heading, with pink centered text.", "textDomain"),
-    icon: "lightbulb",
+    name: 'myprefix-pink-heading',
+    title: __('A pink heading', 'textDomain'),
+    description: __('An H2 heading, with pink centered text.', 'textDomain'),
+    icon: 'lightbulb',
     attributes: {
       level: 2,
-      textAlign: "center",
-      placeholder: __("Add some pink text...", "textDomain"),
+      textAlign: 'center',
+      placeholder: __('Add some pink text...', 'textDomain'),
       // Don't forget to add class CSS rule to editor stylesheet
-      className: "is-variation-pink",
+      className: 'is-variation-pink',
     },
-    scope: ["transform"],
+    scope: ['transform'],
     isActive: (blockAttributes, variationAttributes) =>
       blockAttributes.level === variationAttributes.level &&
       blockAttributes.placeholder === variationAttributes.placeholder,
   },
   {
-    name: "myprefix-green-heading",
-    title: __("A green heading", "textDomain"),
-    description: __("An H3 heading, with green centered text.", "textDomain"),
-    icon: "lightbulb",
+    name: 'myprefix-green-heading',
+    title: __('A green heading', 'textDomain'),
+    description: __('An H3 heading, with green centered text.', 'textDomain'),
+    icon: 'lightbulb',
     attributes: {
       level: 3,
-      textAlign: "right",
-      placeholder: __("Default paragraph text...", "textDomain"),
+      textAlign: 'right',
+      placeholder: __('Default paragraph text...', 'textDomain'),
       // Don't forget to add class CSS rule to editor stylesheet
-      className: "is-variation-green",
+      className: 'is-variation-green',
     },
-    scope: ["transform"],
+    scope: ['transform'],
     isActive: (blockAttributes, variationAttributes) =>
       blockAttributes.level === variationAttributes.level &&
       blockAttributes.placeholder === variationAttributes.placeholder,
@@ -119,17 +119,17 @@ registerBlockVariation("core/heading", [
  *
  ********************************************************************/
 
-registerBlockVariation("core/columns", {
-  name: "myprefix-three-columns",
-  title: __("My Three Columns of stuff", "textDomain"),
-  description: __("Three columns of stuff.", "textDomain"),
-  icon: "lightbulb",
+registerBlockVariation('core/columns', {
+  name: 'myprefix-three-columns',
+  title: __('My Three Columns of stuff', 'textDomain'),
+  description: __('Three columns of stuff.', 'textDomain'),
+  icon: 'lightbulb',
   /* Make the variation appear in the Placeholder, where you chose the
      starting column format when inserting the columns. */
-  scope: ["block"],
+  scope: ['block'],
   attributes: {
-    align: "full",
-    className: "is-my-three-columns",
+    align: 'full',
+    className: 'is-my-three-columns',
   },
   isActive: (blockAttributes, variationAttributes) =>
     blockAttributes.className
@@ -137,39 +137,33 @@ registerBlockVariation("core/columns", {
       : false && blockAttributes.align === variationAttributes.align,
   innerBlocks: [
     [
-      "core/column",
+      'core/column',
       {},
       [
         [
-          "core/heading",
+          'core/heading',
           {
             level: 2,
-            placeholder: __("Three columns", "textDomain"),
-            className: "is-variation-pink",
+            placeholder: __('Three columns', 'textDomain'),
+            className: 'is-variation-pink',
           },
         ],
       ],
     ],
     [
-      "core/column",
+      'core/column',
       {},
       [
-        ["core/heading", { level: 3, content: __("Stuff", "textDomain") }],
-        [
-          "core/paragraph",
-          { placeholder: __("Enter stuff here...", "textDomain") },
-        ],
+        ['core/heading', { level: 3, content: __('Stuff', 'textDomain') }],
+        ['core/paragraph', { placeholder: __('Enter stuff here...', 'textDomain') }],
       ],
     ],
     [
-      "core/column",
+      'core/column',
       {},
       [
-        ["core/heading", { level: 3, content: __("More stuff", "textDomain") }],
-        [
-          "core/paragraph",
-          { placeholder: __("Add a bit more stuff here...", "textDomain") },
-        ],
+        ['core/heading', { level: 3, content: __('More stuff', 'textDomain') }],
+        ['core/paragraph', { placeholder: __('Add a bit more stuff here...', 'textDomain') }],
       ],
     ],
   ],

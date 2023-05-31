@@ -1,18 +1,18 @@
 /**
  * WordPress dependencies
  */
-import { TextControl } from "@wordpress/components";
-import { useSelect } from "@wordpress/data";
-import { useEntityProp } from "@wordpress/core-data";
-import { registerPlugin } from "@wordpress/plugins";
-import { PluginDocumentSettingPanel } from "@wordpress/edit-post";
-import { __ } from "@wordpress/i18n";
+import { __ } from '@wordpress/i18n';
+import { useSelect } from '@wordpress/data';
+import { TextControl } from '@wordpress/components';
+import { useEntityProp } from '@wordpress/core-data';
+import { registerPlugin } from '@wordpress/plugins';
+import { PluginDocumentSettingPanel } from '@wordpress/edit-post';
 
 /**
  * Local dependencies
  */
 // This is not a block.json file. It stores the meta field name,so that it is accessible to JS and PHP
-import metadata from "./meta-document-settings.metafield.json";
+import metadata from './meta-document-settings.metafield.json';
 
 // The meta field name is defined in the JSON file
 const metaField = metadata.metaField;
@@ -24,12 +24,9 @@ const metaField = metadata.metaField;
  ********************************************************************/
 
 const DocPanelMetaFields = () => {
-  const postType = useSelect(
-    (select) => select("core/editor").getCurrentPostType(),
-    []
-  );
+  const postType = useSelect((select) => select('core/editor').getCurrentPostType(), []);
 
-  const [meta, setMeta] = useEntityProp("postType", postType, "meta");
+  const [meta, setMeta] = useEntityProp('postType', postType, 'meta');
   const metaFieldValue = meta[metaField];
 
   function updateMetaValue(newValue) {
@@ -38,8 +35,8 @@ const DocPanelMetaFields = () => {
 
   return (
     <TextControl
-      label={__("Meta Block Field", "textDomain")}
-      placeholder={__("Enter some metadata...", "textDomain")}
+      label={__('Meta Block Field', 'textDomain')}
+      placeholder={__('Enter some metadata...', 'textDomain')}
       value={metaFieldValue}
       onChange={updateMetaValue}
     />
@@ -53,16 +50,15 @@ const DocPanelMetaFields = () => {
  *
  ********************************************************************/
 
-registerPlugin("myprefix-meta-document-settings", {
-  icon: "lightbulb",
+registerPlugin('myprefix-meta-document-settings', {
+  icon: 'lightbulb',
   render: () => {
     return (
       <>
         <PluginDocumentSettingPanel
-          name="myprefix-meta-document-settings-panel"
-          title="Meta Document Settings Panel"
-          icon="lightbulb"
-        >
+          name='myprefix-meta-document-settings-panel'
+          title='Meta Document Settings Panel'
+          icon='lightbulb'>
           <DocPanelMetaFields />
         </PluginDocumentSettingPanel>
       </>

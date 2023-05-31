@@ -1,18 +1,18 @@
 /**
  * WordPress dependencies
  */
-import { registerBlockType } from "@wordpress/blocks";
-import { TextControl } from "@wordpress/components";
-import { useSelect } from "@wordpress/data";
-import { useEntityProp } from "@wordpress/core-data";
-import { useBlockProps } from "@wordpress/block-editor";
-import { __ } from "@wordpress/i18n";
+import { __ } from '@wordpress/i18n';
+import { useSelect } from '@wordpress/data';
+import { registerBlockType } from '@wordpress/blocks';
+import { TextControl } from '@wordpress/components';
+import { useBlockProps } from '@wordpress/block-editor';
+import { useEntityProp } from '@wordpress/core-data';
 
 /**
  * Local dependencies
  */
-import metadata from "./meta-simple.block.json";
-import metaFieldData from "./meta-simple.metafield.json";
+import metadata from './meta-simple.block.json';
+import metaFieldData from './meta-simple.metafield.json';
 
 const metaField = metaFieldData.metaField;
 
@@ -23,12 +23,9 @@ registerBlockType(metadata.name, {
     /**
      * Process the post meta
      */
-    const postType = useSelect(
-      (select) => select("core/editor").getCurrentPostType(),
-      []
-    );
+    const postType = useSelect((select) => select('core/editor').getCurrentPostType(), []);
 
-    const [meta, setMeta] = useEntityProp("postType", postType, "meta");
+    const [meta, setMeta] = useEntityProp('postType', postType, 'meta');
     const metaFieldValue = meta[metaField];
 
     function updateMetaValue(newValue) {
@@ -38,8 +35,8 @@ registerBlockType(metadata.name, {
     return (
       <div {...blockProps}>
         <TextControl
-          label={__("Meta Box Block Field", "textDomain")}
-          placeholder={__("Enter some metadata...", "textDomain")}
+          label={__('Meta Box Block Field', 'textDomain')}
+          placeholder={__('Enter some metadata...', 'textDomain')}
           value={metaFieldValue}
           onChange={updateMetaValue}
         />

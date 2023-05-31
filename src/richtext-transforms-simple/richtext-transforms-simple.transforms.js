@@ -1,12 +1,12 @@
 /**
- * Register dependencies
+ * WordPress dependencies
  */
-import { createBlock } from "@wordpress/blocks";
+import { createBlock } from '@wordpress/blocks';
 
 /**
  * Local dependencies
  */
-import metadata from "./richtext-transforms-simple.block.json";
+import metadata from './richtext-transforms-simple.block.json';
 
 export const transforms = {
   /**
@@ -16,8 +16,8 @@ export const transforms = {
    */
   from: [
     {
-      type: "block",
-      blocks: ["core/paragraph"],
+      type: 'block',
+      blocks: ['core/paragraph'],
       transform: ({ content, className }) => {
         return createBlock(metadata.name, {
           content,
@@ -26,8 +26,8 @@ export const transforms = {
       },
     },
     {
-      type: "block",
-      blocks: ["core/heading"],
+      type: 'block',
+      blocks: ['core/heading'],
       transform: ({ content, className }) => {
         return createBlock(metadata.name, {
           content,
@@ -42,20 +42,20 @@ export const transforms = {
    */
   to: [
     {
-      type: "block",
-      blocks: ["core/paragraph"],
+      type: 'block',
+      blocks: ['core/paragraph'],
       transform: ({ content, className }) => {
-        return createBlock("core/paragraph", {
+        return createBlock('core/paragraph', {
           content,
           className,
         });
       },
     },
     {
-      type: "block",
-      blocks: ["core/heading"],
+      type: 'block',
+      blocks: ['core/heading'],
       transform: ({ content, className }) => {
-        return createBlock("core/heading", {
+        return createBlock('core/heading', {
           content,
           className,
           level: 2,

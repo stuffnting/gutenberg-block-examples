@@ -1,11 +1,10 @@
 /**
  * WordPress dependencies.
  */
-import { registerFormatType, toggleFormat } from '@wordpress/rich-text';
-import { RichTextToolbarButton } from '@wordpress/block-editor';
 import { useSelect } from '@wordpress/data';
-import { BlockControls } from '@wordpress/block-editor';
+import { registerFormatType, toggleFormat } from '@wordpress/rich-text';
 import { ToolbarGroup, ToolbarButton } from '@wordpress/components';
+import { BlockControls, RichTextToolbarButton } from '@wordpress/block-editor';
 
 /******************************************************************************
  *

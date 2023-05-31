@@ -1,14 +1,14 @@
 /**
  * Wordpress dependencies
  */
-import { registerBlockType } from "@wordpress/blocks";
-import { useEntityRecords } from "@wordpress/core-data";
-import { useBlockProps } from "@wordpress/block-editor";
+import { registerBlockType } from '@wordpress/blocks';
+import { useBlockProps } from '@wordpress/block-editor';
+import { useEntityRecords } from '@wordpress/core-data';
 
 /**
  * Local dependencies
  */
-import metadata from "./dynamic-simple.block.json";
+import metadata from './dynamic-simple.block.json';
 
 registerBlockType(metadata, {
   edit: () => {
@@ -17,15 +17,15 @@ registerBlockType(metadata, {
      *
      * @see https://developer.wordpress.org/rest-api/reference/posts/#arguments
      */
-    const posts = useEntityRecords("postType", "post", {
+    const posts = useEntityRecords('postType', 'post', {
       per_page: 5,
       categories: [1],
-      order: "asc",
+      order: 'asc',
     });
 
     const blockProps = useBlockProps();
 
-    if (posts.status === "ERROR") {
+    if (posts.status === 'ERROR') {
       return <p>ERROR!!!!</p>;
     }
 
@@ -43,8 +43,8 @@ registerBlockType(metadata, {
     return (
       <div {...blockProps}>
         <h2>Last Posts</h2>
-        {posts.isResolving && "Loading..."}
-        {posts.hasResolved && posts.records.length === 0 && "No posts."}
+        {posts.isResolving && 'Loading...'}
+        {posts.hasResolved && posts.records.length === 0 && 'No posts.'}
         {/* PostList defined above */}
         {posts.hasResolved && posts.records.length > 0 && <PostList />}
       </div>

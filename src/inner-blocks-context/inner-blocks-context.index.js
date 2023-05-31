@@ -1,15 +1,15 @@
 /**
  * Wordpress dependencies
  */
-import { registerBlockType } from "@wordpress/blocks";
-import { useBlockProps, useInnerBlocksProps } from "@wordpress/block-editor";
-import { TextControl } from "@wordpress/components";
+import { registerBlockType } from '@wordpress/blocks';
+import { TextControl } from '@wordpress/components';
+import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
 
 /**
  * Local dependencies
  */
-import metadataParent from "./inner-blocks-context-parent.block.json";
-import metadataChild from "./inner-blocks-context-child.block.json";
+import metadataParent from './inner-blocks-context-parent.block.json';
+import metadataChild from './inner-blocks-context-child.block.json';
 
 /******************************************************************************
  *
@@ -20,13 +20,13 @@ import metadataChild from "./inner-blocks-context-child.block.json";
 registerBlockType(metadataParent.name, {
   edit: (props) => {
     // Only allow the child block as an inner block.
-    const MY_TEMPLATE = [["myprefix/inner-blocks-context-child", {}]];
+    const MY_TEMPLATE = [['myprefix/inner-blocks-context-child', {}]];
     const blockProps = useBlockProps();
     const innerBlocksProps = useInnerBlocksProps(
       {},
       {
         template: MY_TEMPLATE,
-        templateLock: "all",
+        templateLock: 'all',
       }
     );
 
@@ -38,8 +38,8 @@ registerBlockType(metadataParent.name, {
     return (
       <div {...blockProps}>
         <TextControl
-          label="My Number:"
-          value={myNumber || ""}
+          label='My Number:'
+          value={myNumber || ''}
           onChange={(val) => setAttributes({ myNumber: Number(val) })}
         />
         <div {...innerBlocksProps} />
@@ -69,10 +69,10 @@ registerBlockType(metadataParent.name, {
 registerBlockType(metadataChild.name, {
   edit(props) {
     const { context } = props;
-    return "My Number IS: " + context["myprefix/myNumber"];
+    return 'My Number IS: ' + context['myprefix/myNumber'];
   },
   save(props) {
     // Rendered by the parent
-    return "Content from child save function";
+    return 'Content from child save function';
   },
 });

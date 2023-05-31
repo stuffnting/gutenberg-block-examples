@@ -1,14 +1,14 @@
 /**
  * WordPress dependencies
  */
-import { registerBlockType } from "@wordpress/blocks";
-import { RichText, useBlockProps } from "@wordpress/block-editor";
-import { __ } from "@wordpress/i18n";
+import { __ } from '@wordpress/i18n';
+import { registerBlockType } from '@wordpress/blocks';
+import { RichText, useBlockProps } from '@wordpress/block-editor';
 
 /**
  * Local dependencies
  */
-import metadata from "./block-lock.block.json";
+import metadata from './block-lock.block.json';
 
 registerBlockType(metadata.name, {
   edit: (props) => {
@@ -18,11 +18,11 @@ registerBlockType(metadata.name, {
 
     return (
       <RichText
-        identifier="content"
-        tagName="h2"
+        identifier='content'
+        tagName='h2'
         value={content}
         onChange={(value) => setAttributes({ content: value })}
-        placeholder={__("Write heading…", "textDomain")}
+        placeholder={__('Write heading…', 'textDomain')}
         {...blockProps}
       />
     );

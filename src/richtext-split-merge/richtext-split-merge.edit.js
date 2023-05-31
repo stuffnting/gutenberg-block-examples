@@ -1,14 +1,14 @@
 /**
  * WordPress dependencies
  */
-import { RichText, useBlockProps } from "@wordpress/block-editor";
-import { createBlock } from "@wordpress/blocks";
-import { __ } from "@wordpress/i18n";
+import { __ } from '@wordpress/i18n';
+import { createBlock } from '@wordpress/blocks';
+import { RichText, useBlockProps } from '@wordpress/block-editor';
 
 /**
  * Local dependencies
  */
-import metadata from "./richtext-split-merge.block.json";
+import metadata from './richtext-split-merge.block.json';
 
 /******************************************************************************
  *
@@ -29,8 +29,8 @@ import metadata from "./richtext-split-merge.block.json";
 
 export const merge = (attributes, attributesToMerge) => {
   return {
-    content: (attributes.content || "") + (attributesToMerge.content || ""),
-    className: "",
+    content: (attributes.content || '') + (attributesToMerge.content || ''),
+    className: '',
   };
 };
 
@@ -52,7 +52,7 @@ export const edit = (props) => {
      * This happens if the split is at the beginning or end of the block's content.
      */
     if (!value) {
-      return createBlock("core/paragraph");
+      return createBlock('core/paragraph');
     }
 
     // If the `value` is not empty create a new myprefix/richtext-split-merge block containing the string.
@@ -64,15 +64,15 @@ export const edit = (props) => {
 
   return (
     <RichText
-      identifier="content"
-      tagName="h2"
+      identifier='content'
+      tagName='h2'
       value={content}
       onChange={(value) => setAttributes({ content: value })}
       onMerge={mergeBlocks}
       onSplit={onSplit}
       onReplace={onReplace}
       onRemove={() => onReplace([])}
-      placeholder={__("Write heading…", "textDomain")}
+      placeholder={__('Write heading…', 'textDomain')}
       {...blockProps}
     />
   );

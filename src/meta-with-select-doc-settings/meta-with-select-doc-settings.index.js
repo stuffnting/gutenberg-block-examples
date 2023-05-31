@@ -1,11 +1,11 @@
 /**
  * WordPress dependencies
  */
-import { registerPlugin } from '@wordpress/plugins';
-import { PluginDocumentSettingPanel } from '@wordpress/editPost';
 import { __ } from '@wordpress/i18n';
-import { TextControl } from '@wordpress/components';
 import { withSelect, withDispatch } from '@wordpress/data';
+import { TextControl } from '@wordpress/components';
+import { registerPlugin } from '@wordpress/plugins';
+import { PluginDocumentSettingPanel } from '@wordpress/edit-post';
 
 /**
  * Local dependencies

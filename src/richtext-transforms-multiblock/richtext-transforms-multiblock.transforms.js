@@ -1,4 +1,4 @@
-import { createBlock } from "@wordpress/blocks";
+import { createBlock } from '@wordpress/blocks';
 import {
   __UNSTABLE_LINE_SEPARATOR,
   create,
@@ -6,9 +6,12 @@ import {
   replace,
   split,
   toHTMLString,
-} from "@wordpress/rich-text";
+} from '@wordpress/rich-text';
 
-import metadata from "./richtext-transforms-multiblock.block.json";
+/**
+ * Local dependencies
+ */
+import metadata from './richtext-transforms-multiblock.block.json';
 
 export const transforms = {
   /**
@@ -19,9 +22,9 @@ export const transforms = {
 
   from: [
     {
-      type: "block",
+      type: 'block',
       isMultiBlock: true, // transforms with multiple blocks selected.
-      blocks: ["core/paragraph"],
+      blocks: ['core/paragraph'],
       transform: (attributes) =>
         // `attributes` contains an array, with one element per selected block.
         attributes.map(({ content, className }) =>
@@ -39,15 +42,15 @@ export const transforms = {
    */
   to: [
     {
-      type: "block",
+      type: 'block',
       isMultiBlock: true,
-      blocks: ["core/paragraph"],
+      blocks: ['core/paragraph'],
       transform: (attributes) => {
         console.log(attributes);
         // `attributes` contains an array, with one element per selected block.
         return attributes.map(({ content, className }) =>
           // `map` returns an array. One new block created per selected block.
-          createBlock("core/paragraph", {
+          createBlock('core/paragraph', {
             content,
             className,
           })
@@ -57,11 +60,11 @@ export const transforms = {
     {
       // Lifted from core/list Gutenberg version 12.8
       // Change to include core/block-item when included in WP Gutenberg >= 12.9
-      type: "block",
+      type: 'block',
       isMultiBlock: true,
-      blocks: ["core/list"],
+      blocks: ['core/list'],
       transform: (blockAttributes) => {
-        return createBlock("core/list", {
+        return createBlock('core/list', {
           values: toHTMLString({
             value: join(
               blockAttributes.map(({ content }) => {
@@ -77,7 +80,7 @@ export const transforms = {
               }),
               __UNSTABLE_LINE_SEPARATOR
             ),
-            multilineTag: "li",
+            multilineTag: 'li',
           }),
           anchor: blockAttributes.anchor,
         });

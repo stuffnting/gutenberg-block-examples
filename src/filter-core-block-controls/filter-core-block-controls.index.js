@@ -7,11 +7,11 @@ import { assign, merge } from 'lodash';
 /**
  * WordPRess dependencies
  */
-import { __ } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
+import { __ } from '@wordpress/i18n';
 import { createHigherOrderComponent } from '@wordpress/compose';
-import { InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, SelectControl } from '@wordpress/components';
+import { InspectorControls } from '@wordpress/block-editor';
 
 /******************************************************************************
  *
@@ -35,7 +35,6 @@ function myprefixAddAttributes(settings, name) {
         },
       }),
     });
-
     return newSet;
   }
   return settings;

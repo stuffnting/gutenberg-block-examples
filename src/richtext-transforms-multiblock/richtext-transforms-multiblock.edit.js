@@ -1,14 +1,14 @@
 /**
  * WordPress dependencies
  */
-import { RichText, useBlockProps } from "@wordpress/block-editor";
-import { createBlock } from "@wordpress/blocks";
-import { __ } from "@wordpress/i18n";
+import { __ } from '@wordpress/i18n';
+import { createBlock } from '@wordpress/blocks';
+import { RichText, useBlockProps } from '@wordpress/block-editor';
 
 /**
  * Local dependencies
  */
-import metadata from "./richtext-transforms-multiblock.block.json";
+import metadata from './richtext-transforms-multiblock.block.json';
 
 /******************************************************************************
  *
@@ -18,8 +18,8 @@ import metadata from "./richtext-transforms-multiblock.block.json";
 
 export const merge = (attributes, attributesToMerge) => {
   return {
-    content: (attributes.content || "") + (attributesToMerge.content || ""),
-    className: "",
+    content: (attributes.content || '') + (attributesToMerge.content || ''),
+    className: '',
   };
 };
 
@@ -36,7 +36,7 @@ export const edit = (props) => {
 
   const onSplit = (value) => {
     if (!value) {
-      return createBlock("core/paragraph");
+      return createBlock('core/paragraph');
     }
 
     return createBlock(metadata.name, {
@@ -47,15 +47,15 @@ export const edit = (props) => {
 
   return (
     <RichText
-      identifier="content"
-      tagName="h2"
+      identifier='content'
+      tagName='h2'
       value={content}
       onChange={(value) => setAttributes({ content: value })}
       onMerge={mergeBlocks}
       onSplit={onSplit}
       onReplace={onReplace}
       onRemove={() => onReplace([])}
-      placeholder={__("Write heading…", "textDomain")}
+      placeholder={__('Write heading…', 'textDomain')}
       {...blockProps}
     />
   );

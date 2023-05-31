@@ -1,10 +1,10 @@
 /**
  * WordPress dependencies
- */
+*/
 import { addFilter } from '@wordpress/hooks';
-import { registerBlockStyle, unregisterBlockStyle } from '@wordpress/blocks';
-import domReady from '@wordpress/dom-ready';
 import { __ } from '@wordpress/i18n';
+import domReady from '@wordpress/dom-ready';
+import { registerBlockStyle, unregisterBlockStyle } from '@wordpress/blocks';
 /**
  * This dependency is not used, but is included to force wp-scripts to
  * add wp-edit-post to the dependencies in index.assets.php. Without

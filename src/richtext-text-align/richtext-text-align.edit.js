@@ -1,20 +1,15 @@
 /**
  * WordPress dependencies
  */
-import {
-  RichText,
-  useBlockProps,
-  BlockControls,
-  AlignmentToolbar,
-} from "@wordpress/block-editor";
-import { __ } from "@wordpress/i18n";
+import { __ } from '@wordpress/i18n';
+import { RichText, useBlockProps, BlockControls, AlignmentToolbar } from '@wordpress/block-editor';
 
 /**
  * External Dependencies
  *
  * classnames is an external dependency installed by @wordpress/block-editor
  */
-import classnames from "classnames";
+import classnames from 'classnames';
 
 export const edit = (props) => {
   const { attributes, setAttributes } = props;
@@ -33,17 +28,17 @@ export const edit = (props) => {
           value={textAlign}
           onChange={(newAlign) => {
             setAttributes({
-              textAlign: newAlign === undefined ? "none" : newAlign,
+              textAlign: newAlign === undefined ? 'none' : newAlign,
             });
           }}
         />
       </BlockControls>
       <RichText
-        identifier="content"
-        tagName="h2"
+        identifier='content'
+        tagName='h2'
         value={content}
         onChange={(value) => setAttributes({ content: value })}
-        placeholder={__("Write heading…", "textDomain")}
+        placeholder={__('Write heading…', 'textDomain')}
         {...blockProps}
       />
     </>

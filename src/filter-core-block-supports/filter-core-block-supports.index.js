@@ -1,8 +1,12 @@
 /**
  * External dependencies
  */
-import { addFilter } from "@wordpress/hooks";
-import { assign, merge } from "lodash";
+import { assign, merge } from 'lodash';
+
+/**
+ * WordPress dependencies
+ */
+import { addFilter } from '@wordpress/hooks';
 
 /******************************************************************************
  *
@@ -11,10 +15,10 @@ import { assign, merge } from "lodash";
  *****************************************************************************/
 
 function myprefixFilterCoverBlockAlignments(settings, name) {
-  if (name === "core/cover") {
+  if (name === 'core/cover') {
     return assign({}, settings, {
       supports: merge(settings.supports, {
-        align: ["full"],
+        align: ['full'],
       }),
     });
   }
@@ -22,8 +26,8 @@ function myprefixFilterCoverBlockAlignments(settings, name) {
 }
 
 addFilter(
-  "blocks.registerBlockType",
-  "myprefix/filter-cover-block-alignment-settings",
+  'blocks.registerBlockType',
+  'myprefix/filter-cover-block-alignment-settings',
   myprefixFilterCoverBlockAlignments
 );
 
@@ -34,10 +38,10 @@ addFilter(
  *****************************************************************************/
 
 function myprefixFilterButtonsBlockSupportsAlignWide(settings, name) {
-  if (name === "core/code") {
+  if (name === 'core/code') {
     return assign({}, settings, {
       supports: merge(settings.supports, {
-        align: ["full", "wide"],
+        align: ['full', 'wide'],
         // ... or only allow specific alignments
         // align: ['center,'full'],
       }),
@@ -47,8 +51,8 @@ function myprefixFilterButtonsBlockSupportsAlignWide(settings, name) {
 }
 
 wp.hooks.addFilter(
-  "blocks.registerBlockType",
-  "myprefix/filter-buttons-block-supports-align-wide",
+  'blocks.registerBlockType',
+  'myprefix/filter-buttons-block-supports-align-wide',
   myprefixFilterButtonsBlockSupportsAlignWide
 );
 
@@ -59,14 +63,14 @@ wp.hooks.addFilter(
  *****************************************************************************/
 
 function myprefixFilterSpacerBlockSupportsColour(settings, name) {
-  if (name === "core/spacer") {
+  if (name === 'core/spacer') {
     return assign({}, settings, {
       supports: merge(settings.supports, {
         color: {
           background: true,
           text: false,
         },
-        align: ["full", "wide"],
+        align: ['full', 'wide'],
       }),
     });
   }
@@ -74,7 +78,7 @@ function myprefixFilterSpacerBlockSupportsColour(settings, name) {
 }
 
 wp.hooks.addFilter(
-  "blocks.registerBlockType",
-  "myprefix/filter-spacer-block-supports-colour",
+  'blocks.registerBlockType',
+  'myprefix/filter-spacer-block-supports-colour',
   myprefixFilterSpacerBlockSupportsColour
 );

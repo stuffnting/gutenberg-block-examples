@@ -1,9 +1,9 @@
 /**
  * WordPress dependencies
  */
-import { registerBlockType } from '@wordpress/blocks';
-import { TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
+import { TextControl } from '@wordpress/components';
+import { registerBlockType } from '@wordpress/blocks';
 
 registerBlockType('myprefix/meta-attribute', {
   title: 'Meta Box Attribute',

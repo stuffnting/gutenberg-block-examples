@@ -1,8 +1,8 @@
 /**
  * WordPress dependencies
  */
-import { RichText, useBlockProps } from "@wordpress/block-editor";
-import { __ } from "@wordpress/i18n";
+import { __ } from '@wordpress/i18n';
+import { RichText, useBlockProps } from '@wordpress/block-editor';
 
 export const edit = (props) => {
   const { attributes, setAttributes } = props;
@@ -11,11 +11,11 @@ export const edit = (props) => {
 
   return (
     <RichText
-      identifier="content"
-      tagName="h2"
+      identifier='content'
+      tagName='h2'
       value={content}
       onChange={(value) => setAttributes({ content: value })}
-      placeholder={__("Write heading…", "textDomain")}
+      placeholder={__('Write heading…', 'textDomain')}
       {...blockProps}
     />
   );

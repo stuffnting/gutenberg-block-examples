@@ -1,3 +1,7 @@
+/**
+ * WordPress dependencies
+ */
+import { __ } from '@wordpress/i18n';
 import {
   PanelBody,
   PanelRow,
@@ -5,20 +9,17 @@ import {
   ToggleControl,
   SelectControl,
   CheckboxControl,
-} from "@wordpress/components";
-import { InspectorControls } from "@wordpress/block-editor";
-import { __ } from "@wordpress/i18n";
+} from '@wordpress/components';
+import { InspectorControls } from '@wordpress/block-editor';
 
-export const TheInspectorControls = ({
-  parentProps: { attributes, setAttributes },
-}) => {
+export const TheInspectorControls = ({ parentProps: { attributes, setAttributes } }) => {
   return (
     <>
-      <InspectorControls group="styles">
-        <PanelBody title="Tile controls" initialOpen={false}>
+      <InspectorControls group='styles'>
+        <PanelBody title='Tile controls' initialOpen={false}>
           <PanelRow>
             <ToggleControl
-              label={__("Show title?", "textDomain")}
+              label={__('Show title?', 'textDomain')}
               checked={attributes.showTitle}
               onChange={(newVal) => setAttributes({ showTitle: newVal })}
             />
@@ -27,19 +28,19 @@ export const TheInspectorControls = ({
             <>
               <PanelRow>
                 <SelectControl
-                  label={__("Title font family.", "textDomain")}
+                  label={__('Title font family.', 'textDomain')}
                   value={attributes.font}
                   options={[
-                    { label: "Sans-serif", value: "sans-serif" },
-                    { label: "Serif", value: "serif" },
-                    { label: "Mono spaced", value: "monospace" },
+                    { label: 'Sans-serif', value: 'sans-serif' },
+                    { label: 'Serif', value: 'serif' },
+                    { label: 'Mono spaced', value: 'monospace' },
                   ]}
                   onChange={(newVal) => setAttributes({ font: newVal })}
                 />
               </PanelRow>
               <PanelRow>
                 <CheckboxControl
-                  label={__("Title underline.", "textDomain")}
+                  label={__('Title underline.', 'textDomain')}
                   checked={attributes.underline}
                   onChange={(newVal) => setAttributes({ underline: newVal })}
                 />
@@ -48,10 +49,10 @@ export const TheInspectorControls = ({
           )}
         </PanelBody>
       </InspectorControls>
-      <InspectorControls group="advanced">
+      <InspectorControls group='advanced'>
         <PanelRow>
           <TextControl
-            label={__("Title text.", "textDomain")}
+            label={__('Title text.', 'textDomain')}
             value={attributes.title}
             onChange={(newVal) => setAttributes({ title: newVal })}
           />

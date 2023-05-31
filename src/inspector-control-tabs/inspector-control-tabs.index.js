@@ -1,11 +1,17 @@
-import { registerBlockType } from "@wordpress/blocks";
-import { useBlockProps } from "@wordpress/block-editor";
-import { __ } from "@wordpress/i18n";
+/**
+ * WordPress dependencies
+ */
+import { __ } from '@wordpress/i18n';
+import { registerBlockType } from '@wordpress/blocks';
+import { useBlockProps } from '@wordpress/block-editor';
 
-import { TheInspectorControls } from "./inspector-controls";
-import { PostListTitle } from "./post-list-title";
-import { GetPosts } from "./get-posts";
-import metadata from "./inspector-control-tabs.block.json";
+/**
+ * Local dependencies
+ */
+import { TheInspectorControls } from './inspector-controls';
+import { PostListTitle } from './post-list-title';
+import { GetPosts } from './get-posts';
+import metadata from './inspector-control-tabs.block.json';
 
 registerBlockType(metadata.name, {
   edit: (props) => {

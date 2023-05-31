@@ -19,7 +19,7 @@
     },
     "name": "block-json",
     "cat": ["richtext"],
-    "include": true
+    "include": false
   },
   "block-lock": {
     "name": "block-lock",
@@ -85,7 +85,7 @@
     "name": "filter-core-block-controls",
     "blocks": {},
     "cat": "filter",
-    "include": false
+    "include": true
   },
   "filter-core-block-supports": {
     "name": "filter-core-block-supports",
@@ -285,7 +285,7 @@
     "name": "variations-query-block",
     "blocks": {},
     "cat": "variations",
-    "include": false
+    "include": true
   },
   "variations-register-block": {
     "name": "variations-register-block",
