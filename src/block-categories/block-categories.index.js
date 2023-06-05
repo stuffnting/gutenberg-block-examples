@@ -87,7 +87,6 @@ setCategories([...newCategories]);
  */
 function myprefixFilterSpacerCategory(settings, name) {
   if (name === 'core/spacer') {
-    // Object.assign can also be used instead of lodash.assign
     return {
       ...settings,
       category: 'custom-category-php',
