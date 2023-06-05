@@ -108,7 +108,7 @@
       "myprefix/inner-blocks-context-child": "Inner Blocks Context Child"
     },
     "cat": ["dynamic", "inner-blocks", "context"],
-    "include": true
+    "include": false
   },
   "inner-blocks-template": {
     "name": "inner-blocks-template",
@@ -285,7 +285,7 @@
     "name": "variations-query-block",
     "blocks": {},
     "cat": "variations",
-    "include": false
+    "include": true
   },
   "variations-register-block": {
     "name": "variations-register-block",

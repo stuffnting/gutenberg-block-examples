@@ -1,12 +1,6 @@
 /**
- * External dependencies
- */
-import { assign, merge } from 'lodash';
-
-/**
  * WordPress dependencies
  */
-import { addFilter } from '@wordpress/hooks';
 import { __ } from '@wordpress/i18n';
 import { registerBlockVariation } from '@wordpress/blocks';
 
@@ -38,7 +32,9 @@ registerBlockVariation('core/query', {
   attributes: {
     namespace: namespaceMeta,
     query: {
-      commentCount: { value: 4, compare: '>=' },
+      // Add new comment count query var
+      commentCount: { value: 0, compare: '>=' },
+      // Set defaults for existing query vars
       perPage: perPageMeta,
       postType: 'post',
       order: 'asc',
@@ -60,26 +56,3 @@ registerBlockVariation('core/query', {
     ['core/query-no-results'],
   ],
 });
-
-function myprefixAddAttributes(settings, name) {
-  if (name === 'core/query') {
-    const newObj = assign({}, settings.attributes.query.default, {
-      commentCount: {
-        value: 0,
-        compare: '>=',
-      },
-    });
-    const newSet = merge(settings, {
-      attributes: merge(settings.attributes, {
-        query: {
-          default: newObj,
-        },
-      }),
-    });
-
-    return newSet;
-  }
-  return settings;
-}
-
-addFilter('blocks.registerBlockType', 'myprefix/core-query/add-attributes', myprefixAddAttributes);

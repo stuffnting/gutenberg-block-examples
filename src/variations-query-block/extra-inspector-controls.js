@@ -1,9 +1,4 @@
 /**
- * External dependencies
- */
-import { assign, merge } from 'lodash';
-
-/**
  * WordPress dependencies
  */
 import { addFilter } from '@wordpress/hooks';
@@ -12,7 +7,6 @@ import { createHigherOrderComponent } from '@wordpress/compose';
 import {
   PanelBody,
   PanelRow,
-  TextControl,
   __experimentalNumberControl as NumberControl,
 } from '@wordpress/components';
 import { InspectorControls } from '@wordpress/block-editor';
@@ -59,16 +53,16 @@ export const myprefixExtraQueryControls = createHigherOrderComponent(
                 min={0}
                 max={100}
                 onChange={(newVal) => {
-                  setAttributes(
-                    merge(attributes, {
-                      query: {
-                        commentCount: {
-                          value: parseInt(newVal),
-                          compare: commentCount.compare,
-                        },
+                  setAttributes({
+                    ...attributes,
+                    query: {
+                      ...query,
+                      commentCount: {
+                        value: parseInt(newVal),
+                        compare: commentCount.compare,
                       },
-                    })
-                  );
+                    },
+                  });
                 }}
               />
             </PanelRow>
