@@ -1,9 +1,4 @@
 /**
- * External dependencies
- */
-import { assign, merge } from 'lodash';
-
-/**
  * WordPress dependencies
  */
 import { addFilter } from '@wordpress/hooks';
@@ -16,11 +11,13 @@ import { addFilter } from '@wordpress/hooks';
 
 function myprefixFilterCoverBlockAlignments(settings, name) {
   if (name === 'core/cover') {
-    return assign({}, settings, {
-      supports: merge(settings.supports, {
+    return {
+      ...settings,
+      supports: {
+        ...settings.supports,
         align: ['full'],
-      }),
-    });
+      },
+    };
   }
   return settings;
 }
@@ -33,19 +30,19 @@ addFilter(
 
 /******************************************************************************
  *
- * 2. Adds `align` support for `wide` and `full`,  to the core/code block type.
+ * 2. Adds `align` support for `wide` and `full`, to the core/code block type.
  *
  *****************************************************************************/
 
 function myprefixFilterButtonsBlockSupportsAlignWide(settings, name) {
   if (name === 'core/code') {
-    return assign({}, settings, {
-      supports: merge(settings.supports, {
+    return {
+      ...settings,
+      supports: {
+        ...settings.supports,
         align: ['full', 'wide'],
-        // ... or only allow specific alignments
-        // align: ['center,'full'],
-      }),
-    });
+      },
+    };
   }
   return settings;
 }
@@ -64,15 +61,16 @@ wp.hooks.addFilter(
 
 function myprefixFilterSpacerBlockSupportsColour(settings, name) {
   if (name === 'core/spacer') {
-    return assign({}, settings, {
-      supports: merge(settings.supports, {
+    return {
+      ...settings,
+      supports: {
+        ...settings.supports,
         color: {
           background: true,
           text: false,
         },
-        align: ['full', 'wide'],
-      }),
-    });
+      },
+    };
   }
   return settings;
 }
