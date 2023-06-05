@@ -4,7 +4,7 @@
     "name": "block-categories",
     "blocks": { "myprefix/change-inserter-test-block": "Test Categories" },
     "cat": ["categories", "filter"],
-    "include": false
+    "include": true
   },
   "block-collection": {
     "cat": ["collections", "categories"],
@@ -285,7 +285,7 @@
     "name": "variations-query-block",
     "blocks": {},
     "cat": "variations",
-    "include": true
+    "include": false
   },
   "variations-register-block": {
     "name": "variations-register-block",
