@@ -2,7 +2,6 @@
  * External dependencies
  */
 import classnames from 'classnames';
-import { assign, merge } from 'lodash';
 
 /**
  * WordPRess dependencies
@@ -27,14 +26,16 @@ import { InspectorControls } from '@wordpress/block-editor';
 
 function myprefixAddAttributes(settings, name) {
   if (name === 'core/list') {
-    const newSet = assign({}, settings, {
-      attributes: merge(settings.attributes, {
+    const newSet = {
+      ...settings,
+      attributes: {
+        ...settings.attributes,
         listType: {
           type: 'string',
           default: 'disc',
         },
-      }),
-    });
+      },
+    };
     return newSet;
   }
   return settings;

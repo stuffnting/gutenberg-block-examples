@@ -4,7 +4,7 @@
     "name": "block-categories",
     "blocks": { "myprefix/change-inserter-test-block": "Test Categories" },
     "cat": ["categories", "filter"],
-    "include": true
+    "include": false
   },
   "block-collection": {
     "cat": ["collections", "categories"],
@@ -85,7 +85,7 @@
     "name": "filter-core-block-controls",
     "blocks": {},
     "cat": "filter",
-    "include": false
+    "include": true
   },
   "filter-core-block-supports": {
     "name": "filter-core-block-supports",

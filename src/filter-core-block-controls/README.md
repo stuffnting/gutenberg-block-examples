@@ -116,8 +116,6 @@ Also, look at the other filter examples.
 
 - [`classnames`](https://www.npmjs.com/package/classnames)
 
-- [`lodash`](https://www.npmjs.com/package/lodash)
-
 **JS WP filters**
 
 - [`blocks.registerBlockType`](https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/#blocks-registerblocktype)
