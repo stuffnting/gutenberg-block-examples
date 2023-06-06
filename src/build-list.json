@@ -91,7 +91,7 @@
     "name": "filter-core-block-supports",
     "blocks": {},
     "cat": ["filter"],
-    "include": true
+    "include": false
   },
   "inner-blocks": {
     "name": "inner-blocks",

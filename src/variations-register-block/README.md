@@ -86,7 +86,9 @@ The `scope` parameter value is an array, and it can contain multiple elements. T
 
 ### `isActive`
 
-This function, that must return `true` or `false`, tells the editor if a variation is active, or not. It also provides information about the variation via the `useBlockDisplayInformation` hook (see [here](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-variations/)).
+This is used to test whether a block instance is this variation, or not. It also provides information about the variation via the `useBlockDisplayInformation` hook (see [here](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-variations/)).
+
+`isActive` can be a function, that must return `true` or `false`, or, an array of attributes.
 
 In this example, `attributes.isActiveName` is used to provide an easy way to tell which variation the selected block is.
 
@@ -109,6 +111,14 @@ The `variations-existing-blocks` example, where variations are added to core blo
 Gutenberg Handbook's [documentation](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-variations/).
 
 ## Uses
+
+**PHP WP functions**
+
+- [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
+
+**PHP WP actions**
+
+- [`init`](https://developer.wordpress.org/reference/hooks/init/)
 
 **JS WP dependencies**
 
@@ -147,11 +157,3 @@ Gutenberg Handbook's [documentation](https://developer.wordpress.org/block-edito
 - [`core/block-editor`](https://developer.wordpress.org/block-editor/reference-guides/data/data-core-block-editor/)
 
   - `getSelectedBlock`
-
-**PHP WP functions**
-
-- [`register_block_type`](https://developer.wordpress.org/reference/functions/register_block_type/)
-
-**PHP WP actions**
-
-- [`init`](https://developer.wordpress.org/reference/hooks/init/)
