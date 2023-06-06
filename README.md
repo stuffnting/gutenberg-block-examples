@@ -6,9 +6,9 @@ There is an alphabetical list of the examples [below](#alphabetical-index-of-exa
 
 ## Using these examples
 
-The example files, which are written in [JSX/](https://react.dev/learn/writing-markup-with-jsx), are in the `src` folder. When using the examples, they are transpiled into a WordPress plugin, located in the `start/`.
+The example files, which are written in [JSX](https://react.dev/learn/writing-markup-with-jsx), are in the `src/` folder. When using the examples, they are transpiled into a WordPress plugin, located in the `start/`.
 
-Running these examples on your computer requires a development environment, so that, a WordPress test site can be locally hosted.
+Running these examples on your computer requires a development environment, so that, a WordPress test site can be hosted locally.
 
 ### Development environment: WordPress' recommended way
 
@@ -26,11 +26,11 @@ Using these examples requires WordPress' development environment:
 
 WordPress' development environment quick start guide can be found in the [Gutenberg Handbook](https://developer.wordpress.org/block-editor/getting-started/devenv/#quick-start).
 
-**When `wp-scripts` is started, the examples are built into a WP plugin, located in a folder named `start`, which is placed into the root folder.**
+**When `wp-scripts` is started, the examples are built into a WP plugin, located in the `/start` folder.**
 
-Using this environment, when the source code is changed and saved, the plugin within the `start` folder will automatically be updated.
+Using this environment, when files within the `src` folder are changed and saved, the plugin within the `start` folder will automatically be updated.
 
-Other methods of running a WP test site can be use. However, the you must be able to copy the `start` folder to `wp-content/plugins/`. Using code editors, such as VS Code, it is also possible to connect the `start` folder to a remotely hosted WP site via an FPT/SFTP plugin.
+Other methods of running a WP test site can be use. However, the you must be able to copy the `start` folder to the `wp-content/plugins/` folder of a WP installation. Using code editors, such as VS Code, it is also possible to connect the `start` folder to a remotely hosted WP site via an FPT/SFTP plugin.
 
 ### Clone this repository and install the examples
 
