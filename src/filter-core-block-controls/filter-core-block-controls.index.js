@@ -4,7 +4,7 @@
 import classnames from 'classnames';
 
 /**
- * WordPRess dependencies
+ * WordPress dependencies
  */
 import { addFilter } from '@wordpress/hooks';
 import { __ } from '@wordpress/i18n';
@@ -14,7 +14,7 @@ import { InspectorControls } from '@wordpress/block-editor';
 
 /******************************************************************************
  *
- * Add Size attribute to Button block
+ * Add listType attribute to the block inspector
  *
  * @see {@link https://css-tricks.com/a-crash-course-in-wordpress-block-filters/}
  *
@@ -62,7 +62,7 @@ const myprefixAddInspectorControl = createHigherOrderComponent((BlockEdit) => {
     if (name !== 'core/list' || ordered === true) {
       return <BlockEdit {...props} />;
     }
-
+    console.log(props);
     // set listType and className
     const onChange = (newListType) => {
       // Take out any previous has-list-style-type- className, but keep other classNames
