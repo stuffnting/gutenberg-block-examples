@@ -157,13 +157,19 @@ editMiniCss.options.filename = '[name]/style.css';
 // Merge plugins
 const plugins = defaultConfig.plugins.concat(extraPlugins, editMiniCss);
 
+console.log(path.join(__dirname, '/start'));
+
 /**
  * Export
+ * 
+ * Build to Local Sites on Windows
+ * '/mnt/c/Users/richa/Local Sites/{site-folder}}/app/public/wp-content/plugins/start'
  */
 module.exports = {
   ...defaultConfig,
   plugins,
   entry: buildListObj,
+
   output: {
     path: path.join(__dirname, '/start'),
     filename: '[name]/index.js',

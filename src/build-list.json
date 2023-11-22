@@ -12,6 +12,12 @@
     "name": "block-collection",
     "include": false
   },
+  "block-hooks-json": {
+    "cat": ["hooks", "patterns"],
+    "blocks": { "myprefix/block-pattern-json": "Block Hook JSON" },
+    "name": "block-hooks-json",
+    "include": true
+  },
   "block-json": {
     "blocks": {
       "myprefix/block-json": "Test Block JSON",
@@ -85,7 +91,7 @@
     "name": "filter-core-block-controls",
     "blocks": {},
     "cat": "filter",
-    "include": true
+    "include": false
   },
   "filter-core-block-supports": {
     "name": "filter-core-block-supports",
