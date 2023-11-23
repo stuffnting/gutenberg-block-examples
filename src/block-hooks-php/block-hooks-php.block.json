@@ -1,0 +1,10 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "myprefix/block-hook-php",
+  "title": "Block Hook PHP",
+  "icon": "lightbulb",
+  "category": "widgets",
+  "description": "Uses a block hook to attach a dynamic block to a block pattern.",
+  "editorScript": "file:./index.js"
+}
