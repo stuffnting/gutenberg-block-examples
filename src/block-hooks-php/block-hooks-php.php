@@ -1,7 +1,5 @@
 <?php
 
-require_once('block-pattern.php');
-
 /******************************************************************************
  * 
  * Callback function
@@ -9,7 +7,7 @@ require_once('block-pattern.php');
  *****************************************************************************/
 function myprefix_block_hooks_php_cb( $attributes, $content, $block_object ) {
   $wrapper_attributes = get_block_wrapper_attributes();
-  $out = '<h2>Added by the hook!</h2>';
+  $out = '<h2>Added by the hook via PHP!</h2>';
 
   return sprintf( '<div %1$s>%2$s</div>',
           $wrapper_attributes,
@@ -43,43 +41,49 @@ function myprefix_block_hooks_php() {
  * Add the block hook
  * 
  *****************************************************************************/
+add_filter( 'hooked_block_types', 'example_block_hooks', 10, 4 );
 
- function example_block_hooks( $hooked_blocks, $position, $anchor_block, $context ) {
-	// Template/Template Part hooks.
-	if ( $context instanceof WP_Block_Template ) {
-
-    // Hooks the "Like" button block before the Post Title in the Single template.
-		if ( 
+function example_block_hooks( $hooked_blocks, $position, $anchor_block, $context ) {
+  // Template/Template Part hooks.
+  
+  if ( $context instanceof WP_Block_Template ) {
+    /**
+     * Hooks myprefix/block_hooks_php before core/post-title in the single.html 
+     * template of twentytwentyfour theme.
+     * 
+     * Note: if the user has modified the single template, this will not work.
+     * Existing templates and template parts in the editor will have the hooked block added.
+     * If hooked blocks have already been added, and the hook is removed, the 
+     * hooked blocks will be removed from the editor.
+     */
+    if ( 
+      'twentytwentyfour' === $context->theme &&
+      'single' === $context->slug &&
       'core/post-title' === $anchor_block &&
-			'before' === $position &&
-			'single' === $context->slug
+      'before' === $position
       ) {
         $hooked_blocks[] = 'myprefix/block-hook-php';
-		}
-    
-		// Hooks the Login/Logout link block after the Navigation block if the context of the template part is a header.
-		if ( 
-      'core/group' === $anchor_block &&
-			'last_child' === $position &&
-			'header' === $context->area
-      ) {
-        $hooked_blocks[] = 'core/loginout';
-      }
-	}
+    }
+  }
   
 	// Pattern hooks.
 	if ( is_array( $context ) && isset( $context['slug'] ) ) {
-		// Hooks into the Post Meta pattern in the Twenty Twenty-Four theme.
+		/**
+     * Hooks myprefix/block_hooks_php to the twentytwentyfour/text-feature-grid-3-col pattern.
+     * 
+     * Note: the hooked block will only be added to the editor when the pattern is first added. 
+     * Existing patterns in the editor will not have the hooked block added.
+     * If hooked blocks have already been added to the pattern, and the hook is removed, the 
+     * hooked blocks will remain in the editor.
+     */
 		if ( 
-			'core/columns' === $anchor_block && 
-			'before' === $position && 
-			'twentytwentyfour/team-4-col' === $context['slug']
+			'core/column' === $anchor_block && 
+			'first_child' === $position  && 
+			'twentytwentyfour/text-feature-grid-3-col' === $context['slug']
 		) {
-      snt_dump("pants");
 			$hooked_blocks[] = 'myprefix/block-hook-php';
 		}
 	}
 
 	return $hooked_blocks;
 }
-add_filter( 'hooked_block_types', 'example_block_hooks', 100, 4 );

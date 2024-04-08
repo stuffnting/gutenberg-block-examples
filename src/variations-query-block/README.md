@@ -4,7 +4,7 @@
 
 This example adds a block variation to the `core/query` block, that sets a default value for the `perPage` query var, and adds a `commentCount` query var to the `core/query` block type's `query` attribute
 
-The default `perPage` value is set in a JSON file, and zn extra control is added to the Block Inspector, into which the number of comments can be entered.
+The default `perPage` value is set in a JSON file, and an extra control is added to the Block Inspector, into which the number of comments can be entered.
 
 Note, this example does not register a block type, only a variation for a core block type.
 

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "myprefix/block-lock-editor-mode",
+  "title": "Block Lock Editor Mode",
+  "description": "Demonstrates the useBlockEditingMode React hook.",
+  "icon": "lightbulb",
+  "category": "text",
+  "editorScript": "file:./index.js"
+}

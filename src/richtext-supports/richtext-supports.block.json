@@ -18,6 +18,9 @@
     "anchor": true,
     "_comment-1": "// Adds the anchor field to the Advanced panel in the block inspector",
     "align": true,
+    "background": {
+      "backgroundImage": true
+    },
     "className": false,
     "_comment-2": "// Removes the automatic classname from the block's wrapper tag on the front-end e.g. .wp-block-your-block-name",
     "_comment-3": "// This is for block alignment (not text alignment)",

@@ -9,7 +9,7 @@ require_once('block-pattern.php');
  *****************************************************************************/
 function myprefix_block_hooks_json_cb( $attributes, $content, $block_object ) {
   $wrapper_attributes = get_block_wrapper_attributes();
-  $out = '<h2>Added by the hook!</h2>';
+  $out = '<h2>Added by the hook via JSON!</h2>';
 
   return sprintf( '<div %1$s>%2$s</div>',
           $wrapper_attributes,

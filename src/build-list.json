@@ -22,7 +22,7 @@
     "cat": ["hooks", "patterns"],
     "blocks": { "myprefix/block-pattern-php": "Block Hook PHP" },
     "name": "block-hooks-php",
-    "include": true
+    "include": false
   },
   "block-json": {
     "blocks": {
@@ -36,8 +36,14 @@
   "block-lock": {
     "name": "block-lock",
     "blocks": { "myprefix/block-lock": "Block Lock" },
-    "cat": ["templates", "patterns"],
+    "cat": ["templates", "patterns", "lock"],
     "include": false
+  },
+  "block-lock-editor-mode": {
+    "name": "block-lock-editor-mode",
+    "blocks": { "myprefix/block-lock-editor-mode": "Block Lock Editor Mode" },
+    "cat": ["lock", "inner-blocks"],
+    "include": true
   },
   "block-patterns": {
     "name": "block-patterns",
@@ -111,7 +117,7 @@
       "myprefix/inner-blocks": "Inner Blocks"
     },
     "cat": ["inner-blocks"],
-    "include": false
+    "include": true
   },
   "inner-blocks-context": {
     "name": "inner-blocks-context",

@@ -91,7 +91,7 @@ function myprefix_register_block_patterns() {
     'title' => __('Images and text in columns', 'textDomain'),
     'description' => __('My nice block pattern', 'textDomain'),
     'keywords' => ['columns', 'pictures'],
-    'categories' => ['columns', 'myprefix-patterns'],
+    'categories' => array('columns', 'myprefix-patterns'),
     'blockTypes' => ['core/paragraph', 'core/image', 'core/post-content'],
     'postTypes' => [ 'post' ],
     'viewportWidth' => 840,

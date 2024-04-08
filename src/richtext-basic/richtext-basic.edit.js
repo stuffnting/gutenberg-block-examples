@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { RichText, useBlockProps } from '@wordpress/block-editor';
+import { RichText, useBlockProps, useBlockEditingMode } from '@wordpress/block-editor';
 
 export const edit = (props) => {
   const { attributes, setAttributes } = props;

@@ -15,7 +15,7 @@ registerBlockType(metadata, {
 
     return (
       <div {...blockProps}>
-        <h2>Added by the hook!</h2>
+        <h2>Added by the hook via JSON!</h2>
       </div>
     );
   },
