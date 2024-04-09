@@ -43,7 +43,7 @@
     "name": "block-lock-editor-mode",
     "blocks": { "myprefix/block-lock-editor-mode": "Block Lock Editor Mode" },
     "cat": ["lock", "inner-blocks"],
-    "include": true
+    "include": false
   },
   "block-patterns": {
     "name": "block-patterns",
@@ -117,7 +117,7 @@
       "myprefix/inner-blocks": "Inner Blocks"
     },
     "cat": ["inner-blocks"],
-    "include": true
+    "include": false
   },
   "inner-blocks-context": {
     "name": "inner-blocks-context",
@@ -298,6 +298,12 @@
     "blocks": {},
     "cat": "variations",
     "include": false
+  },
+  "variations-php-filter": {
+    "name": "variations-php-filter",
+    "blocks": {},
+    "cat": "variations",
+    "include": true
   },
   "variations-query-block": {
     "name": "variations-query-block",
