@@ -2,27 +2,27 @@
 
 ## Description
 
-This example uses a block hook to prepend the `myprefix/block-hook-json` block to any `core/column` block contained within any pattern or template. The hook is added in the `block.json` file. More conditional use of hooks is possible using the `hooked_block_types` PHP hook.
+This example uses a block hook to prepend the `myprefix/block-hook-php` block to any `core/post-title` block in the TwentyTwentyFour theme single template, and the `core/column` block in the contained within the `twentytwentyfour/text-feature-grid-3-col` pattern of the TwentyTwentyFour. The hook is added in the `block.json` file. 
+
+Note, using PHP the hooks can be targeted at specific template files, template parts, or patterns registered by the theme (but, not patterns registered by plugins, the Pattern Directory, or a user).
 
 ## In this code
 
-**`block-hook-json.php`**
+**`block-hook-php.php`**
 
-- Registers the `myprefix/block-hook-json` block.
+- Registers the `myprefix/block-hook-php` dynamic block.
 
 - Defines a callback function, which is used to render the block on the front-end.
 
-**`block-pattern.php`**
-
-- Registers the `myprefix/image-and-text-hook-test` which can be used to test the hook.
+- Adds the block hooks using the `hooked_block_types` filter.
 
 **`block-hook-json.index.js`**
 
-- Registers the `myprefix/block-hook-json` block. Note, since the block is dynamic, and is rendered by a callback function on the front-end, the `save` function returns `null`.
+- Registers the `myprefix/block-hook-php` block. Note, since the block is dynamic, and is rendered by a callback function on the front-end, the `save` function returns `null`.
 
 **`block-hook-json.json`**
 
-- Uses the `blockHooks` to define the block hook.
+- There is no `blockHooks` field, because the hooks are registered using PHP.
 
 ## Notes
 
@@ -54,7 +54,7 @@ There are four ways of using the hook to attach a block:
 
 ## Also see
 
-The [`block-hooks-php`](../block-hooks-php/) example.
+The [`block-hooks-json`](../block-hooks-json/) example.
 
 The [`dynamic-simple`](../dynamic-simple/) example.
 
@@ -68,11 +68,13 @@ The [`block-patterns`](../block-patterns/) example.
 
 - [`get_block_wrapper_attributes`](https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/)
 
-- [`register_block_pattern`](https://developer.wordpress.org/reference/functions/register_block_pattern/)
-
 **PHP WP actions**
 
 - [`init`](https://developer.wordpress.org/reference/hooks/init/)
+
+**PHP WP filters**
+
+- [`hooked_block_types`](https://developer.wordpress.org/reference/hooks/hooked_block_types/)
 
 **JS WP dependencies**
 

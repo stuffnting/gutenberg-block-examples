@@ -15,7 +15,7 @@ registerBlockType(metadata, {
 
     return (
       <div {...blockProps}>
-        <h2>Added by the hook via PHP!</h2>
+        <h2>Added by the hook via PHP edit method!</h2>
       </div>
     );
   },

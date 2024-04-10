@@ -7,12 +7,12 @@
  *****************************************************************************/
 function myprefix_block_hooks_php_cb( $attributes, $content, $block_object ) {
   $wrapper_attributes = get_block_wrapper_attributes();
-  $out = '<h2>Added by the hook via PHP!</h2>';
+  $out = '<h2>Added by the hook via PHP CB!</h2>';
 
   return sprintf( '<div %1$s>%2$s</div>',
-          $wrapper_attributes,
-          $out
-        );
+    $wrapper_attributes,
+    $out
+  );
 }
 
 /******************************************************************************
@@ -41,15 +41,17 @@ function myprefix_block_hooks_php() {
  * Add the block hook
  * 
  *****************************************************************************/
-add_filter( 'hooked_block_types', 'example_block_hooks', 10, 4 );
+add_filter( 'hooked_block_types', 'myprefix_block_hooks_php_add_block', 10, 4 );
 
-function example_block_hooks( $hooked_blocks, $position, $anchor_block, $context ) {
+function myprefix_block_hooks_php_add_block( $hooked_blocks, $position, $anchor_block, $context ) {
   // Template/Template Part hooks.
+
+ // print_r($context);
   
   if ( $context instanceof WP_Block_Template ) {
     /**
      * Hooks myprefix/block_hooks_php before core/post-title in the single.html 
-     * template of twentytwentyfour theme.
+     * template of twentytwentyfour theme. Look on front-end.
      * 
      * Note: if the user has modified the single template, this will not work.
      * Existing templates and template parts in the editor will have the hooked block added.
@@ -57,7 +59,7 @@ function example_block_hooks( $hooked_blocks, $position, $anchor_block, $context
      * hooked blocks will be removed from the editor.
      */
     if ( 
-      'twentytwentyfour' === $context->theme &&
+      '2024child' === $context->theme &&
       'single' === $context->slug &&
       'core/post-title' === $anchor_block &&
       'before' === $position
