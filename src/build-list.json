@@ -16,13 +16,13 @@
     "cat": ["hooks", "patterns"],
     "blocks": { "myprefix/block-pattern-json": "Block Hook JSON" },
     "name": "block-hooks-json",
-    "include": false
+    "include": true
   },
   "block-hooks-php": {
     "cat": ["hooks", "patterns"],
     "blocks": { "myprefix/block-pattern-php": "Block Hook PHP" },
     "name": "block-hooks-php",
-    "include": false
+    "include": true
   },
   "block-json": {
     "blocks": {
@@ -303,7 +303,7 @@
     "name": "variations-php-filter",
     "blocks": {},
     "cat": "variations",
-    "include": true
+    "include": false
   },
   "variations-query-block": {
     "name": "variations-query-block",
