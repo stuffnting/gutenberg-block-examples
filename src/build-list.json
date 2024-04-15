@@ -16,7 +16,7 @@
     "cat": ["hooks", "patterns", "templates"],
     "blocks": { "myprefix/block-hooks-basic": "Block Hooks Basic" },
     "name": "block-hooks-basic",
-    "include": false
+    "include": true
   },
   "block-hooks-context": {
     "cat": ["hooks", "patterns", "templates"],
