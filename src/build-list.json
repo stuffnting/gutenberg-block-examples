@@ -7,28 +7,34 @@
     "include": false
   },
   "block-collection": {
-    "cat": ["collections", "categories"],
-    "blocks": {},
     "name": "block-collection",
+    "blocks": {},
+    "cat": ["collections", "categories"],
     "include": false
   },
   "block-hooks-basic": {
-    "cat": ["hooks", "patterns", "templates"],
-    "blocks": { "myprefix/block-hooks-basic": "Block Hooks Basic" },
     "name": "block-hooks-basic",
-    "include": true
+    "blocks": { "myprefix/block-hooks-basic": "Block Hooks Basic" },
+    "cat": ["hooks", "patterns", "templates"],
+    "include": false
   },
   "block-hooks-context": {
-    "cat": ["hooks", "patterns", "templates"],
-    "blocks": { "myprefix/block-hooks-context": "Block Hooks Context" },
     "name": "block-hooks-context",
+    "blocks": { "myprefix/block-hooks-context": "Block Hooks Context" },
+    "cat": ["hooks", "patterns", "templates"],
     "include": false
   },
   "block-hooks-inner-content-and-blocks": {
-    "cat": ["hooks", "inner-blocks"],
-    "blocks": {},
     "name": "block-hooks-inner-content-and-blocks",
+    "blocks": {},
+    "cat": ["hooks", "inner-blocks", "patterns", "templates"],
     "include": false
+  },
+  "block-hooks-nav-menu": {
+    "name": "block-hooks-nav-menu",
+    "blocks": {},
+    "cat": ["hooks", "inner-blocks", "patterns", "templates"],
+    "include": true
   },
   "block-json": {
     "blocks": {
