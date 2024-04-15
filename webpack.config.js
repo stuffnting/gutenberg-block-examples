@@ -91,11 +91,17 @@ const phpPattern = {
   from: '*/*.php',
   to({ absoluteFilename }) {
     const { directory, filenameArray } = processFilename(absoluteFilename);
-    // ./src/example-name/example-name.php becomes index.php
-    // All other PHP files get copied without a name change
-    return filenameArray[0] === directory
+
+    /**
+     * ./src/example-name/example-name.php becomes index.php
+     * ./src/example-name/example-name.partname.php becomes file.php
+     * ./src/example-name/filename.php becomes filename.php
+     */
+    return filenameArray.length === 2 && filenameArray[0] === directory
       ? `./${directory}/index.php`
-      : `./${directory}/[name].php`;
+      : filenameArray.length === 3
+        ? `./${directory}/${filenameArray[1]}.php`
+        : `./${directory}/[name].php`;
   },
   filter: filterCB,
   noErrorOnMissing: true,
@@ -105,6 +111,15 @@ const cssPattern = {
   context: 'src',
   from: '*/*.css',
   to: './[path]/style.css',
+  filter: filterCB,
+  noErrorOnMissing: true,
+};
+
+// Front end script not needed to build block.
+const jsViewPattern = {
+  context: 'src',
+  from: '*/*.view.js',
+  to: './[path]/view.js',
   filter: filterCB,
   noErrorOnMissing: true,
 };
@@ -141,6 +156,7 @@ const extraPlugins = [
       // Patterns
       phpPattern,
       cssPattern,
+      jsViewPattern,
       jsonPattern,
     ],
   }),
@@ -161,7 +177,7 @@ console.log(path.join(__dirname, '/start'));
 
 /**
  * Export
- * 
+ *
  * Build to Local Sites on Windows
  * '/mnt/c/Users/richa/Local Sites/{site-folder}}/app/public/wp-content/plugins/start'
  */

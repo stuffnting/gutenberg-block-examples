@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "myprefix/block-hooks-basic",
+  "version": "0.1.0",
+  "title": "Block Hooks Basic",
+  "category": "widgets",
+  "icon": "heart",
+  "description": "Example block scaffolded with Create Block tool.",
+  "supports": {
+    "html": false,
+    "layout": true
+  },
+  "textdomain": "like-button",
+  "editorScript": "file:./index.js",
+  "style": "file:./style.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js",
+  "usesContext": ["postType", "postId", "commentId"],
+  "blockHooks": {
+    "core/comment-template": "lastChild"
+  }
+}

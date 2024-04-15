@@ -1,0 +1,19 @@
+.like-button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 48px;
+  border-radius: 3px;
+  color: var(--wp--preset--color--contrast-2);
+  font-size: var(--wp--preset--font-size--medium);
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.like-button svg {
+  margin-right: 14px;
+}
+
+.liked svg {
+  fill: #dc3e3e;
+}

@@ -12,17 +12,23 @@
     "name": "block-collection",
     "include": false
   },
-  "block-hooks-json": {
-    "cat": ["hooks", "patterns"],
-    "blocks": { "myprefix/block-pattern-json": "Block Hook JSON" },
-    "name": "block-hooks-json",
+  "block-hooks-basic": {
+    "cat": ["hooks", "patterns", "templates"],
+    "blocks": { "myprefix/block-hooks-basic": "Block Hooks Basic" },
+    "name": "block-hooks-basic",
     "include": true
   },
+  "block-hooks-json": {
+    "cat": ["hooks", "patterns", "templates"],
+    "blocks": { "myprefix/block-pattern-json": "Block Hook JSON" },
+    "name": "block-hooks-json",
+    "include": false
+  },
   "block-hooks-php": {
-    "cat": ["hooks", "patterns"],
+    "cat": ["hooks", "patterns", "templates"],
     "blocks": { "myprefix/block-pattern-php": "Block Hook PHP" },
     "name": "block-hooks-php",
-    "include": true
+    "include": false
   },
   "block-json": {
     "blocks": {

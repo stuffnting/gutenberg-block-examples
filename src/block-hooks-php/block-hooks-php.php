@@ -6,8 +6,17 @@
  * 
  *****************************************************************************/
 function myprefix_block_hooks_php_cb( $attributes, $content, $block_object ) {
+  /**
+   * The second parameter ($content) will not be used, because there are no 
+   * inner-blocks, therefore, there is no content.
+   */
+  $out = "<h2>{$attributes['content']} (from the CB!)</h2>";
+  
+  /**
+   * Get the class, style and id attributes for the block currently being rendered.
+   * @see {@link https://developer.wordpress.org/reference/functions/get_block_wrapper_attributes/}
+   */
   $wrapper_attributes = get_block_wrapper_attributes();
-  $out = '<h2>Added by the hook via PHP CB!</h2>';
 
   return sprintf( '<div %1$s>%2$s</div>',
     $wrapper_attributes,
@@ -59,7 +68,7 @@ function myprefix_block_hooks_php_add_block( $hooked_blocks, $position, $anchor_
      * hooked blocks will be removed from the editor.
      */
     if ( 
-      '2024child' === $context->theme &&
+      'TwentyTwentyFour' === $context->theme &&
       'single' === $context->slug &&
       'core/post-title' === $anchor_block &&
       'before' === $position
@@ -88,4 +97,47 @@ function myprefix_block_hooks_php_add_block( $hooked_blocks, $position, $anchor_
 	}
 
 	return $hooked_blocks;
+}
+
+
+//add_filter( 'hooked_block_myprefix/block-hook-php', 'set_block_layout_attribute_based_on_adjacent_block', 10, 4 );
+
+function set_block_layout_attribute_based_on_adjacent_block( $hooked_block, $hooked_block_type, $relative_position, $anchor_block ) {
+  snt_dump( $anchor_block );
+
+
+    // Has the hooked block been suppressed by a previous filter?
+    if ( is_null( $hooked_block ) ) {
+      return $hooked_block;
+    }
+ 
+    // Is the hooked block adjacent to the anchor block?
+    if ( 'before' !== $relative_position && 'after' !== $relative_position ) {
+      return $hooked_block;
+    }
+ 
+    // Does the anchor block have a layout attribute?
+    if ( isset( $anchor_block['attrs']['layout'] ) ) {
+      // Copy the anchor block's layout attribute to the hooked block.
+      $hooked_block['attrs']['layout'] = $anchor_block['attrs']['layout'];
+    }
+ 
+    return $hooked_block;
+}
+
+/**
+ * Test
+ */
+
+add_filter( 'hooked_block', 'myprefix_block_hooks_test', 10, 5 );
+
+function myprefix_block_hooks_test( $parsed_hooked_block, $hooked_block_type, $relative_position, $parsed_anchor_block, $context ) {
+
+  snt_dump( $parsed_hooked_block, '~', 'dumped' );
+  //snt_dump( $hooked_block_type, false, 'dumped' );
+  //snt_dump( $relative_position, false, 'dumped' );
+  //snt_dump( $parsed_anchor_block, false, 'dumped' );
+  //snt_dump( $context, false, 'dumped' );
+
+ return $parsed_hooked_block;
 }

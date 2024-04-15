@@ -10,12 +10,14 @@ import { useBlockProps } from '@wordpress/block-editor';
 import metadata from './block-hooks-php.block.json';
 
 registerBlockType(metadata, {
-  edit: () => {
+  edit: (props) => {
     const blockProps = useBlockProps();
+    const { attributes } = props;
+    const { content } = attributes;
 
     return (
       <div {...blockProps}>
-        <h2>Added by the hook via PHP edit method!</h2>
+        <h2>{content} (from the edit() method)</h2>
       </div>
     );
   },
