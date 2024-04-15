@@ -30,18 +30,6 @@
     "name": "block-hooks-inner-content-and-blocks",
     "include": false
   },
-  "block-hooks-json": {
-    "cat": ["hooks", "patterns", "templates"],
-    "blocks": { "myprefix/block-pattern-json": "Block Hook JSON" },
-    "name": "block-hooks-json",
-    "include": false
-  },
-  "block-hooks-php": {
-    "cat": ["hooks", "patterns", "templates"],
-    "blocks": { "myprefix/block-pattern-php": "Block Hook PHP" },
-    "name": "block-hooks-php",
-    "include": false
-  },
   "block-json": {
     "blocks": {
       "myprefix/block-json": "Test Block JSON",
