@@ -1,5 +1,17 @@
 {
   "_NOTE": "This file is needed by plugin.php and needs to be on the server.",
+  "block-binding-basic": {
+    "name": "block-binding-basic",
+    "blocks": {},
+    "cat": ["binding", "meta"],
+    "include": true
+  },
+  "block-binding-custom-source": {
+    "name": "block-binding-custom-source",
+    "blocks": {},
+    "cat": ["binding"],
+    "include": true
+  },
   "block-categories": {
     "name": "block-categories",
     "blocks": { "myprefix/change-inserter-test-block": "Test Categories" },
@@ -34,7 +46,7 @@
     "name": "block-hooks-nav-menu",
     "blocks": {},
     "cat": ["hooks", "inner-blocks", "patterns", "templates"],
-    "include": true
+    "include": false
   },
   "block-json": {
     "blocks": {
@@ -83,25 +95,39 @@
   },
   "dynamic-inspector-controls": {
     "name": "dynamic-inspector-controls",
-    "blocks": { "myprefix/dynamic-inspector-controls": "Dynamic Inspector Controls" },
+    "blocks": {
+      "myprefix/dynamic-inspector-controls": "Dynamic Inspector Controls"
+    },
     "cat": ["dynamic", "inspector-controls", "php-render"],
     "include": false
   },
   "dynamic-inspector-query-terms": {
     "name": "dynamic-inspector-query-terms",
-    "blocks": { "prefix/dynamic-inserter-query-terms": "Dynamic Inspector Query Terms" },
+    "blocks": {
+      "prefix/dynamic-inserter-query-terms": "Dynamic Inspector Query Terms"
+    },
     "cat": ["dynamic", "inspector-controls", "php-render"],
     "include": false
   },
   "dynamic-serverside-render": {
     "name": "dynamic-serverside-render",
-    "blocks": { "myprefix/dynamic-serverside-render": "Dynamic Serverside Render" },
+    "blocks": {
+      "myprefix/dynamic-serverside-render": "Dynamic Serverside Render"
+    },
     "cat": ["dynamic", "php-render"],
     "include": false
   },
   "dynamic-simple": {
     "name": "dynamic-simple",
     "blocks": { "myprefix/dynamic-simple": "Dynamic Block Simple" },
+    "cat": ["dynamic", "php-render"],
+    "include": false
+  },
+  "dynamic-with-save-function": {
+    "name": "dynamic-with-save-function",
+    "blocks": {
+      "myprefix/dynamic-with-save-function": "Dynamic Block With Save Function"
+    },
     "cat": ["dynamic", "php-render"],
     "include": false
   },
@@ -239,7 +265,9 @@
   },
   "richtext-multi-components": {
     "name": "richtext-multi-components",
-    "blocks": { "myprefix/richtext-multi-components": "RichText Multiple Components" },
+    "blocks": {
+      "myprefix/richtext-multi-components": "RichText Multiple Components"
+    },
     "cat": ["richtext"],
     "include": false
   },

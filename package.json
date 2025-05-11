@@ -22,9 +22,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@wordpress/prettier-config": "^3.12.0",
-    "@wordpress/scripts": "^27.6.0",
+    "@wordpress/prettier-config": "^4.23.0",
+    "@wordpress/scripts": "^30.16.0",
     "classnames": "^2.5.1",
-    "webpack-merge": "^5.10.0"
+    "webpack-merge": "^6.0.1"
   }
 }
