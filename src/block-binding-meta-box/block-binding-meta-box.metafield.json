@@ -1,0 +1,6 @@
+{
+  "_comment-1": "This is a document panel metabox, and no block is registered",
+  "description": "A metabox placed in the document settings panel.",
+  "_comment-2": "The meta field key must not be private, i.e. must not start with `_`",
+  "metaField": "myprefix_block_binding_meta_box_field"
+}

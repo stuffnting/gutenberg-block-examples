@@ -4,13 +4,19 @@
     "name": "block-binding-basic",
     "blocks": {},
     "cat": ["binding", "meta"],
-    "include": true
+    "include": false
   },
   "block-binding-custom-source": {
     "name": "block-binding-custom-source",
     "blocks": {},
     "cat": ["binding"],
-    "include": true
+    "include": false
+  },
+  "block-binding-meta-box": {
+    "name": "block-binding-meta-box",
+    "blocks": {},
+    "cat": ["binding", "meta"],
+    "include": false
   },
   "block-categories": {
     "name": "block-categories",
@@ -293,7 +299,7 @@
       "myprefix/richtext-supports": "RichText Supports"
     },
     "cat": ["richtext"],
-    "include": false
+    "include": true
   },
   "richtext-text-align": {
     "name": "richtext-text-align",

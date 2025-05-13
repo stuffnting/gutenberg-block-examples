@@ -1,6 +1,6 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
-  "apiVersion": 2,
+  "apiVersion": 3,
   "name": "myprefix/richtext-supports",
   "title": "RichText Supports",
   "icon": "lightbulb",
@@ -19,43 +19,65 @@
     "_comment-1": "// Adds the anchor field to the Advanced panel in the block inspector",
     "align": true,
     "background": {
-      "backgroundImage": true
+      "backgroundImage": true,
+      "backgroundSize": true
     },
-    "className": false,
+    "__experimentalBorder": {
+      "color": true,
+      "radius": true,
+      "style": true,
+      "width": true
+    },
+    "className": true,
     "_comment-2": "// Removes the automatic classname from the block's wrapper tag on the front-end e.g. .wp-block-your-block-name",
     "_comment-3": "// This is for block alignment (not text alignment)",
     "color": {
-      "gradient": false,
+      "gradient": true,
       "background": true,
       "text": true,
-      "link": false
+      "link": true,
+      "button": true
     },
     "_comment-4": "// Adds colour pickers to the block inspector (WP 5.6), Supports background, text and gradient. Adding support for gradient, as done here, also adds support for background and text colours because `color` is `true` if it contains a non-empty object. see https://developer.wordpress.org/block-editor/developers/block-api/block-supports/#color*/",
-    "customClassName": false,
+    "customClassName": true,
+    "defaultStylePicker": false,
     "_comment-5": "// Remove the classname field from the Advanced panel in the block inspector",
     "dimensions": {
-      "minHeight": true
+      "minHeight": true,
+      "aspectRatio": true
     },
     "html": false,
     "_comment-6": "// Prevents Edit HTML in `...` menu",
+    "inserter": true,
+    "lock": false,
     "multiple": true,
     "_comment-7": "// False only allows on of this block in each post",
     "position": {
-      "sticky": true
+      "sticky": true,
+      "_comment-77": "// Can make blocks sticky in the theme editor for templates such as archives"
     },
-    "typography": {
-      "fontSize": true,
-      "_comment-8": "// Adds a drop down to the Block Inspector WP 5.6",
-      "lineHeight": true,
-      "_comment-9": "// Adds a control to Block Inspector WP 5.6, this needs theme support, see the PHP file"
-    },
+    "renaming": false,
+    "_comment-7a": "Allow the block to be renamed in the List View",
+    "reusable": false,
+    "_comment-7b": "When false, removes the Create Block option from the block 3-dot menu",
+    "shadow": true,
+    "_comment-7c": "Allows CSS shadow controls",
     "spacing": {
       "margin": ["top", "bottom"],
       "_comment-10": "// Enable margin UI control.",
       "padding": true,
       "_comment-11": "// Enable padding UI control."
     },
-    "lock": true
+    "splitting": true,
+    "_comment-10a": "When set to true, the block will split when return is hit",
+    "typography": {
+      "fontSize": true,
+      "_comment-8": "// Adds a drop down to the Block Inspector WP 5.6",
+      "lineHeight": true,
+      "_comment-9": "// Adds a control to Block Inspector WP 5.6, this needs theme support, see the PHP file",
+      "textAlign": false,
+      "_comment-9a": "// Adds the text align tool to the block toolbar"
+    }
   },
   "editorScript": "file:./index.js"
 }
