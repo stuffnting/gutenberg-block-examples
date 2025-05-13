@@ -6,9 +6,9 @@
  * 
  *****************************************************************************/
 
-add_action('init', 'myprefix_richtext_supports');
+add_action('init', 'myprefix_block_supports');
 
-function myprefix_richtext_supports() {
+function myprefix_block_supports() {
 
   if (! function_exists('register_block_type')) {
     // Gutenberg is not active.
@@ -25,9 +25,9 @@ function myprefix_richtext_supports() {
  * 
  *****************************************************************************/
 
-//add_action( 'after_setup_theme', 'myprefix_richtext_supports_extra_theme_setup' );
+//add_action( 'after_setup_theme', 'myprefix_block_supports_extra_theme_setup' );
 
-function myprefix_richtext_supports_extra_theme_setup() {
+function myprefix_block_supports_extra_theme_setup() {
   add_theme_support('custom-line-height');
   add_theme_support('custom-spacing');
   add_theme_support('editor-font-sizes');
@@ -39,9 +39,9 @@ function myprefix_richtext_supports_extra_theme_setup() {
  * 
  *****************************************************************************/
 
-add_action('init', 'myprefix_add_richtext_supports_styles');
+add_action('init', 'myprefix_add_block_supports_styles');
 
-function myprefix_add_richtext_supports_styles() {
+function myprefix_add_block_supports_styles() {
   // Use inline style
   register_block_style(
     'myprefix/richtext-supports',

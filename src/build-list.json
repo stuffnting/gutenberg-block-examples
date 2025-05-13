@@ -61,7 +61,7 @@
     },
     "name": "block-json",
     "cat": ["richtext"],
-    "include": false
+    "include": true
   },
   "block-lock": {
     "name": "block-lock",
@@ -86,6 +86,14 @@
     "blocks": {},
     "cat": ["styles", "filter"],
     "include": false
+  },
+  "block-supports": {
+    "name": "block-supports",
+    "blocks": {
+      "myprefix/block-supports": "Block Supports"
+    },
+    "cat": ["richtext"],
+    "include": true
   },
   "dynamic-attribute": {
     "name": "dynamic-attribute",
@@ -141,7 +149,7 @@
     "name": "filter-block-settings",
     "blocks": {},
     "cat": "filter",
-    "include": false
+    "include": true
   },
   "filter-core-block-controls": {
     "name": "filter-core-block-controls",
@@ -292,14 +300,6 @@
     },
     "cat": ["richtext"],
     "include": false
-  },
-  "richtext-supports": {
-    "name": "richtext-supports",
-    "blocks": {
-      "myprefix/richtext-supports": "RichText Supports"
-    },
-    "cat": ["richtext"],
-    "include": true
   },
   "richtext-text-align": {
     "name": "richtext-text-align",

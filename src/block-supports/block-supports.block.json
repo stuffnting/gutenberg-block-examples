@@ -1,8 +1,8 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "myprefix/richtext-supports",
-  "title": "RichText Supports",
+  "name": "myprefix/block-supports",
+  "title": "Block Supports",
   "icon": "lightbulb",
   "category": "text",
   "description": "Test's various `supports` properties",
