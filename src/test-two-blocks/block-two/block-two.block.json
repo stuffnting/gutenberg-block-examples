@@ -1,0 +1,18 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "myprefix/test-two-blocks-two",
+  "title": "Test Block Two",
+  "description": "Testing the registration of two blocks from separate folders.",
+  "icon": "lightbulb",
+  "category": "text",
+  "attributes": {
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": "h2",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js"
+}

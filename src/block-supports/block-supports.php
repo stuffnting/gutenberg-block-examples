@@ -14,7 +14,8 @@ function myprefix_block_supports() {
     // Gutenberg is not active.
     return;
   }
-  register_block_type(__DIR__);
+  register_block_type(__DIR__ . '/supports-single-blocks');
+  register_block_type(__DIR__ . '/supports-inner-blocks');
 }
 
 /******************************************************************************
@@ -44,7 +45,7 @@ add_action('init', 'myprefix_add_block_supports_styles');
 function myprefix_add_block_supports_styles() {
   // Use inline style
   register_block_style(
-    'myprefix/richtext-supports',
+    'myprefix/supports-single-blocks',
     array(
       'name'         => 'dodgerblue', // Adds class name .is-style-dodgerblue
       'label'        => __('Dodger Blue', 'textDomain'),
@@ -54,7 +55,7 @@ function myprefix_add_block_supports_styles() {
 
   // This will be removed with PHP below
   register_block_style(
-    'myprefix/richtext-supports',
+    'myprefix/supports-single-blocks',
     array(
       'name'         => 'pink',  // Adds class name is-style-pink
       'label'        => __('Pink', 'textDomain'),

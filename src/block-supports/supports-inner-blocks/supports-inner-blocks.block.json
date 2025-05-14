@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "myprefix/supports-inner-blocks",
+  "title": "Block Supports Inner Blocks",
+  "icon": "lightbulb",
+  "category": "text",
+  "description": "Test's various `supports` properties for blocks that contain other blocks, i.e. inner-blocks",
+  "supports": {
+    "color": {
+      "text": false,
+      "background": false,
+      "button": true,
+      "heading": true
+    },
+    "layout": {
+      "allowSwitching": true,
+      "allowEditing": true,
+      "allowInheriting": true,
+      "allowJustification": true,
+      "allowCustomContentAndWideSize": true,
+      "allowOrientation": true,
+      "allowSizingOnChildren": false,
+      "allowVerticalAlignment": true
+    },
+    "spacing": {
+      "margin": false,
+      "padding": false,
+      "blockGap": true
+    }
+  },
+  "editorScript": "file:./index.js"
+}

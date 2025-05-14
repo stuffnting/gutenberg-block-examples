@@ -1,11 +1,11 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "myprefix/block-supports",
-  "title": "Block Supports",
+  "name": "myprefix/supports-single-blocks",
+  "title": "Block Supports Single Blocks",
   "icon": "lightbulb",
   "category": "text",
-  "description": "Test's various `supports` properties",
+  "description": "Test's various `supports` properties for single blocks, e.i. not inner-blocks",
   "attributes": {
     "content": {
       "type": "string",
@@ -35,8 +35,7 @@
       "gradient": true,
       "background": true,
       "text": true,
-      "link": true,
-      "button": true
+      "link": true
     },
     "_comment-4": "// Adds colour pickers to the block inspector (WP 5.6), Supports background, text and gradient. Adding support for gradient, as done here, also adds support for background and text colours because `color` is `true` if it contains a non-empty object. see https://developer.wordpress.org/block-editor/developers/block-api/block-supports/#color*/",
     "customClassName": true,

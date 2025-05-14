@@ -2,366 +2,333 @@
   "_NOTE": "This file is needed by plugin.php and needs to be on the server.",
   "block-binding-basic": {
     "name": "block-binding-basic",
-    "blocks": {},
+    "blocks": [],
     "cat": ["binding", "meta"],
     "include": false
   },
   "block-binding-custom-source": {
     "name": "block-binding-custom-source",
-    "blocks": {},
+    "blocks": [],
     "cat": ["binding"],
     "include": false
   },
   "block-binding-meta-box": {
     "name": "block-binding-meta-box",
-    "blocks": {},
+    "blocks": [],
     "cat": ["binding", "meta"],
     "include": false
   },
   "block-categories": {
     "name": "block-categories",
-    "blocks": { "myprefix/change-inserter-test-block": "Test Categories" },
+    "blocks": ["myprefix/change-inserter-test-block"],
     "cat": ["categories", "filter"],
     "include": false
   },
   "block-collection": {
     "name": "block-collection",
-    "blocks": {},
+    "blocks": [],
     "cat": ["collections", "categories"],
     "include": false
   },
   "block-hooks-basic": {
     "name": "block-hooks-basic",
-    "blocks": { "myprefix/block-hooks-basic": "Block Hooks Basic" },
+    "blocks": ["myprefix/block-hooks-basic"],
     "cat": ["hooks", "patterns", "templates"],
     "include": false
   },
   "block-hooks-context": {
     "name": "block-hooks-context",
-    "blocks": { "myprefix/block-hooks-context": "Block Hooks Context" },
+    "blocks": ["myprefix/block-hooks-context"],
     "cat": ["hooks", "patterns", "templates"],
     "include": false
   },
   "block-hooks-inner-content-and-blocks": {
     "name": "block-hooks-inner-content-and-blocks",
-    "blocks": {},
+    "blocks": [],
     "cat": ["hooks", "inner-blocks", "patterns", "templates"],
     "include": false
   },
   "block-hooks-nav-menu": {
     "name": "block-hooks-nav-menu",
-    "blocks": {},
+    "blocks": [],
     "cat": ["hooks", "inner-blocks", "patterns", "templates"],
     "include": false
   },
   "block-json": {
-    "blocks": {
-      "myprefix/block-json": "Test Block JSON",
-      "myprefix/another-block-json": "Another Block JSON"
-    },
+    "blocks": ["myprefix/block-json", "myprefix/another-block-json"],
     "name": "block-json",
     "cat": ["richtext"],
-    "include": true
+    "include": false
   },
   "block-lock": {
     "name": "block-lock",
-    "blocks": { "myprefix/block-lock": "Block Lock" },
+    "blocks": ["myprefix/block-lock"],
     "cat": ["templates", "patterns", "lock"],
     "include": false
   },
   "block-lock-editor-mode": {
     "name": "block-lock-editor-mode",
-    "blocks": { "myprefix/block-lock-editor-mode": "Block Lock Editor Mode" },
+    "blocks": ["myprefix/block-lock-editor-mode"],
     "cat": ["lock", "inner-blocks"],
     "include": false
   },
   "block-patterns": {
     "name": "block-patterns",
-    "blocks": {},
+    "blocks": [],
     "cat": ["templates", "styles"],
     "include": false
   },
   "block-styles": {
     "name": "block-styles",
-    "blocks": {},
+    "blocks": [],
     "cat": ["styles", "filter"],
     "include": false
   },
   "block-supports": {
     "name": "block-supports",
-    "blocks": {
-      "myprefix/block-supports": "Block Supports"
-    },
-    "cat": ["richtext"],
+    "blocks": [
+      "myprefix/supports-single-blocks",
+      "myprefix/supports-inner-blocks"
+    ],
+    "custom-entry-point-directories": [
+      "supports-single-blocks",
+      "supports-inner-blocks"
+    ],
+    "cat": ["richtext", "inner-blocks"],
     "include": true
   },
   "dynamic-attribute": {
     "name": "dynamic-attribute",
-    "block": { "myprefix/dynamic-attribute": "Dynamic Attribute" },
+    "block": ["myprefix/dynamic-attribute"],
     "cat": ["dynamic", "php-render"],
     "include": false
   },
   "dynamic-inner-blocks": {
     "name": "dynamic-inner-blocks",
-    "blocks": { "myprefix/dynamic-inner-blocks": "Dynamic Inner Blocks" },
+    "blocks": ["myprefix/dynamic-inner-blocks"],
     "cat": ["dynamic", "inner-blocks", "php-render"],
     "include": false
   },
   "dynamic-inspector-controls": {
     "name": "dynamic-inspector-controls",
-    "blocks": {
-      "myprefix/dynamic-inspector-controls": "Dynamic Inspector Controls"
-    },
+    "blocks": ["myprefix/dynamic-inspector-controls"],
     "cat": ["dynamic", "inspector-controls", "php-render"],
     "include": false
   },
   "dynamic-inspector-query-terms": {
     "name": "dynamic-inspector-query-terms",
-    "blocks": {
-      "prefix/dynamic-inserter-query-terms": "Dynamic Inspector Query Terms"
-    },
+    "blocks": ["prefix/dynamic-inserter-query-terms"],
     "cat": ["dynamic", "inspector-controls", "php-render"],
     "include": false
   },
   "dynamic-serverside-render": {
     "name": "dynamic-serverside-render",
-    "blocks": {
-      "myprefix/dynamic-serverside-render": "Dynamic Serverside Render"
-    },
+    "blocks": ["myprefix/dynamic-serverside-render"],
     "cat": ["dynamic", "php-render"],
     "include": false
   },
   "dynamic-simple": {
     "name": "dynamic-simple",
-    "blocks": { "myprefix/dynamic-simple": "Dynamic Block Simple" },
+    "blocks": ["myprefix/dynamic-simple"],
     "cat": ["dynamic", "php-render"],
     "include": false
   },
   "dynamic-with-save-function": {
     "name": "dynamic-with-save-function",
-    "blocks": {
-      "myprefix/dynamic-with-save-function": "Dynamic Block With Save Function"
-    },
+    "blocks": ["myprefix/dynamic-with-save-function"],
     "cat": ["dynamic", "php-render"],
     "include": false
   },
   "filter-block-settings": {
     "name": "filter-block-settings",
-    "blocks": {},
+    "blocks": [],
     "cat": "filter",
-    "include": true
+    "include": false
   },
   "filter-core-block-controls": {
     "name": "filter-core-block-controls",
-    "blocks": {},
+    "blocks": [],
     "cat": "filter",
     "include": false
   },
   "filter-core-block-supports": {
     "name": "filter-core-block-supports",
-    "blocks": {},
+    "blocks": [],
     "cat": ["filter"],
     "include": false
   },
   "inner-blocks": {
     "name": "inner-blocks",
-    "blocks": {
-      "myprefix/inner-blocks": "Inner Blocks"
-    },
+    "blocks": ["myprefix/inner-blocks"],
     "cat": ["inner-blocks"],
     "include": false
   },
   "inner-blocks-context": {
     "name": "inner-blocks-context",
-    "blocks": {
-      "myprefix/inner-blocks-context-parent": "Inner Blocks Context Parent",
-      "myprefix/inner-blocks-context-child": "Inner Blocks Context Child"
-    },
+    "blocks": [
+      "myprefix/inner-blocks-context-parent",
+      "myprefix/inner-blocks-context-child"
+    ],
     "cat": ["dynamic", "inner-blocks", "context"],
     "include": false
   },
   "inner-blocks-template": {
     "name": "inner-blocks-template",
-    "blocks": {
-      "myprefix/inner-bocks-template-parent": "Inner Blocks Template Parent",
-      "myprefix/inner-blocks-template-child": "Inner Blocks Template Child"
-    },
+    "blocks": [
+      "myprefix/inner-bocks-template-parent",
+      "myprefix/inner-blocks-template-child"
+    ],
     "cat": ["inner-blocks"],
     "include": false
   },
   "inspector-control-tabs": {
     "name": "inspector-control-tabs",
-    "blocks": {
-      "myprefix/inspector-control-tabs": "Inspector Control Tabs"
-    },
+    "blocks": ["myprefix/inspector-control-tabs"],
     "cat": ["inspector-controls", "php-render"],
     "include": false
   },
   "meta-attribute": {
     "name": "meta-attribute",
-    "blocks": {
-      "myprefix/meta-attribute": "Meta Box Attribute"
-    },
+    "blocks": ["myprefix/meta-attribute"],
     "cat": ["meta"],
     "include": false
   },
   "meta-block-inspector": {
     "name": "meta-block-inspector",
-    "blocks": {
-      "myprefix/meta-inner-blocks-inspector": "Meta Inner Blocks Inspector"
-    },
+    "blocks": ["myprefix/meta-inner-blocks-inspector"],
     "cat": ["meta", "php-render"],
     "include": false
   },
   "meta-callback": {
     "name": "meta-callback",
-    "blocks": {
-      "myprefix/meta-callback": "Meta Callback"
-    },
+    "blocks": ["myprefix/meta-callback"],
     "cat": ["meta", "php-render"],
     "include": false
   },
   "meta-document-settings": {
     "name": "meta-document-settings",
-    "blocks": {},
+    "blocks": [],
     "cat": ["meta"],
     "include": false
   },
   "meta-notices-save-lock": {
     "name": "meta-notices-save-lock",
-    "blocks": {
-      "myprefix/meta-notices-save-lock": "Meta Notices and Save-Lock"
-    },
+    "blocks": ["myprefix/meta-notices-save-lock"],
     "cat": ["meta", "notices", "php-render"],
     "include": false
   },
   "meta-plugin-sidebar": {
     "name": "meta-plugin-sidebar",
-    "blocks": {},
+    "blocks": [],
     "cat": ["meta", "plugin sidebar"],
     "include": false
   },
   "meta-simple": {
     "name": "meta-simple",
-    "blocks": {
-      "myprefix/meta-simple": "Meta Simple"
-    },
+    "blocks": ["myprefix/meta-simple"],
     "cat": ["meta"],
     "include": false
   },
   "meta-with-media": {
     "name": "meta-with-media",
-    "blocks": {},
+    "blocks": [],
     "cat": ["meta", "media", "plugin sidebar"],
     "include": false
   },
   "meta-with-select-doc-settings": {
     "name": "meta-with-select-doc-settings",
-    "blocks": {},
+    "blocks": [],
     "cat": ["meta", "plugin sidebar"],
     "include": false
   },
   "render-php-template": {
     "name": "render-php-template",
-    "blocks": {
-      "myprefix/render-php-template": "Render PHP Template"
-    },
+    "blocks": ["myprefix/render-php-template"],
     "cat": ["dynamic", "php-render"],
     "include": false
   },
   "richtext-basic": {
     "name": "richtext-basic",
-    "blocks": {
-      "myprefix/richtext-basic": "RichText Basic"
-    },
+    "blocks": ["myprefix/richtext-basic"],
     "cat": ["richtext"],
     "include": false
   },
   "richtext-multi-components": {
     "name": "richtext-multi-components",
-    "blocks": {
-      "myprefix/richtext-multi-components": "RichText Multiple Components"
-    },
+    "blocks": ["myprefix/richtext-multi-components"],
     "cat": ["richtext"],
     "include": false
   },
   "richtext-multiline": {
     "name": "richtext-multiline",
-    "blocks": {
-      "myprefix/richtext-multiline": "RichText Multiline"
-    },
+    "blocks": ["myprefix/richtext-multiline"],
     "cat": ["richtext"],
     "include": false
   },
   "richtext-split-merge": {
     "name": "richtext-split-merge",
-    "blocks": {
-      "myprefix/richtext-split-merge": "RichText Split Merge"
-    },
+    "blocks": ["myprefix/richtext-split-merge"],
     "cat": ["richtext"],
     "include": false
   },
   "richtext-text-align": {
     "name": "richtext-text-align",
-    "blocks": {
-      "myprefix/richtext-text-align": "RichText Text Align"
-    },
+    "blocks": ["myprefix/richtext-text-align"],
     "cat": ["richtext"],
     "include": false
   },
   "richtext-toolbar-buttons": {
     "name": "richtext-toolbar-buttons",
-    "blocks": {
-      "myprefix/richtext-toolbar-buttons": "RichText Toolbar Buttons"
-    },
+    "blocks": ["myprefix/richtext-toolbar-buttons"],
     "cat": ["richtext"],
     "include": false
   },
   "richtext-transforms-multiblock": {
     "name": "richtext-transforms-multiblock",
-    "blocks": {
-      "myprefix/richtext-transforms-multiblock": "RichText Transforms Multiblock"
-    },
+    "blocks": ["myprefix/richtext-transforms-multiblock"],
     "cat": ["richtext"],
     "include": false
   },
   "richtext-transforms-simple": {
     "name": "richtext-transforms-simple",
-    "blocks": {
-      "myprefix/richtext-transforms-simple": "RichText Transforms Simple"
-    },
+    "blocks": ["myprefix/richtext-transforms-simple"],
     "cat": ["richtext"],
     "include": false
   },
   "templates": {
     "name": "templates",
-    "blocks": {},
+    "blocks": [],
     "cat": ["templates", "styles"],
     "include": false
   },
+  "test-two-blocks": {
+    "name": "test-two-blocks",
+    "blocks": ["myprefix/test-two-blocks-one", "myprefix/test-two-blocks-two"],
+    "custom-entry-point-directories": ["block-one", "block-two"],
+    "cat": ["misc"],
+    "include": true
+  },
   "variations-existing-blocks": {
     "name": "variations-existing-blocks",
-    "blocks": {},
+    "blocks": [],
     "cat": "variations",
     "include": false
   },
   "variations-php-filter": {
     "name": "variations-php-filter",
-    "blocks": {},
+    "blocks": [],
     "cat": "variations",
     "include": false
   },
   "variations-query-block": {
     "name": "variations-query-block",
-    "blocks": {},
+    "blocks": [],
     "cat": "variations",
     "include": false
   },
   "variations-register-block": {
     "name": "variations-register-block",
-    "blocks": {
-      "myprefix/variations-register-block": "Variations Register Block"
-    },
+    "blocks": ["myprefix/variations-register-block"],
     "cat": ["variations"],
     "include": false
   }

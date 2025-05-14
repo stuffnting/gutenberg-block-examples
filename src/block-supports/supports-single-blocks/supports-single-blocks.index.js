@@ -8,7 +8,7 @@ import { RichText, useBlockProps } from "@wordpress/block-editor";
 /**
  * Local dependencies
  */
-import metadata from "./block-supports.block.json";
+import metadata from "./supports-single-blocks.block.json";
 
 registerBlockType(metadata, {
   edit: (props) => {
