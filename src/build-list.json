@@ -58,7 +58,7 @@
     "blocks": ["myprefix/block-json", "myprefix/another-block-json"],
     "name": "block-json",
     "cat": ["richtext"],
-    "include": false
+    "include": true
   },
   "block-lock": {
     "name": "block-lock",
@@ -82,7 +82,7 @@
     "name": "block-styles",
     "blocks": [],
     "cat": ["styles", "filter"],
-    "include": false
+    "include": true
   },
   "block-supports": {
     "name": "block-supports",
@@ -95,7 +95,7 @@
       "supports-inner-blocks"
     ],
     "cat": ["richtext", "inner-blocks"],
-    "include": true
+    "include": false
   },
   "dynamic-attribute": {
     "name": "dynamic-attribute",
@@ -306,7 +306,7 @@
     "blocks": ["myprefix/test-two-blocks-one", "myprefix/test-two-blocks-two"],
     "custom-entry-point-directories": ["block-one", "block-two"],
     "cat": ["misc"],
-    "include": true
+    "include": false
   },
   "variations-existing-blocks": {
     "name": "variations-existing-blocks",

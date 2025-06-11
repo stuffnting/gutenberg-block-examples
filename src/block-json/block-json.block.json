@@ -24,6 +24,10 @@
     },
     "anchor": true
   },
+  "styles": [
+    { "name": "normal", "label": "The Normal One", "isDefault": true },
+    { "name": "big-pink", "label": "The Big Pink One" }
+  ],
   "example": {
     "attributes": {
       "content": "Tester McTest!"

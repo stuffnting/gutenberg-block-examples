@@ -26,8 +26,10 @@ const buildListArray = Object.values(BUILD_LIST_DATA)
 	.filter((el) => (el.include ? true : false))
 	.map((el) => el.name);
 
+//console.log(buildListArray);
+
 /**
- * Make a normal entry point object for Webpack.
+ * Make an entry point object for Webpack.
  *
  * Each property is name: source
  * ./src/${el}/${el}.index.js is in form ./src/block-name/block-name.index.js
@@ -51,33 +53,25 @@ const defaultListObj = buildListArray.length
 		)
 	: {};
 
-/**
- * Make an custom entry point object for Webpack.
- *
- * The custom entry point are defined in the `custom-entry-point-directories` field of build-list.json
- */
+//[el]: `./src/${el}/${el}.index.js`,hasOwnProperty(BUILD_LIST_DATA[el], "custom-entry-points")
+
 const customBuildListObj = buildListArray.length
 	? buildListArray.reduce((acc, el) => {
-			/**
-			 * Does this item in buildListArray have a `custom-entry-point` field?
-			 * Find out by checking against the complete build list object,
-			 * if the field is there, it should contain an array.
-			 */
-			const customArray =
-				BUILD_LIST_DATA[el].hasOwnProperty(
-					'custom-entry-point-directories'
-				) &&
-				Array.isArray(
-					BUILD_LIST_DATA[el]['custom-entry-point-directories']
-				)
-					? BUILD_LIST_DATA[el]['custom-entry-point-directories']
-					: null;
+			console.log(BUILD_LIST_DATA[el]);
+			const customArray = BUILD_LIST_DATA[el].hasOwnProperty(
+				'custom-entry-points'
+			)
+				? BUILD_LIST_DATA[el]['custom-entry-points']
+				: null;
 			if (customArray) {
 				customArray.forEach((customEl, index) => {
+					console.log('BINGO');
+					console.log(`./src/${el}/${customEl}`);
+					console.log(fs.existsSync(`./src/${el}/${customEl}`));
 					if (fs.existsSync(`./src/${el}/${customEl}`)) {
 						acc = {
 							...acc,
-							[`${el}/${customEl}`]: `./src/${el}/${customEl}/${customEl}.index.js`,
+							[`${el}-${index}`]: `./src/${el}/${customEl}`,
 						};
 					}
 				});
@@ -101,8 +95,8 @@ console.log(buildListObj);
  * @returns {boolean} - Whether to copy the file to the build folder.
  */
 const filterCB = (absoluteSourcePath) => {
-	const pathArray = absoluteSourcePath.split('src/');
-	const fileDirectory = pathArray[1].split('/')[0];
+	const pathArray = absoluteSourcePath.split('/');
+	const fileDirectory = pathArray.slice(-2, -1).join();
 
 	if (buildListArray.includes(fileDirectory)) {
 		return true;
@@ -118,53 +112,40 @@ const filterCB = (absoluteSourcePath) => {
  *                      Either two elements for example-name.ext, or three elements for example-name.index.ext
  */
 const processFilename = (absoluteFilename) => {
-	//const directory = absoluteFilename.split("/").slice(-2, -1).join();
-	const exampleDirectory = absoluteFilename.split('src/')[1].split('/')[0];
-	const relativePath = absoluteFilename
-		.split('src/')[1]
-		.split('/')
-		.slice(0, -1)
-		.join('/');
-	const blockDirectory = relativePath.split('/').slice(-1).join();
+	const directory = absoluteFilename.split('/').slice(-2, -1).join();
 	const filenameArray = absoluteFilename
 		.split('/')
 		.slice(-1)
 		.join()
 		.split('.');
 
-	return { exampleDirectory, blockDirectory, relativePath, filenameArray };
+	return { directory, filenameArray };
 };
 
 /**
  * Define the more complex copy-webpack-plugin patterns here.
  */
 const phpPattern = {
-	//context: "src",
-	from: 'src/**/**/*.php',
+	context: 'src',
+	from: '*/*.php',
 	to({ absoluteFilename }) {
-		const {
-			exampleDirectory,
-			blockDirectory,
-			relativePath,
-			filenameArray,
-		} = processFilename(absoluteFilename);
+		const { directory, filenameArray } = processFilename(absoluteFilename);
 
 		/**
 		 * ./src/example-name/example-name.php becomes index.php
-		 * ./src/example-name/example-name.partname.php becomes partname.php
+		 * ./src/example-name/example-name.partname.php becomes file.php
 		 * ./src/example-name/filename.php becomes filename.php
 		 */
-		return filenameArray.length === 2 && filenameArray[0] === blockDirectory
-			? `./${relativePath}/index.php`
+		return filenameArray.length === 2 && filenameArray[0] === directory
+			? `./${directory}/index.php`
 			: filenameArray.length === 3
-				? `./${relativePath}/${filenameArray[1]}.php`
-				: `./${relativePath}/[name].php`;
+				? `./${directory}/${filenameArray[1]}.php`
+				: `./${directory}/[name].php`;
 	},
 	filter: filterCB,
 	noErrorOnMissing: true,
 };
 
-// Used to copy .css files, scss are processed by miniCSS
 const cssPattern = {
 	context: 'src',
 	from: '*/*.css',
@@ -183,23 +164,18 @@ const jsViewPattern = {
 };
 
 const jsonPattern = {
-	//context: "src",
-	from: 'src/**/**/*.json',
+	context: 'src',
+	from: '*/*.json',
 	to({ absoluteFilename }) {
-		const {
-			exampleDirectory,
-			blockDirectory,
-			relativePath,
-			filenameArray,
-		} = processFilename(absoluteFilename);
+		const { directory, filenameArray } = processFilename(absoluteFilename);
 		// ./src/example-name/example-name.block.js becomes block.json
 		// All other JSON files get copied without a name change
 		return filenameArray.length === 3 &&
-			[blockDirectory, 'block', 'json'].every(
+			[directory, 'block', 'json'].every(
 				(el, i) => el === filenameArray[i]
 			)
-			? `./${relativePath}/block.json`
-			: `./${relativePath}/[name].json`;
+			? `./${directory}/block.json`
+			: `./${directory}/[name].json`;
 	},
 	filter: filterCB,
 	noErrorOnMissing: true,
@@ -228,31 +204,24 @@ const extraPlugins = [
 ];
 
 /**
- * *** This works OK with the default @WP MiniCssExtractPlugin settings***
- *
- * If you need to change the output folder, use the next few lines.
+ * Change the output folder for the MiniCssExtractPlugin in @WP/scripts config.
+ * If new MiniCssExtractPlugin is used, two instances exist and 2 copies of css files are made.
  */
-/* const editMiniCss = defaultConfig.plugins.filter(
+const editMiniCss = defaultConfig.plugins.filter(
 	(el) => el instanceof MiniCssExtractPlugin
 )[0]; // Filter will return an array with one element
-// Set output directory
-editMiniCss.options.filename = '[name]/style.css'; */
-//const plugins = [...new Set([...defaultConfig.plugins, ...extraPlugins, ...extraPlugins])];
 
-/**
- * Merge plugin arrays without duplicates
- */
-const plugins = [...new Set([...defaultConfig.plugins, ...extraPlugins])];
+editMiniCss.options.filename = '[name]/style.css';
+
+// Merge plugins
+const plugins = defaultConfig.plugins.concat(extraPlugins, editMiniCss);
 
 const buildPath = path.join(
 	__dirname,
 	'../WP Test 1/app/public/wp-content/plugins/gutenberg-example-blocks'
 );
 console.log(`Build path: ${buildPath}`);
-
 /**
- * *** WINDOWS ***
- *
  * Export
  *
  * Build to Local Sites on Windows

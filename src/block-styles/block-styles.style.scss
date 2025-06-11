@@ -1,9 +1,25 @@
-.is-style-aquamarine,
-.editor-styles-wrapper .is-style-aquamarine {
+.is-style-aquamarine {
   color: aquamarine;
 }
 
-.is-style-firebrick,
-.editor-styles-wrapper .is-style-firebrick {
+.is-style-firebrick {
   color: firebrick;
+}
+
+.wp-block-myprefix-block-styles {
+  color: white;
+  text-align: center;
+  font-weight: bolder;
+  background-color: black;
+  padding: 30px;
+}
+
+.is-style-big-pink {
+  background-color: Fuchsia;
+  padding: 100px;
+}
+
+.is-style-little-maroon {
+  background-color: maroon;
+  padding: 10px;
 }

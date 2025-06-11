@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "myprefix/block-styles",
+  "title": "Test Block Styles",
+  "description": "A block to test how block style variations work when registered with a custom block.",
+  "icon": "lightbulb",
+  "category": "text",
+  "styles": [
+    { "name": "normal", "label": "The Normal One", "isDefault": true },
+    { "name": "big-pink", "label": "The Big Pink One" },
+    { "name": "little-maroon", "label": "The Little Maroon One" }
+  ],
+  "editorScript": "file:./index.js",
+  "style": "file:./style.css"
+}
