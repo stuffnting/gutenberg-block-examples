@@ -228,21 +228,18 @@ const extraPlugins = [
 ];
 
 /**
- * *** This works OK with the default @WP MiniCssExtractPlugin settings***
- *
  * If you need to change the output folder, use the next few lines.
  */
-/* const editMiniCss = defaultConfig.plugins.filter(
+const editMiniCss = defaultConfig.plugins.filter(
 	(el) => el instanceof MiniCssExtractPlugin
 )[0]; // Filter will return an array with one element
-// Set output directory
-editMiniCss.options.filename = '[name]/style.css'; */
-//const plugins = [...new Set([...defaultConfig.plugins, ...extraPlugins, ...extraPlugins])];
 
-/**
- * Merge plugin arrays without duplicates
- */
-const plugins = [...new Set([...defaultConfig.plugins, ...extraPlugins])];
+// Set output directory
+editMiniCss.options.filename = '[name]/style.css';
+
+const plugins = [
+	...new Set([...defaultConfig.plugins, ...extraPlugins, ...extraPlugins]),
+];
 
 const buildPath = path.join(
 	__dirname,

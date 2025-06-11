@@ -2,19 +2,20 @@
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-import {
-	registerBlockStyle,
-	unregisterBlockStyle,
-	registerBlockType,
-} from '@wordpress/blocks';
+import { registerBlockStyle, unregisterBlockStyle } from '@wordpress/blocks';
 import domReady from '@wordpress/dom-ready';
 import { addFilter } from '@wordpress/hooks';
-import { useBlockProps } from '@wordpress/block-editor';
+/**
+ * This dependency is not used, but is included to force wp-scripts to
+ * add wp-edit-post to the dependencies in index.assets.php. Without
+ * this extra dependency, @wordpress/wp-dom does not work.
+ */
+import '@wordpress/edit-post';
 
 /**
  * Local dependencies
  */
-import metadata from './block-styles.block.json';
+import './block-styles-test-block.index';
 import styles from './block-styles.style.scss';
 
 /**
@@ -69,27 +70,3 @@ addFilter(
 		return settings;
 	}
 );
-
-/**
- * Register a block to test the style variations registered from block.json.
- */
-registerBlockType(metadata.name, {
-	edit: () => {
-		const blockProps = useBlockProps();
-
-		return (
-			<div {...blockProps}>
-				<p>Hello chunky!</p>
-			</div>
-		);
-	},
-	save: () => {
-		const blockProps = useBlockProps.save();
-
-		return (
-			<div {...blockProps}>
-				<p>Hello chunky!</p>
-			</div>
-		);
-	},
-});
