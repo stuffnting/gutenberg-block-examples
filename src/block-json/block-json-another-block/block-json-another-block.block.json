@@ -1,0 +1,11 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "myprefix/block-json-another-block",
+	"title": "Test another block JSON",
+	"description": "A block to test using JSON files that are not named block.json",
+	"category": "text",
+	"icon": "lightbulb",
+	"editorScript": "file:./index.js",
+	"style": "file:./style.css"
+}

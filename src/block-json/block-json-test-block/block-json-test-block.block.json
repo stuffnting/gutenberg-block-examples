@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "myprefix/block-json-test-block",
+	"title": "Test Block JSON",
+	"icon": "lightbulb",
+	"category": "text",
+	"description": "Test block.json file",
+	"keywords": ["paragraph", "test"],
+	"textdomain": "textDomain",
+	"attributes": {
+		"content": {
+			"type": "string",
+			"source": "html",
+			"selector": "p",
+			"default": ""
+		}
+	},
+	"supports": {
+		"align": true,
+		"color": {
+			"background": true,
+			"text": true
+		},
+		"anchor": true
+	},
+	"styles": [
+		{ "name": "normal", "label": "The Normal One", "isDefault": true },
+		{ "name": "big-pink", "label": "The Big Pink One" },
+		{ "name": "i-am-green", "label": "I Am Green" }
+	],
+	"example": {
+		"attributes": {
+			"content": "Tester McTest!"
+		}
+	},
+	"editorScript": "file:./index.js",
+	"style": "file:./style.css"
+}

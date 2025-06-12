@@ -22,7 +22,7 @@
 		"name": "block-categories",
 		"blocks": ["myprefix/change-inserter-test-block"],
 		"cat": ["categories", "filter"],
-		"include": true
+		"include": false
 	},
 	"block-collection": {
 		"name": "block-collection",
@@ -55,8 +55,15 @@
 		"include": false
 	},
 	"block-json": {
-		"blocks": ["myprefix/block-json", "myprefix/another-block-json"],
 		"name": "block-json",
+		"blocks": [
+			"myprefix/block-json-test-block",
+			"myprefix/block-json-another-block"
+		],
+		"custom-entry-point-directories": [
+			"block-json-test-block",
+			"block-json-another-block"
+		],
 		"cat": ["richtext"],
 		"include": false
 	},
@@ -64,7 +71,7 @@
 		"name": "block-lock",
 		"blocks": ["myprefix/block-lock"],
 		"cat": ["templates", "patterns", "lock"],
-		"include": false
+		"include": true
 	},
 	"block-lock-editor-mode": {
 		"name": "block-lock-editor-mode",
@@ -76,13 +83,13 @@
 		"name": "block-patterns",
 		"blocks": [],
 		"cat": ["templates", "styles"],
-		"include": false
+		"include": true
 	},
 	"block-styles": {
 		"name": "block-styles",
 		"blocks": [],
 		"cat": ["styles", "filter"],
-		"include": true
+		"include": false
 	},
 	"block-supports": {
 		"name": "block-supports",

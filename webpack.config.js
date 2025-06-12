@@ -10,7 +10,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // Get the build list from the JSON file. `require` converts JSON to an object.
 const BUILD_LIST_DATA = require('./src/build-list.json');
 
-// Log all block names for README.md
+// Log all example names
+console.log('*** Complete example list ***');
+
 Object.values(BUILD_LIST_DATA).forEach((el) =>
 	console.log(`[\`${el.name}\`](./src/${el.name})`)
 );
@@ -88,6 +90,7 @@ const customBuildListObj = buildListArray.length
 
 const buildListObj = { ...defaultListObj, ...customBuildListObj };
 
+console.log('*** Build list **');
 console.log(buildListObj);
 
 /**
@@ -245,7 +248,7 @@ const buildPath = path.join(
 	__dirname,
 	'../WP Test 1/app/public/wp-content/plugins/gutenberg-example-blocks'
 );
-console.log(`Build path: ${buildPath}`);
+console.log(`*** Build path ***  ${buildPath}`);
 
 /**
  * *** WINDOWS ***
