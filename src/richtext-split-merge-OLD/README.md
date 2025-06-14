@@ -4,9 +4,7 @@
 
 When enter is hit with the cursor in the middle of the text in a `RichText` block, the block can be made to split into two of the same type of block. Similarly, two adjacent instances of the same type of block, can be made to merge into a single block using the delete, or backspace keys.
 
-This example demonstrates how to add `supports.splitting` and `merge` to a `RichText` component.
-
-Note, `onSplit` was [depreciated in WP 6.6](https://make.wordpress.org/core/2024/06/24/miscellaneous-editor-changes-in-wordpress-6-6/#Unified-split-logic-for-writing-flow) and replaced with [block supports splitting](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-supports/#splitting).
+This example demonstrates how to add `split` and `merge` to a `RichText` component.
 
 ## In this code
 
