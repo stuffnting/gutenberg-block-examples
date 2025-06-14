@@ -248,9 +248,9 @@
     "cat": ["richtext"],
     "include": false
   },
-  "richtext-multiline": {
-    "name": "richtext-multiline",
-    "blocks": ["myprefix/richtext-multiline"],
+  "richtext-multiline-OLD": {
+    "name": "richtext-multiline-OLD",
+    "blocks": ["myprefix/richtext-multiline-OLD"],
     "cat": ["richtext"],
     "include": false
   },

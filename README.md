@@ -127,7 +127,7 @@ The PHP file uses the transpiled names, whereas, the `src` JS files uses the fil
 
 [`richtext-multi-components`](./src/richtext-multi-components)
 
-[`richtext-multiline`](./src/richtext-multiline)
+[`richtext-multiline`](./src/richtext-multiline-OLD)
 
 [`richtext-toolbar-buttons`](./src/richtext-toolbar-buttons)
 
@@ -268,7 +268,7 @@ The PHP file uses the transpiled names, whereas, the `src` JS files uses the fil
 
 [`richtext-multi-components`](./src/richtext-multi-components)
 
-[`richtext-multiline`](./src/richtext-multiline)
+[`richtext-multiline`](./src/richtext-multiline-OLD)
 
 [`richtext-split-merge`](./src/richtext-split-merge)
 

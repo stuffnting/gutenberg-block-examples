@@ -1,7 +1,7 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 2,
-  "name": "myprefix/richtext-multiline",
+  "name": "myprefix/richtext-multiline-old",
   "title": "RichText Multiline",
   "icon": "lightbulb",
   "category": "text",

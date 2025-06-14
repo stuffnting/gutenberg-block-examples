@@ -6,14 +6,14 @@
  * 
  *****************************************************************************/
 
-add_action( 'init', 'myprefix_richtext_multiline' );
+add_action('init', 'myprefix_richtext_multiline_OLD');
 
-function myprefix_richtext_multiline() {
+function myprefix_richtext_multiline_OLD() {
 
-  if ( ! function_exists( 'register_block_type' ) ) {
+  if (! function_exists('register_block_type')) {
     // Gutenberg is not active.
     return;
   }
 
-  register_block_type( __DIR__ );
+  register_block_type(__DIR__);
 }
