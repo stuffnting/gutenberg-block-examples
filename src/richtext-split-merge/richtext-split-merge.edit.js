@@ -51,6 +51,7 @@ export const edit = (props) => {
       tagName='h2'
       value={content}
       onChange={(value) => setAttributes({ content: value })}
+      disableLineBreaks={true}
       onMerge={mergeBlocks}
       onReplace={onReplace}
       onRemove={() => onReplace([])}

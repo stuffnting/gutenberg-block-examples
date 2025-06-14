@@ -240,7 +240,7 @@
     "name": "richtext-basic",
     "blocks": ["myprefix/richtext-basic"],
     "cat": ["richtext"],
-    "include": false
+    "include": true
   },
   "richtext-multi-components": {
     "name": "richtext-multi-components",
