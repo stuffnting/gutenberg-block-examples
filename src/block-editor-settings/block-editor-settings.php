@@ -1,4 +1,15 @@
 <?php
+
+/**
+ * Include the PHP filter files.
+ */
+include 'block-type-metadata-settings.php';
+include 'wp-theme-json-data-user.php';
+include 'block-editor-settings-all.php';
+
+/**
+ * Enqueue the JS file.
+ */
 add_action('enqueue_block_editor_assets', 'myprefix_block_editor_settings');
 
 function myprefix_block_editor_settings() {
@@ -20,99 +31,4 @@ function myprefix_block_editor_settings() {
     $asset_file['version'],
     array('in_footer' => true)
   );
-}
-
-/**
- * Edit the editor default styles.
- */
-
-add_filter('block_editor_settings_all', 'myprefix_restrict_code_editor', 10, 2);
-
-function myprefix_restrict_code_editor($settings) {
-
-  $can_active_plugins = current_user_can('activate_plugins');
-
-  // Disable the Code Editor for users that cannot activate plugins (Administrators).
-  if (! $can_active_plugins) {
-    $settings['codeEditingEnabled'] = false;
-  }
-
-  $settings['alignWide'] = false;
-  //$settings['imageEditing'] = true;
-  $settings['allowedBlockTypes'] = array(
-    'core/paragraph',
-    'core/list',
-    'core/list-item',
-    'core/buttons',
-    'core/button',
-    'core/image',
-    'code/quote',
-    'core/group'
-  );
-
-  return $settings;
-}
-
-/**
- * Edit block settings.
- * 
- * Note, the settings in theme.json trump these settings.
- */
-
-add_filter('block_type_metadata_settings', function ($settings, $metadata) {
-
-  // change per-block type
-  if ($settings['name'] === 'core/image' && isset($settings['supports']['align'])) {
-    //Remove completely
-    //unset($settings['supports']['align']);
-
-    // Change available options
-    $settings['supports']['align'] = ['wide'];
-  }
-
-  // Remove for all block types. Not all blocks have this set
-  if (isset($settings['supports']['align'])) {
-    //Remove completely
-    //unset($settings['supports']['align']);
-
-    // Change available options
-    //$settings['supports']['align'];
-  }
-  return $settings;
-}, 10, 2);
-
-
-/**
- * Override theme.json.
- */
-add_filter('wp_theme_json_data_user', 'snt_filter_theme_json_data_theme');
-
-function snt_filter_theme_json_data_theme($theme_json) {
-
-  // Conditional on users permissions
-  $is_administrator = current_user_can('edit_theme_options');
-
-  if ($is_administrator) {
-    $new_data = array(
-      'version'  => 3,
-      'settings' => array(
-        // Disable color controls for all users except Administrators.
-        'color' => array(
-          'custom'           => false,
-          'background'       => false,
-          'customDuotone'    => false,
-          'customGradient'   => false,
-          'defaultGradients' => false,
-          'defaultPalette'   => false,
-          'text'             => false,
-        ),
-        // Restrict the unite allowed for padding and margins.
-        'spacing' => array(
-          'units' => ['px']
-        )
-      ),
-    );
-  }
-
-  return $theme_json->update_with($new_data);
 }
