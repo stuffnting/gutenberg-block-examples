@@ -30,6 +30,12 @@
     "cat": ["collections", "categories"],
     "include": false
   },
+  "block-editor-settings": {
+    "name": "block-editor-settings",
+    "blocks": [],
+    "cat": ["filter"],
+    "include": true
+  },
   "block-hooks-basic": {
     "name": "block-hooks-basic",
     "blocks": ["myprefix/block-hooks-basic"],
@@ -56,8 +62,14 @@
   },
   "block-json": {
     "name": "block-json",
-    "blocks": ["myprefix/block-json-test-block", "myprefix/block-json-another-block"],
-    "custom-entry-point-directories": ["block-json-test-block", "block-json-another-block"],
+    "blocks": [
+      "myprefix/block-json-test-block",
+      "myprefix/block-json-another-block"
+    ],
+    "custom-entry-point-directories": [
+      "block-json-test-block",
+      "block-json-another-block"
+    ],
     "cat": ["richtext"],
     "include": false
   },
@@ -87,8 +99,14 @@
   },
   "block-supports": {
     "name": "block-supports",
-    "blocks": ["myprefix/supports-single-blocks", "myprefix/supports-inner-blocks"],
-    "custom-entry-point-directories": ["supports-single-blocks", "supports-inner-blocks"],
+    "blocks": [
+      "myprefix/supports-single-blocks",
+      "myprefix/supports-inner-blocks"
+    ],
+    "custom-entry-point-directories": [
+      "supports-single-blocks",
+      "supports-inner-blocks"
+    ],
     "cat": ["richtext", "inner-blocks"],
     "include": false
   },
@@ -160,13 +178,19 @@
   },
   "inner-blocks-context": {
     "name": "inner-blocks-context",
-    "blocks": ["myprefix/inner-blocks-context-parent", "myprefix/inner-blocks-context-child"],
+    "blocks": [
+      "myprefix/inner-blocks-context-parent",
+      "myprefix/inner-blocks-context-child"
+    ],
     "cat": ["dynamic", "inner-blocks", "context"],
     "include": false
   },
   "inner-blocks-template": {
     "name": "inner-blocks-template",
-    "blocks": ["myprefix/inner-bocks-template-parent", "myprefix/inner-blocks-template-child"],
+    "blocks": [
+      "myprefix/inner-bocks-template-parent",
+      "myprefix/inner-blocks-template-child"
+    ],
     "cat": ["inner-blocks"],
     "include": false
   },
@@ -240,7 +264,7 @@
     "name": "richtext-basic",
     "blocks": ["myprefix/richtext-basic"],
     "cat": ["richtext"],
-    "include": true
+    "include": false
   },
   "richtext-multi-components": {
     "name": "richtext-multi-components",
