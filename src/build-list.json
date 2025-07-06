@@ -34,7 +34,7 @@
     "name": "block-editor-settings",
     "blocks": [],
     "cat": ["filter"],
-    "include": true
+    "include": false
   },
   "block-hooks-basic": {
     "name": "block-hooks-basic",
@@ -169,6 +169,12 @@
     "blocks": [],
     "cat": ["filter"],
     "include": false
+  },
+  "i11y-api-g-l-d": {
+    "name": "i11y-api-g-l-d",
+    "blocks": ["myprefix/i11y-api-g-l-d"],
+    "cat": ["interactivity", "dynamic"],
+    "include": true
   },
   "inner-blocks": {
     "name": "inner-blocks",

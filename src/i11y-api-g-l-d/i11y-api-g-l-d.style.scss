@@ -1,0 +1,80 @@
+.wp-block-myprefix-i11y-api-g-l-d {
+  box-sizing: border-box;
+  background-color: #f2fcf6;
+  color: #023a51;
+  border: 3px solid #023a51;
+  border-radius: 1.5rem;
+  text-align: center;
+  overflow: hidden;
+
+  .product {
+    padding: 3rem 2rem;
+
+    &-name {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    &-number-items {
+      margin: 1.25rem auto;
+      font-size: 1.75rem;
+      color: #023a51;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &-form {
+        padding: 0.5rem 1rem;
+        margin-left: 0.5rem;
+        border: 2px solid #023a51;
+        border-radius: 1rem;
+        background-color: #fff;
+        font-size: 1.5rem;
+        text-align: center;
+        color: #023a51;
+        max-width: 130px;
+      }
+    }
+
+    &-sales-tax {
+      margin: 1.25rem auto;
+
+      &-form {
+        padding: 0.25rem 1rem;
+        margin-left: 0.5rem;
+        border: 1px solid #023a51;
+        border-radius: 1rem;
+        background-color: #fff;
+        font-size: 1rem;
+        text-align: end;
+        color: #023a51;
+        max-width: 130px;
+      }
+    }
+
+    &-output {
+      display: none;
+
+      &.show {
+        display: block;
+      }
+
+      span {
+        color: #f2fcf6;
+        background: #0cab49;
+        font-weight: bold;
+        border-radius: 5px;
+        padding: 0.25rem 0.5rem;
+
+        &.items-plural {
+          color: initial;
+          background: none;
+          font-weight: normal;
+          border-radius: none;
+          padding: initial;
+        }
+      }
+    }
+  }
+}
