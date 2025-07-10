@@ -1,27 +1,17 @@
+// const { merge } = require("webpack-merge");
 const defaultConfig = require('@wordpress/scripts/config/webpack.config');
-
-/**
- * If the `start` script in package.json is "wp-scripts start  --experimental-modules",
- * defaultConfig will be an array containing 2 different configs,
- * without --experimental-modules it will be an object.
- * The normal, non-module config is called classic.
- */
-const [defaultConfigClassic, defaultConfigModule] = Array.isArray(defaultConfig)
-  ? defaultConfig
-  : [defaultConfig, undefined];
 
 const fs = require('fs');
 const path = require('path');
 
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { log } = require('console');
 
 /**
  * Source path
  */
 const sourcePath = path.resolve(__dirname, 'src');
-console.log(`*** Sources path ***  ${sourcePath}`);
+console.log(`*** SourceS path ***  ${sourcePath}`);
 
 /**
  * Build path *** Set Here ***
@@ -29,14 +19,13 @@ console.log(`*** Sources path ***  ${sourcePath}`);
 const buildPath = path.resolve(
   __dirname,
   '..',
-  'WP-TESTER',
+  'WP Test 1',
   'app',
   'public',
   'wp-content',
   'plugins',
   'gutenberg-example-blocks'
 );
-
 console.log(`*** Build path ***  ${buildPath}`);
 
 // Get the build list from the JSON file. `require` converts JSON to an object.
@@ -81,9 +70,7 @@ console.log(buildListMap);
  */
 const extensionsToCopy = ['.md', '.php', '.css', '.json']; // Copy these file types with CopyPlugin
 const extensionsForEntry = ['.js', '.scss', '.sass']; // Possible entry points.
-const allowedJSEntryClassic = ['index.js']; // Limit JS entry points.
-const allowedJSEntryModule = ['view.js']; // Limit JS entry points.
-const allowedJSEntryBoth = [...allowedJSEntryClassic, ...allowedJSEntryModule];
+const allowedJSEntry = ['index.js', 'view.js']; // Limit JS entry points.
 
 // Root files to always copy across.
 const rootFilesToCopy = [
@@ -99,8 +86,7 @@ const rootFilesToCopy = [
 
 // Declare variables in root.
 const filesToCopy = [...rootFilesToCopy];
-const entryPointsClassic = {};
-const entryPointsModule = {};
+const entryPoints = {};
 
 buildListMap.forEach((files, exampleName) => {
   /**
@@ -141,7 +127,7 @@ buildListMap.forEach((files, exampleName) => {
       // Filter for entry point file types, then only allow index.js and view.js, or any scss or sass files.
       return (
         extensionsForEntry.includes(path.extname(file)) &&
-        (allowedJSEntryBoth.some((allowed) => path.basename(file).includes(allowed)) ||
+        (allowedJSEntry.some((allowed) => path.basename(file).includes(allowed)) ||
           path.extname(file) !== '.js')
       );
     })
@@ -163,35 +149,29 @@ buildListMap.forEach((files, exampleName) => {
       const prefix = filenameObj.ext === '.js' ? '_JS_' : '';
       const name = path.join(prefix + exampleName, filenameObj.dir, outputName); // e.g. js files: '_JS_i11y-api-g-l-d/index', or, scss files: 'i11y-api-g-l-d/style'
 
-      if (path.basename(file).includes(allowedJSEntryClassic) || path.extname(file) !== '.js') {
-        entryPointsClassic[name] = entry;
-      } else if (path.basename(file).includes(allowedJSEntryModule)) {
-        entryPointsModule[name] = entry;
-      }
+      entryPoints[name] = entry;
     });
 });
 
 /* console.log("*** Files To Copy ***");
 console.log(filesToCopy); */
 console.log('*** Entry Points ***');
-console.log(entryPointsClassic);
-console.log(entryPointsModule);
+console.log(entryPoints);
 
 /**
- * Reconfigure classic config plugins
+ * Reconfigure plugins
  */
 
-/**
- * There only a CopyPlugin in the classic config, and not one in the modules config.
- * Remove WP config MiniCssExtractPlugin and CopyPlugin from classic
- */
-defaultConfigClassic.plugins = defaultConfigClassic.plugins.filter(
+// Remove WP config MiniCssExtractPlugin and CopyPlugin
+console.log('%%%%%%%%%%%%%%%%%%%%%%%');
+console.dir(defaultConfig[1].entry.toString());
+defaultConfig.plugins = defaultConfig.plugins.filter(
   (plugin) => !(plugin instanceof MiniCssExtractPlugin) && !(plugin instanceof CopyPlugin)
 );
 
 // New plugins array
 const plugins = [
-  ...defaultConfigClassic.plugins,
+  ...defaultConfig.plugins,
   new CopyPlugin({
     patterns: filesToCopy,
   }),
@@ -200,45 +180,19 @@ const plugins = [
   }),
 ];
 
-/**
- * Replace module config output filename
- */
-
-/**
- * Function to sort out output
- */
-
-const outputFilename = (pathData) => {
-  // With CSS files as entry points, empty JS files are created for each one. Junk them by filtering marked JS files.
-  const junkFolder = pathData.chunk.name.includes('_JS_') ? '' : 'junk-empty-files';
-  // Remove prefix, it has done its job.
-  const name = pathData.chunk.name.replace('_JS_', '');
-  return `${junkFolder}${path.sep}${name}.js`; // path.sep is platform specific separator. ${name} contains any sub-folders
-};
-
-const classicConfig = {
-  ...defaultConfigClassic,
+module.exports = {
+  ...defaultConfig,
   plugins,
-  entry: entryPointsClassic,
+  entry: entryPoints,
   output: {
     path: buildPath,
-    filename: outputFilename,
+    filename: (pathData) => {
+      // With CSS files as entry points, empty JS files are created for each one. Junk them by filtering marked JS files.
+      const junkFolder = pathData.chunk.name.includes('_JS_') ? '' : 'junk-empty-files';
+      // Remove prefix, it has done its job.
+      const name = pathData.chunk.name.replace('_JS_', '');
+      return `${junkFolder}${path.sep}${name}.js`; // path.sep is platform specific separator. ${name} contains any sub-folders
+    },
+    clean: true,
   },
 };
-
-/**
- * Conditional export
- */
-if (Array.isArray(defaultConfig)) {
-  defaultConfigModule.output.filename = outputFilename;
-  defaultConfigModule.output.path = buildPath;
-
-  const moduleConfig = {
-    ...defaultConfigModule,
-    entry: entryPointsModule,
-  };
-
-  module.exports = [classicConfig, moduleConfig];
-} else {
-  module.exports = classicConfig;
-}

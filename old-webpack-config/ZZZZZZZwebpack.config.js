@@ -36,7 +36,6 @@ const buildPath = path.resolve(
   'plugins',
   'gutenberg-example-blocks'
 );
-
 console.log(`*** Build path ***  ${buildPath}`);
 
 // Get the build list from the JSON file. `require` converts JSON to an object.
@@ -50,16 +49,16 @@ const EXAMPLE_LIST = require(path.resolve(sourcePath, 'build-list.json'));
 const exampleListArray = Object.entries(EXAMPLE_LIST);
 
 // Log all example names
-console.log('*** Complete example list ***');
-exampleListArray.forEach((el) => console.log(`[\`${el[0]}\`](./src/${el[0]})`));
+//console.log('*** Complete example list ***');
+//exampleListArray.forEach((el) => console.log(`[\`${el[0]}\`](./src/${el[0]})`));
 
 // Filter the full examples list for those to be built. Make a Map with exampleName => {}
 const buildListArray = exampleListArray
   .filter((example) => (example[1].include ? true : false))
   .map((example) => example[0]);
 
-console.log('*** Build List ***');
-console.log(buildListArray);
+//console.log('*** Build List ***');
+//console.log(buildListArray);
 
 /**
  * For each example in the build list, make a Map containing all the files
@@ -68,13 +67,23 @@ console.log(buildListArray);
  */
 const buildListMap = new Map();
 
-buildListArray.forEach((el) => {
-  const absPath = path.resolve(sourcePath, el); // Entry points will be absolute paths.
-  buildListMap.set(el, fs.readdirSync(absPath, { recursive: true }));
+buildListArray.forEach((example) => {
+  const absPath = path.resolve(sourcePath, example);
+  const allFilesInExample = fs.readdirSync(absPath, { recursive: true });
+
+  buildListMap.set(
+    example,
+    allFilesInExample.filter((file) => path.dirname(file) !== '.';
+    )
+  );
+
+  console.log(allFilesInExample);
+
+  // fs.readdirSync(absPath, { recursive: true }));
 });
 
-console.log('*** Build List All Files ***');
-console.log(buildListMap);
+//console.log('*** Build List All Files ***');
+//console.log(buildListMap);
 
 /**
  * Process the files for each example in the build Map.
@@ -226,16 +235,17 @@ const classicConfig = {
   },
 };
 
-/**
- * Conditional export
- */
+console / log(defaultConfig);
+
 if (Array.isArray(defaultConfig)) {
   defaultConfigModule.output.filename = outputFilename;
+  //defaultConfigModule.output.filename = 'i11y-api-g-l-d/view.js';
   defaultConfigModule.output.path = buildPath;
 
   const moduleConfig = {
     ...defaultConfigModule,
     entry: entryPointsModule,
+    //devServer: { devMiddleware: { writeToDisk: true } },
   };
 
   module.exports = [classicConfig, moduleConfig];
