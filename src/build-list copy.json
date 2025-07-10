@@ -71,7 +71,7 @@
       "block-json-another-block"
     ],
     "cat": ["richtext"],
-    "include": true
+    "include": false
   },
   "block-lock": {
     "name": "block-lock",
