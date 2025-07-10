@@ -13,8 +13,8 @@ import { registerBlockType } from "@wordpress/blocks";
  *
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
-import "./i11y-api-g-l-d.style.scss";
-import "./i11y-api-g-l-d.editor.scss";
+//import "./i11y-api-g-l-d.style.scss";
+//import "./i11y-api-g-l-d.editor.scss";
 
 /**
  * Internal dependencies
