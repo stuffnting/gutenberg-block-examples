@@ -1,0 +1,62 @@
+{
+  "title": "JSON schema for Gutenberg Block Examples Build List",
+  "type": "object",
+  "patternProperties": {
+    "^[A-Za-z0-9_-]+$": {
+      "type": "object",
+      "properties": {
+        "blocks": {
+          "description": "An array containing the blocks registered by the example.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_/-]+$"
+          }
+        },
+        "categories": {
+          "description": "An array containing the categories that the example fits into.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "hooks",
+              "inner-blocks",
+              "patterns",
+              "templates",
+              "collections",
+              "categories",
+              "filter",
+              "binding",
+              "meta",
+              "dynamic",
+              "richtext",
+              "lock",
+              "styles",
+              "interactivity",
+              "context",
+              "inspector-controls",
+              "notices",
+              "php-render",
+              "plugin-sidebar",
+              "variations",
+              "supports",
+              "media"
+            ]
+          }
+        },
+        "include": {
+          "description": "The whether or not to included the example in the next build.",
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "$schema": "",
+    "_NOTE": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}
